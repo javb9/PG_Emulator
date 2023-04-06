@@ -1,259 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="src/css/index.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="row m-0 home">
-      <div class="active" id="sidebar">
-        <div class="text-end">
-          <a type="button" id="closeSidebar"
-            ><span class="fas fa-times fa-2x"></span
-          ></a>
-        </div>
-        <ul class="m-0">
-          <li class="mb-1 mt-0">
-            <h3 class="img-logo">
-              <img src="src/Img/LogoGifTG.gif" alt="">
-            </h3>
-          </li>
-          <li class="li-opciones d-flex row justify-content-between">
-            <a type="button" id="btnContenido" data-bs-toggle="collapse" href="#collapseUnit" role="button" aria-expanded="false" aria-controls="collapseUnit"
-              ><i class="fas fa-exclamation-circle"></i> Contenido teorico <i class="fas fa-sort-down" id="icon-Contenido"></i></a
-            >
-          </li>
-          <div class="collapse" id="collapseUnit">
-            <ul class="m-0">
-              <li class="li-sub-opciones text-center">
-                <a type="button" id="btnUnit1">
-                  UNIDAD I - MODELOS DE PROPAGACIÓN
-                </a>
-              </li>
-              <li class="li-sub-opciones text-center">
-                <a type="button" id="btnUnit2">
-                  UNIDAD II -COMUNICACIONES INALAMBRICAS
-                </a>
-              </li>
-            </ul>
-          </div>
-          <li class="li-opciones" id="liCambioContrasenna">
-            <a type="button" id="btnCalcular"
-              ><i class="fas fa-calculator"></i> Calcular</a
-            >
-          </li>
-          <li class="li-opciones" id="liConectados">
-            <a type="button" id="btnGuia"
-              ><i class="fas fa-file-alt"></i> Guias de laboratorio</a
-            >
-          </li>
-        </ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/css/index.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="row m-0 home">
+    <div class="active" id="sidebar">
+      <div class="text-end">
+        <a type="button" id="closeSidebar"><span class="fas fa-times fa-2x"></span></a>
       </div>
-      <div class="home-contenedor" id="contenedor">
-        <div class="row">
-          <div class="col-12 m-2">
-            <button class="btn btn-light d-none" id="openSlide">
-              <span class="fas fa-bars"></span>
-            </button>
+      <ul class="m-0">
+        <li class="mb-1 mt-0">
+          <h3 class="img-logo">
+            <img src="src/Img/LogoGifTG.gif" alt="" />
+          </h3>
+        </li>
+        <li class="li-opciones d-flex row justify-content-between">
+          <a type="button" id="btnContenido" data-bs-toggle="collapse" href="#collapseUnit" role="button"
+            aria-expanded="false" aria-controls="collapseUnit"><i class="fas fa-exclamation-circle"></i> Contenido
+            teorico
+            <i class="fas fa-sort-down" id="icon-Contenido"></i></a>
+        </li>
+        <div class="collapse" id="collapseUnit">
+          <ul class="m-0">
+            <li class="li-sub-opciones text-center">
+              <a type="button" id="btnUnit1">
+                UNIDAD I - MODELOS DE PROPAGACIÓN
+              </a>
+            </li>
+            <li class="li-sub-opciones text-center">
+              <a type="button" id="btnUnit2">
+                UNIDAD II -COMUNICACIONES INALAMBRICAS
+              </a>
+            </li>
+          </ul>
+        </div>
+        <li class="li-opciones" id="liCambioContrasenna">
+          <a type="button" id="btnCalcular"><i class="fas fa-calculator"></i> Calcular</a>
+        </li>
+        <li class="li-opciones" id="liConectados">
+          <a type="button" id="btnGuia"><i class="fas fa-file-alt"></i> Guias de laboratorio</a>
+        </li>
+      </ul>
+    </div>
+    <div class="home-contenedor" id="contenedor">
+      <div class="row">
+        <div class="col-12 m-2">
+          <button class="btn btn-light d-none" id="openSlide">
+            <span class="fas fa-bars"></span>
+          </button>
+        </div>
+        <div id="divUnit1" class="col-12 d-none">
+          <h5>Concepto de modelos de propagacion</h5>
+          <div class="col-12 text-center">
+            <video src="src/video/Unidad-1.mp4" poster="Video" class="video col-12" controls id="videoUnidad1"></video>
           </div>
-          <div id="divUnit1" class="col-12 d-none">
-            <h5>Concepto de modelos de propagacion</h5>
-            <div class="col-12 text-center">
-              <video src="src/video/Unidad-1.mp4" poster="Video" class="video col-12" controls id="videoUnidad1"></video>
-            </div>
-            <div class="accordion mt-3" id="accordionExampleOne">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOneOne">
-                  <button
-                    class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneOne" aria-expanded="false" aria-controls="collapseOneOne">
-                    MODELO DE PROPAGACIÓN EN EXTERIORES
-                  </button>
-                </h2>
-                <div id="collapseOneOne" class="accordion-collapse collapse row" aria-labelledby="headingOneOne" data-bs-parent="#accordionExampleOne">
-                  <div class="accordion-body">
-                    <div class="row">
-                        <p class="col-12 mt-2 mb-2">Son una herramienta muy útil,
-                          estos consideran párametros
-                          como el perfil del terreno, que
-                          puede variar en diferentes
-                          caracteristicas ej: montañoso
-                          o inclinado. Ademas como la
-                          presencia de edificios, arboles, entre otros.
-                        </p>
-                      <a type="button" class="col-12 col-sm-6 mb-2" id="btnCaracteristicasMPE" data-toggle="modal" data-target="#modalModelosUnidadII">
-                        <div class="card card-models">
-                            <h5 class="card-title">Caracteristicas</h5>
-                        </div>
-                      </a>
-                      <a type="button" class="col-12 col-sm-6 mb-2" id="btnModelsRepreMPE" data-toggle="modal" data-target="#modalModelosUnidadII">
-                        <div class="card card-models">
-                            <h5 class="card-title">Modelos representativos</h5>
-                        </div>
-                      </a>
-                      <a type="button" class="col-12 col-sm-2">
-                          <div class="card card-model">
-                              <h5 class="card-title">Modelo I</h5>
-                          </div>
-                      </a>
-                      <a type="button" class="col-12 col-sm-2">
-                          <div class="card card-model">
-                              <h5 class="card-title">Modelo II</h5>
-                          </div>
-                      </a>
-                      <a type="button" class="col-12 col-sm-2">
-                          <div class="card card-model">
-                              <h5 class="card-title">Modelo III</h5>
-                          </div>
-                      </a>
-                      <a type="button" class="col-12 col-sm-2">
-                          <div class="card card-model">
-                              <h5 class="card-title">Modelo IV</h5>
-                          </div>
-                      </a>
-                      <a type="button" class="col-12 col-sm-2">
-                          <div class="card card-model">
-                              <h5 class="card-title">Modelo V</h5>
-                          </div>
-                      </a>
-                      <a type="button" class="col-12 col-sm-2">
-                          <div class="card card-model">
-                              <h5 class="card-title">Modelo VI</h5>
-                          </div>
-                      </a>
+          <div class="accordion mt-3" id="accordionExampleOne">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOneOne">
+                <p class="col-12 mt-2 mb-3">
+                  Las clasificaciones de los modelos de propagacion de acuerdo
+                  a la tecnica de diseño:
+                </p>
+                <div class="row justify-content-center">
+                  <div class="mb-2 col-6 title-map">
+                    <p class="text-center">
+                      MODELOS DE PROPAGACION
+                    </p>
+                    <p class="text-center">
+                      De acuerdo a las tecnicas de diseño
+                    </p>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <a type="button" class="col-12 col-sm-3 mb-1" id="btnEmpir" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">EMPIRICO</h5>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwoTwo">
-                  <button
-                    class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwo">
-                    MODELOS EMPIRICOS Y SEMIEMPIRICOS
-                  </button>
-                </h2>
-                <div id="collapseTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingTwoTwo" data-bs-parent="#accordionExampleOne">
-                  <div class="accordion-body row">
-                      <a type="button" class="col-6" id="btnEmpirico" data-toggle="modal" data-target="#modalModelosUnidadII">
-                        <div class="card card-models">
-                          <h5 class="card-title">Empirico</h5>
-                        </div>
-                      </a>
-                      <a type="button" class="col-6" id="btnSemiEmpirico" data-toggle="modal" data-target="#modalModelosUnidadII">
-                        <div class="card card-models">
-                            <h5 class="card-title">Semi-empirico</h5>
-                        </div>
-                      </a>
-                      <div class="col-12 mt-2 mb-2 text-center">
-                        <img src="src/Img/img_semiempirico.png" alt="" height="300">
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThreeThree">
-                  <button
-                    class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeThree" aria-expanded="false" aria-controls="collapseThreeThree">
-                    MODELOS PARA SITEMAS CON Y SIN LINEA DE VISTA
-                  </button>
-                </h2>
-                <div id="collapseThreeThree" class="accordion-collapse collapse" aria-labelledby="headingThreeThree" data-bs-parent="#accordionExampleOne">
-                  <div class="accordion-body row">
-                    <div class="col-12 text-center">
-                      <video src="src/video/Unidad-1-Video2.mp4" poster="Video" class="video col-12" controls id="videoUnidad1V2"></video><br>
-                      <span>Video sin sonido</span>
-                    </div>
-                    <h2 class="mb-1">Algunos modelos representativos:</h2>
-                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelFriss" target="_blank" href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpfMAB-WGjK0LIuow?e=aPJ5FU">
-                      <div class="card card-models">
-                          <h5 class="card-title">Modelo Friss</h5>
-                      </div>
-                    </a>
-                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelDosRayos" target="_blank" href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpkhyWkMWgFNz_gDQ?e=neTAXc">
-                      <div class="card card-models">
-                          <h5 class="card-title">Modelos dos rayos</h5>
-                      </div>
-                    </a>
-                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelWI" target="_blank" href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpiw6ySmvsG4N0bbg?e=17M0ss">
-                        <div class="card card-models">
-                            <h5 class="card-title">Modelo Walfish-Ikegami</h5>
-                        </div>
-                    </a>
-                    <span class="mt-1 mb-1">Para ingresar a las presentaciones debes tener una cuenta OneDrive abierta</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="divUnit2" class="col-12 d-none">
-            <h5>Concepto de Comunicaciones Inalámbricas:</h5>
-            <div class="col-12 text-center">
-              <video src="src/video/Unidad-2.mp4" poster="Video" class="video" controls id="videoUnidad2"></video>
-            </div>
-            <div class="accordion mt-3" id="accordionExampleTwoTwo">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwoTwoTwo">
-                  <button
-                    class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwoTwo">
-                    COMUNICACIONE INALAMBRICAS PMR, WIFI, WIMAX, LDS
-                  </button>
-                </h2>
-                <div id="collapseTwoTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingTwoTwoTwo" data-bs-parent="#accordionExampleTwoTwo">
-                  <div class="accordion-body row">
-                    <a type="button" class="col-12 col-sm-3 mb-1" id="btnPmr" data-toggle="modal" data-target="#modalModelosUnidadII">
-                      <div class="card card-models">
-                          <h5 class="card-title">PMR</h5>
-                      </div>
-                    </a>
-                    <a type="button" class="col-12 col-sm-3 mb-1" id="btnWifi" data-toggle="modal" data-target="#modalModelosUnidadII">
-                      <div class="card card-models">
-                          <h5 class="card-title">WIFI</h5>
-                      </div>
-                    </a>
-                    <a type="button" class="col-12 col-sm-3 mb-1" id="btnWimax" data-toggle="modal" data-target="#modalModelosUnidadII">
-                        <div class="card card-models">
-                            <h5 class="card-title">WIMAX</h5>
-                        </div>
-                    </a>
-                    <a type="button" class="col-12 col-sm-3 mb-1" id="btnLds" data-toggle="modal" data-target="#modalModelosUnidadII">
-                      <div class="card card-models">
-                          <h5 class="card-title">LDSM</h5>
-                      </div>
                   </a>
+                  <a type="button" class="col-12 col-sm-3 mb-1" id="btnSemiEmpir" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">SEMI EMPIRICOS</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-3 mb-1" id="btnDeterm" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">DETERMINISTAS</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-3 mb-1" id="btnLds" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">ESTADISTICOS</h5>
+                    </div>
+                  </a>
+                </div>
+                <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOneOne" aria-expanded="false" aria-controls="collapseOneOne">
+                  MODELO DE PROPAGACIÓN EN EXTERIORES
+                </button>
+              </h2>
+              <div id="collapseOneOne" class="accordion-collapse collapse row" aria-labelledby="headingOneOne"
+                data-bs-parent="#accordionExampleOne">
+                <div class="accordion-body">
+                  <div class="row">
+                    <p class="col-12 mt-2 mb-2">
+                      Son una herramienta muy útil, estos consideran
+                      párametros como el perfil del terreno, que puede variar
+                      en diferentes caracteristicas ej: montañoso o inclinado.
+                      Ademas como la presencia de edificios, arboles, entre
+                      otros.
+                    </p>
+                    <a type="button" class="col-12 col-sm-6 mb-2" id="btnCaracteristicasMPE" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">Caracteristicas</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-6 mb-2" id="btnModelsRepreMPE" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">Modelos representativos</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-2">
+                      <div class="card card-model">
+                        <h5 class="card-title">Modelo I</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-2">
+                      <div class="card card-model">
+                        <h5 class="card-title">Modelo II</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-2">
+                      <div class="card card-model">
+                        <h5 class="card-title">Modelo III</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-2">
+                      <div class="card card-model">
+                        <h5 class="card-title">Modelo IV</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-2">
+                      <div class="card card-model">
+                        <h5 class="card-title">Modelo V</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-2">
+                      <div class="card card-model">
+                        <h5 class="card-title">Modelo VI</h5>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwoTwo">
+                <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwo">
+                  MODELOS EMPIRICOS Y SEMIEMPIRICOS
+                </button>
+              </h2>
+              <div id="collapseTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingTwoTwo"
+                data-bs-parent="#accordionExampleOne">
+                <div class="accordion-body row">
+                  <a type="button" class="col-6" id="btnEmpirico" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">Empirico</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-6" id="btnSemiEmpirico" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">Semi-empirico</h5>
+                    </div>
+                  </a>
+                  <div class="col-12 mt-2 mb-2 text-center">
+                    <img src="src/Img/img_semiempirico.png" alt="" height="300" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThreeThree">
+                <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThreeThree" aria-expanded="false" aria-controls="collapseThreeThree">
+                  MODELOS PARA SISTEMAS CON Y SIN LINEA DE VISTA
+                </button>
+              </h2>
+              <div id="collapseThreeThree" class="accordion-collapse collapse" aria-labelledby="headingThreeThree"
+                data-bs-parent="#accordionExampleOne">
+                <div class="accordion-body row">
+                  <div class="col-12 text-center">
+                    <video src="src/video/Unidad-1-Video2.mp4" poster="Video" class="video col-12" controls
+                      id="videoUnidad1V2"></video><br />
+                    <span>Video sin sonido</span>
+                  </div>
+                  <h2 class="mb-1">Algunos modelos representativos:</h2>
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelFriss" target="_blank"
+                    href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpfMAB-WGjK0LIuow?e=aPJ5FU">
+                    <div class="card card-models">
+                      <h5 class="card-title">Modelo Friss</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelDosRayos" target="_blank"
+                    href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpkhyWkMWgFNz_gDQ?e=neTAXc">
+                    <div class="card card-models">
+                      <h5 class="card-title">Modelos dos rayos</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelWI" target="_blank"
+                    href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpiw6ySmvsG4N0bbg?e=17M0ss">
+                    <div class="card card-models">
+                      <h5 class="card-title">Modelo Walfish-Ikegami</h5>
+                    </div>
+                  </a>
+                  <span class="mt-1 mb-1">Para ingresar a las presentaciones debes tener una cuenta
+                    OneDrive abierta</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="divUnit2" class="col-12 d-none">
+          <h5>Concepto de Comunicaciones Inalámbricas:</h5>
+          <div class="col-12 text-center">
+            <video src="src/video/Unidad-2.mp4" poster="Video" class="video" controls id="videoUnidad2"></video>
+          </div>
+          <div class="accordion mt-3" id="accordionExampleTwoTwo">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwoTwoTwo">
+                <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwoTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwoTwo">
+                  COMUNICACIONE INALAMBRICAS PMR, WIFI, WIMAX, LDS
+                </button>
+              </h2>
+              <div id="collapseTwoTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingTwoTwoTwo"
+                data-bs-parent="#accordionExampleTwoTwo">
+                <div class="accordion-body row">
+
+
+                  <div class="accordion-body row">
+                    <a type="button" class="col-12 col-sm-3 mb-1" id="btnPmr" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">PMR</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-3 mb-1" id="btnWifi" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">WIFI</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-3 mb-1" id="btnWimax" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">WIMAX</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-3 mb-1" id="btnLds" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">LDSM</h5>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThreeThreeThree">
-                  <button
-                    class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeThreeThree" aria-expanded="false" aria-controls="collapseThreeThreeThree">
+                  <button class="accordion-button accordion-secundario collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseThreeThreeThree" aria-expanded="false"
+                    aria-controls="collapseThreeThreeThree">
                     SISTEMAS TETRA, DETEC, RADIO MENSAJERIA
                   </button>
                 </h2>
-                <div id="collapseThreeThreeThree" class="accordion-collapse collapse" aria-labelledby="headingThreeThreeThree" data-bs-parent="#accordionExampleTwoTwo">
+                <div id="collapseThreeThreeThree" class="accordion-collapse collapse"
+                  aria-labelledby="headingThreeThreeThree" data-bs-parent="#accordionExampleTwoTwo">
                   <div class="accordion-body row">
-                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnTetra" data-toggle="modal" data-target="#modalModelosUnidadII">
+                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnTetra" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
                       <div class="card card-models">
-                          <h5 class="card-title">TETRA</h5>
+                        <h5 class="card-title">TETRA</h5>
                       </div>
                     </a>
-                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnDectec" data-toggle="modal" data-target="#modalModelosUnidadII">
+                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnDectec" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
                       <div class="card card-models">
-                          <h5 class="card-title">DETEC</h5>
+                        <h5 class="card-title">DETEC</h5>
                       </div>
                     </a>
-                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnRadioMensajeria" data-toggle="modal" data-target="#modalModelosUnidadII">
-                        <div class="card card-models">
-                            <h5 class="card-title">RADIO MENSAJERIA</h5>
-                        </div>
+                    <a type="button" class="col-12 col-sm-4 mb-1" id="btnRadioMensajeria" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">RADIO MENSAJERIA</h5>
+                      </div>
                     </a>
                   </div>
                 </div>
@@ -263,7 +320,8 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="modalModelosUnidadII" tabindex="-1" role="dialog" aria-labelledby="modalModelosUnidadII" aria-hidden="true">
+    <div class="modal fade" id="modalModelosUnidadII" tabindex="-1" role="dialog" aria-labelledby="modalModelosUnidadII"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -274,13 +332,17 @@
           </div>
           <div class="modal-body row">
             <div class="d-none" id="divContentEmpirico">
-              <p>Estos se basan en numerosas medidas y observaciones de campo sobre el ambiente de propagacion en condiciones reales, a partir de las cuales se obtienen formulas por medio de ajustes.</p>
+              <p>
+                Estos se basan en numerosas medidas y observaciones de campo
+                sobre el ambiente de propagacion en condiciones reales, a partir
+                de las cuales se obtienen formulas por medio de ajustes.
+              </p>
               <audio controls autoplay>
-                <source src="src/Audio/Audio1_Model_E.mp3" type="audio/mpeg">
+                <source src="src/Audio/Audio1_Model_E.mp3" type="audio/mpeg" />
               </audio>
               <h5>¿De que depende su precisión?</h5>
               <audio controls autoplay>
-                <source src="src/Audio/Audio2_Model_E.mp3" type="audio/mpeg">
+                <source src="src/Audio/Audio2_Model_E.mp3" type="audio/mpeg" />
               </audio>
               <h5>Aqui se destacan los modelos:</h5>
               <div class="list-group list-group-horizontal row">
@@ -295,7 +357,13 @@
               </div>
             </div>
             <div class="d-none" id="divContentSemiEmpirico">
-              <p>Estas se basan en teorias fisicas y mecanismos de propagación de las ondas electromagneticas. Incorporan algunas caracteristicas del entorno (por lo que requieren ciertos datos de morfologia del terreno) y se complementan con medidas para el ajuste de sus parámetros.</p>
+              <p>
+                Estas se basan en teorias fisicas y mecanismos de propagación de
+                las ondas electromagneticas. Incorporan algunas caracteristicas
+                del entorno (por lo que requieren ciertos datos de morfologia
+                del terreno) y se complementan con medidas para el ajuste de sus
+                parámetros.
+              </p>
               <h5>Aqui se destacan los modelos:</h5>
               <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action">Egli</a>
@@ -306,21 +374,23 @@
               </div>
             </div>
             <div class="d-none" id="divCaracteristicasMPE">
-              <p>Se puede hacer una clasificación
-                atendiendo al tamaño del área de
-                cobertura:</p>
+              <p>
+                Se puede hacer una clasificación atendiendo al tamaño del área
+                de cobertura:
+              </p>
               <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Cubren áreas del orden de 200 a
-                  100 metros</a>
-                <a href="#" class="list-group-item list-group-item-action">Emisiones de potencia del orden de 10mW a 1W</a>
-                <a href="#" class="list-group-item list-group-item-action">Antenas bastante elevadas entre 3 a 10 metros</a>
+                <a href="#" class="list-group-item list-group-item-action">Cubren áreas del orden de 200 a 100
+                  metros</a>
+                <a href="#" class="list-group-item list-group-item-action">Emisiones de potencia del orden de 10mW a
+                  1W</a>
+                <a href="#" class="list-group-item list-group-item-action">Antenas bastante elevadas entre 3 a 10
+                  metros</a>
               </div>
             </div>
             <div class="d-none" id="divModelsRepreMPE">
               <div class="list-group list-group-horizontal row">
-                <a href="#" class="list-group-item col-4">Teóricos de propagación de ondas
-                  electromagnéticas
-                  </a>
+                <a href="#" class="list-group-item col-4">Teóricos de propagación de ondas electromagnéticas
+                </a>
                 <a href="#" class="list-group-item col-4">FRIIS en espacio libre</a>
                 <a href="#" class="list-group-item col-4">Longley-Rice </a>
                 <a href="#" class="list-group-item col-4">Okumura - Hata</a>
@@ -331,7 +401,7 @@
                 <a href="#" class="list-group-item col-4">Walfish - Bertoni</a>
                 <a href="#" class="list-group-item col-4">Walfish - Ikegami</a>
                 <a href="#" class="list-group-item col-4">The COST 231-Walfish-Ikegami</a>
-                <a href="#" class="list-group-item col-4">ITU-R1411 y ITU-1546-5</a>
+                <a href="#" class="list-group-item col-4" pir>ITU-R1411 y ITU-1546-5</a>
                 <a href="#" class="list-group-item col-4">Erceg C o SUI</a>
                 <a href="#" class="list-group-item col-4">ITU-Advanced Channel Model</a>
                 <a href="#" class="list-group-item col-4">COST 207 GSM</a>
@@ -343,66 +413,161 @@
                 <a href="#" class="list-group-item col-4">Xia-Bertoni, MOPEM, ECC-33</a>
               </div>
             </div>
+            <div class="d-none" id="divEmpir">
+              <p class="col-12 mt-2 mb-2 text-justify">
+                Estos se basan en numerosas medidas y observaciones de campo
+                sobre el ambiente de propagacion en condiciones reales, a partir
+                de las cuales se obtienen formulas por medio de ajustes.
+              </p>
+              <div class="row justify-content-center">
+                <audio controls autoplay class="mb-2">
+                  <source src="src/Audio/Empirico1.mpeg" type="audio/mpeg" />
+                </audio>
+                <b>
+                  <p>¿De que depende su precision?</p>
+                </b>
+                <audio controls autoplay class="mb-2">
+                  <source src="src/Audio/Empirico2.mpeg" type="audio/mpeg" />
+                </audio>
+                <b>
+                  <p>Aqui se destacan los modelos:</p>
+                </b>
+                <div class="list-group list-group-horizontal row">
+                  <a href="#" class="list-group-item col-6 text-center">Recomendacion UIT-R P 1546</a>
+                  <a href="#" class="list-group-item col-6 text-center">Hata</a>
+                  <a href="#" class="list-group-item col-6 text-center">COST-231 Hata</a>
+                  <a href="#" class="list-group-item col-6 text-center">London de Ibrahim y Parsons</a>
+                  <a href="#" class="list-group-item col-6 text-center">Allsebrook´s</a>
+                  <a href="#" class="list-group-item col-6 text-center">MeGeeHan y Griffiths</a>
+                  <a href="#" class="list-group-item col-6 text-center">Atefi y Parsons</a>
+                  <a href="#" class="list-group-item col-6 text-center">Lee</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none" id="divSemiEmpir">
+              <p class="col-12 mt-2 mb-2 text-justify">
+                Estos se basan en teorias fisicas y mecanismos de propagacion de las ondas electromagneticas. Incorporan
+                algunas caracteristicas del entorno (por lo que requieren datos de morfologia del terreno) y se
+                complementan con medidas para el ajuste de sus parametros.
+              </p>
+              <b>
+                <p>
+                  Se destacan los modelos:
+                </p>
+              </b>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">Egli</a>
+                <a href="#" class="list-group-item list-group-item-action">Walfish</a>
+                <a href="#" class="list-group-item list-group-item-action">Okumura</a>
+                <a href="#" class="list-group-item list-group-item-action">Longley-Rice</a>
+                <a href="#" class="list-group-item list-group-item-action">Ikegami</a>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divDeterm">
+              <p class="col-12 mt-2 mb-2 text-justify mb-2">
+                Estos se basan en la representacion matematica de las leyes de propagacion de ondas electromagneticas,
+                normalmente toman como referencia las leyes de Maxwell con el fin de predecir intensidad de la señal
+                recibida.
+              </p>
+              <audio controls autoplay class="mb-2">
+                <source src="src/Audio/Deterministas.mpeg" type="audio/mpeg" />
+              </audio>
+              <b>
+                <p>Aqui se destacan los modelos:</p>
+              </b>
+            </div>
+
             <div class="d-none" id="divPmr">
               <p class="col-12 mt-2 mb-2">
-                Cuando hablamos de PMR (Radios Móviles Privadas), nos referimos a redes de comunicaciones privadas que usan los móviles que llevan esta tecnología y no se conectan con redes públicas. Son redes para grupos cerrados de usuarios. Su uso primordial es aquellas organizaciones que necesitan tener un control sobre terminales desde un punto central.
+                Cuando hablamos de PMR (Radios Móviles Privadas), nos referimos
+                a redes de comunicaciones privadas que usan los móviles que
+                llevan esta tecnología y no se conectan con redes públicas. Son
+                redes para grupos cerrados de usuarios. Su uso primordial es
+                aquellas organizaciones que necesitan tener un control sobre
+                terminales desde un punto central.
               </p>
               <h2 class="col-12 mt-2 mb-2">Historia</h2>
               <div class="text-center">
-                <img src="src/Img/LineadeTiempo.PMR.gif" alt="" height="400">
+                <img src="src/Img/LineadeTiempo.PMR.gif" alt="" height="400" />
               </div>
               <h2 class="mb-1 mt-2">Aplicaciones o usos:</h2>
               <audio controls autoplay>
-                <source src="src/Audio/AudioPMR.mpeg" type="audio/mpeg">
+                <source src="src/Audio/AudioPMR.mpeg" type="audio/mpeg" />
               </audio>
             </div>
             <div class="d-none row" id="divWifi">
-              <p class="col-12 mt-2 mb-2">Cuando hablamos de WIFI, nos referimos a una de las tecnologias de comunicación inalámbricas mediante ondas. La cual es muy utilizada hoy en dia.
-                WIFI pertenece al tipo de red WLAN (Redes inalambrias de area local).
-              </P>
-              <img src="src/Img/wifiImg.jpeg" alt="">
+              <p class="col-12 mt-2 mb-2">
+                Cuando hablamos de WIFI, nos referimos a una de las tecnologias
+                de comunicación inalámbricas mediante ondas. La cual es muy
+                utilizada hoy en dia. WIFI pertenece al tipo de red WLAN (Redes
+                inalambrias de area local).
+              </p>
+              <img src="src/Img/wifiImg.jpeg" alt="" />
               <h2 class="col-12 mt-2 mb-2">Historia</h2>
-              <img src="src/Img/LineadeTiempo.WiFi.gif" alt="">
+              <img src="src/Img/LineadeTiempo.WiFi.gif" alt="" />
               <h2 class="mt-2">Ventajas</h2>
               <audio controls autoplay>
-                <source src="src/Audio/VentajasAudioWifi.mpeg" type="audio/mpeg">
+                <source src="src/Audio/VentajasAudioWifi.mpeg" type="audio/mpeg" />
               </audio>
             </div>
             <div class="d-none" id="divWiMax">
               <p class="col-12 mt-2 mb-2">
-                Cuando hablamos de WiMax (WorldWide InterOperability for Microwave Acces), nos referimos a una tecnologia de radio de ultima generación promovida por la IEEE y pincipalmentew diseñada para proveer vía radio alta capacidad.
-                WiMax pertence al tipo de red WMAN(redes inalambricas de area metropolitana).
+                Cuando hablamos de WiMax (WorldWide InterOperability for
+                Microwave Acces), nos referimos a una tecnologia de radio de
+                ultima generación promovida por la IEEE y pincipalmentew
+                diseñada para proveer vía radio alta capacidad. WiMax pertence
+                al tipo de red WMAN(redes inalambricas de area metropolitana).
               </p>
               <div class="text-center">
-                <img src="src/Img/ImgWiMax.jpeg" alt="" height="125">
+                <img src="src/Img/ImgWiMax.jpeg" alt="" height="125" />
               </div>
               <h2 class="mb-2 mt-2">Historia:</h2>
               <div class="text-center">
-                <img src="src/Img/LineadeTiempo_WiMax.gif" alt="" height="400">
+                <img src="src/Img/LineadeTiempo_WiMax.gif" alt="" height="400" />
               </div>
               <h2 class="mb-1 mt-2">Ventajas:</h2>
               <audio controls autoplay>
-                <source src="src/Audio/AudioWiMax.mpeg" type="audio/mpeg">
+                <source src="src/Audio/AudioWiMax.mpeg" type="audio/mpeg" />
               </audio>
             </div>
             <div class="d-none" id="divLds">
               <p class="col-12 mt-2 mb-2">
-                Cuando hablamos de LDMS (Los sistemas de distribución local multipunto). Nos referimos a una la representación de una tecnología de acceso inalámbrico de banda ancha. Se aplica para el acceso a internet a alta velocidad, telefonía, transmisión de datos entre otros. Requiere de una línea de vista entre el transmisor y el receptor
+                Cuando hablamos de LDMS (Los sistemas de distribución local
+                multipunto). Nos referimos a una la representación de una
+                tecnología de acceso inalámbrico de banda ancha. Se aplica para
+                el acceso a internet a alta velocidad, telefonía, transmisión de
+                datos entre otros. Requiere de una línea de vista entre el
+                transmisor y el receptor
               </p>
               <div class="col-12 text-center mt-2 mb-2">
                 <video src="src/video/videoLDSM.mp4" poster="Video" class="video" controls id="videoLDSM"></video>
               </div>
               <h2 class="mb-1">Aplicaciones o Usos:</h2>
               <audio controls autoplay>
-                <source src="src/Audio/AudioLDSM.mpeg" type="audio/mpeg">
+                <source src="src/Audio/AudioLDSM.mpeg" type="audio/mpeg" />
               </audio>
             </div>
             <div class="d-none" id="divTetra">
               <p class="col-12 mt-2 mb-2">
-                Es un estándar definido por el Instituto Europeo de Estándares de Telecomunicaciones (ETSI). Define un sistema móvil digital de radio y nace con el objeto de unificar diversas alternativas de interfaces de radio digitales para la comunicación entre los profesionales de los servicios de emergencias y servicio público.
-                TETRA, es un sistema móvil radioeléctrico de calidad elevada que ha sido desarrollado principalmente para usuarios profesionales, tales como los servicios de emergencia y los transportes públicos. Cumple especificaciones radioeléctricas de servicios móviles que proporcionan una capacidad completa, que abarca las comunicaciones con concentración de enlaces, comunicaciones sin concentración de enlaces y comunicaciones directas de móvil a móvil.
+                Es un estándar definido por el Instituto Europeo de Estándares
+                de Telecomunicaciones (ETSI). Define un sistema móvil digital de
+                radio y nace con el objeto de unificar diversas alternativas de
+                interfaces de radio digitales para la comunicación entre los
+                profesionales de los servicios de emergencias y servicio
+                público. TETRA, es un sistema móvil radioeléctrico de calidad
+                elevada que ha sido desarrollado principalmente para usuarios
+                profesionales, tales como los servicios de emergencia y los
+                transportes públicos. Cumple especificaciones radioeléctricas de
+                servicios móviles que proporcionan una capacidad completa, que
+                abarca las comunicaciones con concentración de enlaces,
+                comunicaciones sin concentración de enlaces y comunicaciones
+                directas de móvil a móvil.
               </p>
-              <h2 class="mt-2 mb-1">Se emplean en muchas industrias, entre ellas las siguientes:</h2>
+              <h2 class="mt-2 mb-1">
+                Se emplean en muchas industrias, entre ellas las siguientes:
+              </h2>
               <div class="list-group list-group-horizontal row">
                 <a href="#" class="list-group-item col-6">Segurirdad publica</a>
                 <a href="#" class="list-group-item col-6">Petroleo</a>
@@ -417,37 +582,32 @@
               </div>
               <h2 class="mt-2 mb-1">Ventajas:</h2>
               <audio controls autoplay>
-                <source src="src/Audio/AudioTETRA.mpeg" type="audio/mpeg">
+                <source src="src/Audio/AudioTETRA.mpeg" type="audio/mpeg" />
               </audio>
             </div>
-            <div class="d-none" id="divDectec">
-
-            </div>
-            <div class="d-none" id="divRadioMensaje">
-
-            </div>
+            <div class="d-none" id="divDectec"></div>
+            <div class="d-none" id="divRadioMensaje"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <script
-      src="https://kit.fontawesome.com/4a70a8dc5b.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.js"
-      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://kit.fontawesome.com/4a70a8dc5b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
     <script src="src/js/index.js"></script>
-  </body>
+</body>
+
 </html>

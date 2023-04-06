@@ -17,6 +17,9 @@ let btnEmpirico=document.getElementById('btnEmpirico');
 let btnSemiEmpirico=document.getElementById('btnSemiEmpirico');
 let btnCaracteristicasMPE=document.getElementById('btnCaracteristicasMPE');
 let btnModelsRepreMPE=document.getElementById('btnModelsRepreMPE');
+let btnEmpir=document.getElementById('btnEmpir');
+let btnSemiEmpir=document.getElementById('btnSemiEmpir');
+let btnDeterm=document.getElementById('btnDeterm');
 let btnPmr=document.getElementById('btnPmr');
 let btnWifi=document.getElementById('btnWifi');
 let btnWimax=document.getElementById('btnWimax');
@@ -25,9 +28,12 @@ let btnTetra = document.getElementById('btnTetra');
 let btnDectec=document.getElementById('btnDectec');
 let btnRadioMensajeria=document.getElementById('btnRadioMensajeria'); 
 let divContentEmpirico=document.getElementById('divContentEmpirico');
-let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
+// let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE=document.getElementById('divCaracteristicasMPE');
 let divModelsRepreMPE =document.getElementById('divModelsRepreMPE');
+let divEmpir=document.getElementById('divEmpir');
+let divSemiEmpir=document.getElementById('divSemiEmpir');
+let divDeterm=document.getElementById('divDeterm');
 let divPmr=document.getElementById('divPmr');
 let divWifi=document.getElementById('divWifi');
 let divWiMax=document.getElementById('divWiMax');
@@ -83,11 +89,11 @@ btnEmpirico.addEventListener('click', function(){
   ocultarElemento(divContentEmpirico, false);
 });
 
-btnSemiEmpirico.addEventListener('click', function(){
-  limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Modelo semi-empirico";
-  ocultarElemento(divContentSemiEmpirico, false);
-});
+// btnSemiEmpirico.addEventListener('click', function(){
+//   limpiarModalEmpSemp();
+//   titleModalUnidadII.innerText="Modelo semi-empirico";
+//   ocultarElemento(divContentSemiEmpirico, false);
+// });
 
 btnCaracteristicasMPE.addEventListener('click', function(){
   limpiarModalEmpSemp();
@@ -105,6 +111,24 @@ btnWifi.addEventListener('click', function(){
   limpiarModalEmpSemp();
   titleModalUnidadII.innerText="Wifi familia IEEE";
   ocultarElemento(divWifi, false);
+});
+
+btnEmpir.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="EMPIRICO";
+  ocultarElemento(divEmpir, false);
+});
+
+btnSemiEmpir.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="SEMI EMPIRICO";
+  ocultarElemento(divSemiEmpir, false);
+});
+
+btnDeterm.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="DETERMINISTAS";
+  ocultarElemento(divDeterm, false);
 });
 
 btnPmr.addEventListener('click', function(){
@@ -143,9 +167,12 @@ btnRadioMensajeria.addEventListener('click', function(){
 
 function limpiarModalEmpSemp(){
   ocultarElemento(divContentEmpirico, true);
-  ocultarElemento(divContentSemiEmpirico, true);
+  // ocultarElemento(divContentSemiEmpirico, true);
   ocultarElemento(divCaracteristicasMPE, true);
   ocultarElemento(divModelsRepreMPE, true);
+  ocultarElemento(divEmpir, true);
+  ocultarElemento(divSemiEmpir, true);
+  ocultarElemento(divDeterm, true);
   ocultarElemento(divPmr, true);
   ocultarElemento(divWifi, true);
   ocultarElemento(divWiMax, true);
