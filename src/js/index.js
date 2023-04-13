@@ -17,6 +17,7 @@ let videoFriis=document.getElementById('videoFriis');
 let videoTETRA=document.getElementById('videoTETRA');
 let videoDECT=document.getElementById('videoDECT');
 let videoRadioMensa=document.getElementById('videoRadioMensa');
+let videoAMPS=document.getElementById('videoAMPS');
 
 let btnEmpirico=document.getElementById('btnEmpirico');
 let btnSemiEmpirico=document.getElementById('btnSemiEmpirico');
@@ -37,7 +38,9 @@ let btnWimax=document.getElementById('btnWimax');
 let btnLds=document.getElementById('btnLds');
 let btnTetra = document.getElementById('btnTetra');
 let btnDectec=document.getElementById('btnDectec');
-let btnRadioMensajeria=document.getElementById('btnRadioMensajeria'); 
+let btnRadioMensajeria=document.getElementById('btnRadioMensajeria');
+let btnRTGC=document.getElementById('btnRTGC'); 
+let btnAMPS=document.getElementById('btnAMPS'); 
 let divContentEmpirico=document.getElementById('divContentEmpirico');
 // let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE=document.getElementById('divCaracteristicasMPE');
@@ -58,6 +61,8 @@ let divLds=document.getElementById('divLds');
 let divTetra=document.getElementById('divTetra');
 let divDectec=document.getElementById('divDectec');
 let divRadioMensaje=document.getElementById('divRadioMensaje');
+let divRTGC=document.getElementById('divRTGC');
+let divAMPS=document.getElementById('divAMPS');
 let titleModalUnidadII=document.getElementById('titleModalUnidadII');
 let iconContenido = document.getElementById('icon-Contenido');
 let listContent =document.getElementById('listContent');
@@ -219,6 +224,18 @@ btnRadioMensajeria.addEventListener('click', function(){
   ocultarElemento(divRadioMensaje, false);
 });
 
+btnRTGC.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(divRTGC, false);
+});
+
+btnAMPS.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(divAMPS, false);
+});
+
 function limpiarModalEmpSemp(){
   ocultarElemento(divContentEmpirico, true);
   // ocultarElemento(divContentSemiEmpirico, true);
@@ -239,6 +256,8 @@ function limpiarModalEmpSemp(){
   ocultarElemento(divTetra, true);
   ocultarElemento(divDectec, true);
   ocultarElemento(divRadioMensaje, true);
+  ocultarElemento(divRTGC, true);
+  ocultarElemento(divAMPS, true);
 }
 
 function limpiarVista(){
@@ -269,5 +288,6 @@ function cerrarModal(){
   videoTETRA.pause();
   videoDECT.pause();
   videoRadioMensa.pause();
+  videoAMPS.pause();
 
 }
