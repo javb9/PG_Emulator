@@ -11,7 +11,12 @@ let videoUnidad1=document.getElementById('videoUnidad1');
 let videoUnidad2=document.getElementById('videoUnidad2');
 let videoUnidad1V2=document.getElementById('videoUnidad1V2');
 let videoLDSM=document.getElementById('videoLDSM');
+let videoDosRayos=document.getElementById('videoDosRayos');
+let videoWalfisch=document.getElementById('videoWalfisch');
+let videoFriis=document.getElementById('videoFriis');
 let videoTETRA=document.getElementById('videoTETRA');
+let videoDECT=document.getElementById('videoDECT');
+let videoRadioMensa=document.getElementById('videoRadioMensa');
 
 let btnEmpirico=document.getElementById('btnEmpirico');
 let btnSemiEmpirico=document.getElementById('btnSemiEmpirico');
@@ -20,6 +25,12 @@ let btnModelsRepreMPE=document.getElementById('btnModelsRepreMPE');
 let btnEmpir=document.getElementById('btnEmpir');
 let btnSemiEmpir=document.getElementById('btnSemiEmpir');
 let btnDeterm=document.getElementById('btnDeterm');
+let btnEstadis=document.getElementById('btnEstadis');
+let btnIndoor=document.getElementById('btnIndoor');
+let btnOutdoor=document.getElementById('btnOutdoor');
+let btnDosRayos=document.getElementById('btnDosRayos');
+let btnFriss=document.getElementById('btnFriis');
+let btnWalfisch=document.getElementById('btnWalfisch');
 let btnPmr=document.getElementById('btnPmr');
 let btnWifi=document.getElementById('btnWifi');
 let btnWimax=document.getElementById('btnWimax');
@@ -34,6 +45,12 @@ let divModelsRepreMPE =document.getElementById('divModelsRepreMPE');
 let divEmpir=document.getElementById('divEmpir');
 let divSemiEmpir=document.getElementById('divSemiEmpir');
 let divDeterm=document.getElementById('divDeterm');
+let divEstadis=document.getElementById('divEstadis');
+let divIndoor=document.getElementById('divIndoor');
+let divOutdoor=document.getElementById('divOutdoor');
+let divDosRayos=document.getElementById('divDosRayos');
+let divFriis=document.getElementById('divFriis');
+let divWalfisch=document.getElementById('divWalfisch');
 let divPmr=document.getElementById('divPmr');
 let divWifi=document.getElementById('divWifi');
 let divWiMax=document.getElementById('divWiMax');
@@ -131,11 +148,48 @@ btnDeterm.addEventListener('click', function(){
   ocultarElemento(divDeterm, false);
 });
 
+btnEstadis.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="ESTADISTICO";
+  ocultarElemento(divEstadis, false);
+});
+
+btnIndoor.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Modelo Indoor - Interiores:";
+  ocultarElemento(divIndoor, false);
+});
+
+btnOutdoor.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Modelo Indoor - Interiores:";
+  ocultarElemento(divOutdoor, false);
+});
+
+btnDosRayos.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Modelos Dos Rayos";
+  ocultarElemento(divDosRayos, false);
+});
+
+btnFriss.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Modelos Dos Rayos";
+  ocultarElemento(divFriis, false);
+});
+
+btnWalfisch.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Modelos Dos Rayos";
+  ocultarElemento(divWalfisch, false);
+});
+
 btnPmr.addEventListener('click', function(){
   limpiarModalEmpSemp();
   titleModalUnidadII.innerText="PMR";
   ocultarElemento(divPmr, false);
 });
+
 btnWimax.addEventListener('click', function(){
   limpiarModalEmpSemp();
   titleModalUnidadII.innerText="WiMax";
@@ -173,6 +227,11 @@ function limpiarModalEmpSemp(){
   ocultarElemento(divEmpir, true);
   ocultarElemento(divSemiEmpir, true);
   ocultarElemento(divDeterm, true);
+  ocultarElemento(divEstadis, true);
+  ocultarElemento(divIndoor, true);
+  ocultarElemento(divOutdoor, true);
+  ocultarElemento(divDosRayos, true);
+  ocultarElemento(divFriis, true);
   ocultarElemento(divPmr, true);
   ocultarElemento(divWifi, true);
   ocultarElemento(divWiMax, true);
@@ -204,5 +263,11 @@ function ocultarElemento(elemento, validar){
 
 function cerrarModal(){
   videoLDSM.pause();
+  videoDosRayos.pause();
+  videoFriss.pause();
+  videoWalfisch.pause();
   videoTETRA.pause();
+  videoDECT.pause();
+  videoRadioMensa.pause();
+
 }

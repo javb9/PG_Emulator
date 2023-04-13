@@ -80,7 +80,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mb-3">
                   <a type="button" class="col-12 col-sm-3 mb-1" id="btnEmpir" data-toggle="modal"
                     data-target="#modalModelosUnidadII">
                     <div class="card card-models">
@@ -99,13 +99,39 @@
                       <h5 class="card-title">DETERMINISTAS</h5>
                     </div>
                   </a>
-                  <a type="button" class="col-12 col-sm-3 mb-1" id="btnLds" data-toggle="modal"
+                  <a type="button" class="col-12 col-sm-3 mb-1" id="btnEstadis" data-toggle="modal"
                     data-target="#modalModelosUnidadII">
                     <div class="card card-models">
                       <h5 class="card-title">ESTADISTICOS</h5>
                     </div>
                   </a>
                 </div>
+
+                <div class="row justify-content-center">
+                  <div class="mb-2 col-6 title-map">
+                    <p class="text-center">
+                      MODELOS DE PROPAGACION
+                    </p>
+                    <p class="text-center">
+                      De acuerdo al ambiente
+                    </p>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnIndoor" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title"><b>INDOOR</b>- INTERIORES</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnOutdoor" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title"><b>OUTDOOR</b>- EXTERIORES</h5>
+                    </div>
+                  </a>
+                </div>
+
                 <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseOneOne" aria-expanded="false" aria-controls="collapseOneOne">
                   MODELO DE PROPAGACIÓN EN EXTERIORES
@@ -205,29 +231,31 @@
               </h2>
               <div id="collapseThreeThree" class="accordion-collapse collapse" aria-labelledby="headingThreeThree"
                 data-bs-parent="#accordionExampleOne">
-                <div class="accordion-body row">
+                <div class="row justify-content-center mb-3">
                   <div class="col-12 text-center">
                     <video src="src/video/Unidad-1-Video2.mp4" poster="Video" class="video col-12" controls
                       id="videoUnidad1V2"></video><br />
                     <span>Video sin sonido</span>
                   </div>
-                  <h2 class="mb-1">Algunos modelos representativos:</h2>
-                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelFriss" target="_blank"
-                    href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpfMAB-WGjK0LIuow?e=aPJ5FU">
+                  <b>
+                    <p class="mb-1">Algunos modelos representativos:</p>
+                  </b>
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnFriis" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
                     <div class="card card-models">
-                      <h5 class="card-title">Modelo Friss</h5>
+                      <h5 class="card-title">Modelos Friis</h5>
                     </div>
                   </a>
-                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelDosRayos" target="_blank"
-                    href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpkhyWkMWgFNz_gDQ?e=neTAXc">
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnDosRayos" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
                     <div class="card card-models">
-                      <h5 class="card-title">Modelos dos rayos</h5>
+                      <h5 class="card-title">Modelos dos Rayos</h5>
                     </div>
                   </a>
-                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnModelWI" target="_blank"
-                    href="https://1drv.ms/p/s!AuOxwcKz7cxWlbpiw6ySmvsG4N0bbg?e=17M0ss">
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnWalfisch" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
                     <div class="card card-models">
-                      <h5 class="card-title">Modelo Walfish-Ikegami</h5>
+                      <h5 class="card-title">Modelos Walfish - Ikegami</h5>
                     </div>
                   </a>
                   <span class="mt-1 mb-1">Para ingresar a las presentaciones debes tener una cuenta
@@ -310,6 +338,58 @@
                       data-target="#modalModelosUnidadII">
                       <div class="card card-models">
                         <h5 class="card-title">RADIO MENSAJERIA</h5>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFourFourFour">
+                  <button class="accordion-button accordion-secundario collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseFourFourFour" aria-expanded="false"
+                    aria-controls="collapseFourFourFour">
+                    SISTEMAS TRUNKING
+                  </button>
+                </h2>
+                <div id="collapseFourFourFour" class="accordion-collapse collapse" aria-labelledby="headingFourFourFour"
+                  data-bs-parent="#accordionExampleTwoTwo">
+                  <div class="accordion-body row">
+                    <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                      Son sistemas de radiocuminaciones troncalizados que utilizan tecnicas de transmisiones multiples,
+                      control y señalizacion digital para ofrecer la maxima eficiecia en el uso de canales de voz, datos
+                      e imagenes.
+                    </p>
+                    <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                      Representan la solucion idela para sistemas de comunicaciones en el area geografica restringidas o
+                      extensas historas como edificios, regiones, municipios y provincias.
+                    </p>
+                    <b>
+                      <p>
+                        CARACTERISTICAS:
+                      </p>
+                    </b>
+                    <div class="text-center">
+                      <img src="src/Img/TURKING.Carcteristicas.Unidad2_GIF.gif" alt="" height="400" />
+                    </div>
+                    <b>
+                      <p>
+                        VENTAJAS:
+                      </p>
+                    </b>
+                    <audio controls autoplay class="mb-3">
+                      <source src="src/Audio/Audio.VentajasTRUNKING.Unidad2.mp3" type="audio/mp3" />
+                    </audio>
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnRTGC" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">RTGC</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnAMPS" data-toggle="modal"
+                      data-target="#modalModelosUnidadII">
+                      <div class="card card-models">
+                        <h5 class="card-title">AMPS</h5>
                       </div>
                     </a>
                   </div>
@@ -457,11 +537,11 @@
                 </p>
               </b>
               <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Egli</a>
-                <a href="#" class="list-group-item list-group-item-action">Walfish</a>
-                <a href="#" class="list-group-item list-group-item-action">Okumura</a>
-                <a href="#" class="list-group-item list-group-item-action">Longley-Rice</a>
-                <a href="#" class="list-group-item list-group-item-action">Ikegami</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Egli</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Walfish</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Okumura</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Longley-Rice</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Ikegami</a>
               </div>
             </div>
 
@@ -477,9 +557,155 @@
               <b>
                 <p>Aqui se destacan los modelos:</p>
               </b>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action text-center">Modelo Flat edge</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Walfish - Bertoni</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">COST 231 231-Walfish-Ikegami</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Sakagami - Kubai Model</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">MBX para macro celulas</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Ikegami Model</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Modelo de Friss</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Modelo de dos rayos</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Difraccion de objetos</a>
+              </div>
             </div>
 
-            <div class="d-none" id="divPmr">
+            <div class="d-none row justify-content-center" id="divEstadis">
+              <p class="col-12 mt-2 mb-2 text-justify mb-2">
+                Es la representacion del comportamiento de las variables aleatorias en los que existe una secuencia
+                cambiante de eventos que se analizan probabilisticamente durante un intervalo de tiempo.
+              </p>
+              <b>
+                <p>¿De que depende su presicion?</p>
+              </b>
+              <audio controls autoplay class="mb-2">
+                <source src="src/Audio/Estadisticos.mpeg" type="audio/mpeg" />
+              </audio>
+              <b>
+                <p>Aqui se destacan los modelos:</p>
+              </b>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action text-center">Estadistica inferencial</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">Estadistica descriptiva</a>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divIndoor">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                La propagacion en interiores no esta influenciada por el perfil del terreno como la propagacion en
+                ambientes abiertos, pero puede ser afectada por laestructura del edificio, especialmente si hay varios
+                tipos de materiales de construccion en el edificio. La señal transmitida alcanza al receptor por mas de
+                un atrayectoria o ruta, a traves de reflexion, refreccion y difraccion de las ondas de radio a causa de
+                objetos como: paredes, ventanas y puertas dentro del edificio.
+              </p>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio1.Indoor.mp3" type="audio/mp3" />
+              </audio>
+              <b>
+                <p>Caracteristicas:</p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio2.CaracteristicasInndoor.mp3" type="audio/mp3" />
+              </audio>
+              <div class="list-group list-group-horizontal row">
+                <a href="#" class="list-group-item col-6 text-center">Modelo teorico basado en ondas
+                  electromagneticas</a>
+                <a href="#" class="list-group-item col-6 text-center">Keenan - Montiev model</a>
+                <a href="#" class="list-group-item col-6 text-center">Modelo de transmision en espacio libre</a>
+                <a href="#" class="list-group-item col-6 text-center">Multi - Wall Model</a>
+                <a href="#" class="list-group-item col-6 text-center">Modelo de dos rayos</a>
+                <a href="#" class="list-group-item col-6 text-center">Montiev - Simplificado</a>
+                <a href="#" class="list-group-item col-6 text-center">Modelo Longley - Rice</a>
+                <a href="#" class="list-group-item col-6 text-center">Modelo de una pendiente</a>
+                <a href="#" class="list-group-item col-6 text-center">Log - Normal Shadowing Path Loss Model</a>
+                <a href="#" class="list-group-item col-6 text-center">Ericsson multiples</a>
+                <a href="#" class="list-group-item col-6 text-center">Log - Distance</a>
+                <a href="#" class="list-group-item col-6 text-center">Factor de atenuacion</a>
+                <a href="#" class="list-group-item col-6 text-center">Modelo simplificado por el numero de suelos y
+                  muros</a>
+                <a href="#" class="list-group-item col-6 text-center">Modelos FDTD</a>
+                <a href="#" class="list-group-item col-6 text-center">Dual Sippe - Model</a>
+                <a href="#" class="list-group-item col-6 text-center">Modelo de Perdida de Trayecto basado en COST -
+                  231</a>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divOutdoor">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Los modelos en exteriores de acuerdo al tamaño de la zona de cobertura se pueden fividir en modelos de
+                propagacion e zonas grandes y zonas pequeñas.
+              </p>
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Existen mas modelos de propagacion para sistemas inalambricos Outdoor debido a que la comunicacion
+                inalambrica en exteriores se vienen utilizando desde hace mucho mas tiempo: radio, television entre
+                otros.
+              </p>
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Una caracteristica es que estos modelos no tienen en cuenta las cualidades particulares de la
+                propagacion en Indoor (interiores).
+              </p>
+              <b>
+                <p>Aqui se destacan los modelos:</p>
+              </b>
+              <div class="list-group list-group-horizontal row">
+                <a href="#" class="list-group-item col-4 text-center">Modelos teoricos de propagacon de ondas
+                  elecromagneicas</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo Ikegami</a>
+                <a href="#" class="list-group-item col-4 text-center">COST 207 GSM</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo de FRIIS PROPAGACION EN EL ESPACIO
+                  LIBRE</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo Walfish - Ikegami</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo de Xia</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo de dos rayos</a>
+                <a href="#" class="list-group-item col-4 text-center">The COST - 231 o COST Hata</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo de Young</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo Longley-Rice</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo The COST-231-Walfisch-Ikegami</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo de Lee</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo de Durkin</a>
+                <a href="#" class="list-group-item col-4 text-center">ITU-R1411 Y ITU-1546-5</a>
+                <a href="#" class="list-group-item col-4 text-center">Sakagami Kubai</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo Okumura-Hata</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo SIU</a>
+                <a href="#" class="list-group-item col-4 text-center">Ibrahim-Parson</a>
+                <a href="#" class="list-group-item col-4 text-center">Modelo Walfish-Berton</a>
+                <a href="#" class="list-group-item col-4 text-center">The ITU-Advanced Channel Model</a>
+                <a href="#" class="list-group-item col-4 text-center">Xia-Bertoni, Modelo MOPEM ECC-33</a>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divDosRayos">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                El siguiente video brinda el concepto y formulas del modelo de dos rayos con Linea de vista (LOS):
+              </p>
+              <div class="col-12 text-center mt-2 mb-2">
+                <video src="src/video/Video.ModeloDosRayos.LOS.Unidad1.mp4" poster="Video" class="video" controls
+                  id="videoDosRayos"></video>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divFriis">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                El siguiente video brinda el concepto y formulas del modelo de Friis con Linea de vista (LOS):
+              </p>
+              <div class="col-12 text-center mt-2 mb-2">
+                <video src="src/video/Video.ModeloFriis.LOS.Unidad1.mp4" poster="Video" class="video" controls
+                  id="videoFriis"></video>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divWalfisch">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                El siguiente video brinda el concepto y formulas del modelo de Walfisch Ikegami con Linea de vista (LOS)
+                y son linea de Vista (NLOS):
+              </p>
+              <div class="col-12 text-center mt-2 mb-2">
+                <video src="src/video/Video.ModeloWalfischIkegami.LOSyNLOS.Unidad1.mp4" poster="Video" class="video"
+                  controls id="videoWalfisch"></video>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center text-justify" id="divPmr">
               <p class="col-12 mt-2 mb-2">
                 Cuando hablamos de PMR (Radios Móviles Privadas), nos referimos
                 a redes de comunicaciones privadas que usan los móviles que
@@ -492,12 +718,13 @@
               <div class="text-center">
                 <img src="src/Img/LineadeTiempo.PMR.gif" alt="" height="400" />
               </div>
-              <h2 class="mb-1 mt-2">Aplicaciones o usos:</h2>
+              <h2 class="mb-1 mt-2 mb-3">Aplicaciones o usos:</h2>
               <audio controls autoplay>
                 <source src="src/Audio/AudioPMR.mpeg" type="audio/mpeg" />
               </audio>
             </div>
-            <div class="d-none row" id="divWifi">
+
+            <div class="d-none row justify-content-center text-justify" id="divWifi">
               <p class="col-12 mt-2 mb-2">
                 Cuando hablamos de WIFI, nos referimos a una de las tecnologias
                 de comunicación inalámbricas mediante ondas. La cual es muy
@@ -512,7 +739,8 @@
                 <source src="src/Audio/VentajasAudioWifi.mpeg" type="audio/mpeg" />
               </audio>
             </div>
-            <div class="d-none" id="divWiMax">
+
+            <div class="d-none row justify-content-center text-justify" id="divWiMax">
               <p class="col-12 mt-2 mb-2">
                 Cuando hablamos de WiMax (WorldWide InterOperability for
                 Microwave Acces), nos referimos a una tecnologia de radio de
@@ -532,8 +760,9 @@
                 <source src="src/Audio/AudioWiMax.mpeg" type="audio/mpeg" />
               </audio>
             </div>
-            <div class="d-none" id="divLds">
-              <p class="col-12 mt-2 mb-2">
+
+            <div class="d-none row justify-content-center text-justify" id="divLds">
+              <p class="col-12 mt-2 mb-3">
                 Cuando hablamos de LDMS (Los sistemas de distribución local
                 multipunto). Nos referimos a una la representación de una
                 tecnología de acceso inalámbrico de banda ancha. Se aplica para
@@ -541,15 +770,16 @@
                 datos entre otros. Requiere de una línea de vista entre el
                 transmisor y el receptor
               </p>
-              <div class="col-12 text-center mt-2 mb-2">
+              <div class="col-12 text-center mt-2 mb-3">
                 <video src="src/video/videoLDSM.mp4" poster="Video" class="video" controls id="videoLDSM"></video>
               </div>
-              <h2 class="mb-1">Aplicaciones o Usos:</h2>
+              <h2 class="mb-3">Aplicaciones o Usos:</h2>
               <audio controls autoplay>
                 <source src="src/Audio/AudioLDSM.mpeg" type="audio/mpeg" />
               </audio>
             </div>
-            <div class="d-none" id="divTetra">
+
+            <div class="d-none text-justify row justify-content-center" id="divTetra">
               <p class="col-12 mt-2 mb-2">
                 Es un estándar definido por el Instituto Europeo de Estándares
                 de Telecomunicaciones (ETSI). Define un sistema móvil digital de
@@ -569,45 +799,99 @@
                 Se emplean en muchas industrias, entre ellas las siguientes:
               </h2>
               <div class="list-group list-group-horizontal row">
-                <a href="#" class="list-group-item col-6">Segurirdad publica</a>
-                <a href="#" class="list-group-item col-6">Petroleo</a>
-                <a href="#" class="list-group-item col-6">Gas</a>
-                <a href="#" class="list-group-item col-6">Transporte</a>
-                <a href="#" class="list-group-item col-6">Ambulancias</a>
-                <a href="#" class="list-group-item col-6">Bomberos</a>
-                <a href="#" class="list-group-item col-6">Policia</a>
+                <a href="#" class="list-group-item col-6 text-center">Segurirdad publica</a>
+                <a href="#" class="list-group-item col-6 text-center">Petroleo</a>
+                <a href="#" class="list-group-item col-6 text-center">Gas</a>
+                <a href="#" class="list-group-item col-6 text-center">Transporte</a>
+                <a href="#" class="list-group-item col-6 text-center">Ambulancias</a>
+                <a href="#" class="list-group-item col-6 text-center">Bomberos</a>
+                <a href="#" class="list-group-item col-6 text-center">Policia</a>
               </div>
               <div class="col-12 mt-1 text-center">
                 <video src="src/video/videoTETRA.mp4" poster="Video" class="video" controls id="videoTETRA"></video>
               </div>
               <h2 class="mt-2 mb-1">Ventajas:</h2>
-              <audio controls autoplay>
+              <audio controls autoplay="mb-3">
                 <source src="src/Audio/AudioTETRA.mpeg" type="audio/mpeg" />
               </audio>
             </div>
-            <div class="d-none" id="divDectec"></div>
-            <div class="d-none" id="divRadioMensaje"></div>
+
+            <div class="d-none row justify-content-center" id="divDectec">
+              <p class="col-12 mt-2 mb-2 text-justify mb-2">
+                DECT (Digital Enbaced Cordless Telecomunications), es un sistema de radio que se utiliza con especial
+                frecuencia en los telefonos fijos. El nombre de este sistema se refiere a un estandar para la
+                comunicacion inalambrica de señales de voz y datos. Con la introduccion de estos sistemas se adquiere
+                gran ventaja.
+              </p>
+              <b>
+                <p>
+                  El siguiente video brinda informacion del funcionamiento del sistema DECT:
+                </p>
+              </b>
+              <div class="col-12 text-center mt-2 mb-2">
+                <video src="src/video/Video.Funcionamiento.DECT.Unidad1.mp4" poster="Video" class="video" controls
+                  id="videoDECT"></video>
+              </div>
+              <b>
+                <p>
+                  Aplicaciones o usos:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.VentajasDect.Unidad2.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divRadioMensaje">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                La radio mensajeria es un servicio de telecomunicaciones, que permite recibir mensajes orales o escritos
+                en pequeños terminales portatiles de recepcion de radio (generalmente llamados mensafonos), que son
+                suministrados a los abonados.
+              </p>
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Los emisores deben comunicar telefonicamente el mensaje indicando el codigo de identificacion de abonado
+                al que va destinado, a un centro de recogida de mensajes, donde se realiza la difusion via radio de los
+                mismos.
+              </p>
+              <b>
+                <p>
+                  La evolucion de la radio mensajeria en el siguiente video:
+                </p>
+              </b>
+              <div class="col-12 text-center mt-2 mb-2">
+                <video src="src/video/Video.RadioMensajeria.Evolucion.Unidad2.mp4" poster="Video" class="video" controls
+                  id="videoRadioMensa"></video>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divRadioMensaje">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                La radio mensajeria es un servicio de telecomunicaciones, que permite recibir mensajes orales o escritos
+                en pequeños terminales portatiles de recepcion de radio (generalmente llamados mensafonos), que son
+                suministrados a los abonados.
+              </p>
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <script src="https://kit.fontawesome.com/4a70a8dc5b.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-    <script src="src/js/index.js"></script>
+      <script src="https://kit.fontawesome.com/4a70a8dc5b.js" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+      <script src="src/js/index.js"></script>
 </body>
 
 </html>
