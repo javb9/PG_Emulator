@@ -38,7 +38,12 @@
             </li>
             <li class="li-sub-opciones text-center">
               <a type="button" id="btnUnit2">
-                UNIDAD II -COMUNICACIONES INALAMBRICAS
+                UNIDAD II - COMUNICACIONES INALAMBRICAS
+              </a>
+            </li>
+            <li class="li-sub-opciones text-center">
+              <a type="button" id="btnUnit3">
+                UNIDAD III - CARACTERISTICAS DEL CANAL INALAMBRICO
               </a>
             </li>
           </ul>
@@ -258,8 +263,6 @@
                       <h5 class="card-title">Modelos Walfish - Ikegami</h5>
                     </div>
                   </a>
-                  <span class="mt-1 mb-1">Para ingresar a las presentaciones debes tener una cuenta
-                    OneDrive abierta</span>
                 </div>
               </div>
             </div>
@@ -397,6 +400,99 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <div id="divUnit3" class="col-12 d-none">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFiveFiveFive">
+              <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFourFourFour" aria-expanded="false" aria-controls="collapseFourFourFour">
+                TELEFONIAS MOVILES CDMA, TDMA, CDPD
+              </button>
+            </h2>
+            <div id="collapseFourFourFour" class="accordion-collapse collapse" aria-labelledby="headingFiveFiveFive"
+              data-bs-parent="#accordionExampleTwoTwo">
+              <div class="accordion-body row">
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnCDMA" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">CDMA</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnTDMA" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">TDMA</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnCDPD" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">CDPD</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSixSixSix">
+              <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFourFourFour" aria-expanded="false" aria-controls="collapseFourFourFour">
+                SISTEMAS GSM, GPRS, PCS
+              </button>
+            </h2>
+            <div id="collapseFourFourFour" class="accordion-collapse collapse" aria-labelledby="headingFiveFiveFive"
+              data-bs-parent="#accordionExampleTwoTwo">
+              <div class="accordion-body row">
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnGSM" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">GSM</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnGPRS" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">GPRS</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnPCS" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">PCS</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSevenSevenSeven">
+              <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseSevenSevenSeven" aria-expanded="false" aria-controls="collapseSevenSevenSeven">
+                SISTEMAS MOVILES 4G-LTE, 5G IoT
+              </button>
+            </h2>
+            <div id="collapseSevenSevenSeven" class="accordion-collapse collapse"
+              aria-labelledby="headingSevenSevenSeven" data-bs-parent="#accordionExampleTwoTwo">
+              <div class="accordion-body row">
+                <a type="button" class="col-12 col-sm-6 mb-1" id="btn4G" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">4G-LTE</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-6 mb-1" id="btn5G" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">5G</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -906,27 +1002,236 @@
                 id="videoAMPS"></video>
             </div>
 
+            <div class="d-none row justify-content-center" id="divCDMA">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Es un protocolo de acceso multiple para los sistemasde comunicacion celular movil, en otras palabras, es
+                una tecnica que permite que varios usuarios puedan acceder a un mismo medio de comunicaciones.
+              </p>
+              <b>
+                <p>
+                  CARACTERISTICAS:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Caracteristicas.CDMA.Unidad3-Gif.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p>
+                  Ventajas:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.Ventajas.CDMA.Unidad3.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divTDMA">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Representa el acceso multiple por division de tiempo, es una tegnologia que permite multiples
+                conversaciones compartiendo el mismo canal de radio. Es un tipo de modulacion digital. Los proveedores
+                de telefonia movil pueden usarla para transmitir datos.
+              </p>
+              <b>
+                <p>
+                  CARACTERISTICAS:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Caracteristicas.TDMA.Unidad3-Gif.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p>
+                  Ventajas:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.Ventajas.TDMA.Unidad3.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divCDPD">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Tegnologia inalambricaque facilita la transmision de datos a traves de partes de una red telefonica que
+                no sean utilizadas. Es una completa red movil de datos (arquitectura de red) que incluye la definicion
+                de radio, los mecanismos para compartir canales, los mecanismos para asegurar la movilidad en area local
+                y amplia, los protocolos y procedimientos de interpretacion entre sistemas entre otros.
+              </p>
+              <b>
+                <p>
+                  Objetivos:
+                </p>
+              </b>
+              <div class="list-group mb-3">
+                <a href="#" class="list-group-item list-group-item-action text-center"><b>1.</b> Conseguir un estandar
+                  unico
+                  que pueda inter operar con multiples proveedores de servicios</a>
+                <a href="#" class="list-group-item list-group-item-action text-center"><b>2.</b> Esta diseñado para
+                  soportar IP
+                  y los protocolos de redes sin conexion de la ISO</a>
+              </div>
+              <p>
+                El sistema esta estructurado siguiendo los y modelos OSI
+              </p>
+              <div class="text-center mb-3">
+                <img src="src/Img/Estructura.CDPD.Unidad3.gif" alt="" height="400" />
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divGSM">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Fue el intento europeo de unificar los distintos sistemas moviles digitales y sustituir a los analogos.
+                Diseñado con la posibilidad de que varios operadores pudieran compartir el espectro. la red GSM, de
+                segunda generacion (2G), permite conexiones tanto de datos como de voz.
+              </p>
+              <p>
+                GSM tiene cuatro versiones principales basadas en la banda:
+              </p>
+              <div class="list-group mb-3">
+                <a href="#" class="list-group-item list-group-item-action text-center">GSM - 850</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">GSM - 900</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">GSM - 1800</a>
+                <a href="#" class="list-group-item list-group-item-action text-center">GSM - 1900</a>
+              </div>
+              <b>
+                <p>
+                  HISTORIA:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/LineaTiempo.Historia.GSM.Unidad3.gif" alt="" height="400" />
+              </div>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.Ventajas.GSM.Unidad3.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divGPRS">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Es un sistema de comunicaciones movil que se creo en la decada de los 80. F ue bautizada como la
+                generacion 2.5, trajo
+                varios cambios y aportes innovadores a las comunicaciones moviles es una extension mejorada del GSM.
+              </p>
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                GPRS es una tecnica de conmutacion de paquetes que emplea una codificacion reducida del canal, tiene la
+                capacidad para suministrar datos directamente al terminal de usuario, incluso si este se encuentra
+                apagado o fuera de cobertura.
+              </p>
+              <b>
+                <p>
+                  CARACTERISTICAS:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Caracteristicas.GRPS.Unidad3-Gif.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p>
+                  Ventajas:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.Ventajas.GRPS.Unidad3.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divPCS">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Es un sistema que proporciona accesibilidad a un amplio rango de servicio de voz, mensajes y
+                localizacion, a usuarios en casa, trabajo, en movimiento y en regiones remotas ya sean estas nacionales
+                o internacionales.
+              </p>
+              <b>
+                <p>
+                  Estructura:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Estructura.PCS.Unidad3-Gif.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p>
+                  Ventajas:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.Ventajas.PCS.Unidad3.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="div4G">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                4G hace referencia a la cuarta generacion de rede moviles y LTE es sinonimo de Evolucion a Largo Plazo.
+                Es un estandar para la comunicacion inalambrica de datos a alta velocidad. Expande el tamaño de la red y
+                la velocidad mediante el uso de una estructura de red rediseñada produciendo mayor velocidad y potencia
+                en la comunicacion, es la red mas popular.
+              </p>
+              <b>
+                <p>
+                  Historia:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Historia.4G-LTE.Unidad3-Gif.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p>
+                  Ventajas:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.ventajas.4G-LTE.Unidad3.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="div5G">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Cuando hablamos de 5G nos referimos a la quinta generacion de tecnologia celular inalambrica, que ofrece
+                mayores velocidades de carga y descarga, conexiones mas consistentes y capacidad mejorada que las redes
+                anteriores. Permite mejrar y multiplicar la capacidad de los canales de informacion de este modo
+                posibilita que los objetos cotidianos aomo automoviles, implementos del hogar entre otros se puedan
+                conectar en tiempo real a internet o red, todo esto debido a la aparicion de estas nuevas tegnologias
+                como: IoT (Internet de las Cosas) y la automatizacion.
+              </p>
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
+                Cuando hablamos de IoT nos referios a una revoluvion tecnologica qu posibilita al mundo de las llamadas
+                "cosas inteligentes", estos objetos se conectan a internet, de este modo las redes 5G junto con estas
+                tegnologias como lo es IoT, logren grandes ventajas para el mundo tecnologico.
+              </p>
+              <b>
+                <p>
+                  Ventajas:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Ventajas.5G.e.IOT.Unidad3.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p>
+                  Ventajas:
+                </p>
+              </b>
+              <video src="src/video/Video.Funcionamiento5G.Unidad3.mp4" poster="Video" class="video" controls
+                id="video5G"></video>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <script src="https://kit.fontawesome.com/4a70a8dc5b.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-    <script src="src/js/index.js"></script>
+        <script src="https://kit.fontawesome.com/4a70a8dc5b.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.js"
+          integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+        <script src="src/js/index.js"></script>
 </body>
 
 </html>

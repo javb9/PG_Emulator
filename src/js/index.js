@@ -18,6 +18,7 @@ let videoTETRA=document.getElementById('videoTETRA');
 let videoDECT=document.getElementById('videoDECT');
 let videoRadioMensa=document.getElementById('videoRadioMensa');
 let videoAMPS=document.getElementById('videoAMPS');
+let video5G=document.getElementById('video5G');
 
 let btnEmpirico=document.getElementById('btnEmpirico');
 let btnSemiEmpirico=document.getElementById('btnSemiEmpirico');
@@ -41,6 +42,14 @@ let btnDectec=document.getElementById('btnDectec');
 let btnRadioMensajeria=document.getElementById('btnRadioMensajeria');
 let btnRTGC=document.getElementById('btnRTGC'); 
 let btnAMPS=document.getElementById('btnAMPS'); 
+let btnCDMA=document.getElementById('btnCDMA'); 
+let btnTDMA=document.getElementById('btnTDMA');
+let btnCDPD=document.getElementById('btnCDPD'); 
+let btnGSM=document.getElementById('btnGSM'); 
+let btnGPRS=document.getElementById('btnGPRS'); 
+let btnPCS=document.getElementById('btnPCS'); 
+let btn4G=document.getElementById('btn4G'); 
+let btn5G=document.getElementById('btn5G'); 
 let divContentEmpirico=document.getElementById('divContentEmpirico');
 // let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE=document.getElementById('divCaracteristicasMPE');
@@ -63,6 +72,14 @@ let divDectec=document.getElementById('divDectec');
 let divRadioMensaje=document.getElementById('divRadioMensaje');
 let divRTGC=document.getElementById('divRTGC');
 let divAMPS=document.getElementById('divAMPS');
+let divCDMA=document.getElementById('divCDMA');
+let divTDMA=document.getElementById('divTDMA');
+let divCDPD=document.getElementById('divCDPD');
+let divGSM=document.getElementById('divGSM');
+let divGPRS=document.getElementById('divGPRS');
+let divPCS=document.getElementById('divPCS');
+let div4G=document.getElementById('div4G');
+let div5G=document.getElementById('div5G');
 let titleModalUnidadII=document.getElementById('titleModalUnidadII');
 let iconContenido = document.getElementById('icon-Contenido');
 let listContent =document.getElementById('listContent');
@@ -70,6 +87,8 @@ let divUnit1 = document.getElementById('divUnit1');
 let btnUnit1 =document.getElementById('btnUnit1');
 let divUnit2 = document.getElementById('divUnit2');
 let btnUnit2 =document.getElementById('btnUnit2');
+let divUnit3 = document.getElementById('divUnit3');
+let btnUnit3 =document.getElementById('btnUnit3');
 
 openSlide.addEventListener("click", function () {
   sidebar.classList.add("active");
@@ -103,6 +122,11 @@ btnUnit1.addEventListener('click', function(){
 btnUnit2.addEventListener('click', function(){
   limpiarVista();
   ocultarElemento(divUnit2, false);
+});
+
+btnUnit3.addEventListener('click', function(){
+  limpiarVista();
+  ocultarElemento(divUnit3, false);
 });
 
 btnEmpirico.addEventListener('click', function(){
@@ -236,6 +260,54 @@ btnAMPS.addEventListener('click', function(){
   ocultarElemento(divAMPS, false);
 });
 
+btnCDMA.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(divCDMA, false);
+});
+
+btnTDMA.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(divTDMA, false);
+});
+
+btnCDPD.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(divCDPD, false);
+});
+
+btnGSM.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(divGSM, false);
+});
+
+btnGPRS.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(divGPRS, false);
+});
+
+btnPCS.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(divPCS, false);
+});
+
+btn4G.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(div4G, false);
+});
+
+btn5G.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="Radio mensajeria";
+  ocultarElemento(div5G, false);
+});
+
 function limpiarModalEmpSemp(){
   ocultarElemento(divContentEmpirico, true);
   // ocultarElemento(divContentSemiEmpirico, true);
@@ -258,6 +330,14 @@ function limpiarModalEmpSemp(){
   ocultarElemento(divRadioMensaje, true);
   ocultarElemento(divRTGC, true);
   ocultarElemento(divAMPS, true);
+  ocultarElemento(divCDMA, true);
+  ocultarElemento(divTDMA, true);
+  ocultarElemento(divCDPD, true);
+  ocultarElemento(divGSM, true);
+  ocultarElemento(divGPRS, true);
+  ocultarElemento(divPCS, true);
+  ocultarElemento(div4G, true);
+  ocultarElemento(div5G, true);
 }
 
 function limpiarVista(){
@@ -266,6 +346,7 @@ function limpiarVista(){
   videoUnidad1V2.pause();
   ocultarElemento(divUnit1, true);
   ocultarElemento(divUnit2, true);
+  ocultarElemento(divUnit3, true);
 }
 
 function ocultarElemento(elemento, validar){
@@ -289,5 +370,6 @@ function cerrarModal(){
   videoDECT.pause();
   videoRadioMensa.pause();
   videoAMPS.pause();
+  video5G.pause();
 
 }
