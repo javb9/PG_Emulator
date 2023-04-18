@@ -203,13 +203,13 @@ btnDosRayos.addEventListener('click', function(){
 
 btnFriss.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Modelos Dos Rayos";
+  titleModalUnidadII.innerText="Modelo de Friss";
   ocultarElemento(divFriis, false);
 });
 
 btnWalfisch.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Modelos Dos Rayos";
+  titleModalUnidadII.innerText="Modelo Walfisch - Ikegami";
   ocultarElemento(divWalfisch, false);
 });
 
@@ -250,61 +250,61 @@ btnRadioMensajeria.addEventListener('click', function(){
 
 btnRTGC.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="RTGC (Radiotelefonia de Grupo Cerrado)";
   ocultarElemento(divRTGC, false);
 });
 
 btnAMPS.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="AMPS (Sistremas telefonico Movil Avanzado)";
   ocultarElemento(divAMPS, false);
 });
 
 btnCDMA.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="Acceso multiple por Division de Codigo";
   ocultarElemento(divCDMA, false);
 });
 
 btnTDMA.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="Acceso Multiple por Division De Tiempo";
   ocultarElemento(divTDMA, false);
 });
 
 btnCDPD.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="CDPD (Red celular Digital para Paquetes de Datos)";
   ocultarElemento(divCDPD, false);
 });
 
 btnGSM.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="GSM (Group Special Mobil)";
   ocultarElemento(divGSM, false);
 });
 
 btnGPRS.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="GPRS (Servicio General de Paquetes via Radio)";
   ocultarElemento(divGPRS, false);
 });
 
 btnPCS.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="PCS (Servicio de Comunicacion Personal)";
   ocultarElemento(divPCS, false);
 });
 
 btn4G.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="4G - LTE()";
   ocultarElemento(div4G, false);
 });
 
 btn5G.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Radio mensajeria";
+  titleModalUnidadII.innerText="5G E IoT";
   ocultarElemento(div5G, false);
 });
 
