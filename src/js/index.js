@@ -129,11 +129,11 @@ btnUnit3.addEventListener('click', function(){
   ocultarElemento(divUnit3, false);
 });
 
-btnEmpirico.addEventListener('click', function(){
-  limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Modelo empirico"
-  ocultarElemento(divContentEmpirico, false);
-});
+//btnEmpirico.addEventListener('click', function(){
+//  limpiarModalEmpSemp();
+//  titleModalUnidadII.innerText="Modelo empirico"
+//  ocultarElemento(divContentEmpirico, false);
+//});
 
 // btnSemiEmpirico.addEventListener('click', function(){
 //   limpiarModalEmpSemp();
@@ -141,17 +141,17 @@ btnEmpirico.addEventListener('click', function(){
 //   ocultarElemento(divContentSemiEmpirico, false);
 // });
 
-btnCaracteristicasMPE.addEventListener('click', function(){
-  limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Caracteristicas";
-  ocultarElemento(divCaracteristicasMPE, false);
-});
+//btnCaracteristicasMPE.addEventListener('click', function(){
+//  limpiarModalEmpSemp();
+//  titleModalUnidadII.innerText="Caracteristicas";
+//  ocultarElemento(divCaracteristicasMPE, false);
+//});
 
-btnModelsRepreMPE.addEventListener('click', function(){
-  limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="Modelos representativos";
-  ocultarElemento(divModelsRepreMPE, false);
-});
+//btnModelsRepreMPE.addEventListener('click', function(){
+//  limpiarModalEmpSemp();
+//  titleModalUnidadII.innerText="Modelos representativos";
+//  ocultarElemento(divModelsRepreMPE, false);
+//});
 
 btnWifi.addEventListener('click', function(){
   limpiarModalEmpSemp();
@@ -226,7 +226,7 @@ btnWimax.addEventListener('click', function(){
 });
 btnLds.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="LDSM";
+  titleModalUnidadII.innerText="LMDS";
   ocultarElemento(divLds, false);
 });
 

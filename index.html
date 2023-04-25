@@ -146,25 +146,32 @@
                 data-bs-parent="#accordionExampleOne">
                 <div class="accordion-body">
                   <div class="row">
-                    <p class="col-12 mt-2 mb-2">
+                    <p class="col-12 mt-2 mb-3">
                       Son una herramienta muy útil, estos consideran
                       párametros como el perfil del terreno, que puede variar
                       en diferentes caracteristicas ej: montañoso o inclinado.
                       Ademas como la presencia de edificios, arboles, entre
                       otros.
                     </p>
-                    <a type="button" class="col-12 col-sm-6 mb-2" id="btnCaracteristicasMPE" data-toggle="modal"
-                      data-target="#modalModelosUnidadII">
-                      <div class="card card-models">
-                        <h5 class="card-title">Caracteristicas</h5>
+                    <div class="mb-3">
+                      <h5 class="card-title">Caracteristicas</h5>
+                    </div>
+                    <div class="mb-3">
+                      <p class="text-justify">
+                        Se puede hacer una clasificación atendiendo al tamaño del área
+                        de cobertura:
+                      </p>
+                      <div class="list-group text-center mb-3">
+                        <a href="#" class="list-group-item list-group-item-action">Cubren áreas del orden de 200 a 100
+                          metros</a>
+                        <a href="#" class="list-group-item list-group-item-action">Emisiones de potencia del orden de
+                          10mW a
+                          1W</a>
+                        <a href="#" class="list-group-item list-group-item-action">Antenas bastante elevadas entre 3 a
+                          10
+                          metros</a>
                       </div>
-                    </a>
-                    <a type="button" class="col-12 col-sm-6 mb-2" id="btnModelsRepreMPE" data-toggle="modal"
-                      data-target="#modalModelosUnidadII">
-                      <div class="card card-models">
-                        <h5 class="card-title">Modelos representativos</h5>
-                      </div>
-                    </a>
+                    </div>
                     <a type="button" class="col-12 col-sm-2">
                       <div class="card card-model">
                         <h5 class="card-title">Modelo I</h5>
@@ -199,34 +206,7 @@
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwoTwo">
-                <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwo">
-                  MODELOS EMPIRICOS Y SEMIEMPIRICOS
-                </button>
-              </h2>
-              <div id="collapseTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingTwoTwo"
-                data-bs-parent="#accordionExampleOne">
-                <div class="accordion-body row">
-                  <a type="button" class="col-6" id="btnEmpirico" data-toggle="modal"
-                    data-target="#modalModelosUnidadII">
-                    <div class="card card-models">
-                      <h5 class="card-title">Empirico</h5>
-                    </div>
-                  </a>
-                  <a type="button" class="col-6" id="btnSemiEmpirico" data-toggle="modal"
-                    data-target="#modalModelosUnidadII">
-                    <div class="card card-models">
-                      <h5 class="card-title">Semi-empirico</h5>
-                    </div>
-                  </a>
-                  <div class="col-12 mt-2 mb-2 text-center">
-                    <img src="src/Img/img_semiempirico.png" alt="" height="300" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThreeThree">
                 <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
@@ -237,14 +217,13 @@
               <div id="collapseThreeThree" class="accordion-collapse collapse" aria-labelledby="headingThreeThree"
                 data-bs-parent="#accordionExampleOne">
                 <div class="row justify-content-center mb-3">
-                  <div class="col-12 text-center">
-                    <video src="src/video/Unidad-1-Video2.mp4" poster="Video" class="video col-12" controls
-                      id="videoUnidad1V2"></video><br />
-                    <span>Video sin sonido</span>
+                  <div class="col-12 text-center mb-3">
+                    <video src="src/video/Video.SistemasLOSyNLOS.Unidad1.mp4" poster="Video" class="video col-12"
+                      controls id="videoUnidad1V2"></video><br />
                   </div>
-                  <b>
-                    <p class="mb-1">Algunos modelos representativos:</p>
-                  </b>
+                  <p class="mb-3">
+                    Algunos modelos representativos:
+                  </p>
                   <a type="button" class="col-12 col-sm-4 mb-1" id="btnFriis" data-toggle="modal"
                     data-target="#modalModelosUnidadII">
                     <div class="card card-models">
@@ -278,7 +257,7 @@
               <h2 class="accordion-header" id="headingTwoTwoTwo">
                 <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseTwoTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwoTwo">
-                  COMUNICACIONE INALAMBRICAS PMR, WIFI, WIMAX, LDS
+                  COMUNICACIONES INALAMBRICAS PMR, WIFI, WIMAX, LMDS
                 </button>
               </h2>
               <div id="collapseTwoTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingTwoTwoTwo"
@@ -308,7 +287,7 @@
                     <a type="button" class="col-12 col-sm-3 mb-1" id="btnLds" data-toggle="modal"
                       data-target="#modalModelosUnidadII">
                       <div class="card card-models">
-                        <h5 class="card-title">LDSM</h5>
+                        <h5 class="card-title">LMDS</h5>
                       </div>
                     </a>
                   </div>
@@ -319,7 +298,7 @@
                   <button class="accordion-button accordion-secundario collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#collapseThreeThreeThree" aria-expanded="false"
                     aria-controls="collapseThreeThreeThree">
-                    SISTEMAS TETRA, DETEC, RADIO MENSAJERIA
+                    SISTEMAS TETRA, DECT, RADIO MENSAJERIA
                   </button>
                 </h2>
                 <div id="collapseThreeThreeThree" class="accordion-collapse collapse"
@@ -334,7 +313,7 @@
                     <a type="button" class="col-12 col-sm-4 mb-1" id="btnDectec" data-toggle="modal"
                       data-target="#modalModelosUnidadII">
                       <div class="card card-models">
-                        <h5 class="card-title">DETEC</h5>
+                        <h5 class="card-title">DECT</h5>
                       </div>
                     </a>
                     <a type="button" class="col-12 col-sm-4 mb-1" id="btnRadioMensajeria" data-toggle="modal"
@@ -486,7 +465,7 @@
                 <a type="button" class="col-12 col-sm-6 mb-1" id="btn5G" data-toggle="modal"
                   data-target="#modalModelosUnidadII">
                   <div class="card card-models">
-                    <h5 class="card-title">5G</h5>
+                    <h5 class="card-title">5G e IoT</h5>
                   </div>
                 </a>
               </div>
@@ -812,11 +791,11 @@
               </p>
               <h2 class="col-12 mt-2 mb-2">Historia</h2>
               <div class="text-center">
-                <img src="src/Img/LineadeTiempo.PMR.gif" alt="" height="400" />
+                <img src="src/Img/PMR.Unidad2_GIF.gif" alt="" height="400" />
               </div>
               <h2 class="mb-1 mt-2 mb-3">Aplicaciones o usos:</h2>
               <audio controls autoplay>
-                <source src="src/Audio/AudioPMR.mpeg" type="audio/mpeg" />
+                <source src="src/Audio/Audio.Aplicaciones_PMR.mp3" type="audio/mpeg" />
               </audio>
             </div>
 
@@ -827,39 +806,39 @@
                 utilizada hoy en dia. WIFI pertenece al tipo de red WLAN (Redes
                 inalambrias de area local).
               </p>
-              <img src="src/Img/wifiImg.jpeg" alt="" />
+              <img src="src/Img/Imagen1_WIFI.PNG" alt="" />
               <h2 class="col-12 mt-2 mb-2">Historia</h2>
-              <img src="src/Img/LineadeTiempo.WiFi.gif" alt="" />
+              <img src="src/Img/WIFI.Unidad2_GIF.gif" alt="" />
               <h2 class="mt-2">Ventajas</h2>
               <audio controls autoplay>
-                <source src="src/Audio/VentajasAudioWifi.mpeg" type="audio/mpeg" />
+                <source src="src/Audio/Audio.Ventajas_WiFi.mp3" type="audio/mpeg" />
               </audio>
             </div>
 
             <div class="d-none row justify-content-center text-justify" id="divWiMax">
-              <p class="col-12 mt-2 mb-2">
+              <p class="col-12 mt-2 mb-3 text-justify">
                 Cuando hablamos de WiMax (WorldWide InterOperability for
                 Microwave Acces), nos referimos a una tecnologia de radio de
                 ultima generación promovida por la IEEE y pincipalmentew
                 diseñada para proveer vía radio alta capacidad. WiMax pertence
                 al tipo de red WMAN(redes inalambricas de area metropolitana).
               </p>
-              <div class="text-center">
-                <img src="src/Img/ImgWiMax.jpeg" alt="" height="125" />
+              <div class="text-center mb-3">
+                <img src="src/Img/Imagen_WIMAX.PNG" alt="" height="125" />
               </div>
-              <h2 class="mb-2 mt-2">Historia:</h2>
-              <div class="text-center">
-                <img src="src/Img/LineadeTiempo_WiMax.gif" alt="" height="400" />
+              <h2 class="mb-3 mt-2">Historia:</h2>
+              <div class="text-center mb-3">
+                <img src="src/Img/WIMAX.Unidad2_GIF.gif" alt="" height="400" />
               </div>
-              <h2 class="mb-1 mt-2">Ventajas:</h2>
+              <h2 class="mb-3 mt-2">Ventajas:</h2>
               <audio controls autoplay>
-                <source src="src/Audio/AudioWiMax.mpeg" type="audio/mpeg" />
+                <source src="src/Audio/Audio.Ventajas_WiMax.mp3" type="audio/mpeg" />
               </audio>
             </div>
 
             <div class="d-none row justify-content-center text-justify" id="divLds">
-              <p class="col-12 mt-2 mb-3">
-                Cuando hablamos de LDMS (Los sistemas de distribución local
+              <p class="col-12 mt-2 mb-3 text-justify">
+                Cuando hablamos de LMDS (Los sistemas de distribución local
                 multipunto). Nos referimos a una la representación de una
                 tecnología de acceso inalámbrico de banda ancha. Se aplica para
                 el acceso a internet a alta velocidad, telefonía, transmisión de
@@ -867,11 +846,11 @@
                 transmisor y el receptor
               </p>
               <div class="col-12 text-center mt-2 mb-3">
-                <video src="src/video/videoLDSM.mp4" poster="Video" class="video" controls id="videoLDSM"></video>
+                <img src="src/Img/LMDS_GIF.gif" alt="" height="400" />
               </div>
               <h2 class="mb-3">Aplicaciones o Usos:</h2>
               <audio controls autoplay>
-                <source src="src/Audio/AudioLDSM.mpeg" type="audio/mpeg" />
+                <source src="src/Audio/Audio_Aplicaciones_LMDS.mp3" type="audio/mpeg" />
               </audio>
             </div>
 
@@ -891,10 +870,10 @@
                 comunicaciones sin concentración de enlaces y comunicaciones
                 directas de móvil a móvil.
               </p>
-              <h2 class="mt-2 mb-1">
+              <h5 class="mt-2 mb-3">
                 Se emplean en muchas industrias, entre ellas las siguientes:
-              </h2>
-              <div class="list-group list-group-horizontal row">
+              </h5>
+              <div class="list-group list-group-horizontal row mb-3">
                 <a href="#" class="list-group-item col-6 text-center">Segurirdad publica</a>
                 <a href="#" class="list-group-item col-6 text-center">Petroleo</a>
                 <a href="#" class="list-group-item col-6 text-center">Gas</a>
@@ -902,18 +881,19 @@
                 <a href="#" class="list-group-item col-6 text-center">Ambulancias</a>
                 <a href="#" class="list-group-item col-6 text-center">Bomberos</a>
                 <a href="#" class="list-group-item col-6 text-center">Policia</a>
+                <a href="#" class="list-group-item col-6 text-center">logistica</a>
               </div>
-              <div class="col-12 mt-1 text-center">
-                <video src="src/video/videoTETRA.mp4" poster="Video" class="video" controls id="videoTETRA"></video>
+              <div class="col-12 mt-1 text-center mb-3">
+                <img src="src/Img/TETRA.Unidad2_GIF.gif" alt="" height="400" />
               </div>
-              <h2 class="mt-2 mb-1">Ventajas:</h2>
+              <h5 class="mt-2 mb-3">Ventajas:</h5>
               <audio controls autoplay="mb-3">
-                <source src="src/Audio/AudioTETRA.mpeg" type="audio/mpeg" />
+                <source src="src/Audio/Audio.ventajas_SistemasTETRA.mp3" type="audio/mpeg" />
               </audio>
             </div>
 
             <div class="d-none row justify-content-center" id="divDectec">
-              <p class="col-12 mt-2 mb-2 text-justify mb-2">
+              <p class="col-12 mt-2 mb-2 text-justify mb-3">
                 DECT (Digital Enbaced Cordless Telecomunications), es un sistema de radio que se utiliza con especial
                 frecuencia en los telefonos fijos. El nombre de este sistema se refiere a un estandar para la
                 comunicacion inalambrica de señales de voz y datos. Con la introduccion de estos sistemas se adquiere
@@ -1051,7 +1031,7 @@
 
             <div class="d-none row justify-content-center" id="divCDPD">
               <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Tegnologia inalambricaque facilita la transmision de datos a traves de partes de una red telefonica que
+                Tegnologia inalambrica que facilita la transmision de datos a traves de partes de una red telefonica que
                 no sean utilizadas. Es una completa red movil de datos (arquitectura de red) que incluye la definicion
                 de radio, los mecanismos para compartir canales, los mecanismos para asegurar la movilidad en area local
                 y amplia, los protocolos y procedimientos de interpretacion entre sistemas entre otros.
@@ -1069,8 +1049,8 @@
                   soportar IP
                   y los protocolos de redes sin conexion de la ISO</a>
               </div>
-              <p>
-                El sistema esta estructurado siguiendo los y modelos OSI
+              <p class="mb-3">
+                El sistema esta estructurado siguiendo los 7 niveles del modelos OSI:
               </p>
               <div class="text-center mb-3">
                 <img src="src/Img/Estructura.CDPD.Unidad3.gif" alt="" height="400" />
@@ -1107,7 +1087,7 @@
 
             <div class="d-none row justify-content-center" id="divGPRS">
               <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Es un sistema de comunicaciones movil que se creo en la decada de los 80. F ue bautizada como la
+                Es un sistema de comunicaciones movil que se creo en la decada de los 80. Fue bautizada como la
                 generacion 2.5, trajo
                 varios cambios y aportes innovadores a las comunicaciones moviles es una extension mejorada del GSM.
               </p>
