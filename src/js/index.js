@@ -19,6 +19,7 @@ let videoDECT=document.getElementById('videoDECT');
 let videoRadioMensa=document.getElementById('videoRadioMensa');
 let videoAMPS=document.getElementById('videoAMPS');
 let video5G=document.getElementById('video5G');
+let videoHistoria=document.getElementById('videoHistoria');
 
 let btnEmpirico=document.getElementById('btnEmpirico');
 let btnSemiEmpirico=document.getElementById('btnSemiEmpirico');
@@ -49,7 +50,10 @@ let btnGSM=document.getElementById('btnGSM');
 let btnGPRS=document.getElementById('btnGPRS'); 
 let btnPCS=document.getElementById('btnPCS'); 
 let btn4G=document.getElementById('btn4G'); 
-let btn5G=document.getElementById('btn5G'); 
+let btn5G=document.getElementById('btn5G');
+let btnGEO=document.getElementById('btnGEO');
+let btnMEO=document.getElementById('btnMEO'); 
+let btnLEO=document.getElementById('btnLEO'); 
 let divContentEmpirico=document.getElementById('divContentEmpirico');
 // let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE=document.getElementById('divCaracteristicasMPE');
@@ -80,6 +84,9 @@ let divGPRS=document.getElementById('divGPRS');
 let divPCS=document.getElementById('divPCS');
 let div4G=document.getElementById('div4G');
 let div5G=document.getElementById('div5G');
+let divGEO=document.getElementById('divGEO');
+let divMEO=document.getElementById('divMEO');
+let divLEO=document.getElementById('divLEO');
 let titleModalUnidadII=document.getElementById('titleModalUnidadII');
 let iconContenido = document.getElementById('icon-Contenido');
 let listContent =document.getElementById('listContent');
@@ -88,7 +95,9 @@ let btnUnit1 =document.getElementById('btnUnit1');
 let divUnit2 = document.getElementById('divUnit2');
 let btnUnit2 =document.getElementById('btnUnit2');
 let divUnit3 = document.getElementById('divUnit3');
+let divUnit4 = document.getElementById('divUnit4');
 let btnUnit3 =document.getElementById('btnUnit3');
+let btnUnit4 =document.getElementById('btnUnit4');
 
 openSlide.addEventListener("click", function () {
   sidebar.classList.add("active");
@@ -127,6 +136,11 @@ btnUnit2.addEventListener('click', function(){
 btnUnit3.addEventListener('click', function(){
   limpiarVista();
   ocultarElemento(divUnit3, false);
+});
+
+btnUnit4.addEventListener('click', function(){
+  limpiarVista();
+  ocultarElemento(divUnit4, false);
 });
 
 //btnEmpirico.addEventListener('click', function(){
@@ -308,6 +322,24 @@ btn5G.addEventListener('click', function(){
   ocultarElemento(div5G, false);
 });
 
+btnGEO.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="GEO";
+  ocultarElemento(divGEO, false);
+});
+
+btnMEO.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="MEO";
+  ocultarElemento(divMEO, false);
+});
+
+btnLEO.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="MEO";
+  ocultarElemento(divLEO, false);
+});
+
 function limpiarModalEmpSemp(){
   ocultarElemento(divContentEmpirico, true);
   // ocultarElemento(divContentSemiEmpirico, true);
@@ -338,6 +370,9 @@ function limpiarModalEmpSemp(){
   ocultarElemento(divPCS, true);
   ocultarElemento(div4G, true);
   ocultarElemento(div5G, true);
+  ocultarElemento(divGEO, true);
+  ocultarElemento(divMEO, true);
+  ocultarElemento(divLEO, true);
 }
 
 function limpiarVista(){
@@ -347,6 +382,7 @@ function limpiarVista(){
   ocultarElemento(divUnit1, true);
   ocultarElemento(divUnit2, true);
   ocultarElemento(divUnit3, true);
+  ocultarElemento(divUnit4, true);
 }
 
 function ocultarElemento(elemento, validar){
@@ -371,5 +407,6 @@ function cerrarModal(){
   videoRadioMensa.pause();
   videoAMPS.pause();
   video5G.pause();
+  videoHistoria.pause();
 
 }

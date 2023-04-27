@@ -46,6 +46,11 @@
                 UNIDAD III - CARACTERISTICAS DEL CANAL INALAMBRICO
               </a>
             </li>
+            <li class="li-sub-opciones text-center">
+              <a type="button" id="btnUnit4">
+                UNIDAD IV - INTRODUCCION A SISTEMAS DE COMUNICACIONES SAELITALES
+              </a>
+            </li>
           </ul>
         </div>
         <li class="li-opciones" id="liCambioContrasenna">
@@ -206,7 +211,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThreeThree">
                 <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
@@ -471,6 +476,107 @@
               </div>
             </div>
           </div>
+
+        </div>
+
+        <div id="divUnit4" class="col-12 d-none">
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="headingNineNineNine">
+              <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseNineNineNine" aria-expanded="false" aria-controls="collapseFourFourFour">
+                HISTORIA Y EVOLUCION DE LOS SATELITES:
+              </button>
+            </h2>
+            <div id="collapseNineNineNine" class="accordion-collapse collapse" aria-labelledby="headingNineNineNine"
+              data-bs-parent="#accordionExampleTwoTwo">
+              <div class="accordion-body row">
+                <b>
+                  <p class="mb-3">
+                    El siguiente video brinda el concepto de satelites:
+                  </p>
+                </b>
+                <div class="col-12 text-center mb-3">
+                  <video src="src/video/Video.DefinicionSatelite.Unidad4.mp4" poster="Video" class="video col-12"
+                    controls id="videoDosRayos"></video>
+                </div>
+                <b>
+                  <p class="mb-3">
+                    CARACTERISTICAS:
+                  </p>
+                </b>
+                <audio controls autoplay class="mb-2">
+                  <source src="src/Audio/Audio.CaracteristicasSatelite.Unidad4.mp3" type="audio/mp3" />
+                </audio>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOneOneOneOne">
+              <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOneOneOneOne" aria-expanded="false" aria-controls="collapseFourFourFour">
+                SATELITES ORBOTALES Y GEO SINCRONOS: GEO, MEO, LEO
+              </button>
+            </h2>
+            <div id="collapseOneOneOneOne" class="accordion-collapse collapse" aria-labelledby="headingFiveFiveFive"
+              data-bs-parent="#accordionExampleTwoTwo">
+              <div class="accordion-body row">
+                <p class="mb-3">
+                  Definicion de los satelites Orbotales y GeoSincronos:
+                </p>
+                <div class="text-center mb-3">
+                  <img src="src/Img/Definicion.Orbitales.Geosincrono.Unidad4-Gif.gif" alt="" height="400" />
+                </div>
+                <p class="mb-3">
+                  Satelites segun su tipo:
+                </p>
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnGEO" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">GEO</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnMEO" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">MEO</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-4 mb-1" id="btnLEO" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">LEO</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--<div class="accordion-item">
+            <h2 class="accordion-header" id="headingSevenSevenSeven">
+              <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseSevenSevenSeven" aria-expanded="false" aria-controls="collapseSevenSevenSeven">
+                SISTEMAS MOVILES 4G-LTE, 5G IoT
+              </button>
+            </h2>
+            <div id="collapseSevenSevenSeven" class="accordion-collapse collapse"
+              aria-labelledby="headingSevenSevenSeven" data-bs-parent="#accordionExampleTwoTwo">
+              <div class="accordion-body row">
+                <a type="button" class="col-12 col-sm-6 mb-1" id="btn4G" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">4G-LTE</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-6 mb-1" id="btn5G" data-toggle="modal"
+                  data-target="#modalModelosUnidadII">
+                  <div class="card card-models">
+                    <h5 class="card-title">5G e IoT</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>-->
 
         </div>
       </div>
@@ -1193,6 +1299,115 @@
               <video src="src/video/Video.Funcionamiento5G.Unidad3.mp4" poster="Video" class="video" controls
                 id="video5G"></video>
             </div>
+
+            <div class="d-none row justify-content-center" id="divGEO">
+              <p class="text-justify mb-3">
+                Los satelites de orbite geoestacionaria (GEO) siguen una orbita alrededor de la tierra sobre el ecuador
+                en una direccion y velocidad similares a la de la rotacion de la tierra. Esto permite al satelite
+                permanecer concentrado en un area de la superficie terrestre de la forma continua.
+              </p>
+              <b>
+                <p>
+                  Usos de la orbita GEO:
+                </p>
+              </b>
+              <div class="list-group mb-3">
+                <a href="#" class="list-group-item list-group-item-action text-justify">Periodo orbital de: 24 horas, en
+                  ella se ubican todos los satelites que proveen: internet, television, telefonia y otros datos a
+                  diferentes regiones del planeta y a la deteccion y difusion de datos meteorologicos.</a>
+                <a href="#" class="list-group-item list-group-item-action">Es utilizada para colocar los satelites que
+                  deben absolutamente cubrir una region determinada o ser apuntado por antenas fijas en el suelo.</a>
+              </div>
+              <b>
+                <p class="mb-3">
+                  CARACTERISTICAS:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Caracteristicas.GEO.Unidad4-Gif.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p class="mb-3">
+                  Ventajas:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.Ventajas.GEO.Unidad4.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divMEO">
+              <p class="text-justify mb-3">
+                Los satelites MEO orbitan a una altura mayor que los LEO. Este tipo de satelites, son caracterizados por
+                que la forma de su orbita es usualmente la de una orbita Circular intermedia (ICO). Un sistema globalde
+                comunicaciones que este trabajando sobre este tipo de orbita no nesecita muchos satelites para poder
+                cubrir todo el territorio del planeta en cuanto a señales de comunicacion, a diferencia de la
+                comunicacion por medio de satelites tipo LEO.
+              </p>
+              <b>
+                <p>
+                  Usos de la orbita MEO:
+                </p>
+              </b>
+              <div class="list-group mb-3">
+                <a href="#" class="list-group-item list-group-item-action text-justify">Usada por satelites de
+                  observacion, defensa y posicionamiento.</a>
+                <a href="#" class="list-group-item list-group-item-action">El uso mas comun de estas orbitas en los
+                  sistemas satelitales de navegacion global, como el Sistema de Posicionamiento Global (GPS) de los
+                  Estados Unidos de America, o el Sistema de Navegacion Global porSatelite de la federacion Rusa
+                  (GLONASS).</a>
+              </div>
+              <b>
+                <p class="mb-3">
+                  CARACTERISTICAS:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Caracterisiticas.MEO.Unidad4-Gif.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p class="mb-3">
+                  Ventajas:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Ventajas.MEO.Unidad4.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divLEO">
+              <p class="text-justify mb-3">
+                Estos staelites son de tipo no geoestacionarios, de orbita baja y desde sus primeros lanzamientos, los
+                cuales, a principios de los años 80, son un medio muy importante debido a su gran cobertura mundial y a
+                que que presenta una opcion muy atractiva en el nivel cientifico.
+              </p>
+              <b>
+                <p>
+                  Usos de la orbita LEO:
+                </p>
+              </b>
+              <div class="list-group mb-3">
+                <a href="#" class="list-group-item list-group-item-action text-justify">Se usan para proporcionar datos
+                  geologicos sobre movimiento de placas terrestres y para la industria de telefonia satelital.</a>
+              </div>
+              <b>
+                <p class="mb-3">
+                  CARACTERISTICAS:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/Caracteristicas.LEO.Unidad4-Gif.gif" alt="" height="400" />
+              </div>
+              <b>
+                <p class="mb-3">
+                  Ventajas:
+                </p>
+              </b>
+              <audio controls autoplay class="mb-3">
+                <source src="src/Audio/Audio.Ventajas.LEO.Unidad4.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
           </div>
         </div>
 
