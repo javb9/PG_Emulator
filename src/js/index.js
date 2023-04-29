@@ -20,6 +20,8 @@ let videoRadioMensa=document.getElementById('videoRadioMensa');
 let videoAMPS=document.getElementById('videoAMPS');
 let video5G=document.getElementById('video5G');
 let videoHistoria=document.getElementById('videoHistoria');
+let videoPARAMETROS=document.getElementById('videoPARAMETROS');
+let videoECUACIONES=document.getElementById('videoECUACIONES');
 
 let btnEmpirico=document.getElementById('btnEmpirico');
 let btnSemiEmpirico=document.getElementById('btnSemiEmpirico');
@@ -54,6 +56,13 @@ let btn5G=document.getElementById('btn5G');
 let btnGEO=document.getElementById('btnGEO');
 let btnMEO=document.getElementById('btnMEO'); 
 let btnLEO=document.getElementById('btnLEO'); 
+let btnTERRENA=document.getElementById('btnTERRENA'); 
+let btnSUBIDA=document.getElementById('btnSUBIDA'); 
+let btnBAJADA=document.getElementById('btnBAJADA'); 
+let btnCRUZADO=document.getElementById('btnCRUZADO'); 
+let btnTRANSPONDEDOR=document.getElementById('btnTRANSPONDEDOR'); 
+let btnPARAMETROS=document.getElementById('btnPARAMETROS'); 
+let btnECUACIONES=document.getElementById('btnECUACIONES'); 
 let divContentEmpirico=document.getElementById('divContentEmpirico');
 // let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE=document.getElementById('divCaracteristicasMPE');
@@ -87,6 +96,13 @@ let div5G=document.getElementById('div5G');
 let divGEO=document.getElementById('divGEO');
 let divMEO=document.getElementById('divMEO');
 let divLEO=document.getElementById('divLEO');
+let divTERRENA=document.getElementById('divTERRENA');
+let divSUBIDA=document.getElementById('divSUBIDA');
+let divBAJADA=document.getElementById('divBAJADA');
+let divCRUZADO=document.getElementById('divCRUZADO');
+let divTRANSPONDEDOR=document.getElementById('divTRANSPONDEDOR');
+let divPARAMETROS=document.getElementById('divPARAMETROS');
+let divECUACIONES=document.getElementById('divECUACIONES');
 let titleModalUnidadII=document.getElementById('titleModalUnidadII');
 let iconContenido = document.getElementById('icon-Contenido');
 let listContent =document.getElementById('listContent');
@@ -336,8 +352,51 @@ btnMEO.addEventListener('click', function(){
 
 btnLEO.addEventListener('click', function(){
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText="MEO";
+  titleModalUnidadII.innerText="LEO";
   ocultarElemento(divLEO, false);
+});
+
+btnTERRENA.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="ESTACION TERRENA";
+  ocultarElemento(divTERRENA, false);
+});
+
+btnSUBIDA.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="ENLACE DE SUBIDA";
+  ocultarElemento(divSUBIDA, false);
+});
+
+btnBAJADA.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="ENLACE DE BAJADA";
+  ocultarElemento(divBAJADA, false);
+});
+
+btnCRUZADO.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="ENLACE CRUZADO";
+  ocultarElemento(divCRUZADO, false);
+});
+
+
+btnTRANSPONDEDOR.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="TRANSPONDEDOR";
+  ocultarElemento(divTRANSPONDEDOR, false);
+});
+
+btnPARAMETROS.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="PARAMETROS DE UN SISTEMA SATELITAL";
+  ocultarElemento(divPARAMETROS, false);
+});
+
+btnECUACIONES.addEventListener('click', function(){
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText="ECUACIONES DE UN SITEMA SATELITAL";
+  ocultarElemento(divECUACIONES, false);
 });
 
 function limpiarModalEmpSemp(){
@@ -373,6 +432,13 @@ function limpiarModalEmpSemp(){
   ocultarElemento(divGEO, true);
   ocultarElemento(divMEO, true);
   ocultarElemento(divLEO, true);
+  ocultarElemento(divTERRENA, true);
+  ocultarElemento(divSUBIDA, true);
+  ocultarElemento(divBAJADA, true);
+  ocultarElemento(divCRUZADO, true);
+  ocultarElemento(divTRANSPONDEDOR, true);
+  ocultarElemento(divPARAMETROS, true);
+  ocultarElemento(divECUACIONES, true);
 }
 
 function limpiarVista(){
@@ -408,5 +474,7 @@ function cerrarModal(){
   videoAMPS.pause();
   video5G.pause();
   videoHistoria.pause();
+  videoPARAMETROS.pause();
+  videoECUACIONES.pause();
 
 }

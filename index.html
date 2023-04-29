@@ -511,11 +511,11 @@
             </div>
           </div>
 
-          <div class="accordion-item">
+          <div class="accordion-item mb-3">
             <h2 class="accordion-header" id="headingOneOneOneOne">
               <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapseOneOneOneOne" aria-expanded="false" aria-controls="collapseFourFourFour">
-                SATELITES ORBOTALES Y GEO SINCRONOS: GEO, MEO, LEO
+                SATELITES ORBITALES Y GEO SINCRONOS: GEO, MEO, LEO
               </button>
             </h2>
             <div id="collapseOneOneOneOne" class="accordion-collapse collapse" aria-labelledby="headingFiveFiveFive"
@@ -552,31 +552,98 @@
             </div>
           </div>
 
-          <!--<div class="accordion-item">
-            <h2 class="accordion-header" id="headingSevenSevenSeven">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwoTwoTwoTwo">
               <button class="accordion-button accordion-secundario collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseSevenSevenSeven" aria-expanded="false" aria-controls="collapseSevenSevenSeven">
-                SISTEMAS MOVILES 4G-LTE, 5G IoT
+                data-bs-target="#collapseTwoTwoTwoTwo" aria-expanded="false" aria-controls="collapseFourFourFour">
+                PARAMETROS Y ECUACIONES DE UN SISTEMA SATELITAL
               </button>
             </h2>
-            <div id="collapseSevenSevenSeven" class="accordion-collapse collapse"
-              aria-labelledby="headingSevenSevenSeven" data-bs-parent="#accordionExampleTwoTwo">
+            <div id="collapseTwoTwoTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingFiveFiveFive"
+              data-bs-parent="#accordionExampleTwoTwo">
               <div class="accordion-body row">
-                <a type="button" class="col-12 col-sm-6 mb-1" id="btn4G" data-toggle="modal"
-                  data-target="#modalModelosUnidadII">
-                  <div class="card card-models">
-                    <h5 class="card-title">4G-LTE</h5>
+                <p class="mb-3">
+                  Modelo basico de un sistema satelital en el siguiente diagrama:
+                </p>
+                <div class="text-center mb-3">
+                  <img src="src/Img/ModeloSatelital-Diagrama.PNG" alt="" height="400" />
+                </div>
+                <p class="mb-3">
+                  Las comunicaciones de los enlaces entre estaciones terrenas y los satelites estan constituidos por
+                  radiacion electromagnetica dirigida en forma de haces. De esta manera entonces se tienen en cuenta en
+                  un modelo de enlace satelital:
+                </p>
+                <div class="row justify-content-center mb-3">
+                  <div class="mb-2 col-6 title-map">
+                    <p class="text-center">
+                      MODELOS DE ENLACE SATELITAL
+                    </p>
                   </div>
-                </a>
-                <a type="button" class="col-12 col-sm-6 mb-1" id="btn5G" data-toggle="modal"
-                  data-target="#modalModelosUnidadII">
-                  <div class="card card-models">
-                    <h5 class="card-title">5G e IoT</h5>
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <div class="mb-2 col-6 title-map">
+                    <p class="text-center">
+                      Es el canal por donde se envian y se reciben las señales trasmitidas de la estacion terrestre al
+                      satelite y de este a la estacion terrestre.
+                    </p>
                   </div>
-                </a>
+                </div>
+                <div>
+                  <a type="button" class="col-12 mb-1" id="btnTERRENA" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">ESTACION TERRENA</h5>
+                    </div>
+                  </a>
+                </div>
+                <div class="accordion-body row">
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnSUBIDA" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">Enlace de subida</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnBAJADA" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">Enlace de bajada</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-4 mb-1" id="btnCRUZADO" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">Enlaces cruzados</h5>
+                    </div>
+                  </a>
+                </div>
+                <div>
+                  <a type="button" class="col-12 mb-1" id="btnTRANSPONDEDOR" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">Transpondedor</h5>
+                    </div>
+                  </a>
+                </div>
+                <div>
+                  <a type="button" class="col-12 mb-1" id="btnPARAMETROS" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">Parametros del Sistema Satelital</h5>
+                    </div>
+                  </a>
+                </div>
+                <div>
+                  <a type="button" class="col-12 mb-1" id="btnECUACIONES" data-toggle="modal"
+                    data-target="#modalModelosUnidadII">
+                    <div class="card card-models">
+                      <h5 class="card-title">Ecuaciones de un Sistema Satelital</h5>
+                    </div>
+                  </a>
+                </div>
+
               </div>
             </div>
-          </div>-->
+          </div>
 
         </div>
       </div>
@@ -1406,6 +1473,107 @@
               <audio controls autoplay class="mb-3">
                 <source src="src/Audio/Audio.Ventajas.LEO.Unidad4.mp3" type="audio/mp3" />
               </audio>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divTERRENA">
+              <p class="text-justify mb-3">
+                Los modelos de subida y bajada requieren de una estacion terrena, ya sea para trasmitir o recibir señal.
+                Esta compuesta por segmentos:
+              </p>
+              <div class="list-group mb-3">
+                <a href="#" class="list-group-item list-group-item-action text-justify">El primer segmento es un
+                  modulador de FI para transmision y un demodulador para la recepcion.</a>
+                <a href="#" class="list-group-item list-group-item-action text-justify">El segundo segmento es un
+                  convertidor descendente de RF a IF.</a>
+                <a href="#" class="list-group-item list-group-item-action text-justify">El tercer segmento es un
+                  amplificador de alta potencia (HPA) para la transmision y un amplificador de bajo ruido (LNA) para la
+                  recepcion.</a>
+                <a href="#" class="list-group-item list-group-item-action text-justify">El cuarto segmento son las
+                  antenas que conforman a la estacion terrena.</a>
+              </div>
+              <p class="mb-3">
+                Segmentacion en la estacion terrena en forma de diagrama:
+              </p>
+              <div class="text-center mb-3">
+                <img src="src/Img/Imagen.sistemas.lineaVista.PNG" alt="" height="400" />
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divSUBIDA">
+              <p class="text-justify mb-3">
+                Consiste en modular una señal de FI en banda base a una señal de frecuencia intermedia modulada en FM,
+                PSK y QAM, seguida por el convertidor elevador, el cual esta constituido por un mezcladro y un filtro
+                pasa bandas, que convierte la señal IF a RF. Como ultima etapa la señal pasa por un amplificador de
+                potencia (HPA) que da la potencia nesesaria para que la señal llegue hasta el satelite.
+              </p>
+              <p class="text-justify mb-3">
+                Modelo basico de un enlace de subida en el diagrama:
+              </p>
+              <div class="text-center mb-3">
+                <img src="src/Img/Enlace.Subida.PNG" alt="" height="400" />
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divBAJADA">
+              <p class="text-justify mb-3">
+                El receptor de la estacion terrena contiene un filtro (BFP), el cual limita la potencia de entrada que
+                recibe el LNA, cuando ya es amplificada la señal en bajo ruido la señal desciende de RF a frecuencias IF
+                por medio de un convertidor descendiente, luego la señal se demodula y se envia en banda base.
+              </p>
+              <p class="text-justify mb-3">
+                Modelo basico de un enlace de bajada en el diagrama:
+              </p>
+              <div class="text-center mb-3">
+                <img src="src/Img/Enlace.Bajada.PNG" alt="" height="400" />
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divCRUZADO">
+              <p class="text-justify mb-3">
+                Para realizar la comunicacion satelital en ocasiones, no solo se requiere de un unico satelite, en pocas
+                palabras lo que sucede es que cuando no hay linea de vista entre el satelite y el receptor entonces se
+                hace nesesario utilizar otro satelite que, si tenga linea de vista con estacion receptora, pudiendose
+                realizar transmisiones a mayor distancia.
+              </p>
+              <p class="text-justify mb-3">
+                Modelo basico de un enlace cruzado en el diagrama:
+              </p>
+              <div class="text-center mb-3">
+                <img src="src/Img/Enlace.Cruzado.PNG" alt="" height="400" />
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divTRANSPONDEDOR">
+              <p class="text-justify mb-3">
+                Esta constituido por un filtro pasa banda (BFP), este se encarga de limpiar el ruido que la señal
+                adquiere en la trayectoria de subida, tambien seleccione el canal ya que cada canal satelital requiere
+                de un transpondedor por separado. Luego le sigue un amplificador de bajo ruido (LNA) y el desplazador de
+                frecuencia que convierte la frecuecia de banda alta de subida a banda de salida, despues el amplificador
+                de baja potencia que amplifica la señal RF para el enlace de bajada, las señales se filtran y regresan a
+                la estacion terrena.
+              </p>
+              <p class="text-justify mb-3">
+                Etapas basicas de un transpondedor en el diagrama:
+              </p>
+              <div class="text-center mb-3">
+                <img src="src/Img/Diagrama.Transpondedor.PNG" alt="" height="400" />
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divPARAMETROS">
+              <p class="text-justify mb-3">
+                En el siguiente video encontraras los parametros del Sistema Satelital:
+              </p>
+              <video src="src/video/Video.ParametrosEnlaceSatelital.Unidad4.mp4" poster="Video" class="video" controls
+                id="videoPARAMETROS"></video>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divECUACIONES">
+              <p class="text-justify mb-3">
+                En el siguiente video encontraras las Ecuaciones del Sistema Satelital:
+              </p>
+              <video src="src/video/Video.EcuacionesEnlaceSatelital.unidad4.mp4" poster="Video" class="video" controls
+                id="videoECUACIONES"></video>
             </div>
 
           </div>
