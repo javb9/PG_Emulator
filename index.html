@@ -54,7 +54,9 @@
           </ul>
         </div>
         <li class="li-opciones" id="liCambioContrasenna">
-          <a type="button" id="btnCalcular"><i class="fas fa-calculator"></i> Calcular</a>
+          <a type="button" id="btnCalcular"><i class="fas fa-calculator"></i>
+            Calcular
+          </a>
         </li>
         <li class="li-opciones" id="liConectados">
           <a type="button" id="btnGuia"><i class="fas fa-file-alt"></i> Guias de laboratorio</a>
@@ -645,956 +647,1311 @@
             </div>
           </div>
 
+
+
+        </div>
+
+        <div id="divCalcular" class="col-12 d-none">
+          <div>
+            <h5 class="mb-3">
+              CALCULAR
+            </h5>
+            <p class="mb-3 text-justify">
+              Seleccione el modelo para entornos Indoor - Exteriores que va a calcular, ingrese los datos requeridos y
+              de calcular:
+            </p>
+          </div>
+          <div class="mb-3 row justify-content-center">
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnWalfischIk" data-toggle="modal"
+              data-target="#modalModelosUnidadII">
+              <div class="card card-models">
+                <h5 class="card-title">Walfisch - Ikegami</h5>
+              </div>
+            </a>
+          </div>
+          <div class="mb-3 row justify-content-center">
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnCost" data-toggle="modal"
+              data-target="#modalModelosUnidadII">
+              <div class="card card-models">
+                <h5 class="card-title">COST 231 - Hata</h5>
+              </div>
+            </a>
+          </div>
+          <div class="mb-3 row justify-content-center">
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnITU" data-toggle="modal"
+              data-target="#modalModelosUnidadII">
+              <div class="card card-models">
+                <h5 class="card-title">ITU - Recomendacion P.1546-5</h5>
+              </div>
+            </a>
+          </div>
+          <div class="mb-3 row justify-content-center">
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnErceg" data-toggle="modal"
+              data-target="#modalModelosUnidadII">
+              <div class="card card-models">
+                <h5 class="card-title">Erceg C 6 SUI</h5>
+              </div>
+            </a>
+          </div>
+          <div class="mb-3 row justify-content-center">
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnOkumura" data-toggle="modal"
+              data-target="#modalModelosUnidadII">
+              <div class="card card-models">
+                <h5 class="card-title">Okumura-Hata</h5>
+              </div>
+            </a>
+          </div>
+          <div class="mb-3 row justify-content-center">
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnUMI" data-toggle="modal"
+              data-target="#modalModelosUnidadII">
+              <div class="card card-models">
+                <h5 class="card-title">3D - UMI LOS y ED - UMI NLOS</h5>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="modalModelosUnidadII" tabindex="-1" role="dialog" aria-labelledby="modalModelosUnidadII"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="titleModalUnidadII">Modal title</h5>
-            <a type="button" data-dismiss="modal" aria-label="Close" onclick="cerrarModal()">
-              <i class="fas fa-times fa-2x"></i>
-            </a>
+  </div>
+
+  </div>
+  </div>
+  <div class="modal fade" id="modalModelosUnidadII" tabindex="-1" role="dialog" aria-labelledby="modalModelosUnidadII"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="titleModalUnidadII">Modal title</h5>
+          <a type="button" data-dismiss="modal" aria-label="Close" onclick="cerrarModal()">
+            <i class="fas fa-times fa-2x"></i>
+          </a>
+        </div>
+        <div class="modal-body row">
+          <div class="d-none" id="divContentEmpirico">
+            <p>
+              Estos se basan en numerosas medidas y observaciones de campo
+              sobre el ambiente de propagacion en condiciones reales, a partir
+              de las cuales se obtienen formulas por medio de ajustes.
+            </p>
+            <audio controls autoplay>
+              <source src="src/Audio/Audio1_Model_E.mp3" type="audio/mpeg" />
+            </audio>
+            <h5>¿De que depende su precisión?</h5>
+            <audio controls autoplay>
+              <source src="src/Audio/Audio2_Model_E.mp3" type="audio/mpeg" />
+            </audio>
+            <h5>Aqui se destacan los modelos:</h5>
+            <div class="list-group list-group-horizontal row">
+              <a href="#" class="list-group-item col-6">Recomendación UIT-R P.1546</a>
+              <a href="#" class="list-group-item col-6">Hata</a>
+              <a href="#" class="list-group-item col-6">COST-231 Hata</a>
+              <a href="#" class="list-group-item col-6">London de Ibrahim y Parsons</a>
+              <a href="#" class="list-group-item col-6">Allsebrook's</a>
+              <a href="#" class="list-group-item col-6">MeGeeHan y Griffiths</a>
+              <a href="#" class="list-group-item col-6">Atefi y Parsons</a>
+              <a href="#" class="list-group-item col-6">Lee</a>
+            </div>
           </div>
-          <div class="modal-body row">
-            <div class="d-none" id="divContentEmpirico">
-              <p>
-                Estos se basan en numerosas medidas y observaciones de campo
-                sobre el ambiente de propagacion en condiciones reales, a partir
-                de las cuales se obtienen formulas por medio de ajustes.
-              </p>
-              <audio controls autoplay>
-                <source src="src/Audio/Audio1_Model_E.mp3" type="audio/mpeg" />
+          <div class="d-none" id="divContentSemiEmpirico">
+            <p>
+              Estas se basan en teorias fisicas y mecanismos de propagación de
+              las ondas electromagneticas. Incorporan algunas caracteristicas
+              del entorno (por lo que requieren ciertos datos de morfologia
+              del terreno) y se complementan con medidas para el ajuste de sus
+              parámetros.
+            </p>
+            <h5>Aqui se destacan los modelos:</h5>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Egli</a>
+              <a href="#" class="list-group-item list-group-item-action">Walfish</a>
+              <a href="#" class="list-group-item list-group-item-action">Okumura</a>
+              <a href="#" class="list-group-item list-group-item-action">Longley-Rice</a>
+              <a href="#" class="list-group-item list-group-item-action">Ikegami</a>
+            </div>
+          </div>
+          <div class="d-none" id="divCaracteristicasMPE">
+            <p>
+              Se puede hacer una clasificación atendiendo al tamaño del área
+              de cobertura:
+            </p>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Cubren áreas del orden de 200 a 100
+                metros</a>
+              <a href="#" class="list-group-item list-group-item-action">Emisiones de potencia del orden de 10mW a
+                1W</a>
+              <a href="#" class="list-group-item list-group-item-action">Antenas bastante elevadas entre 3 a 10
+                metros</a>
+            </div>
+          </div>
+          <div class="d-none" id="divModelsRepreMPE">
+            <div class="list-group list-group-horizontal row">
+              <a href="#" class="list-group-item col-4">Teóricos de propagación de ondas electromagnéticas
+              </a>
+              <a href="#" class="list-group-item col-4">FRIIS en espacio libre</a>
+              <a href="#" class="list-group-item col-4">Longley-Rice </a>
+              <a href="#" class="list-group-item col-4">Okumura - Hata</a>
+              <a href="#" class="list-group-item col-4">The COST-231 o COST-231-Hata</a>
+              <a href="#" class="list-group-item col-4">Ikegami</a>
+              <a href="#" class="list-group-item col-4">Dos rayos</a>
+              <a href="#" class="list-group-item col-4">Durkin</a>
+              <a href="#" class="list-group-item col-4">Walfish - Bertoni</a>
+              <a href="#" class="list-group-item col-4">Walfish - Ikegami</a>
+              <a href="#" class="list-group-item col-4">The COST 231-Walfish-Ikegami</a>
+              <a href="#" class="list-group-item col-4" pir>ITU-R1411 y ITU-1546-5</a>
+              <a href="#" class="list-group-item col-4">Erceg C o SUI</a>
+              <a href="#" class="list-group-item col-4">ITU-Advanced Channel Model</a>
+              <a href="#" class="list-group-item col-4">COST 207 GSM</a>
+              <a href="#" class="list-group-item col-4">Xia</a>
+              <a href="#" class="list-group-item col-4">Young</a>
+              <a href="#" class="list-group-item col-4">Lee</a>
+              <a href="#" class="list-group-item col-4">Ibrahim - Parson</a>
+              <a href="#" class="list-group-item col-4">Sakagami - Kuboi</a>
+              <a href="#" class="list-group-item col-4">Xia-Bertoni, MOPEM, ECC-33</a>
+            </div>
+          </div>
+          <div class="d-none" id="divEmpir">
+            <p class="col-12 mt-2 mb-2 text-justify">
+              Estos se basan en numerosas medidas y observaciones de campo
+              sobre el ambiente de propagacion en condiciones reales, a partir
+              de las cuales se obtienen formulas por medio de ajustes.
+            </p>
+            <div class="row justify-content-center">
+              <audio controls autoplay class="mb-2">
+                <source src="src/Audio/Empirico1.mpeg" type="audio/mpeg" />
               </audio>
-              <h5>¿De que depende su precisión?</h5>
-              <audio controls autoplay>
-                <source src="src/Audio/Audio2_Model_E.mp3" type="audio/mpeg" />
+              <b>
+                <p>¿De que depende su precision?</p>
+              </b>
+              <audio controls autoplay class="mb-2">
+                <source src="src/Audio/Empirico2.mpeg" type="audio/mpeg" />
               </audio>
-              <h5>Aqui se destacan los modelos:</h5>
+              <b>
+                <p>Aqui se destacan los modelos:</p>
+              </b>
               <div class="list-group list-group-horizontal row">
-                <a href="#" class="list-group-item col-6">Recomendación UIT-R P.1546</a>
-                <a href="#" class="list-group-item col-6">Hata</a>
-                <a href="#" class="list-group-item col-6">COST-231 Hata</a>
-                <a href="#" class="list-group-item col-6">London de Ibrahim y Parsons</a>
-                <a href="#" class="list-group-item col-6">Allsebrook's</a>
-                <a href="#" class="list-group-item col-6">MeGeeHan y Griffiths</a>
-                <a href="#" class="list-group-item col-6">Atefi y Parsons</a>
-                <a href="#" class="list-group-item col-6">Lee</a>
+                <a href="#" class="list-group-item col-6 text-center">Recomendacion UIT-R P 1546</a>
+                <a href="#" class="list-group-item col-6 text-center">Hata</a>
+                <a href="#" class="list-group-item col-6 text-center">COST-231 Hata</a>
+                <a href="#" class="list-group-item col-6 text-center">London de Ibrahim y Parsons</a>
+                <a href="#" class="list-group-item col-6 text-center">Allsebrook´s</a>
+                <a href="#" class="list-group-item col-6 text-center">MeGeeHan y Griffiths</a>
+                <a href="#" class="list-group-item col-6 text-center">Atefi y Parsons</a>
+                <a href="#" class="list-group-item col-6 text-center">Lee</a>
               </div>
             </div>
-            <div class="d-none" id="divContentSemiEmpirico">
+          </div>
+
+          <div class="d-none" id="divSemiEmpir">
+            <p class="col-12 mt-2 mb-2 text-justify">
+              Estos se basan en teorias fisicas y mecanismos de propagacion de las ondas electromagneticas. Incorporan
+              algunas caracteristicas del entorno (por lo que requieren datos de morfologia del terreno) y se
+              complementan con medidas para el ajuste de sus parametros.
+            </p>
+            <b>
               <p>
-                Estas se basan en teorias fisicas y mecanismos de propagación de
-                las ondas electromagneticas. Incorporan algunas caracteristicas
-                del entorno (por lo que requieren ciertos datos de morfologia
-                del terreno) y se complementan con medidas para el ajuste de sus
-                parámetros.
+                Se destacan los modelos:
               </p>
-              <h5>Aqui se destacan los modelos:</h5>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Egli</a>
-                <a href="#" class="list-group-item list-group-item-action">Walfish</a>
-                <a href="#" class="list-group-item list-group-item-action">Okumura</a>
-                <a href="#" class="list-group-item list-group-item-action">Longley-Rice</a>
-                <a href="#" class="list-group-item list-group-item-action">Ikegami</a>
-              </div>
+            </b>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action text-center">Egli</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Walfish</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Okumura</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Longley-Rice</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Ikegami</a>
             </div>
-            <div class="d-none" id="divCaracteristicasMPE">
+          </div>
+
+          <div class="d-none row justify-content-center" id="divDeterm">
+            <p class="col-12 mt-2 mb-2 text-justify mb-2">
+              Estos se basan en la representacion matematica de las leyes de propagacion de ondas electromagneticas,
+              normalmente toman como referencia las leyes de Maxwell con el fin de predecir intensidad de la señal
+              recibida.
+            </p>
+            <audio controls autoplay class="mb-2">
+              <source src="src/Audio/Deterministas.mpeg" type="audio/mpeg" />
+            </audio>
+            <b>
+              <p>Aqui se destacan los modelos:</p>
+            </b>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action text-center">Modelo Flat edge</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Walfish - Bertoni</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">COST 231 231-Walfish-Ikegami</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Sakagami - Kubai Model</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">MBX para macro celulas</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Ikegami Model</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Modelo de Friss</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Modelo de dos rayos</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Difraccion de objetos</a>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divEstadis">
+            <p class="col-12 mt-2 mb-2 text-justify mb-2">
+              Es la representacion del comportamiento de las variables aleatorias en los que existe una secuencia
+              cambiante de eventos que se analizan probabilisticamente durante un intervalo de tiempo.
+            </p>
+            <b>
+              <p>¿De que depende su presicion?</p>
+            </b>
+            <audio controls autoplay class="mb-2">
+              <source src="src/Audio/Estadisticos.mpeg" type="audio/mpeg" />
+            </audio>
+            <b>
+              <p>Aqui se destacan los modelos:</p>
+            </b>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action text-center">Estadistica inferencial</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">Estadistica descriptiva</a>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divIndoor">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              La propagacion en interiores no esta influenciada por el perfil del terreno como la propagacion en
+              ambientes abiertos, pero puede ser afectada por laestructura del edificio, especialmente si hay varios
+              tipos de materiales de construccion en el edificio. La señal transmitida alcanza al receptor por mas de
+              un atrayectoria o ruta, a traves de reflexion, refreccion y difraccion de las ondas de radio a causa de
+              objetos como: paredes, ventanas y puertas dentro del edificio.
+            </p>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio1.Indoor.mp3" type="audio/mp3" />
+            </audio>
+            <b>
+              <p>Caracteristicas:</p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio2.CaracteristicasInndoor.mp3" type="audio/mp3" />
+            </audio>
+            <div class="list-group list-group-horizontal row">
+              <a href="#" class="list-group-item col-6 text-center">Modelo teorico basado en ondas
+                electromagneticas</a>
+              <a href="#" class="list-group-item col-6 text-center">Keenan - Montiev model</a>
+              <a href="#" class="list-group-item col-6 text-center">Modelo de transmision en espacio libre</a>
+              <a href="#" class="list-group-item col-6 text-center">Multi - Wall Model</a>
+              <a href="#" class="list-group-item col-6 text-center">Modelo de dos rayos</a>
+              <a href="#" class="list-group-item col-6 text-center">Montiev - Simplificado</a>
+              <a href="#" class="list-group-item col-6 text-center">Modelo Longley - Rice</a>
+              <a href="#" class="list-group-item col-6 text-center">Modelo de una pendiente</a>
+              <a href="#" class="list-group-item col-6 text-center">Log - Normal Shadowing Path Loss Model</a>
+              <a href="#" class="list-group-item col-6 text-center">Ericsson multiples</a>
+              <a href="#" class="list-group-item col-6 text-center">Log - Distance</a>
+              <a href="#" class="list-group-item col-6 text-center">Factor de atenuacion</a>
+              <a href="#" class="list-group-item col-6 text-center">Modelo simplificado por el numero de suelos y
+                muros</a>
+              <a href="#" class="list-group-item col-6 text-center">Modelos FDTD</a>
+              <a href="#" class="list-group-item col-6 text-center">Dual Sippe - Model</a>
+              <a href="#" class="list-group-item col-6 text-center">Modelo de Perdida de Trayecto basado en COST -
+                231</a>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divOutdoor">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Los modelos en exteriores de acuerdo al tamaño de la zona de cobertura se pueden fividir en modelos de
+              propagacion e zonas grandes y zonas pequeñas.
+            </p>
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Existen mas modelos de propagacion para sistemas inalambricos Outdoor debido a que la comunicacion
+              inalambrica en exteriores se vienen utilizando desde hace mucho mas tiempo: radio, television entre
+              otros.
+            </p>
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Una caracteristica es que estos modelos no tienen en cuenta las cualidades particulares de la
+              propagacion en Indoor (interiores).
+            </p>
+            <b>
+              <p>Aqui se destacan los modelos:</p>
+            </b>
+            <div class="list-group list-group-horizontal row">
+              <a href="#" class="list-group-item col-4 text-center">Modelos teoricos de propagacon de ondas
+                elecromagneicas</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo Ikegami</a>
+              <a href="#" class="list-group-item col-4 text-center">COST 207 GSM</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo de FRIIS PROPAGACION EN EL ESPACIO
+                LIBRE</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo Walfish - Ikegami</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo de Xia</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo de dos rayos</a>
+              <a href="#" class="list-group-item col-4 text-center">The COST - 231 o COST Hata</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo de Young</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo Longley-Rice</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo The COST-231-Walfisch-Ikegami</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo de Lee</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo de Durkin</a>
+              <a href="#" class="list-group-item col-4 text-center">ITU-R1411 Y ITU-1546-5</a>
+              <a href="#" class="list-group-item col-4 text-center">Sakagami Kubai</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo Okumura-Hata</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo SIU</a>
+              <a href="#" class="list-group-item col-4 text-center">Ibrahim-Parson</a>
+              <a href="#" class="list-group-item col-4 text-center">Modelo Walfish-Berton</a>
+              <a href="#" class="list-group-item col-4 text-center">The ITU-Advanced Channel Model</a>
+              <a href="#" class="list-group-item col-4 text-center">Xia-Bertoni, Modelo MOPEM ECC-33</a>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divDosRayos">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              El siguiente video brinda el concepto y formulas del modelo de dos rayos con Linea de vista (LOS):
+            </p>
+            <div class="col-12 text-center mt-2 mb-2">
+              <video src="src/video/Video.ModeloDosRayos.LOS.Unidad1.mp4" poster="Video" class="video" controls
+                id="videoDosRayos"></video>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divFriis">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              El siguiente video brinda el concepto y formulas del modelo de Friis con Linea de vista (LOS):
+            </p>
+            <div class="col-12 text-center mt-2 mb-2">
+              <video src="src/video/Video.ModeloFriis.LOS.Unidad1.mp4" poster="Video" class="video" controls
+                id="videoFriis"></video>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divWalfisch">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              El siguiente video brinda el concepto y formulas del modelo de Walfisch Ikegami con Linea de vista (LOS)
+              y son linea de Vista (NLOS):
+            </p>
+            <div class="col-12 text-center mt-2 mb-2">
+              <video src="src/video/Video.ModeloWalfischIkegami.LOSyNLOS.Unidad1.mp4" poster="Video" class="video"
+                controls id="videoWalfisch"></video>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center text-justify" id="divPmr">
+            <p class="col-12 mt-2 mb-2">
+              Cuando hablamos de PMR (Radios Móviles Privadas), nos referimos
+              a redes de comunicaciones privadas que usan los móviles que
+              llevan esta tecnología y no se conectan con redes públicas. Son
+              redes para grupos cerrados de usuarios. Su uso primordial es
+              aquellas organizaciones que necesitan tener un control sobre
+              terminales desde un punto central.
+            </p>
+            <h2 class="col-12 mt-2 mb-2">Historia</h2>
+            <div class="text-center">
+              <img src="src/Img/PMR.Unidad2_GIF.gif" alt="" height="400" />
+            </div>
+            <h2 class="mb-1 mt-2 mb-3">Aplicaciones o usos:</h2>
+            <audio controls autoplay>
+              <source src="src/Audio/Audio.Aplicaciones_PMR.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center text-justify" id="divWifi">
+            <p class="col-12 mt-2 mb-2">
+              Cuando hablamos de WIFI, nos referimos a una de las tecnologias
+              de comunicación inalámbricas mediante ondas. La cual es muy
+              utilizada hoy en dia. WIFI pertenece al tipo de red WLAN (Redes
+              inalambrias de area local).
+            </p>
+            <img src="src/Img/Imagen1_WIFI.PNG" alt="" />
+            <h2 class="col-12 mt-2 mb-2">Historia</h2>
+            <img src="src/Img/WIFI.Unidad2_GIF.gif" alt="" />
+            <h2 class="mt-2">Ventajas</h2>
+            <audio controls autoplay>
+              <source src="src/Audio/Audio.Ventajas_WiFi.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center text-justify" id="divWiMax">
+            <p class="col-12 mt-2 mb-3 text-justify">
+              Cuando hablamos de WiMax (WorldWide InterOperability for
+              Microwave Acces), nos referimos a una tecnologia de radio de
+              ultima generación promovida por la IEEE y pincipalmentew
+              diseñada para proveer vía radio alta capacidad. WiMax pertence
+              al tipo de red WMAN(redes inalambricas de area metropolitana).
+            </p>
+            <div class="text-center mb-3">
+              <img src="src/Img/Imagen_WIMAX.PNG" alt="" height="125" />
+            </div>
+            <h2 class="mb-3 mt-2">Historia:</h2>
+            <div class="text-center mb-3">
+              <img src="src/Img/WIMAX.Unidad2_GIF.gif" alt="" height="400" />
+            </div>
+            <h2 class="mb-3 mt-2">Ventajas:</h2>
+            <audio controls autoplay>
+              <source src="src/Audio/Audio.Ventajas_WiMax.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center text-justify" id="divLds">
+            <p class="col-12 mt-2 mb-3 text-justify">
+              Cuando hablamos de LMDS (Los sistemas de distribución local
+              multipunto). Nos referimos a una la representación de una
+              tecnología de acceso inalámbrico de banda ancha. Se aplica para
+              el acceso a internet a alta velocidad, telefonía, transmisión de
+              datos entre otros. Requiere de una línea de vista entre el
+              transmisor y el receptor
+            </p>
+            <div class="col-12 text-center mt-2 mb-3">
+              <img src="src/Img/LMDS_GIF.gif" alt="" height="400" />
+            </div>
+            <h2 class="mb-3">Aplicaciones o Usos:</h2>
+            <audio controls autoplay>
+              <source src="src/Audio/Audio_Aplicaciones_LMDS.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+
+          <div class="d-none text-justify row justify-content-center" id="divTetra">
+            <p class="col-12 mt-2 mb-2">
+              Es un estándar definido por el Instituto Europeo de Estándares
+              de Telecomunicaciones (ETSI). Define un sistema móvil digital de
+              radio y nace con el objeto de unificar diversas alternativas de
+              interfaces de radio digitales para la comunicación entre los
+              profesionales de los servicios de emergencias y servicio
+              público. TETRA, es un sistema móvil radioeléctrico de calidad
+              elevada que ha sido desarrollado principalmente para usuarios
+              profesionales, tales como los servicios de emergencia y los
+              transportes públicos. Cumple especificaciones radioeléctricas de
+              servicios móviles que proporcionan una capacidad completa, que
+              abarca las comunicaciones con concentración de enlaces,
+              comunicaciones sin concentración de enlaces y comunicaciones
+              directas de móvil a móvil.
+            </p>
+            <h5 class="mt-2 mb-3">
+              Se emplean en muchas industrias, entre ellas las siguientes:
+            </h5>
+            <div class="list-group list-group-horizontal row mb-3">
+              <a href="#" class="list-group-item col-6 text-center">Segurirdad publica</a>
+              <a href="#" class="list-group-item col-6 text-center">Petroleo</a>
+              <a href="#" class="list-group-item col-6 text-center">Gas</a>
+              <a href="#" class="list-group-item col-6 text-center">Transporte</a>
+              <a href="#" class="list-group-item col-6 text-center">Ambulancias</a>
+              <a href="#" class="list-group-item col-6 text-center">Bomberos</a>
+              <a href="#" class="list-group-item col-6 text-center">Policia</a>
+              <a href="#" class="list-group-item col-6 text-center">logistica</a>
+            </div>
+            <div class="col-12 mt-1 text-center mb-3">
+              <img src="src/Img/TETRA.Unidad2_GIF.gif" alt="" height="400" />
+            </div>
+            <h5 class="mt-2 mb-3">Ventajas:</h5>
+            <audio controls autoplay="mb-3">
+              <source src="src/Audio/Audio.ventajas_SistemasTETRA.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divDectec">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              DECT (Digital Enbaced Cordless Telecomunications), es un sistema de radio que se utiliza con especial
+              frecuencia en los telefonos fijos. El nombre de este sistema se refiere a un estandar para la
+              comunicacion inalambrica de señales de voz y datos. Con la introduccion de estos sistemas se adquiere
+              gran ventaja.
+            </p>
+            <b>
               <p>
-                Se puede hacer una clasificación atendiendo al tamaño del área
-                de cobertura:
+                El siguiente video brinda informacion del funcionamiento del sistema DECT:
               </p>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Cubren áreas del orden de 200 a 100
-                  metros</a>
-                <a href="#" class="list-group-item list-group-item-action">Emisiones de potencia del orden de 10mW a
-                  1W</a>
-                <a href="#" class="list-group-item list-group-item-action">Antenas bastante elevadas entre 3 a 10
-                  metros</a>
-              </div>
+            </b>
+            <div class="col-12 text-center mt-2 mb-2">
+              <video src="src/video/Video.Funcionamiento.DECT.Unidad1.mp4" poster="Video" class="video" controls
+                id="videoDECT"></video>
             </div>
-            <div class="d-none" id="divModelsRepreMPE">
-              <div class="list-group list-group-horizontal row">
-                <a href="#" class="list-group-item col-4">Teóricos de propagación de ondas electromagnéticas
-                </a>
-                <a href="#" class="list-group-item col-4">FRIIS en espacio libre</a>
-                <a href="#" class="list-group-item col-4">Longley-Rice </a>
-                <a href="#" class="list-group-item col-4">Okumura - Hata</a>
-                <a href="#" class="list-group-item col-4">The COST-231 o COST-231-Hata</a>
-                <a href="#" class="list-group-item col-4">Ikegami</a>
-                <a href="#" class="list-group-item col-4">Dos rayos</a>
-                <a href="#" class="list-group-item col-4">Durkin</a>
-                <a href="#" class="list-group-item col-4">Walfish - Bertoni</a>
-                <a href="#" class="list-group-item col-4">Walfish - Ikegami</a>
-                <a href="#" class="list-group-item col-4">The COST 231-Walfish-Ikegami</a>
-                <a href="#" class="list-group-item col-4" pir>ITU-R1411 y ITU-1546-5</a>
-                <a href="#" class="list-group-item col-4">Erceg C o SUI</a>
-                <a href="#" class="list-group-item col-4">ITU-Advanced Channel Model</a>
-                <a href="#" class="list-group-item col-4">COST 207 GSM</a>
-                <a href="#" class="list-group-item col-4">Xia</a>
-                <a href="#" class="list-group-item col-4">Young</a>
-                <a href="#" class="list-group-item col-4">Lee</a>
-                <a href="#" class="list-group-item col-4">Ibrahim - Parson</a>
-                <a href="#" class="list-group-item col-4">Sakagami - Kuboi</a>
-                <a href="#" class="list-group-item col-4">Xia-Bertoni, MOPEM, ECC-33</a>
-              </div>
-            </div>
-            <div class="d-none" id="divEmpir">
-              <p class="col-12 mt-2 mb-2 text-justify">
-                Estos se basan en numerosas medidas y observaciones de campo
-                sobre el ambiente de propagacion en condiciones reales, a partir
-                de las cuales se obtienen formulas por medio de ajustes.
+            <b>
+              <p>
+                Aplicaciones o usos:
               </p>
-              <div class="row justify-content-center">
-                <audio controls autoplay class="mb-2">
-                  <source src="src/Audio/Empirico1.mpeg" type="audio/mpeg" />
-                </audio>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.VentajasDect.Unidad2.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divRadioMensaje">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              La radio mensajeria es un servicio de telecomunicaciones, que permite recibir mensajes orales o escritos
+              en pequeños terminales portatiles de recepcion de radio (generalmente llamados mensafonos), que son
+              suministrados a los abonados.
+            </p>
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Los emisores deben comunicar telefonicamente el mensaje indicando el codigo de identificacion de abonado
+              al que va destinado, a un centro de recogida de mensajes, donde se realiza la difusion via radio de los
+              mismos.
+            </p>
+            <b>
+              <p>
+                La evolucion de la radio mensajeria en el siguiente video:
+              </p>
+            </b>
+            <div class="col-12 text-center mt-2 mb-2">
+              <video src="src/video/Video.RadioMensajeria.Evolucion.Unidad2.mp4" poster="Video" class="video" controls
+                id="videoRadioMensa"></video>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divRTGC">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Son sistemas de radiotelefonia que ofrecen servicio a un grupo cerrado de usuarios, sin la nesecidad o
+              con la posibilidad de su conexion a la red publica de telefonia.
+            </p>
+            <b>
+              <p>
+                Modalidades para este tipo de red:
+              </p>
+            </b>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action text-center"><b>Red privada</b> de frecuencia
+                fija, que solo comunicarse entre los de un mismo grupo</a>
+              <a href="#" class="list-group-item list-group-item-action text-center"><b>Red compartida</b> entre
+                varios
+                grupos, mediante un sistema de proteccion dinamica de canales, denominado sitema de acceso multiple o
+                trunking</a>
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divAMPS">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Es un sitema de telefonia movil de primera generación (1G), desarrollado por los laboratorios Bell e
+              implementado por primera vez en 1982 en Estados Unidos.
+            </p>
+            <b>
+              <p>
+                ¿ Que es la primera generacion (1G)?
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.QueEs1G.AMPS.SistemasTrunking.Unidad2.mp3" type="audio/mp3" />
+            </audio>
+            <b>
+              <p>
+                Para saber como funciona este sistema mira el video:
+              </p>
+            </b>
+            <video src="src/video/Video.Funcionamiento.AMPS.Unidad2.mp4" poster="Video" class="video" controls
+              id="videoAMPS"></video>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divCDMA">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Es un protocolo de acceso multiple para los sistemasde comunicacion celular movil, en otras palabras, es
+              una tecnica que permite que varios usuarios puedan acceder a un mismo medio de comunicaciones.
+            </p>
+            <b>
+              <p>
+                CARACTERISTICAS:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Caracteristicas.CDMA.Unidad3-Gif.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p>
+                Ventajas:
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.Ventajas.CDMA.Unidad3.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divTDMA">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Representa el acceso multiple por division de tiempo, es una tegnologia que permite multiples
+              conversaciones compartiendo el mismo canal de radio. Es un tipo de modulacion digital. Los proveedores
+              de telefonia movil pueden usarla para transmitir datos.
+            </p>
+            <b>
+              <p>
+                CARACTERISTICAS:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Caracteristicas.TDMA.Unidad3-Gif.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p>
+                Ventajas:
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.Ventajas.TDMA.Unidad3.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divCDPD">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Tegnologia inalambrica que facilita la transmision de datos a traves de partes de una red telefonica que
+              no sean utilizadas. Es una completa red movil de datos (arquitectura de red) que incluye la definicion
+              de radio, los mecanismos para compartir canales, los mecanismos para asegurar la movilidad en area local
+              y amplia, los protocolos y procedimientos de interpretacion entre sistemas entre otros.
+            </p>
+            <b>
+              <p>
+                Objetivos:
+              </p>
+            </b>
+            <div class="list-group mb-3">
+              <a href="#" class="list-group-item list-group-item-action text-center"><b>1.</b> Conseguir un estandar
+                unico
+                que pueda inter operar con multiples proveedores de servicios</a>
+              <a href="#" class="list-group-item list-group-item-action text-center"><b>2.</b> Esta diseñado para
+                soportar IP
+                y los protocolos de redes sin conexion de la ISO</a>
+            </div>
+            <p class="mb-3">
+              El sistema esta estructurado siguiendo los 7 niveles del modelos OSI:
+            </p>
+            <div class="text-center mb-3">
+              <img src="src/Img/Estructura.CDPD.Unidad3.gif" alt="" height="400" />
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divGSM">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Fue el intento europeo de unificar los distintos sistemas moviles digitales y sustituir a los analogos.
+              Diseñado con la posibilidad de que varios operadores pudieran compartir el espectro. la red GSM, de
+              segunda generacion (2G), permite conexiones tanto de datos como de voz.
+            </p>
+            <p>
+              GSM tiene cuatro versiones principales basadas en la banda:
+            </p>
+            <div class="list-group mb-3">
+              <a href="#" class="list-group-item list-group-item-action text-center">GSM - 850</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">GSM - 900</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">GSM - 1800</a>
+              <a href="#" class="list-group-item list-group-item-action text-center">GSM - 1900</a>
+            </div>
+            <b>
+              <p>
+                HISTORIA:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/LineaTiempo.Historia.GSM.Unidad3.gif" alt="" height="400" />
+            </div>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.Ventajas.GSM.Unidad3.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divGPRS">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Es un sistema de comunicaciones movil que se creo en la decada de los 80. Fue bautizada como la
+              generacion 2.5, trajo
+              varios cambios y aportes innovadores a las comunicaciones moviles es una extension mejorada del GSM.
+            </p>
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              GPRS es una tecnica de conmutacion de paquetes que emplea una codificacion reducida del canal, tiene la
+              capacidad para suministrar datos directamente al terminal de usuario, incluso si este se encuentra
+              apagado o fuera de cobertura.
+            </p>
+            <b>
+              <p>
+                CARACTERISTICAS:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Caracteristicas.GRPS.Unidad3-Gif.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p>
+                Ventajas:
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.Ventajas.GRPS.Unidad3.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divPCS">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Es un sistema que proporciona accesibilidad a un amplio rango de servicio de voz, mensajes y
+              localizacion, a usuarios en casa, trabajo, en movimiento y en regiones remotas ya sean estas nacionales
+              o internacionales.
+            </p>
+            <b>
+              <p>
+                Estructura:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Estructura.PCS.Unidad3-Gif.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p>
+                Ventajas:
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.Ventajas.PCS.Unidad3.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="div4G">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              4G hace referencia a la cuarta generacion de rede moviles y LTE es sinonimo de Evolucion a Largo Plazo.
+              Es un estandar para la comunicacion inalambrica de datos a alta velocidad. Expande el tamaño de la red y
+              la velocidad mediante el uso de una estructura de red rediseñada produciendo mayor velocidad y potencia
+              en la comunicacion, es la red mas popular.
+            </p>
+            <b>
+              <p>
+                Historia:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Historia.4G-LTE.Unidad3-Gif.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p>
+                Ventajas:
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.ventajas.4G-LTE.Unidad3.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="div5G">
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Cuando hablamos de 5G nos referimos a la quinta generacion de tecnologia celular inalambrica, que ofrece
+              mayores velocidades de carga y descarga, conexiones mas consistentes y capacidad mejorada que las redes
+              anteriores. Permite mejrar y multiplicar la capacidad de los canales de informacion de este modo
+              posibilita que los objetos cotidianos aomo automoviles, implementos del hogar entre otros se puedan
+              conectar en tiempo real a internet o red, todo esto debido a la aparicion de estas nuevas tegnologias
+              como: IoT (Internet de las Cosas) y la automatizacion.
+            </p>
+            <p class="col-12 mt-2 mb-2 text-justify mb-3">
+              Cuando hablamos de IoT nos referios a una revoluvion tecnologica qu posibilita al mundo de las llamadas
+              "cosas inteligentes", estos objetos se conectan a internet, de este modo las redes 5G junto con estas
+              tegnologias como lo es IoT, logren grandes ventajas para el mundo tecnologico.
+            </p>
+            <b>
+              <p>
+                Ventajas:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Ventajas.5G.e.IOT.Unidad3.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p>
+                Ventajas:
+              </p>
+            </b>
+            <video src="src/video/Video.Funcionamiento5G.Unidad3.mp4" poster="Video" class="video" controls
+              id="video5G"></video>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divGEO">
+            <p class="text-justify mb-3">
+              Los satelites de orbite geoestacionaria (GEO) siguen una orbita alrededor de la tierra sobre el ecuador
+              en una direccion y velocidad similares a la de la rotacion de la tierra. Esto permite al satelite
+              permanecer concentrado en un area de la superficie terrestre de la forma continua.
+            </p>
+            <b>
+              <p>
+                Usos de la orbita GEO:
+              </p>
+            </b>
+            <div class="list-group mb-3">
+              <a href="#" class="list-group-item list-group-item-action text-justify">Periodo orbital de: 24 horas, en
+                ella se ubican todos los satelites que proveen: internet, television, telefonia y otros datos a
+                diferentes regiones del planeta y a la deteccion y difusion de datos meteorologicos.</a>
+              <a href="#" class="list-group-item list-group-item-action">Es utilizada para colocar los satelites que
+                deben absolutamente cubrir una region determinada o ser apuntado por antenas fijas en el suelo.</a>
+            </div>
+            <b>
+              <p class="mb-3">
+                CARACTERISTICAS:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Caracteristicas.GEO.Unidad4-Gif.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p class="mb-3">
+                Ventajas:
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.Ventajas.GEO.Unidad4.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divMEO">
+            <p class="text-justify mb-3">
+              Los satelites MEO orbitan a una altura mayor que los LEO. Este tipo de satelites, son caracterizados por
+              que la forma de su orbita es usualmente la de una orbita Circular intermedia (ICO). Un sistema globalde
+              comunicaciones que este trabajando sobre este tipo de orbita no nesecita muchos satelites para poder
+              cubrir todo el territorio del planeta en cuanto a señales de comunicacion, a diferencia de la
+              comunicacion por medio de satelites tipo LEO.
+            </p>
+            <b>
+              <p>
+                Usos de la orbita MEO:
+              </p>
+            </b>
+            <div class="list-group mb-3">
+              <a href="#" class="list-group-item list-group-item-action text-justify">Usada por satelites de
+                observacion, defensa y posicionamiento.</a>
+              <a href="#" class="list-group-item list-group-item-action">El uso mas comun de estas orbitas en los
+                sistemas satelitales de navegacion global, como el Sistema de Posicionamiento Global (GPS) de los
+                Estados Unidos de America, o el Sistema de Navegacion Global porSatelite de la federacion Rusa
+                (GLONASS).</a>
+            </div>
+            <b>
+              <p class="mb-3">
+                CARACTERISTICAS:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Caracterisiticas.MEO.Unidad4-Gif.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p class="mb-3">
+                Ventajas:
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Ventajas.MEO.Unidad4.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divLEO">
+            <p class="text-justify mb-3">
+              Estos staelites son de tipo no geoestacionarios, de orbita baja y desde sus primeros lanzamientos, los
+              cuales, a principios de los años 80, son un medio muy importante debido a su gran cobertura mundial y a
+              que que presenta una opcion muy atractiva en el nivel cientifico.
+            </p>
+            <b>
+              <p>
+                Usos de la orbita LEO:
+              </p>
+            </b>
+            <div class="list-group mb-3">
+              <a href="#" class="list-group-item list-group-item-action text-justify">Se usan para proporcionar datos
+                geologicos sobre movimiento de placas terrestres y para la industria de telefonia satelital.</a>
+            </div>
+            <b>
+              <p class="mb-3">
+                CARACTERISTICAS:
+              </p>
+            </b>
+            <div class="text-center mb-3">
+              <img src="src/Img/Caracteristicas.LEO.Unidad4-Gif.gif" alt="" height="400" />
+            </div>
+            <b>
+              <p class="mb-3">
+                Ventajas:
+              </p>
+            </b>
+            <audio controls autoplay class="mb-3">
+              <source src="src/Audio/Audio.Ventajas.LEO.Unidad4.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divTERRENA">
+            <p class="text-justify mb-3">
+              Los modelos de subida y bajada requieren de una estacion terrena, ya sea para trasmitir o recibir señal.
+              Esta compuesta por segmentos:
+            </p>
+            <div class="list-group mb-3">
+              <a href="#" class="list-group-item list-group-item-action text-justify">El primer segmento es un
+                modulador de FI para transmision y un demodulador para la recepcion.</a>
+              <a href="#" class="list-group-item list-group-item-action text-justify">El segundo segmento es un
+                convertidor descendente de RF a IF.</a>
+              <a href="#" class="list-group-item list-group-item-action text-justify">El tercer segmento es un
+                amplificador de alta potencia (HPA) para la transmision y un amplificador de bajo ruido (LNA) para la
+                recepcion.</a>
+              <a href="#" class="list-group-item list-group-item-action text-justify">El cuarto segmento son las
+                antenas que conforman a la estacion terrena.</a>
+            </div>
+            <p class="mb-3">
+              Segmentacion en la estacion terrena en forma de diagrama:
+            </p>
+            <div class="text-center mb-3">
+              <img src="src/Img/Imagen.sistemas.lineaVista.PNG" alt="" height="400" />
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divSUBIDA">
+            <p class="text-justify mb-3">
+              Consiste en modular una señal de FI en banda base a una señal de frecuencia intermedia modulada en FM,
+              PSK y QAM, seguida por el convertidor elevador, el cual esta constituido por un mezcladro y un filtro
+              pasa bandas, que convierte la señal IF a RF. Como ultima etapa la señal pasa por un amplificador de
+              potencia (HPA) que da la potencia nesesaria para que la señal llegue hasta el satelite.
+            </p>
+            <p class="text-justify mb-3">
+              Modelo basico de un enlace de subida en el diagrama:
+            </p>
+            <div class="text-center mb-3">
+              <img src="src/Img/Enlace.Subida.PNG" alt="" height="400" />
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divBAJADA">
+            <p class="text-justify mb-3">
+              El receptor de la estacion terrena contiene un filtro (BFP), el cual limita la potencia de entrada que
+              recibe el LNA, cuando ya es amplificada la señal en bajo ruido la señal desciende de RF a frecuencias IF
+              por medio de un convertidor descendiente, luego la señal se demodula y se envia en banda base.
+            </p>
+            <p class="text-justify mb-3">
+              Modelo basico de un enlace de bajada en el diagrama:
+            </p>
+            <div class="text-center mb-3">
+              <img src="src/Img/Enlace.Bajada.PNG" alt="" height="400" />
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divCRUZADO">
+            <p class="text-justify mb-3">
+              Para realizar la comunicacion satelital en ocasiones, no solo se requiere de un unico satelite, en pocas
+              palabras lo que sucede es que cuando no hay linea de vista entre el satelite y el receptor entonces se
+              hace nesesario utilizar otro satelite que, si tenga linea de vista con estacion receptora, pudiendose
+              realizar transmisiones a mayor distancia.
+            </p>
+            <p class="text-justify mb-3">
+              Modelo basico de un enlace cruzado en el diagrama:
+            </p>
+            <div class="text-center mb-3">
+              <img src="src/Img/Enlace.Cruzado.PNG" alt="" height="400" />
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divTRANSPONDEDOR">
+            <p class="text-justify mb-3">
+              Esta constituido por un filtro pasa banda (BFP), este se encarga de limpiar el ruido que la señal
+              adquiere en la trayectoria de subida, tambien seleccione el canal ya que cada canal satelital requiere
+              de un transpondedor por separado. Luego le sigue un amplificador de bajo ruido (LNA) y el desplazador de
+              frecuencia que convierte la frecuecia de banda alta de subida a banda de salida, despues el amplificador
+              de baja potencia que amplifica la señal RF para el enlace de bajada, las señales se filtran y regresan a
+              la estacion terrena.
+            </p>
+            <p class="text-justify mb-3">
+              Etapas basicas de un transpondedor en el diagrama:
+            </p>
+            <div class="text-center mb-3">
+              <img src="src/Img/Diagrama.Transpondedor.PNG" alt="" height="400" />
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divPARAMETROS">
+            <p class="text-justify mb-3">
+              En el siguiente video encontraras los parametros del Sistema Satelital:
+            </p>
+            <video src="src/video/Video.ParametrosEnlaceSatelital.Unidad4.mp4" poster="Video" class="video" controls
+              id="videoPARAMETROS"></video>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divECUACIONES">
+            <p class="text-justify mb-3">
+              En el siguiente video encontraras las Ecuaciones del Sistema Satelital:
+            </p>
+            <video src="src/video/Video.EcuacionesEnlaceSatelital.unidad4.mp4" poster="Video" class="video" controls
+              id="videoECUACIONES"></video>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divWalfischIk">
+            <b>
+              <p class="mb-3">
+                Seleccione el tipo de sistema:
+              </p>
+            </b>
+            <div class="row justify-content-center">
+              <div class="form-check form-switch" id="check1">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1"
+                  onchange="MostrarDiv()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Con linea de vista (LOS)</label>
+              </div>
+              <div class="form-check form-switch" id="check2">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2"
+                  onchange="MostrarDiv2()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Sin linea de vista (NLOS)</label>
+              </div>
+              <div class="d-none" id="prueba">
+                <p class="mb-3">
+                  Fórmula para el cálculo de las pérdidas por trayecto según el modelo:
+                </p>
                 <b>
-                  <p>¿De que depende su precision?</p>
+                  <p class="mb-3">
+                    Lp(dB)=42,6+26 log⁡(d)Km+20 log⁡(f)Mhz
+                  </p>
                 </b>
-                <audio controls autoplay class="mb-2">
-                  <source src="src/Audio/Empirico2.mpeg" type="audio/mpeg" />
-                </audio>
                 <b>
-                  <p>Aqui se destacan los modelos:</p>
+                  <p>
+                    Ingrese los datos requeridos:
+                  </p>
                 </b>
-                <div class="list-group list-group-horizontal row">
-                  <a href="#" class="list-group-item col-6 text-center">Recomendacion UIT-R P 1546</a>
-                  <a href="#" class="list-group-item col-6 text-center">Hata</a>
-                  <a href="#" class="list-group-item col-6 text-center">COST-231 Hata</a>
-                  <a href="#" class="list-group-item col-6 text-center">London de Ibrahim y Parsons</a>
-                  <a href="#" class="list-group-item col-6 text-center">Allsebrook´s</a>
-                  <a href="#" class="list-group-item col-6 text-center">MeGeeHan y Griffiths</a>
-                  <a href="#" class="list-group-item col-6 text-center">Atefi y Parsons</a>
-                  <a href="#" class="list-group-item col-6 text-center">Lee</a>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>f(MHz):</b> Frecuencia de operacion del sistema:
+                    <b>(800 - 2000)</b></span>
+                  <input type="text" class="form-control" placeholder="Frecuencia (MHz)" aria-label="Username"
+                    aria-describedby="basic-addon1" id="txtFrecuencia">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d(m):</b> distancia entre el transmisor y
+                    receptor</b></span>
+                  <input type="text" class="form-control" placeholder="Distancia (metros)" aria-label="Username"
+                    aria-describedby="basic-addon1" id="txtDistancia">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalculo">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarDato">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar">
+                    <label>Las perdidas por trayecto son: </label>
+                    <input class="form-control" type="text" id="txtResultadoLOS" readonly>
+                    <label>Lb</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-none" id="prueba1">
+                <p class="mb-3">
+                  Fórmula para el cálculo de las pérdidas por trayecto según el modelo:
+                </p>
+                <div class="text-center mb-3">
+                  <img src="src/Img/Formula_NLOS.JPG" alt="" height="400" />
+                </div>
+                <div class="text-center mb-3">
+                  <img src="src/Img/Formula_NLOS1.JPG" alt="" height="400" />
+                </div>
+                <b>
+                  <p>
+                    2. Seleccione tipo de zona:
+                  </p>
+                </b>
+                <div class="text-center mb-3">
+                  <img src="src/Img/TipoZona.PNG" alt="" height="100" />
+                </div>
+                <b>
+                  <p>
+                    3. Ingrese los datos requeridos:
+                  </p>
+                </b>
+                <div class="form-check form-switch" id="suburbano">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault3"
+                    onchange="MostrarDiv3()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Suburbano</label>
+                </div>
+                <div class="form-check form-switch" id="urbano">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault4"
+                    onchange="MostrarDiv4()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Urbano</label>
+                </div>
+
+                <div class="d-none" id="Zona">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><b>f(MHz):</b> Frecuencia de operacion del sistema:
+                      <b>(800 - 2000)</b></span>
+                    <input type="text" class="form-control" id="txtFrecuenciaNLOS" placeholder="Frecuencia (MHz)"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><b>d(m):</b> distancia entre el transmisor y
+                      receptor</b></span>
+                    <input type="text" id="txtDistanciaNLOS" class="form-control" placeholder="Distancia (metros)"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>w(m):</b> ancho de la calle</b></span>
+                    <input type="text" id="txtAnchoCalleSub" class="form-control" placeholder="ancho de la calle"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>h(roof)(m):</b> altura del edificio</b></span>
+                    <input type="text" class="form-control" id="txtAlturaEdificioSub" placeholder="altura del edificio"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>hm(m):</b> altura de la antena movil</b></span>
+                    <input type="text" class="form-control" id="txtAlturaMovilSub" placeholder="altura antena"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>O (grados):</b> angulo de inclinacion respecto a
+                      la calle (0 - 90)</b></span>
+                    <input type="text" class="form-control" id="txtAnguloSub" placeholder="angulo" aria-label="Username"
+                      aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>h (te):</b> Altura de la estacion base
+                      </b></span>
+                    <input type="text" class="form-control" id="txtAlturaBaseSub" placeholder="Altura estacion base"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>b: (m)</b> Distancia entre los
+                      edificios</b></span>
+                    <input type="text" class="form-control" id="txtDistanciaEdificios" placeholder="Distancia edificios"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="row justify-content-center mb-3">
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularNLOS">
+                      <div class="card card-models mb-3">
+                        <h5 class="card-title">CALCULAR</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-6 mb-3" id="btnBorrarDatoSub">
+                      <div class="card card-models mb-3">
+                        <h5 class="card-title"><b>BORRAR DATOS</h5>
+                      </div>
+                    </a>
+                    <div class="centrar">
+                      <label>Las perdidas por trayecto <b>Lp</b> son: </label>
+                      <input class="form-control" type="text" id="txtResultadoNLOSSub" readonly>
+                      <label>Lb</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-none" id="Zona1">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>f(MHz):</b> Frecuencia de operacion del sistema:
+                      <b>(800 - 2000)</b></span>
+                    <input type="text" class="form-control" id="txtFrecuenciaUrb" placeholder="Frecuencia (MHz)"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>d(m):</b> distancia entre el transmisor y
+                      receptor</b></span>
+                    <input type="text" class="form-control" id="txtDistanciaUrb" placeholder="Distancia (metros)"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>w(m):</b> ancho de la calle</b></span>
+                    <input type="text" class="form-control" id="txtCalleUrb" placeholder="ancho de la calle"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>h(roof)(m):</b> altura del edificio</b></span>
+                    <input type="text" class="form-control" id="txtEdificioUrb" placeholder="altura del edificio"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>hm(m):</b> altura de la antena movil</b></span>
+                    <input type="text" class="form-control" id="txtMovilUrb" placeholder="altura antena"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>O (grados):</b> angulo de inclinacion respecto a
+                      la calle (0 - 90)</b></span>
+                    <input type="text" class="form-control" id="txtGradosUrb" placeholder="angulo" aria-label="Username"
+                      aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>h (te):</b> Altura de la estacion base
+                      </b></span>
+                    <input type="text" class="form-control" id="txtAlturaBaseUrb" placeholder="Altura estacion base"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>b: (m)</b> Distancia entre los
+                      edificios</b></span>
+                    <input type="text" class="form-control" id="txtDistanciaEdifUrb" placeholder="Distancia edificios"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="row justify-content-center mb-3">
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularUrb">
+                      <div class="card card-models mb-3">
+                        <h5 class="card-title">CALCULAR</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarUrb">
+                      <div class="card card-models mb-3">
+                        <h5 class="card-title"><b>BORRAR DATOS</h5>
+                      </div>
+                    </a>
+                    <div class="centrar">
+                      <label>Las perdidas por trayecto <b>Lp</b> son: </label>
+                      <input class="form-control" type="text" id="txtResultadoNLOSUrb" readonly>
+                      <label>Lb</label>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="d-none row justify-content-center" id="divCost">
+            <b>
+              <p class="mb-3">
+                1. Seleccione el tipo de ciudad:
+              </p>
+            </b>
+            <div class="form-check form-switch" id="checkMediana">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1"
+                onchange="MostrarDiv()">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Pequeña o mediana</label>
+            </div>
+            <div class="form-check form-switch" id="checkGrande">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2"
+                onchange="MostrarDiv2()">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Grande</label>
+            </div>
+
+            <div class="mb-3" id="divMediano">
+              <div class="text-center mb-3">
+                <img src="src/Img/CiudadMediana.PNG" alt="" height="100" />
+              </div>
+              <b>
+                <p class="mb-3">
+                  2. Seleccione el tipo de zona:
+                </p>
+              </b>
+
+              <div class="form-check form-switch" id="checkSuburbanaMed">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1"
+                  onchange="MostrarDiv()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Suburbano</label>
+              </div>
+              <div class="form-check form-switch" id="checkAbietaMed">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2"
+                  onchange="MostrarDiv2()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Abierta</label>
+              </div>
+
+              <div class="mb-3" id="divSubMediano">
+                <div class="text-center mb-3">
+                  <img src="src/Img/SubMediano.PNG" alt="" height="100" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    3. Ingrese los datos requeridos:
+                  </p>
+                </b>
+                <p class="mb-3">
+                  Formula para el calculo de las perdidas por trayecto segun el modelo:
+                </p>
+                <div class="text-center mb-3">
+                  <img src="src/Img/PerdidasTrayecto.PNG" alt="" height="100" />
                 </div>
               </div>
             </div>
-
-            <div class="d-none" id="divSemiEmpir">
-              <p class="col-12 mt-2 mb-2 text-justify">
-                Estos se basan en teorias fisicas y mecanismos de propagacion de las ondas electromagneticas. Incorporan
-                algunas caracteristicas del entorno (por lo que requieren datos de morfologia del terreno) y se
-                complementan con medidas para el ajuste de sus parametros.
-              </p>
-              <b>
-                <p>
-                  Se destacan los modelos:
-                </p>
-              </b>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action text-center">Egli</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Walfish</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Okumura</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Longley-Rice</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Ikegami</a>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divDeterm">
-              <p class="col-12 mt-2 mb-2 text-justify mb-2">
-                Estos se basan en la representacion matematica de las leyes de propagacion de ondas electromagneticas,
-                normalmente toman como referencia las leyes de Maxwell con el fin de predecir intensidad de la señal
-                recibida.
-              </p>
-              <audio controls autoplay class="mb-2">
-                <source src="src/Audio/Deterministas.mpeg" type="audio/mpeg" />
-              </audio>
-              <b>
-                <p>Aqui se destacan los modelos:</p>
-              </b>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action text-center">Modelo Flat edge</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Walfish - Bertoni</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">COST 231 231-Walfish-Ikegami</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Sakagami - Kubai Model</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">MBX para macro celulas</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Ikegami Model</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Modelo de Friss</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Modelo de dos rayos</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Difraccion de objetos</a>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divEstadis">
-              <p class="col-12 mt-2 mb-2 text-justify mb-2">
-                Es la representacion del comportamiento de las variables aleatorias en los que existe una secuencia
-                cambiante de eventos que se analizan probabilisticamente durante un intervalo de tiempo.
-              </p>
-              <b>
-                <p>¿De que depende su presicion?</p>
-              </b>
-              <audio controls autoplay class="mb-2">
-                <source src="src/Audio/Estadisticos.mpeg" type="audio/mpeg" />
-              </audio>
-              <b>
-                <p>Aqui se destacan los modelos:</p>
-              </b>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action text-center">Estadistica inferencial</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">Estadistica descriptiva</a>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divIndoor">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                La propagacion en interiores no esta influenciada por el perfil del terreno como la propagacion en
-                ambientes abiertos, pero puede ser afectada por laestructura del edificio, especialmente si hay varios
-                tipos de materiales de construccion en el edificio. La señal transmitida alcanza al receptor por mas de
-                un atrayectoria o ruta, a traves de reflexion, refreccion y difraccion de las ondas de radio a causa de
-                objetos como: paredes, ventanas y puertas dentro del edificio.
-              </p>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio1.Indoor.mp3" type="audio/mp3" />
-              </audio>
-              <b>
-                <p>Caracteristicas:</p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio2.CaracteristicasInndoor.mp3" type="audio/mp3" />
-              </audio>
-              <div class="list-group list-group-horizontal row">
-                <a href="#" class="list-group-item col-6 text-center">Modelo teorico basado en ondas
-                  electromagneticas</a>
-                <a href="#" class="list-group-item col-6 text-center">Keenan - Montiev model</a>
-                <a href="#" class="list-group-item col-6 text-center">Modelo de transmision en espacio libre</a>
-                <a href="#" class="list-group-item col-6 text-center">Multi - Wall Model</a>
-                <a href="#" class="list-group-item col-6 text-center">Modelo de dos rayos</a>
-                <a href="#" class="list-group-item col-6 text-center">Montiev - Simplificado</a>
-                <a href="#" class="list-group-item col-6 text-center">Modelo Longley - Rice</a>
-                <a href="#" class="list-group-item col-6 text-center">Modelo de una pendiente</a>
-                <a href="#" class="list-group-item col-6 text-center">Log - Normal Shadowing Path Loss Model</a>
-                <a href="#" class="list-group-item col-6 text-center">Ericsson multiples</a>
-                <a href="#" class="list-group-item col-6 text-center">Log - Distance</a>
-                <a href="#" class="list-group-item col-6 text-center">Factor de atenuacion</a>
-                <a href="#" class="list-group-item col-6 text-center">Modelo simplificado por el numero de suelos y
-                  muros</a>
-                <a href="#" class="list-group-item col-6 text-center">Modelos FDTD</a>
-                <a href="#" class="list-group-item col-6 text-center">Dual Sippe - Model</a>
-                <a href="#" class="list-group-item col-6 text-center">Modelo de Perdida de Trayecto basado en COST -
-                  231</a>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divOutdoor">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Los modelos en exteriores de acuerdo al tamaño de la zona de cobertura se pueden fividir en modelos de
-                propagacion e zonas grandes y zonas pequeñas.
-              </p>
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Existen mas modelos de propagacion para sistemas inalambricos Outdoor debido a que la comunicacion
-                inalambrica en exteriores se vienen utilizando desde hace mucho mas tiempo: radio, television entre
-                otros.
-              </p>
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Una caracteristica es que estos modelos no tienen en cuenta las cualidades particulares de la
-                propagacion en Indoor (interiores).
-              </p>
-              <b>
-                <p>Aqui se destacan los modelos:</p>
-              </b>
-              <div class="list-group list-group-horizontal row">
-                <a href="#" class="list-group-item col-4 text-center">Modelos teoricos de propagacon de ondas
-                  elecromagneicas</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo Ikegami</a>
-                <a href="#" class="list-group-item col-4 text-center">COST 207 GSM</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo de FRIIS PROPAGACION EN EL ESPACIO
-                  LIBRE</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo Walfish - Ikegami</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo de Xia</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo de dos rayos</a>
-                <a href="#" class="list-group-item col-4 text-center">The COST - 231 o COST Hata</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo de Young</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo Longley-Rice</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo The COST-231-Walfisch-Ikegami</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo de Lee</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo de Durkin</a>
-                <a href="#" class="list-group-item col-4 text-center">ITU-R1411 Y ITU-1546-5</a>
-                <a href="#" class="list-group-item col-4 text-center">Sakagami Kubai</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo Okumura-Hata</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo SIU</a>
-                <a href="#" class="list-group-item col-4 text-center">Ibrahim-Parson</a>
-                <a href="#" class="list-group-item col-4 text-center">Modelo Walfish-Berton</a>
-                <a href="#" class="list-group-item col-4 text-center">The ITU-Advanced Channel Model</a>
-                <a href="#" class="list-group-item col-4 text-center">Xia-Bertoni, Modelo MOPEM ECC-33</a>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divDosRayos">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                El siguiente video brinda el concepto y formulas del modelo de dos rayos con Linea de vista (LOS):
-              </p>
-              <div class="col-12 text-center mt-2 mb-2">
-                <video src="src/video/Video.ModeloDosRayos.LOS.Unidad1.mp4" poster="Video" class="video" controls
-                  id="videoDosRayos"></video>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divFriis">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                El siguiente video brinda el concepto y formulas del modelo de Friis con Linea de vista (LOS):
-              </p>
-              <div class="col-12 text-center mt-2 mb-2">
-                <video src="src/video/Video.ModeloFriis.LOS.Unidad1.mp4" poster="Video" class="video" controls
-                  id="videoFriis"></video>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divWalfisch">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                El siguiente video brinda el concepto y formulas del modelo de Walfisch Ikegami con Linea de vista (LOS)
-                y son linea de Vista (NLOS):
-              </p>
-              <div class="col-12 text-center mt-2 mb-2">
-                <video src="src/video/Video.ModeloWalfischIkegami.LOSyNLOS.Unidad1.mp4" poster="Video" class="video"
-                  controls id="videoWalfisch"></video>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center text-justify" id="divPmr">
-              <p class="col-12 mt-2 mb-2">
-                Cuando hablamos de PMR (Radios Móviles Privadas), nos referimos
-                a redes de comunicaciones privadas que usan los móviles que
-                llevan esta tecnología y no se conectan con redes públicas. Son
-                redes para grupos cerrados de usuarios. Su uso primordial es
-                aquellas organizaciones que necesitan tener un control sobre
-                terminales desde un punto central.
-              </p>
-              <h2 class="col-12 mt-2 mb-2">Historia</h2>
-              <div class="text-center">
-                <img src="src/Img/PMR.Unidad2_GIF.gif" alt="" height="400" />
-              </div>
-              <h2 class="mb-1 mt-2 mb-3">Aplicaciones o usos:</h2>
-              <audio controls autoplay>
-                <source src="src/Audio/Audio.Aplicaciones_PMR.mp3" type="audio/mpeg" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center text-justify" id="divWifi">
-              <p class="col-12 mt-2 mb-2">
-                Cuando hablamos de WIFI, nos referimos a una de las tecnologias
-                de comunicación inalámbricas mediante ondas. La cual es muy
-                utilizada hoy en dia. WIFI pertenece al tipo de red WLAN (Redes
-                inalambrias de area local).
-              </p>
-              <img src="src/Img/Imagen1_WIFI.PNG" alt="" />
-              <h2 class="col-12 mt-2 mb-2">Historia</h2>
-              <img src="src/Img/WIFI.Unidad2_GIF.gif" alt="" />
-              <h2 class="mt-2">Ventajas</h2>
-              <audio controls autoplay>
-                <source src="src/Audio/Audio.Ventajas_WiFi.mp3" type="audio/mpeg" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center text-justify" id="divWiMax">
-              <p class="col-12 mt-2 mb-3 text-justify">
-                Cuando hablamos de WiMax (WorldWide InterOperability for
-                Microwave Acces), nos referimos a una tecnologia de radio de
-                ultima generación promovida por la IEEE y pincipalmentew
-                diseñada para proveer vía radio alta capacidad. WiMax pertence
-                al tipo de red WMAN(redes inalambricas de area metropolitana).
-              </p>
-              <div class="text-center mb-3">
-                <img src="src/Img/Imagen_WIMAX.PNG" alt="" height="125" />
-              </div>
-              <h2 class="mb-3 mt-2">Historia:</h2>
-              <div class="text-center mb-3">
-                <img src="src/Img/WIMAX.Unidad2_GIF.gif" alt="" height="400" />
-              </div>
-              <h2 class="mb-3 mt-2">Ventajas:</h2>
-              <audio controls autoplay>
-                <source src="src/Audio/Audio.Ventajas_WiMax.mp3" type="audio/mpeg" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center text-justify" id="divLds">
-              <p class="col-12 mt-2 mb-3 text-justify">
-                Cuando hablamos de LMDS (Los sistemas de distribución local
-                multipunto). Nos referimos a una la representación de una
-                tecnología de acceso inalámbrico de banda ancha. Se aplica para
-                el acceso a internet a alta velocidad, telefonía, transmisión de
-                datos entre otros. Requiere de una línea de vista entre el
-                transmisor y el receptor
-              </p>
-              <div class="col-12 text-center mt-2 mb-3">
-                <img src="src/Img/LMDS_GIF.gif" alt="" height="400" />
-              </div>
-              <h2 class="mb-3">Aplicaciones o Usos:</h2>
-              <audio controls autoplay>
-                <source src="src/Audio/Audio_Aplicaciones_LMDS.mp3" type="audio/mpeg" />
-              </audio>
-            </div>
-
-            <div class="d-none text-justify row justify-content-center" id="divTetra">
-              <p class="col-12 mt-2 mb-2">
-                Es un estándar definido por el Instituto Europeo de Estándares
-                de Telecomunicaciones (ETSI). Define un sistema móvil digital de
-                radio y nace con el objeto de unificar diversas alternativas de
-                interfaces de radio digitales para la comunicación entre los
-                profesionales de los servicios de emergencias y servicio
-                público. TETRA, es un sistema móvil radioeléctrico de calidad
-                elevada que ha sido desarrollado principalmente para usuarios
-                profesionales, tales como los servicios de emergencia y los
-                transportes públicos. Cumple especificaciones radioeléctricas de
-                servicios móviles que proporcionan una capacidad completa, que
-                abarca las comunicaciones con concentración de enlaces,
-                comunicaciones sin concentración de enlaces y comunicaciones
-                directas de móvil a móvil.
-              </p>
-              <h5 class="mt-2 mb-3">
-                Se emplean en muchas industrias, entre ellas las siguientes:
-              </h5>
-              <div class="list-group list-group-horizontal row mb-3">
-                <a href="#" class="list-group-item col-6 text-center">Segurirdad publica</a>
-                <a href="#" class="list-group-item col-6 text-center">Petroleo</a>
-                <a href="#" class="list-group-item col-6 text-center">Gas</a>
-                <a href="#" class="list-group-item col-6 text-center">Transporte</a>
-                <a href="#" class="list-group-item col-6 text-center">Ambulancias</a>
-                <a href="#" class="list-group-item col-6 text-center">Bomberos</a>
-                <a href="#" class="list-group-item col-6 text-center">Policia</a>
-                <a href="#" class="list-group-item col-6 text-center">logistica</a>
-              </div>
-              <div class="col-12 mt-1 text-center mb-3">
-                <img src="src/Img/TETRA.Unidad2_GIF.gif" alt="" height="400" />
-              </div>
-              <h5 class="mt-2 mb-3">Ventajas:</h5>
-              <audio controls autoplay="mb-3">
-                <source src="src/Audio/Audio.ventajas_SistemasTETRA.mp3" type="audio/mpeg" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divDectec">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                DECT (Digital Enbaced Cordless Telecomunications), es un sistema de radio que se utiliza con especial
-                frecuencia en los telefonos fijos. El nombre de este sistema se refiere a un estandar para la
-                comunicacion inalambrica de señales de voz y datos. Con la introduccion de estos sistemas se adquiere
-                gran ventaja.
-              </p>
-              <b>
-                <p>
-                  El siguiente video brinda informacion del funcionamiento del sistema DECT:
-                </p>
-              </b>
-              <div class="col-12 text-center mt-2 mb-2">
-                <video src="src/video/Video.Funcionamiento.DECT.Unidad1.mp4" poster="Video" class="video" controls
-                  id="videoDECT"></video>
-              </div>
-              <b>
-                <p>
-                  Aplicaciones o usos:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.VentajasDect.Unidad2.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divRadioMensaje">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                La radio mensajeria es un servicio de telecomunicaciones, que permite recibir mensajes orales o escritos
-                en pequeños terminales portatiles de recepcion de radio (generalmente llamados mensafonos), que son
-                suministrados a los abonados.
-              </p>
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Los emisores deben comunicar telefonicamente el mensaje indicando el codigo de identificacion de abonado
-                al que va destinado, a un centro de recogida de mensajes, donde se realiza la difusion via radio de los
-                mismos.
-              </p>
-              <b>
-                <p>
-                  La evolucion de la radio mensajeria en el siguiente video:
-                </p>
-              </b>
-              <div class="col-12 text-center mt-2 mb-2">
-                <video src="src/video/Video.RadioMensajeria.Evolucion.Unidad2.mp4" poster="Video" class="video" controls
-                  id="videoRadioMensa"></video>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divRTGC">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Son sistemas de radiotelefonia que ofrecen servicio a un grupo cerrado de usuarios, sin la nesecidad o
-                con la posibilidad de su conexion a la red publica de telefonia.
-              </p>
-              <b>
-                <p>
-                  Modalidades para este tipo de red:
-                </p>
-              </b>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action text-center"><b>Red privada</b> de frecuencia
-                  fija, que solo comunicarse entre los de un mismo grupo</a>
-                <a href="#" class="list-group-item list-group-item-action text-center"><b>Red compartida</b> entre
-                  varios
-                  grupos, mediante un sistema de proteccion dinamica de canales, denominado sitema de acceso multiple o
-                  trunking</a>
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divAMPS">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Es un sitema de telefonia movil de primera generación (1G), desarrollado por los laboratorios Bell e
-                implementado por primera vez en 1982 en Estados Unidos.
-              </p>
-              <b>
-                <p>
-                  ¿ Que es la primera generacion (1G)?
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.QueEs1G.AMPS.SistemasTrunking.Unidad2.mp3" type="audio/mp3" />
-              </audio>
-              <b>
-                <p>
-                  Para saber como funciona este sistema mira el video:
-                </p>
-              </b>
-              <video src="src/video/Video.Funcionamiento.AMPS.Unidad2.mp4" poster="Video" class="video" controls
-                id="videoAMPS"></video>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divCDMA">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Es un protocolo de acceso multiple para los sistemasde comunicacion celular movil, en otras palabras, es
-                una tecnica que permite que varios usuarios puedan acceder a un mismo medio de comunicaciones.
-              </p>
-              <b>
-                <p>
-                  CARACTERISTICAS:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Caracteristicas.CDMA.Unidad3-Gif.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p>
-                  Ventajas:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.Ventajas.CDMA.Unidad3.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divTDMA">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Representa el acceso multiple por division de tiempo, es una tegnologia que permite multiples
-                conversaciones compartiendo el mismo canal de radio. Es un tipo de modulacion digital. Los proveedores
-                de telefonia movil pueden usarla para transmitir datos.
-              </p>
-              <b>
-                <p>
-                  CARACTERISTICAS:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Caracteristicas.TDMA.Unidad3-Gif.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p>
-                  Ventajas:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.Ventajas.TDMA.Unidad3.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divCDPD">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Tegnologia inalambrica que facilita la transmision de datos a traves de partes de una red telefonica que
-                no sean utilizadas. Es una completa red movil de datos (arquitectura de red) que incluye la definicion
-                de radio, los mecanismos para compartir canales, los mecanismos para asegurar la movilidad en area local
-                y amplia, los protocolos y procedimientos de interpretacion entre sistemas entre otros.
-              </p>
-              <b>
-                <p>
-                  Objetivos:
-                </p>
-              </b>
-              <div class="list-group mb-3">
-                <a href="#" class="list-group-item list-group-item-action text-center"><b>1.</b> Conseguir un estandar
-                  unico
-                  que pueda inter operar con multiples proveedores de servicios</a>
-                <a href="#" class="list-group-item list-group-item-action text-center"><b>2.</b> Esta diseñado para
-                  soportar IP
-                  y los protocolos de redes sin conexion de la ISO</a>
-              </div>
-              <p class="mb-3">
-                El sistema esta estructurado siguiendo los 7 niveles del modelos OSI:
-              </p>
-              <div class="text-center mb-3">
-                <img src="src/Img/Estructura.CDPD.Unidad3.gif" alt="" height="400" />
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divGSM">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Fue el intento europeo de unificar los distintos sistemas moviles digitales y sustituir a los analogos.
-                Diseñado con la posibilidad de que varios operadores pudieran compartir el espectro. la red GSM, de
-                segunda generacion (2G), permite conexiones tanto de datos como de voz.
-              </p>
-              <p>
-                GSM tiene cuatro versiones principales basadas en la banda:
-              </p>
-              <div class="list-group mb-3">
-                <a href="#" class="list-group-item list-group-item-action text-center">GSM - 850</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">GSM - 900</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">GSM - 1800</a>
-                <a href="#" class="list-group-item list-group-item-action text-center">GSM - 1900</a>
-              </div>
-              <b>
-                <p>
-                  HISTORIA:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/LineaTiempo.Historia.GSM.Unidad3.gif" alt="" height="400" />
-              </div>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.Ventajas.GSM.Unidad3.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divGPRS">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Es un sistema de comunicaciones movil que se creo en la decada de los 80. Fue bautizada como la
-                generacion 2.5, trajo
-                varios cambios y aportes innovadores a las comunicaciones moviles es una extension mejorada del GSM.
-              </p>
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                GPRS es una tecnica de conmutacion de paquetes que emplea una codificacion reducida del canal, tiene la
-                capacidad para suministrar datos directamente al terminal de usuario, incluso si este se encuentra
-                apagado o fuera de cobertura.
-              </p>
-              <b>
-                <p>
-                  CARACTERISTICAS:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Caracteristicas.GRPS.Unidad3-Gif.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p>
-                  Ventajas:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.Ventajas.GRPS.Unidad3.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divPCS">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Es un sistema que proporciona accesibilidad a un amplio rango de servicio de voz, mensajes y
-                localizacion, a usuarios en casa, trabajo, en movimiento y en regiones remotas ya sean estas nacionales
-                o internacionales.
-              </p>
-              <b>
-                <p>
-                  Estructura:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Estructura.PCS.Unidad3-Gif.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p>
-                  Ventajas:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.Ventajas.PCS.Unidad3.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="div4G">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                4G hace referencia a la cuarta generacion de rede moviles y LTE es sinonimo de Evolucion a Largo Plazo.
-                Es un estandar para la comunicacion inalambrica de datos a alta velocidad. Expande el tamaño de la red y
-                la velocidad mediante el uso de una estructura de red rediseñada produciendo mayor velocidad y potencia
-                en la comunicacion, es la red mas popular.
-              </p>
-              <b>
-                <p>
-                  Historia:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Historia.4G-LTE.Unidad3-Gif.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p>
-                  Ventajas:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.ventajas.4G-LTE.Unidad3.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="div5G">
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Cuando hablamos de 5G nos referimos a la quinta generacion de tecnologia celular inalambrica, que ofrece
-                mayores velocidades de carga y descarga, conexiones mas consistentes y capacidad mejorada que las redes
-                anteriores. Permite mejrar y multiplicar la capacidad de los canales de informacion de este modo
-                posibilita que los objetos cotidianos aomo automoviles, implementos del hogar entre otros se puedan
-                conectar en tiempo real a internet o red, todo esto debido a la aparicion de estas nuevas tegnologias
-                como: IoT (Internet de las Cosas) y la automatizacion.
-              </p>
-              <p class="col-12 mt-2 mb-2 text-justify mb-3">
-                Cuando hablamos de IoT nos referios a una revoluvion tecnologica qu posibilita al mundo de las llamadas
-                "cosas inteligentes", estos objetos se conectan a internet, de este modo las redes 5G junto con estas
-                tegnologias como lo es IoT, logren grandes ventajas para el mundo tecnologico.
-              </p>
-              <b>
-                <p>
-                  Ventajas:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Ventajas.5G.e.IOT.Unidad3.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p>
-                  Ventajas:
-                </p>
-              </b>
-              <video src="src/video/Video.Funcionamiento5G.Unidad3.mp4" poster="Video" class="video" controls
-                id="video5G"></video>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divGEO">
-              <p class="text-justify mb-3">
-                Los satelites de orbite geoestacionaria (GEO) siguen una orbita alrededor de la tierra sobre el ecuador
-                en una direccion y velocidad similares a la de la rotacion de la tierra. Esto permite al satelite
-                permanecer concentrado en un area de la superficie terrestre de la forma continua.
-              </p>
-              <b>
-                <p>
-                  Usos de la orbita GEO:
-                </p>
-              </b>
-              <div class="list-group mb-3">
-                <a href="#" class="list-group-item list-group-item-action text-justify">Periodo orbital de: 24 horas, en
-                  ella se ubican todos los satelites que proveen: internet, television, telefonia y otros datos a
-                  diferentes regiones del planeta y a la deteccion y difusion de datos meteorologicos.</a>
-                <a href="#" class="list-group-item list-group-item-action">Es utilizada para colocar los satelites que
-                  deben absolutamente cubrir una region determinada o ser apuntado por antenas fijas en el suelo.</a>
-              </div>
-              <b>
-                <p class="mb-3">
-                  CARACTERISTICAS:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Caracteristicas.GEO.Unidad4-Gif.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p class="mb-3">
-                  Ventajas:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.Ventajas.GEO.Unidad4.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divMEO">
-              <p class="text-justify mb-3">
-                Los satelites MEO orbitan a una altura mayor que los LEO. Este tipo de satelites, son caracterizados por
-                que la forma de su orbita es usualmente la de una orbita Circular intermedia (ICO). Un sistema globalde
-                comunicaciones que este trabajando sobre este tipo de orbita no nesecita muchos satelites para poder
-                cubrir todo el territorio del planeta en cuanto a señales de comunicacion, a diferencia de la
-                comunicacion por medio de satelites tipo LEO.
-              </p>
-              <b>
-                <p>
-                  Usos de la orbita MEO:
-                </p>
-              </b>
-              <div class="list-group mb-3">
-                <a href="#" class="list-group-item list-group-item-action text-justify">Usada por satelites de
-                  observacion, defensa y posicionamiento.</a>
-                <a href="#" class="list-group-item list-group-item-action">El uso mas comun de estas orbitas en los
-                  sistemas satelitales de navegacion global, como el Sistema de Posicionamiento Global (GPS) de los
-                  Estados Unidos de America, o el Sistema de Navegacion Global porSatelite de la federacion Rusa
-                  (GLONASS).</a>
-              </div>
-              <b>
-                <p class="mb-3">
-                  CARACTERISTICAS:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Caracterisiticas.MEO.Unidad4-Gif.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p class="mb-3">
-                  Ventajas:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Ventajas.MEO.Unidad4.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divLEO">
-              <p class="text-justify mb-3">
-                Estos staelites son de tipo no geoestacionarios, de orbita baja y desde sus primeros lanzamientos, los
-                cuales, a principios de los años 80, son un medio muy importante debido a su gran cobertura mundial y a
-                que que presenta una opcion muy atractiva en el nivel cientifico.
-              </p>
-              <b>
-                <p>
-                  Usos de la orbita LEO:
-                </p>
-              </b>
-              <div class="list-group mb-3">
-                <a href="#" class="list-group-item list-group-item-action text-justify">Se usan para proporcionar datos
-                  geologicos sobre movimiento de placas terrestres y para la industria de telefonia satelital.</a>
-              </div>
-              <b>
-                <p class="mb-3">
-                  CARACTERISTICAS:
-                </p>
-              </b>
-              <div class="text-center mb-3">
-                <img src="src/Img/Caracteristicas.LEO.Unidad4-Gif.gif" alt="" height="400" />
-              </div>
-              <b>
-                <p class="mb-3">
-                  Ventajas:
-                </p>
-              </b>
-              <audio controls autoplay class="mb-3">
-                <source src="src/Audio/Audio.Ventajas.LEO.Unidad4.mp3" type="audio/mp3" />
-              </audio>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divTERRENA">
-              <p class="text-justify mb-3">
-                Los modelos de subida y bajada requieren de una estacion terrena, ya sea para trasmitir o recibir señal.
-                Esta compuesta por segmentos:
-              </p>
-              <div class="list-group mb-3">
-                <a href="#" class="list-group-item list-group-item-action text-justify">El primer segmento es un
-                  modulador de FI para transmision y un demodulador para la recepcion.</a>
-                <a href="#" class="list-group-item list-group-item-action text-justify">El segundo segmento es un
-                  convertidor descendente de RF a IF.</a>
-                <a href="#" class="list-group-item list-group-item-action text-justify">El tercer segmento es un
-                  amplificador de alta potencia (HPA) para la transmision y un amplificador de bajo ruido (LNA) para la
-                  recepcion.</a>
-                <a href="#" class="list-group-item list-group-item-action text-justify">El cuarto segmento son las
-                  antenas que conforman a la estacion terrena.</a>
-              </div>
-              <p class="mb-3">
-                Segmentacion en la estacion terrena en forma de diagrama:
-              </p>
-              <div class="text-center mb-3">
-                <img src="src/Img/Imagen.sistemas.lineaVista.PNG" alt="" height="400" />
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divSUBIDA">
-              <p class="text-justify mb-3">
-                Consiste en modular una señal de FI en banda base a una señal de frecuencia intermedia modulada en FM,
-                PSK y QAM, seguida por el convertidor elevador, el cual esta constituido por un mezcladro y un filtro
-                pasa bandas, que convierte la señal IF a RF. Como ultima etapa la señal pasa por un amplificador de
-                potencia (HPA) que da la potencia nesesaria para que la señal llegue hasta el satelite.
-              </p>
-              <p class="text-justify mb-3">
-                Modelo basico de un enlace de subida en el diagrama:
-              </p>
-              <div class="text-center mb-3">
-                <img src="src/Img/Enlace.Subida.PNG" alt="" height="400" />
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divBAJADA">
-              <p class="text-justify mb-3">
-                El receptor de la estacion terrena contiene un filtro (BFP), el cual limita la potencia de entrada que
-                recibe el LNA, cuando ya es amplificada la señal en bajo ruido la señal desciende de RF a frecuencias IF
-                por medio de un convertidor descendiente, luego la señal se demodula y se envia en banda base.
-              </p>
-              <p class="text-justify mb-3">
-                Modelo basico de un enlace de bajada en el diagrama:
-              </p>
-              <div class="text-center mb-3">
-                <img src="src/Img/Enlace.Bajada.PNG" alt="" height="400" />
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divCRUZADO">
-              <p class="text-justify mb-3">
-                Para realizar la comunicacion satelital en ocasiones, no solo se requiere de un unico satelite, en pocas
-                palabras lo que sucede es que cuando no hay linea de vista entre el satelite y el receptor entonces se
-                hace nesesario utilizar otro satelite que, si tenga linea de vista con estacion receptora, pudiendose
-                realizar transmisiones a mayor distancia.
-              </p>
-              <p class="text-justify mb-3">
-                Modelo basico de un enlace cruzado en el diagrama:
-              </p>
-              <div class="text-center mb-3">
-                <img src="src/Img/Enlace.Cruzado.PNG" alt="" height="400" />
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divTRANSPONDEDOR">
-              <p class="text-justify mb-3">
-                Esta constituido por un filtro pasa banda (BFP), este se encarga de limpiar el ruido que la señal
-                adquiere en la trayectoria de subida, tambien seleccione el canal ya que cada canal satelital requiere
-                de un transpondedor por separado. Luego le sigue un amplificador de bajo ruido (LNA) y el desplazador de
-                frecuencia que convierte la frecuecia de banda alta de subida a banda de salida, despues el amplificador
-                de baja potencia que amplifica la señal RF para el enlace de bajada, las señales se filtran y regresan a
-                la estacion terrena.
-              </p>
-              <p class="text-justify mb-3">
-                Etapas basicas de un transpondedor en el diagrama:
-              </p>
-              <div class="text-center mb-3">
-                <img src="src/Img/Diagrama.Transpondedor.PNG" alt="" height="400" />
-              </div>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divPARAMETROS">
-              <p class="text-justify mb-3">
-                En el siguiente video encontraras los parametros del Sistema Satelital:
-              </p>
-              <video src="src/video/Video.ParametrosEnlaceSatelital.Unidad4.mp4" poster="Video" class="video" controls
-                id="videoPARAMETROS"></video>
-            </div>
-
-            <div class="d-none row justify-content-center" id="divECUACIONES">
-              <p class="text-justify mb-3">
-                En el siguiente video encontraras las Ecuaciones del Sistema Satelital:
-              </p>
-              <video src="src/video/Video.EcuacionesEnlaceSatelital.unidad4.mp4" poster="Video" class="video" controls
-                id="videoECUACIONES"></video>
-            </div>
-
           </div>
-        </div>
 
-        <script src="https://kit.fontawesome.com/4a70a8dc5b.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.3.js"
-          integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-          crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-          crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-          crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-          crossorigin="anonymous"></script>
-        <script src="src/js/index.js"></script>
+        </div>
+      </div>
+
+      <script src="https://kit.fontawesome.com/4a70a8dc5b.js" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+      <script src="src/js/index.js"></script>
 </body>
 
 </html>

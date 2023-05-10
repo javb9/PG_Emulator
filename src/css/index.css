@@ -189,3 +189,9 @@ h5 {
   .text-justify {
     text-align: justify;
   }
+  .centrar{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 15px;
+  }
