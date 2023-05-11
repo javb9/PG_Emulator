@@ -651,7 +651,7 @@
 
         </div>
 
-        <div id="divCalcular" class="col-12 d-none">
+        <div class="d-none col-12" id="divCalcular">
           <div>
             <h5 class="mb-3">
               CALCULAR
@@ -1883,19 +1883,19 @@
               </p>
             </b>
             <div class="form-check form-switch" id="checkMediana">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1"
-                onchange="MostrarDiv()">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault5"
+                onchange="MostrarDiv5()">
               <label class="form-check-label" for="flexSwitchCheckDefault">Pequeña o mediana</label>
             </div>
             <div class="form-check form-switch" id="checkGrande">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2"
-                onchange="MostrarDiv2()">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault6"
+                onchange="MostrarDiv6()">
               <label class="form-check-label" for="flexSwitchCheckDefault">Grande</label>
             </div>
 
-            <div class="mb-3" id="divMediano">
+            <div class="d-none" id="divMediano">
               <div class="text-center mb-3">
-                <img src="src/Img/CiudadMediana.PNG" alt="" height="100" />
+                <img src="src/Img/CiudadMediana.PNG" alt="" height="50" />
               </div>
               <b>
                 <p class="mb-3">
@@ -1904,19 +1904,20 @@
               </b>
 
               <div class="form-check form-switch" id="checkSuburbanaMed">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1"
-                  onchange="MostrarDiv()">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault7"
+                  onchange="MostrarDiv7()">
                 <label class="form-check-label" for="flexSwitchCheckDefault">Suburbano</label>
               </div>
               <div class="form-check form-switch" id="checkAbietaMed">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2"
-                  onchange="MostrarDiv2()">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault8"
+                  onchange="MostrarDiv8()">
                 <label class="form-check-label" for="flexSwitchCheckDefault">Abierta</label>
               </div>
+            </div>
 
-              <div class="mb-3" id="divSubMediano">
+              <div class="d-none" id="divMedianoSub">
                 <div class="text-center mb-3">
-                  <img src="src/Img/SubMediano.PNG" alt="" height="100" />
+                  <img src="src/Img/MedianaSuburbana.PNG" alt="" height="40" />
                 </div>
                 <b>
                   <p class="mb-3">
@@ -1927,10 +1928,274 @@
                   Formula para el calculo de las perdidas por trayecto segun el modelo:
                 </p>
                 <div class="text-center mb-3">
-                  <img src="src/Img/PerdidasTrayecto.PNG" alt="" height="100" />
+                  <img src="src/Img/PerdidasTrayecto.PNG" alt="" height="300" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>f (MHz):</b> Frecuencia de operacion del sistema: (150 - 2000)</b></span>
+                  <input type="text" class="form-control" id="txtFrecuanciaMedSub" placeholder="Frecuencia de Operacion"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hb: (m)</b> Altura de la estacion base</b></span>
+                  <input type="text" class="form-control" id="txtAlturaBaseMedSub" placeholder="Altura estacion base"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hm: (m)</b>Altura de la antena movil</b></span>
+                  <input type="text" class="form-control" id="txtAlturaMovilMedSub" placeholder="Altura movil"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d: (Km)</b> Distancia entre el transmisor y el receptor</b></span>
+                  <input type="text" class="form-control" id="txtDistanciaTransmisorMedSub" placeholder="Distancia Transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>Cf:</b> Factor de correccion segun el ambiente</b></span>
+                  <input type="text" class="form-control" id="txtFactorCorreccionMedSub" placeholder="Factor de correccion"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularMedSub">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarMedSub">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>PLo</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoMed" readonly>
+                    <label>dB</label>
+                  </div>
+                  <div class="centrar">
+                    <label>Las perdidas por trayecto <b>PL(sub)</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoMedSub" readonly>
+                    <label>dB</label>
+                  </div>
                 </div>
               </div>
+            
+
+            <div class=" d-none" id="divMedAbierto">
+              <div class="text-center mb-3">
+                <img src="src/Img/ZonaAbierta.PNG" alt="" height="30" />
+              </div>
+                <b>
+                  <p class="mb-3">
+                    3. Ingrese los datos requeridos:
+                  </p>
+                </b>
+                <p class="mb-3">
+                  Formula para el calculo de las perdidas por trayecto segun el modelo:
+                </p>
+                <div class="text-center mb-3">
+                  <img src="src/Img/PerdidasTrayecto.PNG" alt="" height="300" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>f (MHz):</b> Frecuencia de operacion del sistema: (150 - 2000)</b></span>
+                  <input type="text" class="form-control" id="txtFrecuanciaMedAbi" placeholder="Frecuencia"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hb: (m)</b> Altura de la estacion base</b></span>
+                  <input type="text" class="form-control" id="txtAlturaBaseMedAbi" placeholder="Altura estacion base"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hm: (m)</b>Altura de la antena movil</b></span>
+                  <input type="text" class="form-control" id="txtAlturaMovilMedAbi" placeholder="Altura Movil"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d: (Km)</b> Distancia entre el transmisor y el receptor</b></span>
+                  <input type="text" class="form-control" id="txtDistanciaTransmisorMedAbi" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>Cf:</b> Factor de correccion segun el ambiente</b></span>
+                  <input type="text" class="form-control" id="txtFactorCorreccionMedAbi" placeholder="Factor de correccion"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularMedAbi">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarMedAbi">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>PLo</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoMediana" readonly>
+                    <label>dB</label>
+                  </div>
+                  <div class="centrar">
+                    <label>Las perdidas por trayecto <b>PL(abi)</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoMedAbi" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" d-none" id="divGrande">
+                <div class="text-center mb-3">
+                  <img src="src/Img/CiudadGrande.PNG" alt="" height="50" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    2. Seleccione el tipo de zona:
+                  </p>
+                </b>
+  
+                <div class="form-check form-switch" id="checkSuburbanaMed">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault9"
+                    onchange="MostrarDiv9()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Suburbano</label>
+                </div>
+                <div class="form-check form-switch" id="checkAbietaMed">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault10"
+                    onchange="MostrarDiv10()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Abierta</label>
+                </div>
+              </div>
+
+              <div class=" d-none" id="divGranSub">
+                <div class="text-center mb-3">
+                  <img src="src/Img/SubMediano.PNG" alt="" height="50" />
+                </div>
+                  <b>
+                    <p class="mb-3">
+                      3. Ingrese los datos requeridos:
+                    </p>
+                  </b>
+                  <p class="mb-3">
+                    Formula para el calculo de las perdidas por trayecto segun el modelo:
+                  </p>
+                  <div class="text-center mb-3">
+                    <img src="src/Img/PerdidasTrayecto.PNG" alt="" height="300" />
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>f (MHz):</b> Frecuencia de operacion del sistema: (150 - 2000)</b></span>
+                    <input type="text" class="form-control" id="txtFrecuanciaGranSub" placeholder="Frecuencia"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>hb: (m)</b> Altura de la estacion base</b></span>
+                    <input type="text" class="form-control" id="txtAlturaBaseGranSub" placeholder="Altura estacion Base"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>hm: (m)</b>Altura de la antena movil</b></span>
+                    <input type="text" class="form-control" id="txtAlturaMovilGranSub" placeholder="Altura Movil"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>d: (Km)</b> Distancia entre el transmisor y el receptor</b></span>
+                    <input type="text" class="form-control" id="txtDistanciaTransmisorGranSub" placeholder="Distancia Transmisor Receptor"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>Cf:</b> Factor de correccion segun el ambiente</b></span>
+                    <input type="text" class="form-control" id="txtFactorCorreccionGranSub" placeholder="Factor correccion"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="row justify-content-center mb-3">
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularGranSub">
+                      <div class="card card-models mb-3">
+                        <h5 class="card-title">CALCULAR</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarGranSub">
+                      <div class="card card-models mb-3">
+                        <h5 class="card-title"><b>BORRAR DATOS</h5>
+                      </div>
+                    </a>
+                    <div class="centrar mb-3">
+                      <label>Las perdidas por trayecto <b>PLo</b> son: </label>
+                      <input class="form-control" type="text" id="txtResultadoGrande" readonly>
+                      <label>dB</label>
+                    </div>
+                    <div class="centrar">
+                      <label>Las perdidas por trayecto <b>PL(sub)</b> son: </label>
+                      <input class="form-control" type="text" id="txtResultadoGraSub" readonly>
+                      <label>dB</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" d-none" id="divGranAbi">
+                  <div class="text-center mb-3">
+                    <img src="src/Img/ZonaAbierta.PNG" alt="" height="40" />
+                  </div>
+                    <b>
+                      <p class="mb-3">
+                        3. Ingrese los datos requeridos:
+                      </p>
+                    </b>
+                    <p class="mb-3">
+                      Formula para el calculo de las perdidas por trayecto segun el modelo:
+                    </p>
+                    <div class="text-center mb-3">
+                      <img src="src/Img/PerdidasTrayecto.PNG" alt="" height="300" />
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><b>f (MHz):</b> Frecuencia de operacion del sistema: (150 - 2000)</b></span>
+                      <input type="text" class="form-control" id="txtFrecuanciaGranAbi" placeholder="Frecuencia"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><b>hb: (m)</b> Altura de la estacion base</b></span>
+                      <input type="text" class="form-control" id="txtAlturaBaseGranAbi" placeholder="Altura Estacion Base"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><b>hm: (m)</b>Altura de la antena movil</b></span>
+                      <input type="text" class="form-control" id="txtAlturaMovilGranAbi" placeholder="Altura Movil"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><b>d: (Km)</b> Distancia entre el transmisor y el receptor</b></span>
+                      <input type="text" class="form-control" id="txtDistanciaTransmisorGranAbi" placeholder="Distancia Transmisor receptor"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><b>Cf:</b> Factor de correccion segun el ambiente</b></span>
+                      <input type="text" class="form-control" id="txtFactorCorreccionGranAbi" placeholder="Factor Correcion"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                      <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularGranAbi">
+                        <div class="card card-models mb-3">
+                          <h5 class="card-title">CALCULAR</h5>
+                        </div>
+                      </a>
+                      <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarGranAbi">
+                        <div class="card card-models mb-3">
+                          <h5 class="card-title"><b>BORRAR DATOS</h5>
+                        </div>
+                      </a>
+                      <div class="centrar mb-3">
+                        <label>Las perdidas por trayecto <b>PLo</b> son: </label>
+                        <input class="form-control" type="text" id="txtResultadoGra" readonly>
+                        <label>dB</label>
+                      </div>
+                      <div class="centrar">
+                        <label>Las perdidas por trayecto <b>PL(sub)</b> son: </label>
+                        <input class="form-control" type="text" id="txtResultadoGraAbi" readonly>
+                        <label>dB</label>
+                      </div>
+                    </div>
+                  </div>
+
             </div>
+
           </div>
 
         </div>

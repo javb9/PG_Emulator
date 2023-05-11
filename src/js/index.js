@@ -131,6 +131,24 @@ let flexSwitchCheckDefault3 = document.getElementById(
 let flexSwitchCheckDefault4 = document.getElementById(
   "flexSwitchCheckDefault4"
 );
+let flexSwitchCheckDefault5 = document.getElementById(
+  "flexSwitchCheckDefault5"
+);
+let flexSwitchCheckDefault6 = document.getElementById(
+  "flexSwitchCheckDefault6"
+);
+let flexSwitchCheckDefault7 = document.getElementById(
+  "flexSwitchCheckDefault7"
+);
+let flexSwitchCheckDefault8 = document.getElementById(
+  "flexSwitchCheckDefault8"
+);
+let flexSwitchCheckDefault9 = document.getElementById(
+  "flexSwitchCheckDefault9"
+);
+let flexSwitchCheckDefault10 = document.getElementById(
+  "flexSwitchCheckDefault10"
+);
 let txtFrecuencia = document.getElementById("txtFrecuencia");
 let txtDistancia = document.getElementById("txtDistancia");
 let txtResultadoLOS = document.getElementById("txtResultadoLOS");
@@ -151,8 +169,26 @@ let txtMovilUrb = document.getElementById("txtMovilUrb");
 let txtGradosUrb = document.getElementById("txtGradosUrb");
 let txtAlturaBaseUrb = document.getElementById("txtAlturaBaseUrb");
 let txtDistanciaEdifUrb = document.getElementById("txtDistanciaEdifUrb");
-
-
+let txtFrecuanciaMedSub = document.getElementById("txtFrecuanciaMedSub");
+let txtAlturaBaseMedSub = document.getElementById("txtAlturaBaseMedSub");
+let txtAlturaMovilMedSub = document.getElementById("txtAlturaMovilMedSub");
+let txtDistanciaTransmisorMedSub = document.getElementById("txtDistanciaTransmisorMedSub");
+let txtFactorCorreccionMedSub = document.getElementById("txtFactorCorreccionMedSub");
+let txtFrecuanciaMedAbi = document.getElementById("txtFrecuanciaMedAbi");
+let txtAlturaBaseMedAbi = document.getElementById("txtAlturaBaseMedAbi");
+let txtAlturaMovilMedAbi = document.getElementById("txtAlturaMovilMedAbi");
+let txtDistanciaTransmisorMedAbi = document.getElementById("txtDistanciaTransmisorMedAbi");
+let txtFactorCorreccionMedAbi = document.getElementById("txtFactorCorreccionMedAbi");
+let txtFrecuanciaGranSub = document.getElementById("txtFrecuanciaGranSub");
+let txtAlturaBaseGranSub = document.getElementById("txtAlturaBaseGranSub");
+let txtAlturaMovilGranSub = document.getElementById("txtAlturaMovilGranSub");
+let txtDistanciaTransmisorGranSub = document.getElementById("txtDistanciaTransmisorGranSub");
+let txtFactorCorreccionGranSub = document.getElementById("txtFactorCorreccionGranSub");
+let txtFrecuanciaGranAbi = document.getElementById("txtFrecuanciaGranAbi");
+let txtAlturaBaseGranAbi = document.getElementById("txtAlturaBaseGranAbi");
+let txtAlturaMovilGranAbi = document.getElementById("txtAlturaMovilGranAbi");
+let txtDistanciaTransmisorGranAbi = document.getElementById("txtDistanciaTransmisorGranAbi");
+let txtFactorCorreccionGranAbi = document.getElementById("txtFactorCorreccionGranAbi");
 
 openSlide.addEventListener("click", function () {
   sidebar.classList.add("active");
@@ -526,6 +562,112 @@ btnBorrarUrb.addEventListener("click", function () {
   var disanciaEdificios = Math.log10(parseFloat((txtDistanciaEdifUrb.value = 0)));
 });
 
+btnCalcularMedSub.addEventListener("click", function () {
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaMedSub.value));
+  var AlturaMovil = parseFloat(txtAlturaMovilMedSub.value);
+  var FactorAhm = (1.1 * logFrecuencia - 0.7) * AlturaMovil - (1.56 * logFrecuencia - 0.8);
+  var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseMedSub.value));
+  var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorMedSub.value));
+  var FactorCf = parseFloat(txtFactorCorreccionMedSub.value);
+  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 -6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedSub.value)/28);
+  var PerdidasMedUrb = PerdidasPlo - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
+      
+  txtResultadoMed.value = PerdidasPlo;
+  txtResultadoMedSub.value = PerdidasMedUrb;
+
+});
+
+btnBorrarMedSub.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuanciaMedSub.value = 0)));
+  var base = Math.log10(parseFloat((txtAlturaBaseMedSub.value = 0)));
+  var movil = Math.log10(parseFloat((txtAlturaMovilMedSub.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaTransmisorMedSub.value = 0)));
+  var factor = Math.log10(parseFloat((txtFactorCorreccionMedSub.value = 0)));
+  var PerdidasPlo = Math.log10(parseFloat((txtResultadoMed.value = 0)));
+  var Perdidas = Math.log10(parseFloat((txtResultadoMedSub.value = 0)));
+});
+
+btnCalcularMedAbi.addEventListener("click", function () {
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaMedAbi.value));
+  var AlturaMovil = parseFloat(txtAlturaMovilMedAbi.value);
+  var FactorAhm = (1.1 * logFrecuencia - 0.7) * AlturaMovil - (1.56 * logFrecuencia - 0.8);
+  var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseMedAbi.value));
+  var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorMedAbi.value));
+  var FactorCf = parseFloat(txtFactorCorreccionMedAbi.value);
+  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 -6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedAbi.value)/28);
+  var PerdidasMedUrb = PerdidasPlo - 4.78 * Math.pow(logFrecuenciaDiv, 2) + 18.33 * logFrecuencia - 40.94;
+      
+  txtResultadoMediana.value = PerdidasPlo;
+  txtResultadoMedAbi.value = PerdidasMedUrb;
+
+});
+
+btnBorrarMedAbi.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuanciaMedAbi.value = 0)));
+  var base = Math.log10(parseFloat((txtAlturaBaseMedAbi.value = 0)));
+  var movil = Math.log10(parseFloat((txtAlturaMovilMedAbi.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaTransmisorMedAbi.value = 0)));
+  var factor = Math.log10(parseFloat((txtFactorCorreccionMedAbi.value = 0)));
+  var PerdidasPlo = Math.log10(parseFloat((txtResultadoMediana.value = 0)));
+  var Perdidas = Math.log10(parseFloat((txtResultadoMedAbi.value = 0)));
+});
+
+btnCalcularGranSub.addEventListener("click", function () {
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaGranSub.value));
+  var AlturaMovil = parseFloat(txtAlturaMovilGranSub.value);
+  var logAhm = Math.log10(11.75 * parseFloat(txtFrecuanciaGranSub.value));
+  var FactorAhm = 3.2 * Math.pow(logAhm, 2) - 4.97;
+  var LogAluraBase = Math.log10(parseFloat(txtAlturaMovilGranSub.value));
+  var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorGranSub.value));
+  var FactorCf = parseFloat(txtFactorCorreccionGranSub.value);
+  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 -6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranSub.value)/28);
+  var PerdidasMedUrb = PerdidasPlo - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
+      
+  txtResultadoGrande.value = PerdidasPlo;
+  txtResultadoGraSub.value = PerdidasMedUrb;
+
+});
+
+btnBorrarGranSub.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuanciaGranSub.value = 0)));
+  var base = Math.log10(parseFloat((txtAlturaBaseGranSub.value = 0)));
+  var movil = Math.log10(parseFloat((txtAlturaMovilGranSub.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaTransmisorGranSub.value = 0)));
+  var factor = Math.log10(parseFloat((txtFactorCorreccionGranSub.value = 0)));
+  var PerdidasPlo = Math.log10(parseFloat((txtResultadoGrande.value = 0)));
+  var Perdidas = Math.log10(parseFloat((txtResultadoGraSub.value = 0)));
+});
+
+btnCalcularGranAbi.addEventListener("click", function () {
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaGranAbi.value));
+  var AlturaMovil = parseFloat(txtAlturaMovilGranAbi.value);
+  var logAhm = Math.log10(11.75 * parseFloat(txtFrecuanciaGranAbi.value));
+  var FactorAhm = 3.2 * Math.pow(logAhm, 2) - 4.97;
+  var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseGranAbi.value));
+  var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorGranAbi.value));
+  var FactorCf = parseFloat(txtFactorCorreccionGranAbi.value);
+  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 -6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranAbi.value)/28);
+  var PerdidasMedUrb = PerdidasPlo - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
+      
+  txtResultadoGra.value = PerdidasPlo;
+  txtResultadoGraAbi.value = PerdidasMedUrb;
+
+});
+
+btnBorrarGranAbi.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuanciaGranAbi.value = 0)));
+  var base = Math.log10(parseFloat((txtAlturaBaseGranAbi.value = 0)));
+  var movil = Math.log10(parseFloat((txtAlturaMovilGranAbi.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaTransmisorGranAbi.value = 0)));
+  var factor = Math.log10(parseFloat((txtFactorCorreccionGranAbi.value = 0)));
+  var PerdidasPlo = Math.log10(parseFloat((txtResultadoGra.value = 0)));
+  var Perdidas = Math.log10(parseFloat((txtResultadoGraAbi.value = 0)));
+});
+
 function limpiarModalEmpSemp() {
   ocultarElemento(divContentEmpirico, true);
   // ocultarElemento(divContentSemiEmpirico, true);
@@ -577,6 +719,8 @@ function limpiarVista() {
   ocultarElemento(divUnit2, true);
   ocultarElemento(divUnit3, true);
   ocultarElemento(divUnit4, true);
+  ocultarElemento(divCalcular, true);
+  
 }
 
 function ocultarElemento(elemento, validar) {
@@ -629,6 +773,67 @@ function MostrarDiv4() {
     return;
   }
   ocultarElemento(document.getElementById("Zona1"), true);
+}
+
+function MostrarDiv5() {
+  if (flexSwitchCheckDefault5.checked) {
+    flexSwitchCheckDefault6.checked = false;
+    ocultarElemento(document.getElementById("divMediano"), false);
+    ocultarElemento(document.getElementById("divGrande"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divMediano"), true);
+}
+
+function MostrarDiv6() {
+  if (flexSwitchCheckDefault6.checked) {
+    flexSwitchCheckDefault5.checked = false;
+    ocultarElemento(document.getElementById("divGrande"), false);
+    ocultarElemento(document.getElementById("divMediano"), true);
+    ocultarElemento(document.getElementById("divMedAbierto"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divGrande"), true);
+}
+
+function MostrarDiv7() {
+  if (flexSwitchCheckDefault7.checked) {
+    flexSwitchCheckDefault8.checked = false;
+    ocultarElemento(document.getElementById("divMedianoSub"), false);
+    ocultarElemento(document.getElementById("divMedAbierto"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divMedianoSub"), true);
+}
+
+function MostrarDiv8() {
+  if (flexSwitchCheckDefault8.checked) {
+    flexSwitchCheckDefault7.checked = false;
+    ocultarElemento(document.getElementById("divMedAbierto"), false);
+    ocultarElemento(document.getElementById("divMedianoSub"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divMedAbierto"), true);
+}
+
+function MostrarDiv9() {
+  if (flexSwitchCheckDefault9.checked) {
+    flexSwitchCheckDefault10.checked = false;
+    ocultarElemento(document.getElementById("divGranSub"), false);
+    ocultarElemento(document.getElementById("divGranAbi"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divGranSub"), true);
+}
+
+function MostrarDiv10() {
+  if (flexSwitchCheckDefault10.checked) {
+    flexSwitchCheckDefault9.checked = false;
+    ocultarElemento(document.getElementById("divGranAbi"), false);
+    ocultarElemento(document.getElementById("divGranSub"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divGranAbi"), true);
 }
 
 function CalcularAngulo(){
