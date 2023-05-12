@@ -65,6 +65,10 @@ let btnPARAMETROS = document.getElementById("btnPARAMETROS");
 let btnECUACIONES = document.getElementById("btnECUACIONES");
 let btnWalfischIk = document.getElementById("btnWalfischIk");
 let btnCost = document.getElementById("btnCost");
+let btnITU = document.getElementById("btnITU");
+let btnSUI = document.getElementById("btnSUI");
+let btnHata = document.getElementById("btnHata");
+let btnUMI = document.getElementById("btnUMI");
 let divContentEmpirico = document.getElementById("divContentEmpirico");
 // let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE = document.getElementById("divCaracteristicasMPE");
@@ -106,6 +110,10 @@ let divTRANSPONDEDOR = document.getElementById("divTRANSPONDEDOR");
 let divPARAMETROS = document.getElementById("divPARAMETROS");
 let divECUACIONES = document.getElementById("divECUACIONES");
 let divCost = document.getElementById("divCost");
+let divITU = document.getElementById("divITU");
+let divSUI = document.getElementById("divSUI");
+let divHata = document.getElementById("divHata");
+let divUMI = document.getElementById("divUMI");
 let titleModalUnidadII = document.getElementById("titleModalUnidadII");
 let iconContenido = document.getElementById("icon-Contenido");
 let listContent = document.getElementById("listContent");
@@ -149,6 +157,15 @@ let flexSwitchCheckDefault9 = document.getElementById(
 let flexSwitchCheckDefault10 = document.getElementById(
   "flexSwitchCheckDefault10"
 );
+let flexSwitchCheckDefault11 = document.getElementById(
+  "flexSwitchCheckDefault11"
+);
+let flexSwitchCheckDefault12 = document.getElementById(
+  "flexSwitchCheckDefault12"
+);
+let flexSwitchCheckDefault13 = document.getElementById(
+  "flexSwitchCheckDefault13"
+);
 let txtFrecuencia = document.getElementById("txtFrecuencia");
 let txtDistancia = document.getElementById("txtDistancia");
 let txtResultadoLOS = document.getElementById("txtResultadoLOS");
@@ -189,6 +206,41 @@ let txtAlturaBaseGranAbi = document.getElementById("txtAlturaBaseGranAbi");
 let txtAlturaMovilGranAbi = document.getElementById("txtAlturaMovilGranAbi");
 let txtDistanciaTransmisorGranAbi = document.getElementById("txtDistanciaTransmisorGranAbi");
 let txtFactorCorreccionGranAbi = document.getElementById("txtFactorCorreccionGranAbi");
+let txtFrecuenciaITU = document.getElementById("txtFrecuenciaITU");
+let txtDistanciaITU = document.getElementById("txtDistanciaITU");
+let txtAlturaAntenaITU = document.getElementById("txtAlturaAntenaITU");
+let txtAlturaReceptorITU = document.getElementById("txtAlturaReceptorITU");
+let txtFrecuenciaTipoA = document.getElementById("txtFrecuenciaTipoA");
+let txtAntenaBaseTipoA = document.getElementById("txtAntenaBaseTipoA");
+let txtAntenaReceptorTipoA = document.getElementById("txtAntenaReceptorTipoA");
+let txtDistanciaTipoA = document.getElementById("txtDistanciaTipoA");
+let txtFrecuenciaHataMedSub = document.getElementById("txtFrecuenciaHataMedSub");
+let txtAntenaBaseHataMedSub = document.getElementById("txtAntenaBaseHataMedSub");
+let txtDistanciaHataMedSub = document.getElementById("txtDistanciaHataMedSub");
+let txtAntenaReceptorHataMedSub = document.getElementById("txtAntenaReceptorHataMedSub");
+let txtFrecuenciaHataMedAbi = document.getElementById("txtFrecuenciaHataMedAbi");
+let txtAntenaBaseHataMedAbi = document.getElementById("txtAntenaBaseHataMedAbi");
+let txtAntenaReceptorHataMedAbi = document.getElementById("txtAntenaReceptorHataMedAbi");
+let txtDistanciaHataMedAbi = document.getElementById("txtDistanciaHataMedAbi");
+let txtFrecuenciaGraHataSub = document.getElementById("txtFrecuenciaGraHataSub");
+let txtAntenaBaseGraHataSub = document.getElementById("txtAntenaBaseGraHataSub");
+let txtAntenaReceptorGraHataSub = document.getElementById("txtAntenaReceptorGraHataSub");
+let txtDistanciaGraHataSub = document.getElementById("txtDistanciaGraHataSub");
+let txtFrecuenciaGraHataAbi = document.getElementById("txtFrecuenciaGraHataAbi");
+let txtAntenaBaseGraHataAbi = document.getElementById("txtAntenaBaseGraHataAbi");
+let txtAntenaReceptorGraHataAbi = document.getElementById("txtAntenaReceptorGraHataAbi");
+let txtDistanciaGraHataAbi = document.getElementById("txtDistanciaGraHataAbi");
+let txtFrecuenciaUMILos = document.getElementById("txtFrecuenciaUMILos");
+let txtAlturaTrasLos = document.getElementById("txtAlturaTrasLos");
+let txtAlturaRecepLos = document.getElementById("txtAlturaRecepLos");
+let txtDistanciaBaseReceptoraLos = document.getElementById("txtDistanciaBaseReceptoraLos");
+let txtDistanciaTransReceLos = document.getElementById("txtDistanciaTransReceLos");
+let txtFrecuenciaUMINLos = document.getElementById("txtFrecuenciaUMINLos");
+let txtAlturaTrasNLos = document.getElementById("txtAlturaTrasNLos");
+let txtAlturaRecepNLos = document.getElementById("txtAlturaRecepNLos");
+let txtDistanciaBaseReceptoraNLos = document.getElementById("txtDistanciaBaseReceptoraNLos");
+let txtDistanciaTransReceNLos = document.getElementById("txtDistanciaTransReceNLos");
+
 
 openSlide.addEventListener("click", function () {
   sidebar.classList.add("active");
@@ -668,6 +720,275 @@ btnBorrarGranAbi.addEventListener("click", function () {
   var Perdidas = Math.log10(parseFloat((txtResultadoGraAbi.value = 0)));
 });
 
+btnITU.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "ITU - Recomendacion P.1546-5";
+  ocultarElemento(divITU, false);
+});
+
+btnCalcularITU.addEventListener("click", function () {
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaITU.value));
+  var cuadradoDistancia = Math.pow(parseFloat(txtDistanciaITU.value), 2);
+  var DiferenciaAlturas = (parseFloat(txtAlturaAntenaITU.value) - parseFloat(txtAlturaReceptorITU.value));
+  var cuadradoAlturas = Math.pow(DiferenciaAlturas, 2);
+  console.log(cuadradoAlturas)
+  var Dslope = Math.sqrt(cuadradoDistancia + 0.000001 * cuadradoAlturas);
+  console.log(Dslope)
+  var logDslope = Math.log10(Dslope);
+  var CampoElectrico = 106.9 - 20 * logDslope;
+  var PerdidasTrayecto = 139.3 - CampoElectrico + logFrecuencia;
+  console.log(PerdidasTrayecto)
+      
+  txtResultadoITU.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarITU.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaITU.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaITU.value = 0)));
+  var transmisor = Math.log10(parseFloat((txtAlturaAntenaITU.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAlturaReceptorITU.value = 0)));
+  var perdidas = Math.log10(parseFloat((txtResultadoITU.value = 0)));
+    
+});
+
+btnSUI.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "Erceg C o SUI";
+  ocultarElemento(divSUI, false);
+});
+
+btnCalcularTipoA.addEventListener("click", function () {
+  var logFrecuencia = parseFloat(txtFrecuenciaTipoA.value);
+  var antenaReceptora = parseFloat(txtAntenaReceptorTipoA.value);
+  console.log(logFrecuencia)
+  var velLuz = 299792458;
+  var DivisionA = Math.log((4 * 3.1416 * 100 * parseFloat(txtFrecuenciaTipoA.value)) / velLuz);
+  console.log(DivisionA)
+  var PerdidasEspacioLibre = 20 * DivisionA;
+  console.log(PerdidasEspacioLibre)
+  var exponPerdidasY = 4.6 - 0.0075 * parseFloat(txtAntenaBaseTipoA.value) * (12.6 / parseFloat(txtAntenaBaseTipoA.value));
+  console.log(exponPerdidasY)
+  var logDivFrecuencia = Math.log(logFrecuencia / 2000);
+  console.log(logDivFrecuencia)
+  var logDivhr = Math.log(antenaReceptora / 2000);
+  var Xf = 6 * logDivFrecuencia;
+  var Xh = 10.8 * logDivhr;
+  var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoA.value) / 100) + Xf + Xh + 10.6;
+      
+  txtResultadoTipoA.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarTipoA.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaTipoA.value = 0)));
+  var base = Math.log10(parseFloat((txtAntenaBaseTipoA.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAntenaReceptorTipoA.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaTipoA.value = 0)));
+  var perdidas = Math.log10(parseFloat((txtResultadoTipoA.value = 0)));
+    
+});
+
+btnCalcularTipoB.addEventListener("click", function () {
+  var logFrecuencia = parseFloat(txtFrecuenciaTipoB.value);
+  var antenaReceptora = parseFloat(txtAntenaReceptorTipoB.value);
+  var velLuz = 299792458;
+  var DivisionA = Math.log((4 * 3.1416 * 100 * parseFloat(txtFrecuenciaTipoB.value)) / velLuz);
+  var PerdidasEspacioLibre = 20 * DivisionA;
+  var exponPerdidasY = 4 - 0.0065 * parseFloat(txtAntenaBaseTipoB.value) * (17.1 / parseFloat(txtAntenaBaseTipoB.value));
+  var logDivFrecuencia = Math.log(logFrecuencia / 2000);
+  var logDivhr = Math.log(antenaReceptora / 2000);
+  var Xf = 6 * logDivFrecuencia;
+  var Xh = 10.8 * logDivhr;
+  var PerdidasTrayecto = PerdidasEspacioLibre + 10 * Math.log10(parseFloat(txtDistanciaTipoB.value) / 100) + Xf + Xh + 9.6;
+      
+  txtResultadoTipoB.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarTipoB.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaTipoB.value = 0)));
+  var base = Math.log10(parseFloat((txtAntenaBaseTipoB.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAntenaReceptorTipoB.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaTipoB.value = 0)));
+  var perdidas = Math.log10(parseFloat((txtResultadoTipoB.value = 0)));
+    
+});
+
+btnCalcularTipoC.addEventListener("click", function () {
+  var logFrecuencia = parseFloat(txtFrecuenciaTipoC.value);
+  var antenaReceptora = parseFloat(txtAntenaReceptorTipoC.value);
+  var velLuz = 299792458;
+  var DivisionA = Math.log((4 * 3.1416 * 100 * parseFloat(txtFrecuenciaTipoC.value)) / velLuz);
+  var PerdidasEspacioLibre = 20 * DivisionA;
+  var exponPerdidasY = 3.6 - 0.005 * parseFloat(txtAntenaBaseTipoC.value) * (20 / parseFloat(txtAntenaBaseTipoC.value));
+  var logDivFrecuencia = Math.log(logFrecuencia / 2000);
+  var logDivhr = Math.log(antenaReceptora / 2000);
+  var Xf = 6 * logDivFrecuencia;
+  var Xh = 20 * logDivhr;
+  var PerdidasTrayecto = PerdidasEspacioLibre + 10 * Math.log10(parseFloat(txtDistanciaTipoC.value) / 100) + Xf + Xh + 8.2;
+      
+  txtResultadoTipoC.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarTipoC.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaTipoC.value = 0)));
+  var base = Math.log10(parseFloat((txtAntenaBaseTipoC.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAntenaReceptorTipoC.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaTipoC.value = 0)));
+  var perdidas = Math.log10(parseFloat((txtResultadoTipoC.value = 0)));
+    
+});
+
+btnHata.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "Okumura - Hata";
+  ocultarElemento(divHata, false);
+});
+
+btnCalcularHataMedSub.addEventListener("click", function () {
+  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaHataMedSub.value));
+  console.log(logFrecuencia) 
+  var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedSub.value);
+  console.log(AntenaReceptora)
+  var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+  var logDistacia = Math.log(parseFloat(txtDistanciaHataMedSub.value));
+  var logAntenaTransmisora = Math.log(parseFloat(txtAntenaBaseHataMedSub.value));
+  var PerdidasTrayecto = 69 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+      
+  txtResultadoHataMedSub.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarHataMedSub.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaHataMedSub.value = 0)));
+  var base = Math.log10(parseFloat((txtAntenaBaseHataMedSub.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAntenaReceptorHataMedSub.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaHataMedSub.value = 0)));
+  var perdidas = Math.log10(parseFloat((txtResultadoHataMedSub.value = 0)));
+    
+});
+
+btnCalcularHataMedAbi.addEventListener("click", function () {
+  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaHataMedAbi.value));
+  console.log(logFrecuencia) 
+  var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedAbi.value);
+  console.log(AntenaReceptora)
+  var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+  var logDistacia = Math.log(parseFloat(txtDistanciaHataMedAbi.value));
+  var logAntenaTransmisora = Math.log(parseFloat(txtAntenaBaseHataMedAbi.value));
+  var PerdidasTrayecto = 69 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+      
+  txtResultadoHataMedAbi.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarHataMedAbi.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaHataMedAbi.value = 0)));
+  var base = Math.log10(parseFloat((txtAntenaBaseHataMedAbi.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAntenaReceptorHataMedAbi.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaHataMedAbi.value = 0)));
+  var perdidas = Math.log10(parseFloat((txtResultadoHataMedAbi.value = 0)));
+    
+});
+
+btnCalcularGraHataSub.addEventListener("click", function () {
+  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaGraHataSub.value));
+  console.log(logFrecuencia) 
+  var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataSub.value);
+  console.log(AntenaReceptora)
+  var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+  var logDistacia = Math.log(parseFloat(txtDistanciaGraHataSub.value));
+  console.log(logDistacia)
+  var logAntenaTransmisora = Math.log(parseFloat(txtAntenaBaseGraHataSub.value));
+  var PerdidasTrayecto = 69 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2Abi() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+      
+  txtResultadoGraHataSub.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarGraHataSub.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaGraHataSub.value = 0)));
+  var base = Math.log10(parseFloat((txtAntenaBaseGraHataSub.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAntenaReceptorGraHataSub.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaGraHataSub.value = 0)));
+  var perdidas = Math.log10(parseFloat((txtResultadoGraHataSub.value = 0)));
+    
+});
+
+btnCalcularGraHataAbi.addEventListener("click", function () {
+  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaGraHataAbi.value));
+  console.log(logFrecuencia) 
+  var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataAbi.value);
+  console.log(AntenaReceptora)
+  var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+  var logDistacia = Math.log(parseFloat(txtDistanciaGraHataAbi.value));
+  console.log(logDistacia)
+  var logAntenaTransmisora = Math.log(parseFloat(txtAntenaBaseGraHataAbi.value));
+  var PerdidasTrayecto = 69 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2Abi() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+      
+  txtResultadoGraHataAbi.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarGraHataAbi.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaGraHataAbi.value = 0)));
+  var base = Math.log10(parseFloat((txtAntenaBaseGraHataAbi.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAntenaReceptorGraHataAbi.value = 0)));
+  var distancia = Math.log10(parseFloat((txtDistanciaGraHataAbi.value = 0)));
+  var perdidas = Math.log10(parseFloat((txtResultadoGraHataAbi.value = 0)));
+    
+});
+
+btnUMI.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "3D-UMI LOS y 3D-UMI NLOS";
+  ocultarElemento(divUMI, false);
+});
+
+btnCalcularUMILos.addEventListener("click", function () {
+  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaUMILos.value));
+  console.log(logFrecuencia)
+  var logDistanciaPuntaPunta = Math.log(parseFloat(txtDistanciaTransReceLos.value));
+  console.log(logDistanciaPuntaPunta)
+  var PerdidasTrayecto = 22 * logDistanciaPuntaPunta + 28 + 20 * logFrecuencia;
+
+  txtResultadoUMILos.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarUMILos.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaUMILos.value = 0)));
+  var transmisor = Math.log10(parseFloat((txtAlturaTrasLos.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAlturaRecepLos.value = 0)));
+  var baseReceptor = Math.log10(parseFloat((txtDistanciaBaseReceptoraLos.value = 0)));
+  var baseReceptorpuntaPunta = Math.log10(parseFloat((txtDistanciaTransReceLos.value = 0)));
+  var resultado = Math.log10(parseFloat((txtResultadoUMILos.value = 0)));
+    
+});
+
+btnCalcularUMINLos.addEventListener("click", function () {
+  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaUMINLos.value));
+  console.log(logFrecuencia)
+  var logDistanciaPuntaPunta = Math.log(parseFloat(txtDistanciaTransReceNLos.value));
+  console.log(logDistanciaPuntaPunta)
+  var PerdidasTrayecto = 36.7 * logDistanciaPuntaPunta + 22.7 + 26 * logFrecuencia - 0.3 * (parseFloat(txtAlturaRecepNLos.value) - 1.5);
+
+  txtResultadoUMINLos.value = PerdidasTrayecto;
+  
+});
+
+btnBorrarUMINLos.addEventListener("click", function () {
+  var frecuencia = Math.log10(parseFloat((txtFrecuenciaUMINLos.value = 0)));
+  var transmisor = Math.log10(parseFloat((txtAlturaTrasNLos.value = 0)));
+  var receptor = Math.log10(parseFloat((txtAlturaRecepNLos.value = 0)));
+  var baseReceptor = Math.log10(parseFloat((txtDistanciaBaseReceptoraNLos.value = 0)));
+  var baseReceptorpuntaPunta = Math.log10(parseFloat((txtDistanciaTransReceNLos.value = 0)));
+  var resultado = Math.log10(parseFloat((txtResultadoUMINLos.value = 0)));
+    
+});
+
 function limpiarModalEmpSemp() {
   ocultarElemento(divContentEmpirico, true);
   // ocultarElemento(divContentSemiEmpirico, true);
@@ -709,6 +1030,11 @@ function limpiarModalEmpSemp() {
   ocultarElemento(divPARAMETROS, true);
   ocultarElemento(divECUACIONES, true);
   ocultarElemento(divWalfischIk, true);
+  ocultarElemento(divCost, true);
+  ocultarElemento(divITU, true);
+  ocultarElemento(divSUI, true);
+  ocultarElemento(divHata, true);
+  ocultarElemento(divUMI, true);
 }
 
 function limpiarVista() {
@@ -836,6 +1162,124 @@ function MostrarDiv10() {
   ocultarElemento(document.getElementById("divGranAbi"), true);
 }
 
+function MostrarDiv11() {
+  if (flexSwitchCheckDefault11.checked) {
+    flexSwitchCheckDefault12.checked = false;
+    flexSwitchCheckDefault13.checked = false;
+    ocultarElemento(document.getElementById("divTipoA"), false);
+    ocultarElemento(document.getElementById("divTipoB"), true);
+    ocultarElemento(document.getElementById("divTipoC"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divTipoA"), true);
+}
+
+function MostrarDiv12() {
+  if (flexSwitchCheckDefault12.checked) {
+    flexSwitchCheckDefault11.checked = false;
+    flexSwitchCheckDefault13.checked = false;
+    ocultarElemento(document.getElementById("divTipoB"), false);
+    ocultarElemento(document.getElementById("divTipoA"), true);
+    ocultarElemento(document.getElementById("divTipoC"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divTipoB"), true);
+}
+
+function MostrarDiv13() {
+  if (flexSwitchCheckDefault13.checked) {
+    flexSwitchCheckDefault11.checked = false;
+    flexSwitchCheckDefault12.checked = false;
+    ocultarElemento(document.getElementById("divTipoC"), false);
+    ocultarElemento(document.getElementById("divTipoA"), true);
+    ocultarElemento(document.getElementById("divTipoB"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divTipoC"), true);
+}
+
+function MostrarDiv14() {
+  if (flexSwitchCheckDefault14.checked) {
+    flexSwitchCheckDefault15.checked = false;
+    ocultarElemento(document.getElementById("divMedianoHata"), false);
+    ocultarElemento(document.getElementById("divGrandeHata"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divMedianoHata"), true);
+}
+
+function MostrarDiv15() {
+  if (flexSwitchCheckDefault15.checked) {
+    flexSwitchCheckDefault14.checked = false;
+    ocultarElemento(document.getElementById("divGrandeHata"), false);
+    ocultarElemento(document.getElementById("divMedianoHata"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divGrandeHata"), true);
+}
+
+function MostrarDiv16() {
+  if (flexSwitchCheckDefault16.checked) {
+    flexSwitchCheckDefault17.checked = false;
+    ocultarElemento(document.getElementById("MedianoHataSub"), false);
+    ocultarElemento(document.getElementById("MedianoHataAbi"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("MedianoHataSub"), true);
+}
+
+function MostrarDiv17() {
+  if (flexSwitchCheckDefault17.checked) {
+    flexSwitchCheckDefault16.checked = false;
+    ocultarElemento(document.getElementById("MedianoHataAbi"), false);
+    ocultarElemento(document.getElementById("MedianoHataSub"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("MedianoHataAbi"), true);
+}
+
+function MostrarDiv18() {
+  if (flexSwitchCheckDefault18.checked) {
+    flexSwitchCheckDefault19.checked = false;
+    ocultarElemento(document.getElementById("GrandeHataSub"), false);
+    ocultarElemento(document.getElementById("GrandeHataAbi"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("GrandeHataSub"), true);
+}
+
+function MostrarDiv19() {
+  if (flexSwitchCheckDefault19.checked) {
+    flexSwitchCheckDefault18.checked = false;
+    ocultarElemento(document.getElementById("GrandeHataAbi"), false);
+    ocultarElemento(document.getElementById("GrandeHataSub"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("GrandeHataAbi"), true);
+}
+
+function MostrarDiv20() {
+  if (flexSwitchCheckDefault20.checked) {
+    flexSwitchCheckDefault21.checked = false;
+    ocultarElemento(document.getElementById("divUMILos"), false);
+    ocultarElemento(document.getElementById("divUMINLos"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divUMILos"), true);
+}
+
+function MostrarDiv21() {
+  if (flexSwitchCheckDefault21.checked) {
+    flexSwitchCheckDefault20.checked = false;
+    ocultarElemento(document.getElementById("divUMINLos"), false);
+    ocultarElemento(document.getElementById("divUMILos"), true);
+    return;
+  }
+  ocultarElemento(document.getElementById("divUMINLos"), true);
+}
+
+
+
 function CalcularAngulo(){
   var angulo = parseFloat(txtAnguloSub.value);
   if ( angulo <= 35 ){
@@ -957,6 +1401,40 @@ function ControlDependenciaUrb(){
   else if (alturaEstacion <= AlturaEdificio){
     var KdSub = 18 - ((15 * alturaEstacion) / AlturaEdificio )
     return(KdSub);
+  }
+}
+
+function FactAh2(){
+  var frecuencia = parseFloat(txtFrecuenciaGraHataSub.value);
+  var receptor = parseFloat(txtAntenaReceptorGraHataSub.value);
+  if(frecuencia < 300) {
+    var logfrecuencia = Math.log(1.54 * receptor);
+    var cuadradoFrecuencia = Math.pow(logfrecuencia, 2);
+    var facAh2 = 18.29 * cuadradoFrecuencia - 1.1;
+    return(facAh2);
+  }
+  else if (frecuencia >= 300){
+    var logfrecuencia = Math.log(11.75 * receptor);
+    var cuadradoFrecuencia = Math.pow(logfrecuencia, 2);
+    var facAh2 = 3.2 * cuadradoFrecuencia - 4.97;
+    return(facAh2);
+  }
+}
+
+function FactAh2Abi(){
+  var frecuencia = parseFloat(txtFrecuenciaGraHataAbi.value);
+  var receptor = parseFloat(txtAntenaReceptorGraHataAbi.value);
+  if(frecuencia < 300) {
+    var logfrecuencia = Math.log(1.54 * receptor);
+    var cuadradoFrecuencia = Math.pow(logfrecuencia, 2);
+    var facAh2 = 18.29 * cuadradoFrecuencia - 1.1;
+    return(facAh2);
+  }
+  else if (frecuencia >= 300){
+    var logfrecuencia = Math.log(11.75 * receptor);
+    var cuadradoFrecuencia = Math.pow(logfrecuencia, 2);
+    var facAh2 = 3.2 * cuadradoFrecuencia - 4.97;
+    return(facAh2);
   }
 }
 

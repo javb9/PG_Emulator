@@ -686,15 +686,15 @@
             </a>
           </div>
           <div class="mb-3 row justify-content-center">
-            <a type="button" class="col-12 col-sm-4 mb-1" id="btnErceg" data-toggle="modal"
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnSUI" data-toggle="modal"
               data-target="#modalModelosUnidadII">
               <div class="card card-models">
-                <h5 class="card-title">Erceg C 6 SUI</h5>
+                <h5 class="card-title">Erceg C o SUI</h5>
               </div>
             </a>
           </div>
           <div class="mb-3 row justify-content-center">
-            <a type="button" class="col-12 col-sm-4 mb-1" id="btnOkumura" data-toggle="modal"
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnHata" data-toggle="modal"
               data-target="#modalModelosUnidadII">
               <div class="card card-models">
                 <h5 class="card-title">Okumura-Hata</h5>
@@ -2196,7 +2196,660 @@
 
             </div>
 
-          </div>
+            <div class="d-none row justify-content-center" id="divITU">
+              <b>
+                <p class="mb-3">
+                  1. Ingrese los datos requeridos:
+                </p>
+              </b>
+              <p class="mb-3">
+                Formula para el calculo de las perdidas por trayecto segun el modelo:
+              </p>
+              <div class="text-center mb-3">
+                <img src="src/Img/PerdidasTrayectoITU.PNG" alt="" height="60" />
+              </div>
+              <P>
+                Formula para el calculo del campo Electrico segun el modelo:
+              </P>
+              <div class="text-center mb-3">
+                <img src="src/Img/CampoElectricoITU.PNG" alt="" height="120" />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><b>f(MHz):</b> Frecuencia de operacion del sistema (30 - 3000)</b></span>
+                <input type="text" class="form-control" id="txtFrecuenciaITU" placeholder="Frecuencia"
+                  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el transmisor y el receptor</b></span>
+                <input type="text" class="form-control" id="txtDistanciaITU" placeholder="Distancia Transmisor receptor"
+                  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><b>ht(m):</b> Altura de la antena transmisora</b></span>
+                <input type="text" class="form-control" id="txtAlturaAntenaITU" placeholder="Altura antena"
+                  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><b>hr(m):</b> Altura de la antena receptora</b></span>
+                <input type="text" class="form-control" id="txtAlturaReceptorITU" placeholder="Altura Receptor"
+                  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <p class="mb-3 text text-justify">
+                <b>Nota:</b> Existen correcciones para hallar la altura de las antenas, de igual forma se deben tener en cuenta las curvaturas que dependen de la frecuencia, el tipo de trayecto y el porcentaje de trabajo. Debido a que esta Recomendacion es muy extensa en este calculo se toma solo para trayectos Terrestres y Maritimos en la gama de frecuencia de los 30 a 3000 MHz solamente.
+              </p>
+              <div class="row justify-content-center mb-3">
+                <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularITU">
+                  <div class="card card-models mb-3">
+                    <h5 class="card-title">CALCULAR</h5>
+                  </div>
+                </a>
+                <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarITU">
+                  <div class="card card-models mb-3">
+                    <h5 class="card-title"><b>BORRAR DATOS</h5>
+                  </div>
+                </a>
+                <div class="centrar mb-3">
+                  <label>Las perdidas por trayecto <b>L</b> son: </label>
+                  <input class="form-control" type="text" id="txtResultadoITU" readonly>
+                  <label>dB</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none row justify-content-center" id="divSUI">
+              <b>
+                <p class="mb-3">
+                  1. Seleccione tipo de terreno:
+                </p>
+              </b>
+              <div class="text-center mb-3">
+                <img src="src/Img/TipoTerrenoSUI.PNG" alt="" height="300" />
+              </div>
+              <div class="form-check form-switch" id="checkTerrenoA">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault11"
+                  onchange="MostrarDiv11()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Terreno A</label>
+              </div>
+              <div class="form-check form-switch" id="checkTerrenoB">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault12"
+                  onchange="MostrarDiv12()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Terreno B</label>
+              </div>
+              <div class="form-check form-switch" id="checkTerrenoC">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault13"
+                  onchange="MostrarDiv13()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Terreno C</label>
+              </div>
+
+              <div class=" d-none" id="divTipoA">
+                <b>
+                  <p class="mb-3">
+                    2. Ingrese los datos requeridos:
+                  </p>
+                </b>
+                <p class="mb-3">
+                  Formula para el calculo de las perdidas por trayecto segun el modelo:
+                </p>
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulasSUITipoA.PNG" alt="" height="260" />
+                </div>
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulasSUITipoA2.PNG" alt="" height="200" />
+                </div>
+                <div class="text-center mb-3">
+                  <img src="src/Img/ParametrosTipoA.PNG" alt="" height="260" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (0 -2000)</b></span>
+                  <input type="text" class="form-control" id="txtFrecuenciaTipoA" placeholder="Frecuencia"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hb(m):</b> Alura de la antena estacion base: (15 - 40)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaBaseTipoA" placeholder="Altura antena base"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hr(m):</b> Alura de la antena receptora: (2 - 10)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaReceptorTipoA" placeholder="Altura Receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaTipoA" placeholder="Distancia transmisor Receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularTipoA">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarTipoA">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>Lb</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoTipoA" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" d-none" id="divTipoB">
+                <b>
+                  <p class="mb-3">
+                    2. Ingrese los datos requeridos:
+                  </p>
+                </b>
+                <p class="mb-3">
+                  Formula para el calculo de las perdidas por trayecto segun el modelo:
+                </p>
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulasSUITipoA.PNG" alt="" height="260" />
+                </div>
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulasSUITipoA2.PNG" alt="" height="200" />
+                </div>
+                <div class="text-center mb-3">
+                  <img src="src/Img/ParametrosTipoA.PNG" alt="" height="260" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (0 -2000)</b></span>
+                  <input type="text" class="form-control" id="txtFrecuenciaTipoB" placeholder="Frecuencia"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hb(m):</b> Alura de la antena estacion base: (15 - 40)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaBaseTipoB" placeholder="Altura Antena transmisora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hr(m):</b> Alura de la antena receptora: (2 - 10)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaReceptorTipoB" placeholder="Altura Receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaTipoB" placeholder="Distancia trasmisor Receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularTipoB">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarTipoB">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>Lb</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoTipoB" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" d-none" id="divTipoC">
+                <b>
+                  <p class="mb-3">
+                    2. Ingrese los datos requeridos:
+                  </p>
+                </b>
+                <p class="mb-3">
+                  Formula para el calculo de las perdidas por trayecto segun el modelo:
+                </p>
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulasSUITipoA.PNG" alt="" height="260" />
+                </div>
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulasSUITipoA2.PNG" alt="" height="200" />
+                </div>
+                <div class="text-center mb-3">
+                  <img src="src/Img/ParametrosTipoA.PNG" alt="" height="260" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (0 -2000)</b></span>
+                  <input type="text" class="form-control" id="txtFrecuenciaTipoC" placeholder="Frecuencia"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hb(m):</b> Alura de la antena estacion base: (15 - 40)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaBaseTipoC" placeholder="Altura Antena Base"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hr(m):</b> Alura de la antena receptora: (2 - 10)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaReceptorTipoC" placeholder="Altura Receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaTipoC" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularTipoC">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarTipoC">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>Lb</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoTipoC" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="d-none row justify-content-center" id="divHata">
+              <b>
+                <p class="mb-3">
+                  1. Seleccione el tipo de ciudad:
+                </p>
+              </b>
+              <div class="form-check form-switch" id="checkMedianaHata">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault14"
+                  onchange="MostrarDiv14()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Mediana y pequeña</label>
+              </div>
+              <div class="form-check form-switch" id="checkGrandeHata">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault15"
+                  onchange="MostrarDiv15()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Grande</label>
+              </div>
+
+              <div class="d-none" id="divMedianoHata">
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulaMedianoHata.PNG" alt="" height="50" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    2. Seleccione el tipo de zona:
+                  </p>
+                </b>
+                <div class="form-check form-switch" id="checkSuburbanaMed">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault16"
+                    onchange="MostrarDiv16()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Suburbano</label>
+                </div>
+                <div class="form-check form-switch" id="checkAbietaMed">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault17"
+                    onchange="MostrarDiv17()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Abierta o rural</label>
+                </div>
+              </div>
+
+                <div class="d-none" id="MedianoHataSub">
+                  <div class="text-center mb-3">
+                    <img src="src/Img/FormulaSubHata.PNG" alt="" height="70" />
+                  </div>
+                  <b>
+                    <p class="mb-3">
+                      3. Ingrese los datos para el calculo de las perdidas por taryecto segun el modelo:
+                    </p>
+                  </b>
+                  <div class="text-center mb-3">
+                    <img src="src/Img/PerdidasTrayectoHata.PNG" alt="" height="200" />
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (150 - 1500)</b></span>
+                    <input type="text" class="form-control" id="txtFrecuenciaHataMedSub" placeholder="Frecuencia"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>h1(m):</b> Alura de la antena estacion base: (30 - 200)</b></span>
+                    <input type="text" class="form-control" id="txtAntenaBaseHataMedSub" placeholder="Altura Antena Transmisora"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>h2(m):</b> Alura de la antena receptora: (1 - 20)</b></span>
+                    <input type="text" class="form-control" id="txtAntenaReceptorHataMedSub" placeholder="Altura Antena Receptora"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
+                    <input type="text" class="form-control" id="txtDistanciaHataMedSub" placeholder="Distancia transmisor receptor"
+                      aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="row justify-content-center mb-3">
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularHataMedSub">
+                      <div class="card card-models mb-3">
+                        <h5 class="card-title">CALCULAR</h5>
+                      </div>
+                    </a>
+                    <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarHataMedSub">
+                      <div class="card card-models mb-3">
+                        <h5 class="card-title"><b>BORRAR DATOS</h5>
+                      </div>
+                    </a>
+                    <div class="centrar mb-3">
+                      <label>Las perdidas por trayecto <b>L</b> son: </label>
+                      <input class="form-control" type="text" id="txtResultadoHataMedSub" readonly>
+                      <label>dB</label>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="d-none" id="MedianoHataAbi">
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulaAbiertoHata.PNG" alt="" height="70" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    3. Ingrese los datos para el calculo de las perdidas por taryecto segun el modelo:
+                  </p>
+                </b>
+                <div class="text-center mb-3">
+                  <img src="src/Img/PerdidasTrayectoHata.PNG" alt="" height="200" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (150 - 1500)</b></span>
+                  <input type="text" class="form-control" id="txtFrecuenciaHataMedAbi" placeholder="Frecuencia"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h1(m):</b> Alura de la antena estacion base: (30 - 200)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaBaseHataMedAbi" placeholder="Altura Antena Transmisora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h2(m):</b> Alura de la antena receptora: (1 - 20)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaReceptorHataMedAbi" placeholder="Altura Antena Receptora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaHataMedAbi" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularHataMedAbi">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarHataMedAbi">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>L</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoHataMedAbi" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-none" id="divGrandeHata">
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulaHataGrande.PNG" alt="" height="70" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    2. Seleccione el tipo de zona:
+                  </p>
+                </b>
+                <div class="form-check form-switch" id="checkSuburbanaAbi">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault18"
+                    onchange="MostrarDiv18()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Suburbano</label>
+                </div>
+                <div class="form-check form-switch" id="checkAbietaAbi">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault19"
+                    onchange="MostrarDiv19()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Abierta o rural</label>
+                </div>
+              </div>
+
+              <div class="d-none" id="GrandeHataSub">
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulaSubHata.PNG" alt="" height="70" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    3. Ingrese los datos para el calculo de las perdidas por taryecto segun el modelo:
+                  </p>
+                </b>
+                <div class="text-center mb-3">
+                  <img src="src/Img/PerdidasTrayectoHata.PNG" alt="" height="200" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (150 - 1500)</b></span>
+                  <input type="text" class="form-control" id="txtFrecuenciaGraHataSub" placeholder="Frecuencia"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h1(m):</b> Alura de la antena estacion base: (30 - 200)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaBaseGraHataSub" placeholder="Altura Antena Transmisora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h2(m):</b> Alura de la antena receptora: (1 - 20)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaReceptorGraHataSub" placeholder="Altura Antena Receptora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaGraHataSub" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularGraHataSub">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarGraHataSub">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>L</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoGraHataSub" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-none" id="GrandeHataAbi">
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulaAbiertoHata.PNG" alt="" height="70" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    3. Ingrese los datos para el calculo de las perdidas por taryecto segun el modelo:
+                  </p>
+                </b>
+                <div class="text-center mb-3">
+                  <img src="src/Img/PerdidasTrayectoHata.PNG" alt="" height="200" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (150 - 1500)</b></span>
+                  <input type="text" class="form-control" id="txtFrecuenciaGraHataAbi" placeholder="Frecuencia"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h1(m):</b> Alura de la antena estacion base: (30 - 200)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaBaseGraHataAbi" placeholder="Altura Antena Transmisora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h2(m):</b> Alura de la antena receptora: (1 - 20)</b></span>
+                  <input type="text" class="form-control" id="txtAntenaReceptorGraHataAbi" placeholder="Altura Antena Receptora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaGraHataAbi" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularGraHataAbi">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarGraHataAbi">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>L</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoGraHataAbi" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="d-none col-12 row justify-content-center" id="divUMI">
+              <b>
+                <p class="mb-3">
+                  1. Seleccione el tipo de ciudad:
+                </p>
+              </b>
+              <div class="form-check form-switch" id="checkSuburbanaAbi">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault20"
+                  onchange="MostrarDiv20()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Con linea de Vista (LOS)</label>
+              </div>
+              <div class="form-check form-switch" id="checkAbietaAbi">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault21"
+                  onchange="MostrarDiv21()">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Sin linea de Vista (NLOS)</label>
+              </div>
+
+              <div class="d-none" id="divUMILos">
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulaUMILos.PNG" alt="" height="30" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    2. Ingrese los datos requeridos:
+                  </p>
+                </b>
+                <div class="text-center mb-3">
+                  <img src="src/Img/GraficaUMI.PNG" alt="" height="200" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>f(GHz):</b> Frecuencia de operacion del sistema: (2 - 6) </b></span>
+                  <input type="text" class="form-control" id="txtFrecuenciaUMILos" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hbs(m):</b> Altura de la antena transmisora: (0 - 10)</b></span>
+                  <input type="text" class="form-control" id="txtAlturaTrasLos" placeholder="Altura de la antena trasmisora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hut(m):</b> Altura de la antena receptora: (1.5 - 22.5)</b></span>
+                  <input type="text" class="form-control" id="txtAlturaRecepLos" placeholder="Altura de la antena receptora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h2d(m):</b> Distancia entre la antena base y la receptora: (10 - 2000) </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaBaseReceptoraLos" placeholder="Distancia base receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h3d(m):</b> Distancia entre Distancia entre punta a punta de la base y receptor: </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaTransReceLos" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularUMILos">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarUMILos">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>PL</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoUMILos" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-none" id="divUMINLos">
+                <div class="text-center mb-3">
+                  <img src="src/Img/FormulaUMINLos.PNG" alt="" height="60" />
+                </div>
+                <b>
+                  <p class="mb-3">
+                    2. Ingrese los datos requeridos:
+                  </p>
+                </b>
+                <div class="text-center mb-3">
+                  <img src="src/Img/GraficaUMI.PNG" alt="" height="200" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>f(GHz):</b> Frecuencia de operacion del sistema: (2 - 6) </b></span>
+                  <input type="text" class="form-control" id="txtFrecuenciaUMINLos" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hbs(m):</b> Altura de la antena transmisora: (0 - 10)</b></span>
+                  <input type="text" class="form-control" id="txtAlturaTrasNLos" placeholder="Altura de la antena trasmisora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>hut(m):</b> Altura de la antena receptora: (1.5 - 22.5)</b></span>
+                  <input type="text" class="form-control" id="txtAlturaRecepNLos" placeholder="Altura de la antena receptora"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h2d(m):</b> Distancia entre la antena base y la receptora: (10 - 2000) </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaBaseReceptoraNLos" placeholder="Distancia base receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><b>h3d(m):</b> Distancia entre Distancia entre punta a punta de la base y receptor: </b></span>
+                  <input type="text" class="form-control" id="txtDistanciaTransReceNLos" placeholder="Distancia transmisor receptor"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="row justify-content-center mb-3">
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnCalcularUMINLos">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title">CALCULAR</h5>
+                    </div>
+                  </a>
+                  <a type="button" class="col-12 col-sm-6 mb-1" id="btnBorrarUMINLos">
+                    <div class="card card-models mb-3">
+                      <h5 class="card-title"><b>BORRAR DATOS</h5>
+                    </div>
+                  </a>
+                  <div class="centrar mb-3">
+                    <label>Las perdidas por trayecto <b>PL</b> son: </label>
+                    <input class="form-control" type="text" id="txtResultadoUMINLos" readonly>
+                    <label>dB</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
 
         </div>
       </div>
