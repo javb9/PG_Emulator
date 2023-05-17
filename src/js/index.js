@@ -730,15 +730,15 @@ btnCalcularITU.addEventListener("click", function () {
   var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaITU.value));
   var cuadradoDistancia = Math.pow(parseFloat(txtDistanciaITU.value), 2);
   var DiferenciaAlturas = (parseFloat(txtAlturaAntenaITU.value) - parseFloat(txtAlturaReceptorITU.value));
+  var alt = parseFloat(txtAlturaAntenaITU.value);
+  var rec = parseFloat(txtAlturaReceptorITU.value);
   var cuadradoAlturas = Math.pow(DiferenciaAlturas, 2);
-  console.log(cuadradoAlturas)
   var Dslope = Math.sqrt(cuadradoDistancia + 0.000001 * cuadradoAlturas);
-  console.log(Dslope)
   var logDslope = Math.log10(Dslope);
   var CampoElectrico = 106.9 - 20 * logDslope;
-  var PerdidasTrayecto = 139.3 - CampoElectrico + logFrecuencia;
-  console.log(PerdidasTrayecto)
-      
+  console.log(CampoElectrico)
+  var PerdidasTrayecto = 139.3 - CampoElectrico + 20 * logFrecuencia;
+        
   txtResultadoITU.value = PerdidasTrayecto;
   
 });
@@ -793,14 +793,20 @@ btnCalcularTipoB.addEventListener("click", function () {
   var logFrecuencia = parseFloat(txtFrecuenciaTipoB.value);
   var antenaReceptora = parseFloat(txtAntenaReceptorTipoB.value);
   var velLuz = 299792458;
-  var DivisionA = Math.log((4 * 3.1416 * 100 * parseFloat(txtFrecuenciaTipoB.value)) / velLuz);
+  var DivisionA = Math.log10((4 * 3.1416 * 100 * logFrecuencia) / velLuz);
+  console.log(DivisionA)
   var PerdidasEspacioLibre = 20 * DivisionA;
+  console.log(PerdidasEspacioLibre)
   var exponPerdidasY = 4 - 0.0065 * parseFloat(txtAntenaBaseTipoB.value) * (17.1 / parseFloat(txtAntenaBaseTipoB.value));
-  var logDivFrecuencia = Math.log(logFrecuencia / 2000);
-  var logDivhr = Math.log(antenaReceptora / 2000);
+  console.log(exponPerdidasY)          
+  var logDivFrecuencia = Math.log(logFrecuencia / 2000); 
+  var logDivhr = Math.log10(antenaReceptora / 2000);
+  console.log(logDivFrecuencia)
   var Xf = 6 * logDivFrecuencia;
+  console.log(Xf)
   var Xh = 10.8 * logDivhr;
-  var PerdidasTrayecto = PerdidasEspacioLibre + 10 * Math.log10(parseFloat(txtDistanciaTipoB.value) / 100) + Xf + Xh + 9.6;
+  console.log(Xh)
+  var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoB.value) / 100) + Xf + Xh + 9.6;
       
   txtResultadoTipoB.value = PerdidasTrayecto;
   
@@ -848,15 +854,16 @@ btnHata.addEventListener("click", function () {
 });
 
 btnCalcularHataMedSub.addEventListener("click", function () {
-  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaHataMedSub.value));
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value));
   console.log(logFrecuencia) 
   var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedSub.value);
   console.log(AntenaReceptora)
-  var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
-  var logDistacia = Math.log(parseFloat(txtDistanciaHataMedSub.value));
-  var logAntenaTransmisora = Math.log(parseFloat(txtAntenaBaseHataMedSub.value));
-  var Perdidas = 69 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  var logFrecuenciaDiv = Math.log(parseFloat(txtFrecuenciaHataMedSub.value)  / 28);
+  var FactorAh2 = (1.1 * logFrecuencia - 0.7) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+  console.log(FactorAh2)
+  var logDistacia = Math.log10(parseFloat(txtDistanciaHataMedSub.value));
+  var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseHataMedSub.value));
+  var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value)  / 28);
   var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
       
   txtResultadoHataMedSub.value = PerdidasTrayecto;
@@ -873,14 +880,14 @@ btnBorrarHataMedSub.addEventListener("click", function () {
 });
 
 btnCalcularHataMedAbi.addEventListener("click", function () {
-  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaHataMedAbi.value));
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaHataMedAbi.value));
   console.log(logFrecuencia) 
   var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedAbi.value);
   console.log(AntenaReceptora)
   var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
-  var logDistacia = Math.log(parseFloat(txtDistanciaHataMedAbi.value));
-  var logAntenaTransmisora = Math.log(parseFloat(txtAntenaBaseHataMedAbi.value));
-  var Perdidas = 69 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+  var logDistacia = Math.log10(parseFloat(txtDistanciaHataMedAbi.value));
+  var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseHataMedAbi.value));
+  var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
   
   var PerdidasTrayecto = Perdidas - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
       
@@ -898,14 +905,14 @@ btnBorrarHataMedAbi.addEventListener("click", function () {
 });
 
 btnCalcularGraHataSub.addEventListener("click", function () {
-  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaGraHataSub.value));
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaGraHataSub.value));
   var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataSub.value);
   var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
-  var logDistacia = Math.log(parseFloat(txtDistanciaGraHataSub.value));
-  var logAntenaTransmisora = Math.log(parseFloat(txtAntenaBaseGraHataSub.value));
+  var logDistacia = Math.log10(parseFloat(txtDistanciaGraHataSub.value));
+  var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseGraHataSub.value));
   var factores = FactAh2();
   var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  var logFrecuenciaDiv = Math.log(parseFloat(txtFrecuenciaHataMedSub.value)  / 28);
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value)  / 28);
   var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;    
     
   txtResultadoGraHataSub.value = PerdidasTrayecto;
@@ -922,15 +929,15 @@ btnBorrarGraHataSub.addEventListener("click", function () {
 });
 
 btnCalcularGraHataAbi.addEventListener("click", function () {
-  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaGraHataAbi.value));
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaGraHataAbi.value));
   console.log(logFrecuencia) 
   var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataAbi.value);
   console.log(AntenaReceptora)
   var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
-  var logDistacia = Math.log(parseFloat(txtDistanciaGraHataAbi.value));
+  var logDistacia = Math.log10(parseFloat(txtDistanciaGraHataAbi.value));
   console.log(logDistacia)
-  var logAntenaTransmisora = Math.log(parseFloat(txtAntenaBaseGraHataAbi.value));
-  var Perdidas = 69 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2Abi() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+  var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseGraHataAbi.value));
+  var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2Abi() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
   var PerdidasTrayecto = Perdidas - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
       
   txtResultadoGraHataAbi.value = PerdidasTrayecto;
@@ -953,9 +960,9 @@ btnUMI.addEventListener("click", function () {
 });
 
 btnCalcularUMILos.addEventListener("click", function () {
-  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaUMILos.value));
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUMILos.value));
   console.log(logFrecuencia)
-  var logDistanciaPuntaPunta = Math.log(parseFloat(txtDistanciaTransReceLos.value));
+  var logDistanciaPuntaPunta = Math.log10(parseFloat(txtDistanciaTransReceLos.value));
   console.log(logDistanciaPuntaPunta)
   var PerdidasTrayecto = 22 * logDistanciaPuntaPunta + 28 + 20 * logFrecuencia;
 
@@ -974,9 +981,9 @@ btnBorrarUMILos.addEventListener("click", function () {
 });
 
 btnCalcularUMINLos.addEventListener("click", function () {
-  var logFrecuencia = Math.log(parseFloat(txtFrecuenciaUMINLos.value));
+  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUMINLos.value));
   console.log(logFrecuencia)
-  var logDistanciaPuntaPunta = Math.log(parseFloat(txtDistanciaTransReceNLos.value));
+  var logDistanciaPuntaPunta = Math.log10(parseFloat(txtDistanciaTransReceNLos.value));
   console.log(logDistanciaPuntaPunta)
   var PerdidasTrayecto = 36.7 * logDistanciaPuntaPunta + 22.7 + 26 * logFrecuencia - 0.3 * (parseFloat(txtAlturaRecepNLos.value) - 1.5);
 
