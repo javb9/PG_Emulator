@@ -127,6 +127,8 @@ let btnUnit3 = document.getElementById("btnUnit3");
 let btnUnit4 = document.getElementById("btnUnit4");
 let btnCalcular = document.getElementById("btnCalcular");
 let divCalcular = document.getElementById("divCalcular");
+let divEvaluacion = document.getElementById("divEvaluacion");
+let btnEvaluacion = document.getElementById("btnEvaluacion");
 let flexSwitchCheckDefault1 = document.getElementById(
   "flexSwitchCheckDefault1"
 );
@@ -290,6 +292,12 @@ btnCalcular.addEventListener("click", function () {
   console.log("entro");
   limpiarVista();
   ocultarElemento(divCalcular, false);
+});
+
+btnEvaluacion.addEventListener("click", function () {
+  console.log("entro");
+  limpiarVista();
+  ocultarElemento(divEvaluacion, false);
 });
 
 //btnEmpirico.addEventListener('click', function(){
@@ -1058,6 +1066,7 @@ function limpiarVista() {
   ocultarElemento(divUnit3, true);
   ocultarElemento(divUnit4, true);
   ocultarElemento(divCalcular, true);
+  ocultarElemento(divEvaluacion, true);
   
 }
 

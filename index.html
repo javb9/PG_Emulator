@@ -61,6 +61,9 @@
         <li class="li-opciones" id="liConectados">
           <a type="button" id="btnGuia"><i class="fas fa-file-alt"></i> Guias de laboratorio</a>
         </li>
+        <li class="li-opciones" id="liConectados">
+          <a type="button" id="btnEvaluacion"><i class="fas fa-file-alt"></i> Evaluacion</a>
+        </li>
       </ul>
     </div>
     <div class="home-contenedor" id="contenedor">
@@ -710,6 +713,53 @@
             </a>
           </div>
         </div>
+
+        <div class="d-none col-12" id="divEvaluacion">
+          <div></div>
+            <h5 class="mb-3">
+              EVALUACION
+            </h5>
+            <p class="mb-3 text-justify">
+              Seleccione la unidad a ser evaluada:
+            </p>
+            <div class="mb-3 row justify-content-center">
+              <a type="button" class="col-12 col-sm-4 mb-1" id="btnEvalu1" data-toggle="modal"
+                data-target="#modalModelosUnidadII">
+                <div class="card card-models">
+                  <h5 class="card-title">UNIDAD 1</h5>
+                </div>
+              </a>
+            </div>
+            <div class="mb-3 row justify-content-center">
+              <a type="button" class="col-12 col-sm-4 mb-1" id="btnEvalu2" data-toggle="modal"
+                data-target="#modalModelosUnidadII">
+                <div class="card card-models">
+                  <h5 class="card-title">UNIDAD 2</h5>
+                </div>
+              </a>
+            </div>
+            <div class="mb-3 row justify-content-center">
+              <a type="button" class="col-12 col-sm-4 mb-1" id="btnEvalu3" data-toggle="modal"
+                data-target="#modalModelosUnidadII">
+                <div class="card card-models">
+                  <h5 class="card-title">UNIDAD 3</h5>
+                </div>
+              </a>
+          </div>
+          <div class="mb-3 row justify-content-center">
+            <a type="button" class="col-12 col-sm-4 mb-1" id="btnEvalu4" data-toggle="modal"
+              data-target="#modalModelosUnidadII">
+              <div class="card card-models">
+                <h5 class="card-title">UNIDAD 4</h5>
+              </div>
+            </a>
+          </div>
+          <p class="text-justify">
+            A continuacion, encontrara la rubrica de evaluacion correspondiente ne formato pdf que podra verla o descargarla.
+          </p>
+        </div>
+
+
       </div>
     </div>
   </div>
@@ -2304,22 +2354,22 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (0 -2000)</b></span>
-                  <input type="text" class="form-control" id="txtFrecuenciaTipoA" placeholder="Frecuencia"
+                  <input type="number" class="form-control" id="txtFrecuenciaTipoA" placeholder="Frecuencia"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hb(m):</b> Alura de la antena estacion base: (15 - 40)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaBaseTipoA" placeholder="Altura antena base"
+                  <input type="number" class="form-control" id="txtAntenaBaseTipoA" placeholder="Altura antena base"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hr(m):</b> Alura de la antena receptora: (2 - 10)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaReceptorTipoA" placeholder="Altura Receptor"
+                  <input type="number" class="form-control" id="txtAntenaReceptorTipoA" placeholder="Altura Receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaTipoA" placeholder="Distancia transmisor Receptor"
+                  <input type="number" class="form-control" id="txtDistanciaTipoA" placeholder="Distancia transmisor Receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="row justify-content-center mb-3">
@@ -2361,22 +2411,22 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (0 -2000)</b></span>
-                  <input type="text" class="form-control" id="txtFrecuenciaTipoB" placeholder="Frecuencia"
+                  <input type="number" class="form-control" id="txtFrecuenciaTipoB" placeholder="Frecuencia"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hb(m):</b> Alura de la antena estacion base: (15 - 40)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaBaseTipoB" placeholder="Altura Antena transmisora"
+                  <input type="number" class="form-control" id="txtAntenaBaseTipoB" placeholder="Altura Antena transmisora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hr(m):</b> Alura de la antena receptora: (2 - 10)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaReceptorTipoB" placeholder="Altura Receptor"
+                  <input type="number" class="form-control" id="txtAntenaReceptorTipoB" placeholder="Altura Receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaTipoB" placeholder="Distancia trasmisor Receptor"
+                  <input type="number" class="form-control" id="txtDistanciaTipoB" placeholder="Distancia trasmisor Receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="row justify-content-center mb-3">
@@ -2418,22 +2468,22 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (0 -2000)</b></span>
-                  <input type="text" class="form-control" id="txtFrecuenciaTipoC" placeholder="Frecuencia"
+                  <input type="number" class="form-control" id="txtFrecuenciaTipoC" placeholder="Frecuencia"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hb(m):</b> Alura de la antena estacion base: (15 - 40)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaBaseTipoC" placeholder="Altura Antena Base"
+                  <input type="number" class="form-control" id="txtAntenaBaseTipoC" placeholder="Altura Antena Base"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hr(m):</b> Alura de la antena receptora: (2 - 10)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaReceptorTipoC" placeholder="Altura Receptor"
+                  <input type="number" class="form-control" id="txtAntenaReceptorTipoC" placeholder="Altura Receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaTipoC" placeholder="Distancia transmisor receptor"
+                  <input type="number" class="form-control" id="txtDistanciaTipoC" placeholder="Distancia transmisor receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="row justify-content-center mb-3">
@@ -2509,22 +2559,22 @@
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (150 - 1500)</b></span>
-                    <input type="text" class="form-control" id="txtFrecuenciaHataMedSub" placeholder="Frecuencia"
+                    <input type="number" class="form-control" id="txtFrecuenciaHataMedSub" placeholder="Frecuencia"
                       aria-label="Username" aria-describedby="basic-addon1">
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><b>h1(m):</b> Alura de la antena estacion base: (30 - 200)</b></span>
-                    <input type="text" class="form-control" id="txtAntenaBaseHataMedSub" placeholder="Altura Antena Transmisora"
+                    <input type="number" class="form-control" id="txtAntenaBaseHataMedSub" placeholder="Altura Antena Transmisora"
                       aria-label="Username" aria-describedby="basic-addon1">
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><b>h2(m):</b> Alura de la antena receptora: (1 - 20)</b></span>
-                    <input type="text" class="form-control" id="txtAntenaReceptorHataMedSub" placeholder="Altura Antena Receptora"
+                    <input type="number" class="form-control" id="txtAntenaReceptorHataMedSub" placeholder="Altura Antena Receptora"
                       aria-label="Username" aria-describedby="basic-addon1">
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
-                    <input type="text" class="form-control" id="txtDistanciaHataMedSub" placeholder="Distancia transmisor receptor"
+                    <input type="number" class="form-control" id="txtDistanciaHataMedSub" placeholder="Distancia transmisor receptor"
                       aria-label="Username" aria-describedby="basic-addon1">
                   </div>
                   <div class="row justify-content-center mb-3">
@@ -2561,22 +2611,22 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (150 - 1500)</b></span>
-                  <input type="text" class="form-control" id="txtFrecuenciaHataMedAbi" placeholder="Frecuencia"
+                  <input type="number" class="form-control" id="txtFrecuenciaHataMedAbi" placeholder="Frecuencia"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h1(m):</b> Alura de la antena estacion base: (30 - 200)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaBaseHataMedAbi" placeholder="Altura Antena Transmisora"
+                  <input type="number" class="form-control" id="txtAntenaBaseHataMedAbi" placeholder="Altura Antena Transmisora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h2(m):</b> Alura de la antena receptora: (1 - 20)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaReceptorHataMedAbi" placeholder="Altura Antena Receptora"
+                  <input type="number" class="form-control" id="txtAntenaReceptorHataMedAbi" placeholder="Altura Antena Receptora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaHataMedAbi" placeholder="Distancia transmisor receptor"
+                  <input type="number" class="form-control" id="txtDistanciaHataMedAbi" placeholder="Distancia transmisor receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="row justify-content-center mb-3">
@@ -2633,22 +2683,22 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (150 - 1500)</b></span>
-                  <input type="text" class="form-control" id="txtFrecuenciaGraHataSub" placeholder="Frecuencia"
+                  <input type="number" class="form-control" id="txtFrecuenciaGraHataSub" placeholder="Frecuencia"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h1(m):</b> Alura de la antena estacion base: (30 - 200)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaBaseGraHataSub" placeholder="Altura Antena Transmisora"
+                  <input type="number" class="form-control" id="txtAntenaBaseGraHataSub" placeholder="Altura Antena Transmisora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h2(m):</b> Alura de la antena receptora: (1 - 20)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaReceptorGraHataSub" placeholder="Altura Antena Receptora"
+                  <input type="number" class="form-control" id="txtAntenaReceptorGraHataSub" placeholder="Altura Antena Receptora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaGraHataSub" placeholder="Distancia transmisor receptor"
+                  <input type="number" class="form-control" id="txtDistanciaGraHataSub" placeholder="Distancia transmisor receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="row justify-content-center mb-3">
@@ -2684,22 +2734,22 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>F(MHz):</b> Frecuencia de operacion del sistema: (150 - 1500)</b></span>
-                  <input type="text" class="form-control" id="txtFrecuenciaGraHataAbi" placeholder="Frecuencia"
+                  <input type="number" class="form-control" id="txtFrecuenciaGraHataAbi" placeholder="Frecuencia"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h1(m):</b> Alura de la antena estacion base: (30 - 200)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaBaseGraHataAbi" placeholder="Altura Antena Transmisora"
+                  <input type="number" class="form-control" id="txtAntenaBaseGraHataAbi" placeholder="Altura Antena Transmisora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h2(m):</b> Alura de la antena receptora: (1 - 20)</b></span>
-                  <input type="text" class="form-control" id="txtAntenaReceptorGraHataAbi" placeholder="Altura Antena Receptora"
+                  <input type="number" class="form-control" id="txtAntenaReceptorGraHataAbi" placeholder="Altura Antena Receptora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>d(Km):</b> Distancia entre el Transmisor y el receptor: </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaGraHataAbi" placeholder="Distancia transmisor receptor"
+                  <input type="number" class="form-control" id="txtDistanciaGraHataAbi" placeholder="Distancia transmisor receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="row justify-content-center mb-3">
@@ -2754,27 +2804,27 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>f(GHz):</b> Frecuencia de operacion del sistema: (2 - 6) </b></span>
-                  <input type="text" class="form-control" id="txtFrecuenciaUMILos" placeholder="Distancia transmisor receptor"
+                  <input type="number" class="form-control" id="txtFrecuenciaUMILos" placeholder="Distancia transmisor receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hbs(m):</b> Altura de la antena transmisora: (0 - 10)</b></span>
-                  <input type="text" class="form-control" id="txtAlturaTrasLos" placeholder="Altura de la antena trasmisora"
+                  <input type="number" class="form-control" id="txtAlturaTrasLos" placeholder="Altura de la antena trasmisora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hut(m):</b> Altura de la antena receptora: (1.5 - 22.5)</b></span>
-                  <input type="text" class="form-control" id="txtAlturaRecepLos" placeholder="Altura de la antena receptora"
+                  <input type="number" class="form-control" id="txtAlturaRecepLos" placeholder="Altura de la antena receptora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h2d(m):</b> Distancia entre la antena base y la receptora: (10 - 2000) </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaBaseReceptoraLos" placeholder="Distancia base receptor"
+                  <input type="number" class="form-control" id="txtDistanciaBaseReceptoraLos" placeholder="Distancia base receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h3d(m):</b> Distancia entre Distancia entre punta a punta de la base y receptor: </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaTransReceLos" placeholder="Distancia transmisor receptor"
+                  <input type="number" class="form-control" id="txtDistanciaTransReceLos" placeholder="Distancia transmisor receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="row justify-content-center mb-3">
@@ -2810,27 +2860,27 @@
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>f(GHz):</b> Frecuencia de operacion del sistema: (2 - 6) </b></span>
-                  <input type="text" class="form-control" id="txtFrecuenciaUMINLos" placeholder="Distancia transmisor receptor"
+                  <input type="number" class="form-control" id="txtFrecuenciaUMINLos" placeholder="Distancia transmisor receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hbs(m):</b> Altura de la antena transmisora: (0 - 10)</b></span>
-                  <input type="text" class="form-control" id="txtAlturaTrasNLos" placeholder="Altura de la antena trasmisora"
+                  <input type="number" class="form-control" id="txtAlturaTrasNLos" placeholder="Altura de la antena trasmisora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>hut(m):</b> Altura de la antena receptora: (1.5 - 22.5)</b></span>
-                  <input type="text" class="form-control" id="txtAlturaRecepNLos" placeholder="Altura de la antena receptora"
+                  <input type="number" class="form-control" id="txtAlturaRecepNLos" placeholder="Altura de la antena receptora"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h2d(m):</b> Distancia entre la antena base y la receptora: (10 - 2000) </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaBaseReceptoraNLos" placeholder="Distancia base receptor"
+                  <input type="number" class="form-control" id="txtDistanciaBaseReceptoraNLos" placeholder="Distancia base receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><b>h3d(m):</b> Distancia entre Distancia entre punta a punta de la base y receptor: </b></span>
-                  <input type="text" class="form-control" id="txtDistanciaTransReceNLos" placeholder="Distancia transmisor receptor"
+                  <input type="number" class="form-control" id="txtDistanciaTransReceNLos" placeholder="Distancia transmisor receptor"
                     aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="row justify-content-center mb-3">
@@ -2852,6 +2902,39 @@
                 </div>
               </div>
 
+            </div>
+
+            <div class="d-none col-12 row justify-content-center" id="divEvalu1">
+              <p>
+                <b>1.</b>	Conjunto de expresiones matemáticas, diagramas y algoritmos que representan características de radio de un ambiente, es un modelo de <input type="text" id="" readonly>
+              </p>
+              <p>
+                <b>2.</b>	 Los modelos de propagación predicen la perdida por: <input type="text" id="" readonly> , que una señal RF tenga entre la estación base y el receptor móvil.
+              </p>
+              <p>
+                <b>3.</b>	 Nombre de un modelo que aparece en la clasificación según la técnica de diseño: <input type="text" id="" readonly> 
+              </p>
+              <p>
+                <b>4.</b>	 Nombre de un modelo que aparece en la clasificación según la técnica de diseño: <input type="text" id="" readonly> 
+              </p>
+              <p>
+                <b>5.</b>	La precisión del modelo Estadístico depende de la cantidad de: <input type="text" id="" readonly> , que se recolectan en el ambiente de propagación a estudiar.
+              </p>
+              <p>
+                <b>6.</b>	Uno de los fenómenos que afecta los modelos de propagación dentro de construcciones <input type="text" id="" readonly>
+              </p>
+              <p>
+                <b>7.</b>	Modelo (en inglés), que permite predecir los niveles de señal al interior de construcciones <input type="text" id="" readonly>
+              </p>
+              <p>
+                <b>8.</b>	Modelo (en inglés), que considera parámetros como el perfil del terreno, como la presencia de edificios, arboles, entre otros. <input type="text" id="" readonly>
+              </p>
+              <p>
+                <b>9.</b>	Se desarrolló a partir de una descripción estadística precisa en un entorno urbano, es el resultado de la fusión de los modelos J. Walfisch y F. Ikegami <input type="text" id="" readonly>
+              </p>
+              <p>
+                <b>10.</b>	10.	En el modelo Walfisch - Ikegami la condición para la altura en metros de la antena receptora es de 1 a (numero en letras) <input type="text" id="" readonly>
+              </p>
             </div>
 
         </div>
