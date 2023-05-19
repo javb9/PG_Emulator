@@ -69,6 +69,7 @@ let btnITU = document.getElementById("btnITU");
 let btnSUI = document.getElementById("btnSUI");
 let btnHata = document.getElementById("btnHata");
 let btnUMI = document.getElementById("btnUMI");
+let btnEvalu1 = document.getElementById("btnEvalu1");
 let divContentEmpirico = document.getElementById("divContentEmpirico");
 // let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE = document.getElementById("divCaracteristicasMPE");
@@ -114,6 +115,7 @@ let divITU = document.getElementById("divITU");
 let divSUI = document.getElementById("divSUI");
 let divHata = document.getElementById("divHata");
 let divUMI = document.getElementById("divUMI");
+let divEvalu1 = document.getElementById("divEvalu1");
 let titleModalUnidadII = document.getElementById("titleModalUnidadII");
 let iconContenido = document.getElementById("icon-Contenido");
 let listContent = document.getElementById("listContent");
@@ -127,8 +129,9 @@ let btnUnit3 = document.getElementById("btnUnit3");
 let btnUnit4 = document.getElementById("btnUnit4");
 let btnCalcular = document.getElementById("btnCalcular");
 let divCalcular = document.getElementById("divCalcular");
-let divEvaluacion = document.getElementById("divEvaluacion");
 let btnEvaluacion = document.getElementById("btnEvaluacion");
+let divEvaluacion = document.getElementById("divEvaluacion");
+
 let flexSwitchCheckDefault1 = document.getElementById(
   "flexSwitchCheckDefault1"
 );
@@ -1009,6 +1012,13 @@ btnBorrarUMINLos.addEventListener("click", function () {
     
 });
 
+btnEvalu1.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "Unidad 1";
+  ocultarElemento(divEvalu1, false);
+});
+
+
 function limpiarModalEmpSemp() {
   ocultarElemento(divContentEmpirico, true);
   // ocultarElemento(divContentSemiEmpirico, true);
@@ -1055,6 +1065,7 @@ function limpiarModalEmpSemp() {
   ocultarElemento(divSUI, true);
   ocultarElemento(divHata, true);
   ocultarElemento(divUMI, true);
+  ocultarElemento(divEvalu1, true);
 }
 
 function limpiarVista() {
