@@ -70,6 +70,9 @@ let btnSUI = document.getElementById("btnSUI");
 let btnHata = document.getElementById("btnHata");
 let btnUMI = document.getElementById("btnUMI");
 let btnEvalu1 = document.getElementById("btnEvalu1");
+let btnEvalu2 = document.getElementById("btnEvalu2");
+let btnEvalu3 = document.getElementById("btnEvalu3");
+let btnEvalu4 = document.getElementById("btnEvalu4");
 let divContentEmpirico = document.getElementById("divContentEmpirico");
 // let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE = document.getElementById("divCaracteristicasMPE");
@@ -116,6 +119,9 @@ let divSUI = document.getElementById("divSUI");
 let divHata = document.getElementById("divHata");
 let divUMI = document.getElementById("divUMI");
 let divEvalu1 = document.getElementById("divEvalu1");
+let divEvalu2 = document.getElementById("divEvalu2");
+let divEvalu3 = document.getElementById("divEvalu3");
+let divEvalu4 = document.getElementById("divEvalu4");
 let titleModalUnidadII = document.getElementById("titleModalUnidadII");
 let iconContenido = document.getElementById("icon-Contenido");
 let listContent = document.getElementById("listContent");
@@ -1014,10 +1020,27 @@ btnBorrarUMINLos.addEventListener("click", function () {
 
 btnEvalu1.addEventListener("click", function () {
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText = "Unidad 1";
+  titleModalUnidadII.innerText = "Unidad 1 - Evaluacion";
   ocultarElemento(divEvalu1, false);
 });
 
+btnEvalu2.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "Unidad 2 - Evaluacion";
+  ocultarElemento(divEvalu2, false);
+});
+
+btnEvalu3.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "Unidad 3 - Evaluacion";
+  ocultarElemento(divEvalu3, false);
+});
+
+btnEvalu4.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "Unidad 4 - Evaluacion";
+  ocultarElemento(divEvalu4, false);
+});
 
 function limpiarModalEmpSemp() {
   ocultarElemento(divContentEmpirico, true);
@@ -1066,6 +1089,9 @@ function limpiarModalEmpSemp() {
   ocultarElemento(divHata, true);
   ocultarElemento(divUMI, true);
   ocultarElemento(divEvalu1, true);
+  ocultarElemento(divEvalu2, true);
+  ocultarElemento(divEvalu3, true);
+  ocultarElemento(divEvalu4, true);
 }
 
 function limpiarVista() {
