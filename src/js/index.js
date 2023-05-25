@@ -582,13 +582,13 @@ btnCalcularNLOS.addEventListener("click", function () {
   var logAnchoCalleSub = Math.log10(parseFloat(txtAnchoCalleSub.value));
   var logDiferenciaAlturas = Math.log10(parseFloat(txtAlturaEdificioSub.value) - parseFloat(txtAlturaMovilSub.value));
   var PerdidasLrts = -16.9 - 10 * logAnchoCalleSub + 10 * logFrecuencia + 20 * logDiferenciaAlturas + CalcularAngulo();
-  var DependenciaPerdidasSub = - 4 + (0.7 * ((logFrecuencia/925) - 1));
-  var PerdidasLmsd = PerdidasEstacionSub() + IncrementoPerdidasSub() + ControlDependencia() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios; 
+  var DependenciaPerdidasSub = - 4 + (0.7 * ((logFrecuencia / 925) - 1));
+  var PerdidasLmsd = PerdidasEstacionSub() + IncrementoPerdidasSub() + ControlDependencia() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios;
   var perdida1 = PerdidasEstacionSub();
   var perdida2 = IncrementoPerdidasSub();
   var perdida3 = ControlDependencia();
   var total = PerdidasLo + PerdidasLmsd + PerdidasLrts;
-  
+
   txtResultadoNLOSSub.value = total;
 
 });
@@ -612,10 +612,10 @@ btnCalcularUrb.addEventListener("click", function () {
   var logAnchoCalleUrb = Math.log10(parseFloat(txtCalleUrb.value));
   var logDiferenciaAlturas = Math.log10(parseFloat(txtEdificioUrb.value) - parseFloat(txtMovilUrb.value));
   var PerdidasLrts = -16.9 - 10 * logAnchoCalleUrb + 10 * logFrecuencia + 20 * logDiferenciaAlturas + CalcularAnguloUrb();
-  var DependenciaPerdidasSub = - 4 + (1.5 * ((logFrecuencia/925) - 1));
-  var PerdidasLmsd = PerdidasEstacionUrb() + IncrementoPerdidasUrb() + ControlDependenciaUrb() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios; 
+  var DependenciaPerdidasSub = - 4 + (1.5 * ((logFrecuencia / 925) - 1));
+  var PerdidasLmsd = PerdidasEstacionUrb() + IncrementoPerdidasUrb() + ControlDependenciaUrb() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios;
   var total = PerdidasLo + PerdidasLmsd + PerdidasLrts;
-  
+
   txtResultadoNLOSUrb.value = total;
 
 });
@@ -638,10 +638,10 @@ btnCalcularMedSub.addEventListener("click", function () {
   var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseMedSub.value));
   var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorMedSub.value));
   var FactorCf = parseFloat(txtFactorCorreccionMedSub.value);
-  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 -6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedSub.value)/28);
+  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedSub.value) / 28);
   var PerdidasMedUrb = PerdidasPlo - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
-      
+
   txtResultadoMed.value = PerdidasPlo;
   txtResultadoMedSub.value = PerdidasMedUrb;
 
@@ -664,10 +664,10 @@ btnCalcularMedAbi.addEventListener("click", function () {
   var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseMedAbi.value));
   var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorMedAbi.value));
   var FactorCf = parseFloat(txtFactorCorreccionMedAbi.value);
-  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 -6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedAbi.value)/28);
+  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedAbi.value) / 28);
   var PerdidasMedUrb = PerdidasPlo - 4.78 * Math.pow(logFrecuenciaDiv, 2) + 18.33 * logFrecuencia - 40.94;
-      
+
   txtResultadoMediana.value = PerdidasPlo;
   txtResultadoMedAbi.value = PerdidasMedUrb;
 
@@ -691,10 +691,10 @@ btnCalcularGranSub.addEventListener("click", function () {
   var LogAluraBase = Math.log10(parseFloat(txtAlturaMovilGranSub.value));
   var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorGranSub.value));
   var FactorCf = parseFloat(txtFactorCorreccionGranSub.value);
-  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 -6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranSub.value)/28);
+  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranSub.value) / 28);
   var PerdidasMedUrb = PerdidasPlo - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
-      
+
   txtResultadoGrande.value = PerdidasPlo;
   txtResultadoGraSub.value = PerdidasMedUrb;
 
@@ -718,10 +718,10 @@ btnCalcularGranAbi.addEventListener("click", function () {
   var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseGranAbi.value));
   var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorGranAbi.value));
   var FactorCf = parseFloat(txtFactorCorreccionGranAbi.value);
-  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 -6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranAbi.value)/28);
+  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranAbi.value) / 28);
   var PerdidasMedUrb = PerdidasPlo - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
-      
+
   txtResultadoGra.value = PerdidasPlo;
   txtResultadoGraAbi.value = PerdidasMedUrb;
 
@@ -755,9 +755,9 @@ btnCalcularITU.addEventListener("click", function () {
   var CampoElectrico = 106.9 - 20 * logDslope;
   console.log(CampoElectrico)
   var PerdidasTrayecto = 139.3 - CampoElectrico + 20 * logFrecuencia;
-        
+
   txtResultadoITU.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarITU.addEventListener("click", function () {
@@ -766,7 +766,7 @@ btnBorrarITU.addEventListener("click", function () {
   var transmisor = Math.log10(parseFloat((txtAlturaAntenaITU.value = 0)));
   var receptor = Math.log10(parseFloat((txtAlturaReceptorITU.value = 0)));
   var perdidas = Math.log10(parseFloat((txtResultadoITU.value = 0)));
-    
+
 });
 
 btnSUI.addEventListener("click", function () {
@@ -792,9 +792,9 @@ btnCalcularTipoA.addEventListener("click", function () {
   var Xf = 6 * logDivFrecuencia;
   var Xh = 10.8 * logDivhr;
   var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoA.value) / 100) + Xf + Xh + 10.6;
-      
+
   txtResultadoTipoA.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarTipoA.addEventListener("click", function () {
@@ -803,7 +803,7 @@ btnBorrarTipoA.addEventListener("click", function () {
   var receptor = Math.log10(parseFloat((txtAntenaReceptorTipoA.value = 0)));
   var distancia = Math.log10(parseFloat((txtDistanciaTipoA.value = 0)));
   var perdidas = Math.log10(parseFloat((txtResultadoTipoA.value = 0)));
-    
+
 });
 
 btnCalcularTipoB.addEventListener("click", function () {
@@ -815,8 +815,8 @@ btnCalcularTipoB.addEventListener("click", function () {
   var PerdidasEspacioLibre = 20 * DivisionA;
   console.log(PerdidasEspacioLibre)
   var exponPerdidasY = 4 - 0.0065 * parseFloat(txtAntenaBaseTipoB.value) * (17.1 / parseFloat(txtAntenaBaseTipoB.value));
-  console.log(exponPerdidasY)          
-  var logDivFrecuencia = Math.log(logFrecuencia / 2000); 
+  console.log(exponPerdidasY)
+  var logDivFrecuencia = Math.log(logFrecuencia / 2000);
   var logDivhr = Math.log10(antenaReceptora / 2000);
   console.log(logDivFrecuencia)
   var Xf = 6 * logDivFrecuencia;
@@ -824,9 +824,9 @@ btnCalcularTipoB.addEventListener("click", function () {
   var Xh = 10.8 * logDivhr;
   console.log(Xh)
   var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoB.value) / 100) + Xf + Xh + 9.6;
-      
+
   txtResultadoTipoB.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarTipoB.addEventListener("click", function () {
@@ -835,7 +835,7 @@ btnBorrarTipoB.addEventListener("click", function () {
   var receptor = Math.log10(parseFloat((txtAntenaReceptorTipoB.value = 0)));
   var distancia = Math.log10(parseFloat((txtDistanciaTipoB.value = 0)));
   var perdidas = Math.log10(parseFloat((txtResultadoTipoB.value = 0)));
-    
+
 });
 
 btnCalcularTipoC.addEventListener("click", function () {
@@ -850,9 +850,9 @@ btnCalcularTipoC.addEventListener("click", function () {
   var Xf = 6 * logDivFrecuencia;
   var Xh = 20 * logDivhr;
   var PerdidasTrayecto = PerdidasEspacioLibre + 10 * Math.log10(parseFloat(txtDistanciaTipoC.value) / 100) + Xf + Xh + 8.2;
-      
+
   txtResultadoTipoC.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarTipoC.addEventListener("click", function () {
@@ -861,7 +861,7 @@ btnBorrarTipoC.addEventListener("click", function () {
   var receptor = Math.log10(parseFloat((txtAntenaReceptorTipoC.value = 0)));
   var distancia = Math.log10(parseFloat((txtDistanciaTipoC.value = 0)));
   var perdidas = Math.log10(parseFloat((txtResultadoTipoC.value = 0)));
-    
+
 });
 
 btnHata.addEventListener("click", function () {
@@ -872,7 +872,7 @@ btnHata.addEventListener("click", function () {
 
 btnCalcularHataMedSub.addEventListener("click", function () {
   var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value));
-  console.log(logFrecuencia) 
+  console.log(logFrecuencia)
   var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedSub.value);
   console.log(AntenaReceptora)
   var FactorAh2 = (1.1 * logFrecuencia - 0.7) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
@@ -880,11 +880,11 @@ btnCalcularHataMedSub.addEventListener("click", function () {
   var logDistacia = Math.log10(parseFloat(txtDistanciaHataMedSub.value));
   var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseHataMedSub.value));
   var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value)  / 28);
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value) / 28);
   var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
-      
+
   txtResultadoHataMedSub.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarHataMedSub.addEventListener("click", function () {
@@ -893,23 +893,23 @@ btnBorrarHataMedSub.addEventListener("click", function () {
   var receptor = Math.log10(parseFloat((txtAntenaReceptorHataMedSub.value = 0)));
   var distancia = Math.log10(parseFloat((txtDistanciaHataMedSub.value = 0)));
   var perdidas = Math.log10(parseFloat((txtResultadoHataMedSub.value = 0)));
-    
+
 });
 
 btnCalcularHataMedAbi.addEventListener("click", function () {
   var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaHataMedAbi.value));
-  console.log(logFrecuencia) 
+  console.log(logFrecuencia)
   var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedAbi.value);
   console.log(AntenaReceptora)
   var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
   var logDistacia = Math.log10(parseFloat(txtDistanciaHataMedAbi.value));
   var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseHataMedAbi.value));
   var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  
+
   var PerdidasTrayecto = Perdidas - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
-      
+
   txtResultadoHataMedAbi.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarHataMedAbi.addEventListener("click", function () {
@@ -918,7 +918,7 @@ btnBorrarHataMedAbi.addEventListener("click", function () {
   var receptor = Math.log10(parseFloat((txtAntenaReceptorHataMedAbi.value = 0)));
   var distancia = Math.log10(parseFloat((txtDistanciaHataMedAbi.value = 0)));
   var perdidas = Math.log10(parseFloat((txtResultadoHataMedAbi.value = 0)));
-    
+
 });
 
 btnCalcularGraHataSub.addEventListener("click", function () {
@@ -929,11 +929,11 @@ btnCalcularGraHataSub.addEventListener("click", function () {
   var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseGraHataSub.value));
   var factores = FactAh2();
   var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value)  / 28);
-  var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;    
-    
+  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value) / 28);
+  var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
+
   txtResultadoGraHataSub.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarGraHataSub.addEventListener("click", function () {
@@ -942,12 +942,12 @@ btnBorrarGraHataSub.addEventListener("click", function () {
   var receptor = Math.log10(parseFloat((txtAntenaReceptorGraHataSub.value = 0)));
   var distancia = Math.log10(parseFloat((txtDistanciaGraHataSub.value = 0)));
   var perdidas = Math.log10(parseFloat((txtResultadoGraHataSub.value = 0)));
-    
+
 });
 
 btnCalcularGraHataAbi.addEventListener("click", function () {
   var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaGraHataAbi.value));
-  console.log(logFrecuencia) 
+  console.log(logFrecuencia)
   var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataAbi.value);
   console.log(AntenaReceptora)
   var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
@@ -956,9 +956,9 @@ btnCalcularGraHataAbi.addEventListener("click", function () {
   var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseGraHataAbi.value));
   var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2Abi() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
   var PerdidasTrayecto = Perdidas - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
-      
+
   txtResultadoGraHataAbi.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarGraHataAbi.addEventListener("click", function () {
@@ -967,7 +967,7 @@ btnBorrarGraHataAbi.addEventListener("click", function () {
   var receptor = Math.log10(parseFloat((txtAntenaReceptorGraHataAbi.value = 0)));
   var distancia = Math.log10(parseFloat((txtDistanciaGraHataAbi.value = 0)));
   var perdidas = Math.log10(parseFloat((txtResultadoGraHataAbi.value = 0)));
-    
+
 });
 
 btnUMI.addEventListener("click", function () {
@@ -984,7 +984,7 @@ btnCalcularUMILos.addEventListener("click", function () {
   var PerdidasTrayecto = 22 * logDistanciaPuntaPunta + 28 + 20 * logFrecuencia;
 
   txtResultadoUMILos.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarUMILos.addEventListener("click", function () {
@@ -994,7 +994,7 @@ btnBorrarUMILos.addEventListener("click", function () {
   var baseReceptor = Math.log10(parseFloat((txtDistanciaBaseReceptoraLos.value = 0)));
   var baseReceptorpuntaPunta = Math.log10(parseFloat((txtDistanciaTransReceLos.value = 0)));
   var resultado = Math.log10(parseFloat((txtResultadoUMILos.value = 0)));
-    
+
 });
 
 btnCalcularUMINLos.addEventListener("click", function () {
@@ -1005,7 +1005,7 @@ btnCalcularUMINLos.addEventListener("click", function () {
   var PerdidasTrayecto = 36.7 * logDistanciaPuntaPunta + 22.7 + 26 * logFrecuencia - 0.3 * (parseFloat(txtAlturaRecepNLos.value) - 1.5);
 
   txtResultadoUMINLos.value = PerdidasTrayecto;
-  
+
 });
 
 btnBorrarUMINLos.addEventListener("click", function () {
@@ -1015,7 +1015,7 @@ btnBorrarUMINLos.addEventListener("click", function () {
   var baseReceptor = Math.log10(parseFloat((txtDistanciaBaseReceptoraNLos.value = 0)));
   var baseReceptorpuntaPunta = Math.log10(parseFloat((txtDistanciaTransReceNLos.value = 0)));
   var resultado = Math.log10(parseFloat((txtResultadoUMINLos.value = 0)));
-    
+
 });
 
 btnEvalu1.addEventListener("click", function () {
@@ -1104,7 +1104,7 @@ function limpiarVista() {
   ocultarElemento(divUnit4, true);
   ocultarElemento(divCalcular, true);
   ocultarElemento(divEvaluacion, true);
-  
+
 }
 
 function ocultarElemento(elemento, validar) {
@@ -1338,161 +1338,1378 @@ function MostrarDiv21() {
 
 
 
-function CalcularAngulo(){
+function CalcularAngulo() {
   var angulo = parseFloat(txtAnguloSub.value);
-  if ( angulo <= 35 ){
+  if (angulo <= 35) {
     var ValorAngulo = -10 + (0.354 * angulo);
     return (ValorAngulo);
   }
-  else if (angulo <= 55){
-    var ValorAngulo = 2.3 + (0.075 * (angulo-35));
+  else if (angulo <= 55) {
+    var ValorAngulo = 2.3 + (0.075 * (angulo - 35));
     return (ValorAngulo);
   }
   else {
-    var ValorAngulo = 4 - (0.114 * (angulo-55));
+    var ValorAngulo = 4 - (0.114 * (angulo - 55));
     return (ValorAngulo);
   }
 }
 
-function CalcularAnguloUrb(){
+function CalcularAnguloUrb() {
   var angulo = parseFloat(txtGradosUrb.value);
-  if ( angulo <= 35 ){
+  if (angulo <= 35) {
     var ValorAngulo = -10 + (0.354 * angulo);
     return (ValorAngulo);
   }
-  else if (angulo <= 55){
-    var ValorAngulo = 2.3 + (0.075 * (angulo-35));
+  else if (angulo <= 55) {
+    var ValorAngulo = 2.3 + (0.075 * (angulo - 35));
     return (ValorAngulo);
   }
   else {
-    var ValorAngulo = 4 - (0.114 * (angulo-55));
+    var ValorAngulo = 4 - (0.114 * (angulo - 55));
     return (ValorAngulo);
   }
 }
 
-function PerdidasEstacionSub(){
+function PerdidasEstacionSub() {
   var alturaEstacion = parseFloat(txtAlturaBaseSub.value);
   var AlturaEdificio = parseFloat(txtAlturaEdificioSub.value);
-  if (alturaEstacion > AlturaEdificio ){
+  if (alturaEstacion > AlturaEdificio) {
     var PerdidasSub = -18 * Math.log10(1 + alturaEstacion);
-    return(PerdidasSub);
+    return (PerdidasSub);
   }
   else {
     var PerdidasSub = 0;
-    return(PerdidasSub);
+    return (PerdidasSub);
   }
 
 }
 
-function PerdidasEstacionUrb(){
+function PerdidasEstacionUrb() {
   var alturaEstacion = parseFloat(txtAlturaBaseUrb.value);
   var AlturaEdificio = parseFloat(txtEdificioUrb.value);
-  if (alturaEstacion > AlturaEdificio ){
+  if (alturaEstacion > AlturaEdificio) {
     var PerdidasSub = -18 * Math.log10(1 + alturaEstacion);
-    return(PerdidasSub);
+    return (PerdidasSub);
   }
   else {
     var PerdidasSub = 0;
-    return(PerdidasSub);
+    return (PerdidasSub);
   }
 
 }
 
-function IncrementoPerdidasSub(){
+function IncrementoPerdidasSub() {
   var alturaEstacion = parseFloat(txtAlturaBaseSub.value);
   var Distancia = parseFloat(txtDistanciaNLOS.value);
   var AlturaEdificio = parseFloat(txtAlturaEdificioSub.value);
-  if (alturaEstacion > AlturaEdificio){
-    var KaSub= 54;
-    return(KaSub);
+  if (alturaEstacion > AlturaEdificio) {
+    var KaSub = 54;
+    return (KaSub);
   }
-  else if(Distancia >= 0.5 && alturaEstacion <= AlturaEdificio){
-      var KaSub = 5 - (0.8 * alturaEstacion);
-      return(KaSub);
-    }
-  else if(Distancia < 0.5 && alturaEstacion <= AlturaEdificio){
-        var KaSub = 54 - (1.6 * alturaEstacion);
-        return(KaSub);
-    }
-      
+  else if (Distancia >= 0.5 && alturaEstacion <= AlturaEdificio) {
+    var KaSub = 5 - (0.8 * alturaEstacion);
+    return (KaSub);
+  }
+  else if (Distancia < 0.5 && alturaEstacion <= AlturaEdificio) {
+    var KaSub = 54 - (1.6 * alturaEstacion);
+    return (KaSub);
+  }
+
 }
 
-function IncrementoPerdidasUrb(){
+function IncrementoPerdidasUrb() {
   var alturaEstacion = parseFloat(txtAlturaBaseUrb.value);
   var Distancia = parseFloat(txtDistanciaUrb.value);
   var AlturaEdificio = parseFloat(txtEdificioUrb.value);
-  if (alturaEstacion > AlturaEdificio){
-    var KaSub= 54;
-    return(KaSub);
+  if (alturaEstacion > AlturaEdificio) {
+    var KaSub = 54;
+    return (KaSub);
   }
-  else if(Distancia >= 0.5 && alturaEstacion <= AlturaEdificio){
-      var KaSub = 5 - (0.8 * alturaEstacion);
-      return(KaSub);
-    }
-  else if(Distancia < 0.5 && alturaEstacion <= AlturaEdificio){
-        var KaSub = 54 - (1.6 * alturaEstacion);
-        return(KaSub);
-    }
-      
+  else if (Distancia >= 0.5 && alturaEstacion <= AlturaEdificio) {
+    var KaSub = 5 - (0.8 * alturaEstacion);
+    return (KaSub);
+  }
+  else if (Distancia < 0.5 && alturaEstacion <= AlturaEdificio) {
+    var KaSub = 54 - (1.6 * alturaEstacion);
+    return (KaSub);
+  }
+
 }
 
-function ControlDependencia(){
+function ControlDependencia() {
   var alturaEstacion = parseFloat(txtAlturaBaseSub.value);
   var AlturaEdificio = parseFloat(txtAlturaEdificioSub.value);
-  if(alturaEstacion > AlturaEdificio) {
+  if (alturaEstacion > AlturaEdificio) {
     var KdSub = 18;
-    return(KdSub);
+    return (KdSub);
   }
-  else if (alturaEstacion <= AlturaEdificio){
-    var KdSub = 18 - ((15 * alturaEstacion) / AlturaEdificio )
-    return(KdSub);
+  else if (alturaEstacion <= AlturaEdificio) {
+    var KdSub = 18 - ((15 * alturaEstacion) / AlturaEdificio)
+    return (KdSub);
   }
 }
 
-function ControlDependenciaUrb(){
+function ControlDependenciaUrb() {
   var alturaEstacion = parseFloat(txtAlturaBaseUrb.value);
   var AlturaEdificio = parseFloat(txtEdificioUrb.value);
-  if(alturaEstacion > AlturaEdificio) {
+  if (alturaEstacion > AlturaEdificio) {
     var KdSub = 18;
-    return(KdSub);
+    return (KdSub);
   }
-  else if (alturaEstacion <= AlturaEdificio){
-    var KdSub = 18 - ((15 * alturaEstacion) / AlturaEdificio )
-    return(KdSub);
+  else if (alturaEstacion <= AlturaEdificio) {
+    var KdSub = 18 - ((15 * alturaEstacion) / AlturaEdificio)
+    return (KdSub);
   }
 }
 
-function FactAh2(){
+function FactAh2() {
   var frecuencia = parseFloat(txtFrecuenciaGraHataSub.value);
   var receptor = parseFloat(txtAntenaReceptorGraHataSub.value);
-  if(frecuencia < 300) {
+  if (frecuencia < 300) {
     var logfrecuencia = Math.log(1.54 * receptor);
     var cuadradoFrecuencia = Math.pow(logfrecuencia, 2);
     var facAh2 = 18.29 * cuadradoFrecuencia - 1.1;
-    return(facAh2);
+    return (facAh2);
   }
-  else if (frecuencia >= 300){
+  else if (frecuencia >= 300) {
     var logfrecuencia = Math.log(11.75 * receptor);
     var cuadradoFrecuencia = Math.pow(logfrecuencia, 2);
     var facAh2 = 3.2 * cuadradoFrecuencia - 4.97;
-    return(facAh2);
+    return (facAh2);
   }
 }
 
-function FactAh2Abi(){
+function FactAh2Abi() {
   var frecuencia = parseFloat(txtFrecuenciaGraHataAbi.value);
   var receptor = parseFloat(txtAntenaReceptorGraHataAbi.value);
-  if(frecuencia < 300) {
+  if (frecuencia < 300) {
     var logfrecuencia = Math.log(1.54 * receptor);
     var cuadradoFrecuencia = Math.pow(logfrecuencia, 2);
     var facAh2 = 18.29 * cuadradoFrecuencia - 1.1;
-    return(facAh2);
+    return (facAh2);
   }
-  else if (frecuencia >= 300){
+  else if (frecuencia >= 300) {
     var logfrecuencia = Math.log(11.75 * receptor);
     var cuadradoFrecuencia = Math.pow(logfrecuencia, 2);
     var facAh2 = 3.2 * cuadradoFrecuencia - 4.97;
-    return(facAh2);
+    return (facAh2);
+  }
+}
+
+// EVALUCION 1
+
+btnFinalizar1.addEventListener("click", function () {
+  pregunta1 = Preg1();
+  pregunta2 = Preg2();
+  pregunta3 = Preg3();
+  pregunta4 = Preg4();
+  pregunta5 = Preg5();
+  pregunta6 = Preg6();
+  pregunta7 = Preg7();
+  pregunta8 = Preg8();
+  pregunta9 = Preg9();
+  pregunta10 = Preg10();
+  pregunta11 = Preg11();
+  pregunta12 = Preg12();
+  pregunta13 = Preg13();
+  pregunta14 = Preg14();
+  pregunta15 = Preg15();
+  pregunta16 = Preg16();
+  pregunta17 = Preg17();
+  pregunta18 = Preg18();
+  pregunta19 = Preg19();
+  pregunta20 = Preg20();
+  pregunta21 = Preg21();
+  //pregunta22 = Preg22();
+  pregunta23 = Preg23();
+  pregunta24 = Preg24();
+  //pregunta25 = Preg25();
+  pregunta26 = Preg26();
+  pregunta27 = Preg27();
+  pregunta28 = Preg28();
+
+  var resultadoEvaluacion1 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
+  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
+  + pregunta19 + pregunta20 + pregunta21 + pregunta23 + pregunta24 + pregunta26 + pregunta27 + pregunta28;
+
+  console.log(resultadoEvaluacion1)
+
+  txtResultadoEva1.value = resultadoEvaluacion1;
+
+});
+
+// EVALUCION 2
+
+btnFinalizar2.addEventListener("click", function () {
+
+  pregunta1 = Preg2_1();
+  pregunta2 = Preg2_2_a();
+  pregunta2 = Preg2_2_b();
+  pregunta2 = Preg2_2_c();
+  pregunta3 = Preg2_3();
+  pregunta4 = Preg2_4();
+  pregunta5 = Preg2_5();
+  pregunta6 = Preg2_6();
+  pregunta7 = Preg2_7();
+  pregunta8 = Preg2_8();
+  pregunta9 = Preg2_9();
+  pregunta10 = Preg2_10();
+  pregunta11 = Preg2_11();
+  pregunta12 = Preg2_12();
+  pregunta13 = Preg2_13();
+  pregunta14 = Preg2_14();
+  pregunta15 = Preg2_15();
+  pregunta16 = Preg2_16();
+  pregunta17 = Preg2_17();
+  pregunta18 = Preg2_18();
+  pregunta19 = Preg2_19();
+  pregunta20 = Preg2_20();
+
+  var resultadoEvaluacion2 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
+  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
+  + pregunta19 + pregunta20;
+
+  txtResultadoEva2.value = resultadoEvaluacion2;
+
+});
+
+// EVALUCION 3
+
+btnFinalizar3.addEventListener("click", function () {
+
+  pregunta1 = Preg3_1();
+  pregunta2 = Preg3_2();
+  pregunta3 = Preg3_3();
+  pregunta4 = Preg3_4();
+  pregunta5 = Preg3_5();
+  pregunta6 = Preg3_6();
+  pregunta7 = Preg3_7();
+  pregunta8 = Preg3_8();
+  pregunta9 = Preg3_9();
+  pregunta10 = Preg3_10();
+  pregunta11 = Preg3_11();
+  pregunta12 = Preg3_12();
+  pregunta13 = Preg3_13();
+  pregunta14 = Preg3_14();
+  pregunta15 = Preg3_15();
+  pregunta16 = Preg3_16();
+  pregunta17 = Preg3_17();
+  pregunta18 = Preg3_18();
+  pregunta19 = Preg3_19();
+  pregunta20 = Preg3_20();
+
+  var resultadoEvaluacion3 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
+  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
+  + pregunta19 + pregunta20;
+
+  txtResultadoEva3.value = resultadoEvaluacion3;
+
+});
+
+// EVALUCION 4
+
+btnFinalizar4.addEventListener("click", function () {
+
+  pregunta1 = Preg4_1();
+  pregunta2 = Preg4_2();
+  pregunta3 = Preg4_3();
+  pregunta4 = Preg4_4();
+  pregunta5 = Preg4_5();
+  pregunta6 = Preg4_6();
+  pregunta7 = Preg4_7();
+  pregunta8 = Preg4_8();
+  pregunta9 = Preg4_9();
+  pregunta10 = Preg4_10();
+  pregunta11 = Preg4_11();
+  pregunta12 = Preg4_12();
+  pregunta13 = Preg4_13();
+  pregunta14 = Preg4_14();
+  pregunta15 = Preg4_15();
+  pregunta16 = Preg4_16();
+  pregunta17 = Preg4_17();
+  pregunta18 = Preg4_18();
+  pregunta19 = Preg4_19();
+  pregunta20 = Preg4_20();
+  pregunta21 = Preg4_21();
+  pregunta22 = Preg4_22();
+  pregunta23 = Preg4_23();
+
+  var resultadoEvaluacion4 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
+  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
+  + pregunta19 + pregunta20 + pregunta21 + pregunta22 + pregunta23;
+
+  txtResultadoEva3.value = resultadoEvaluacion4;
+
+});
+
+// FUNCIONES EVALUACION 1
+
+function Preg1() {
+  var respuesta = txtPregunta1_1.value;
+  var valor = 0;
+  if (respuesta == "propagacion") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2() {
+  var respuesta = txtPregunta1_2.value;
+  var valor = 0;
+  if (respuesta == "trayectoria") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg3() {
+  var respuesta = txtPregunta1_3.value;
+  var valor = 0;
+  if (respuesta == "empirico") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg4() {
+  var respuesta = txtPregunta1_4.value;
+  var valor = 0;
+  if (respuesta == "deterministico") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg5() {
+  var respuesta = txtPregunta1_5.value;
+  var valor = 0;
+  if (respuesta == "muestras") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg6() {
+  var respuesta = txtPregunta1_6.value;
+  var valor = 0;
+  if (respuesta == "difraccion") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg7() {
+  var respuesta = txtPregunta1_7.value;
+  var valor = 0;
+  if (respuesta == "indoor") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg8() {
+  var respuesta = txtPregunta1_8.value;
+  var valor = 0;
+  if (respuesta == "outdoor") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg9() {
+  var respuesta = txtPregunta1_9.value;
+  var valor = 0;
+  if (respuesta == "WalfischIkegami") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg10() {
+  var respuesta = txtPregunta1_10.value;
+  var valor = 0;
+  if (respuesta == "tres") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg11() {
+  var p11 = 0;
+  if (document.getElementById('Radios2').checked == true) {
+    p11 = 1;
+    return (p11);
+  }
+  else {
+    return (p11);
+  }
+}
+
+function Preg12() {
+  var p12 = 0;
+  if (document.getElementById('Radios4').checked == true) {
+    p12 = 1;
+    return (p12);
+  }
+  else {
+    return (p12);
+  }
+}
+
+function Preg13() {
+  var respuesta = txtPregunta1_13.value;
+  var valor = 0;
+  if (respuesta == "cost 31–Hata") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg14() {
+  var respuesta = txtPregunta1_14.value;
+  var valor = 0;
+  if (respuesta == "veinte") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg15() {
+  var respuesta = txtPregunta1_15.value;
+  var valor = 0;
+  if (respuesta == "movil") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg16() {
+  var p16 = 0;
+  if (document.getElementById('Radios9').checked == true) {
+    p16 = 1;
+    return (p16);
+  }
+  else {
+    return (p16);
+  }
+}
+
+function Preg17() {
+  var p17 = 0;
+  if (document.getElementById('Radios12').checked == true) {
+    p17 = 1;
+    return (p17);
+  }
+  else {
+    return (p17);
+  }
+}
+
+function Preg18() {
+  var respuesta = txtPregunta1_18.value;
+  var valor = 0;
+  if (respuesta == "P.1546-5") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg19() {
+  var respuesta = txtPregunta1_19.value;
+  var valor = 0;
+  if (respuesta == "30 a 300") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg20() {
+  var p20 = 0;
+  if (document.getElementById('Radios13').checked == true) {
+    p20 = 1;
+    return (p20);
+  }
+  else {
+    return (p20);
+  }
+}
+
+function Preg21() {
+  var respuesta = txtPregunta1_21.value;
+  var valor = 0;
+  if (respuesta == "40 metros") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+//function Preg22() {
+//  var respuesta = txtPregunta1_22.value;
+//  var valor = 0;
+//  if (respuesta == "40 metros") {
+//    valor = 1;
+//    return (valor);
+//  }
+//  else {
+//    return (valor);
+//  }
+//}
+
+function Preg23() {
+  var p20 = 0;
+  if (document.getElementById('Radios17').checked == true) {
+    p20 = 1;
+    return (p20);
+  }
+  else {
+    return (p20);
+  }
+}
+
+function Preg24() {
+  var p20 = 0;
+  if (document.getElementById('Radios20').checked == true) {
+    p20 = 1;
+    return (p20);
+  }
+  else {
+    return (p20);
+  }
+}
+
+//function Preg25() {
+//  var respuesta = txtPregunta1_22.value;
+//  var valor = 0;
+//  if (respuesta == "40 metros") {
+//    valor = 1;
+//    return (valor);
+//  }
+//  else {
+//    return (valor);
+//  }
+//}
+
+function Preg26() {
+  var respuesta = txtPregunta1_26.value;
+  var valor = 0;
+  if (respuesta == "LOS y NLOS") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg27() {
+  var p27 = 0;
+  if (document.getElementById('Radios24').checked == true) {
+    p27 = 1;
+    return (p27);
+  }
+  else {
+    return (p27);
+  }
+}
+
+function Preg28() {
+  var p28 = 0;
+  if (document.getElementById('Radios25').checked == true) {
+    p28 = 1;
+    return (p28);
+  }
+  else {
+    return (p28);
+  }
+}
+
+// FUNCIONES EVALUACION 2
+
+function Preg2_1() {
+  var respuesta = txtResultado2_1.value;
+  var valor = 0;
+  if (respuesta == "las señales de humo, las palomas mensajeras, mensajes en piedras") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_2_a() {
+  var respuesta = txtResultado2_2.value;
+  var valor = 0;
+  if (respuesta == "Propagacion Inalambrica") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_2_b() {
+  var respuesta = txtResultado2_3.value;
+  var valor = 0;
+  if (respuesta == "telefono") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_2_c() {
+  var respuesta = txtResultado2_4.value;
+  var valor = 0;
+  if (respuesta == "diodo") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_3() {
+  var respuesta = txtResultado2_3_1.value;
+  var valor = 0;
+  if (respuesta == "ondas de radio") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+} 
+
+function Preg2_4() {
+  var p4 = 0;
+  if (document.getElementById('Radios29').checked == true) {
+    p4 = 1;
+    return (p4);
+  }
+  else {
+    return (p4);
+  }
+}
+
+function Preg2_5() {
+  var respuesta = txtResultado2_5.value;
+  var valor = 0;
+  if (respuesta == "redes pmr") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_6() {
+  var respuesta = txtResultado2_6.value;
+  var valor = 0;
+  if (respuesta == "estandares") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_7() {
+  var respuesta = txtResultado2_7.value;
+  var valor = 0;
+  if (respuesta == "Seguridad, bomberos, taxis, policia") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_8() {
+  var p8 = 0;
+  if (document.getElementById('Radios31').checked == true) {
+    p8 = 1;
+    return (p8);
+  }
+  else {
+    return (p8);
+  }
+}
+
+function Preg2_9() {
+  var p9 = 0;
+  if (document.getElementById('Radios32').checked == true) {
+    p9 = 1;
+    return (p9);
+  }
+  else {
+    return (p9);
+  }
+}
+
+function Preg2_10() {
+  var p10 = 0;
+  if (document.getElementById('Radios34').checked == true) {
+    p10 = 1;
+    return (p10);
+  }
+  else {
+    return (p10);
+  }
+}
+
+function Preg2_11() {
+  var respuesta = txtResultado2_11.value;
+  var valor = 0;
+  if (respuesta == "lmds") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_12() {
+  var p12 = 0;
+  if (document.getElementById('Radios36').checked == true) {
+    p12 = 1;
+    return (p12);
+  }
+  else {
+    return (p12);
+  }
+}
+
+function Preg2_13() {
+  var p13 = 0;
+  if (document.getElementById('Radios41').checked == true) {
+    p13 = 1;
+    return (p13);
+  }
+  else {
+    return (p13);
+  }
+}
+
+function Preg2_14() {
+  var respuesta = txtResultado2_14.value;
+  var valor = 0;
+  if (respuesta == "dos estacion base fija y telefono fijo") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_15() {
+  var p15 = 0;
+  if (document.getElementById('Radios44').checked == true) {
+    p15 = 1;
+    return (p15);
+  }
+  else {
+    return (p15);
+  }
+}
+
+function Preg2_16() {
+  var p16 = 0;
+  if (document.getElementById('Radios46').checked == true) {
+    p16 = 1;
+    return (p16);
+  }
+  else {
+    return (p16);
+  }
+}
+
+function Preg2_17() {
+  var p17 = 0;
+  if (document.getElementById('Radios49').checked == true) {
+    p17 = 1;
+    return (p17);
+  }
+  else {
+    return (p17);
+  }
+}
+
+function Preg2_18() {
+  var respuesta = txtResultado2_18.value;
+  var valor = 0;
+  if (respuesta == "primera generacion") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg2_19() {
+  var p19 = 0;
+  if (document.getElementById('Radios52').checked == true) {
+    p19 = 1;
+    return (p19);
+  }
+  else {
+    return (p19);
+  }
+}
+
+function Preg2_20() {
+  var p20 = 0;
+  if (document.getElementById('Radios53').checked == true) {
+    p20 = 1;
+    return (p20);
+  }
+  else {
+    return (p20);
+  }
+}
+
+// FUNCIONES EVALUACION 3
+
+function Preg3_1() {
+  var respuesta = txtResultado3_1.value;
+  var valor = 0;
+  if (respuesta == "cdma") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg3_2() {
+  var p2 = 0;
+  if (document.getElementById('Radios56').checked == true) {
+    p2 = 1;
+    return (p2);
+  }
+  else {
+    return (p2);
+  }
+}
+
+function Preg3_3() {
+  var p3 = 0;
+  if (document.getElementById('Radios59').checked == true) {
+    p3 = 1;
+    return (p3);
+  }
+  else {
+    return (p3);
+  }
+}
+
+function Preg3_4() {
+  var p4 = 0;
+  if (document.getElementById('Radios62').checked == true) {
+    p4 = 1;
+    return (p4);
+  }
+  else {
+    return (p4);
+  }
+}
+
+function Preg3_5() {
+  var p5 = 0;
+  if (document.getElementById('Radios65').checked == true) {
+    p5 = 1;
+    return (p5);
+  }
+  else {
+    return (p5);
+  }
+}
+
+function Preg3_6() {
+  var respuesta = txtResultado3_6.value;
+  var valor = 0;
+  if (respuesta == "segunda generacion") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg3_7() {
+  var p7 = 0;
+  if (document.getElementById('Radios68').checked == true) {
+    p7 = 1;
+    return (p7);
+  }
+  else {
+    return (p7);
+  }
+}
+
+function Preg3_8() {
+  var p8 = 0;
+  if (document.getElementById('Radios69').checked == true) {
+    p8 = 1;
+    return (p8);
+  }
+  else {
+    return (p8);
+  }
+}
+
+function Preg3_9() {
+  var respuesta = txtResultado3_9.value;
+  var valor = 0;
+  if (respuesta == "2.5 g") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg3_10() {
+  var p10 = 0;
+  if (document.getElementById('Radios71').checked == true) {
+    p10 = 1;
+    return (p10);
+  }
+  else {
+    return (p10);
+  }
+}
+
+function Preg3_11() {
+  var p11 = 0;
+  if (document.getElementById('Radios75').checked == true) {
+    p11 = 1;
+    return (p11);
+  }
+  else {
+    return (p11);
+  }
+}
+
+function Preg3_12() {
+  var p12 = 0;
+  if (document.getElementById('Radios78').checked == true) {
+    p12 = 1;
+    return (p12);
+  }
+  else {
+    return (p12);
+  }
+}
+
+function Preg3_13() {
+  var p13 = 0;
+  if (document.getElementById('Radios81').checked == true) {
+    p13 = 1;
+    return (p13);
+  }
+  else {
+    return (p13);
+  }
+}
+
+function Preg3_14() {
+  var p14 = 0;
+  if (document.getElementById('Radios83').checked == true) {
+    p14 = 1;
+    return (p14);
+  }
+  else {
+    return (p14);
+  }
+}
+
+function Preg3_15() {
+  var p15 = 0;
+  if (document.getElementById('Radios87').checked == true) {
+    p15 = 1;
+    return (p15);
+  }
+  else {
+    return (p15);
+  }
+}
+
+function Preg3_16() {
+  var respuesta = txtResultado3_16.value;
+  var valor = 0;
+  if (respuesta == "5g e iot") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg3_17() {
+  var respuesta = txtResultado3_17.value;
+  var valor = 0;
+  if (respuesta == "iot") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg3_18() {
+  var p18 = 0;
+  if (document.getElementById('Radios91').checked == true) {
+    p18 = 1;
+    return (p18);
+  }
+  else {
+    return (p18);
+  }
+}
+
+function Preg3_19() {
+  var respuesta = txtResultado3_19.value;
+  var valor = 0;
+  if (respuesta == "ofdm") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg3_20() {
+  var p20 = 0;
+  if (document.getElementById('Radios92').checked == true) {
+    p20 = 1;
+    return (p20);
+  }
+  else {
+    return (p20);
+  }
+}
+
+// FUNCIONES EVALUACION 4
+
+function Preg4_1() {
+  var p1 = 0;
+  if (document.getElementById('Radios96').checked == true) {
+    p1 = 1;
+    return (p1);
+  }
+  else {
+    return (p1);
+  }
+}
+
+function Preg4_2() {
+  var p2 = 0;
+  if (document.getElementById('Radios97').checked == true) {
+    p2 = 1;
+    return (p2);
+  }
+  else {
+    return (p2);
+  }
+}
+
+function Preg4_3() {
+  var p3 = 0;
+  if (document.getElementById('Radios100').checked == true) {
+    p3 = 1;
+    return (p3);
+  }
+  else {
+    return (p3);
+  }
+}
+
+function Preg4_4() {
+  var p4 = 0;
+  if (document.getElementById('Radios103').checked == true) {
+    p4 = 1;
+    return (p4);
+  }
+  else {
+    return (p4);
+  }
+}
+
+function Preg4_5() {
+  var p5 = 0;
+  if (document.getElementById('Radios106').checked == true) {
+    p5 = 1;
+    return (p5);
+  }
+  else {
+    return (p5);
+  }
+}
+
+function Preg4_6() {
+  var p6 = 0;
+  if (document.getElementById('Radios107').checked == true) {
+    p6 = 1;
+    return (p6);
+  }
+  else {
+    return (p6);
+  }
+}
+
+function Preg4_7() {
+  var respuesta = txtResultado4_7.value;
+  var valor = 0;
+  if (respuesta == "geoestacionaria") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg4_8() {
+  var p8 = 0;
+  if (document.getElementById('Radios111').checked == true) {
+    p8 = 1;
+    return (p8);
+  }
+  else {
+    return (p8);
+  }
+}
+
+function Preg4_9() {
+  var respuesta = txtResultado4_9.value;
+  var valor = 0;
+  if (respuesta == "3 y 7") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg4_10() {
+  var p10 = 0;
+  if (document.getElementById('Radios112').checked == true) {
+    p10 = 1;
+    return (p10);
+  }
+  else {
+    return (p10);
+  }
+}
+
+function Preg4_11() {
+  var respuesta = txtResultado4_11.value;
+  var valor = 0;
+  if (respuesta == "10 y 15") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg4_12() {
+  var p12 = 0;
+  if (document.getElementById('Radios116').checked == true) {
+    p12 = 1;
+    return (p12);
+  }
+  else {
+    return (p12);
+  }
+}
+
+function Preg4_13() {
+  var p13 = 0;
+  if (document.getElementById('Radios118').checked == true) {
+    p13 = 1;
+    return (p13);
+  }
+  else {
+    return (p13);
+  }
+}
+
+function Preg4_14() {
+  var p14 = 0;
+  if (document.getElementById('Radios121').checked == true) {
+    p14 = 1;
+    return (p14);
+  }
+  else {
+    return (p14);
+  }
+}
+
+function Preg4_15() {
+  var p15 = 0;
+  if (document.getElementById('Radios123').checked == true) {
+    p15 = 1;
+    return (p15);
+  }
+  else {
+    return (p15);
+  }
+}
+
+function Preg4_17() {
+  var p17 = 0;
+  if (document.getElementById('Radios126').checked == true) {
+    p17 = 1;
+    return (p17);
+  }
+  else {
+    return (p17);
+  }
+}
+
+function Preg4_18() {
+  var p18 = 0;
+  if (document.getElementById('Radios129').checked == true) {
+    p18 = 1;
+    return (p18);
+  }
+  else {
+    return (p18);
+  }
+}
+
+function Preg4_19() {
+  var p19 = 0;
+  if (document.getElementById('Radios133').checked == true) {
+    p19 = 1;
+    return (p19);
+  }
+  else {
+    return (p19);
+  }
+}
+
+function Preg4_20() {
+  var p20 = 0;
+  if (document.getElementById('Radios134').checked == true) {
+    p20 = 1;
+    return (p20);
+  }
+  else {
+    return (p20);
+  }
+}
+
+function Preg4_21() {
+  var p21 = 0;
+  if (document.getElementById('Radios136').checked == true) {
+    p21 = 1;
+    return (p21);
+  }
+  else {
+    return (p21);
+  }
+}
+
+function Preg4_22() {
+  var p22 = 0;
+  if (document.getElementById('Radios142').checked == true) {
+    p22 = 1;
+    return (p22);
+  }
+  else {
+    return (p22);
+  }
+}
+
+function Preg4_23() {
+  var respuesta = txtResultado4_23.value;
+  var valor = 0;
+  if (respuesta == "ofdm") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
+
+function Preg4_24() {
+  var p24 = 0;
+  if (document.getElementById('Radios143').checked == true) {
+    p24 = 1;
+    return (p24);
+  }
+  else {
+    return (p24);
   }
 }
 
