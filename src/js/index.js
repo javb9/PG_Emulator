@@ -5,7 +5,7 @@ let closeSidebar = document.getElementById("closeSidebar");
 
 let btnContenido = document.getElementById("btnContenido");
 //let btnCalcular=document.getElementById('btnCalcular');
-let btnGuia = document.getElementById("btnGuia");
+//let btnGuia = document.getElementById("btnGuia");
 
 let videoUnidad1 = document.getElementById("videoUnidad1");
 let videoUnidad2 = document.getElementById("videoUnidad2");
@@ -137,6 +137,8 @@ let btnCalcular = document.getElementById("btnCalcular");
 let divCalcular = document.getElementById("divCalcular");
 let btnEvaluacion = document.getElementById("btnEvaluacion");
 let divEvaluacion = document.getElementById("divEvaluacion");
+let btnGuia = document.getElementById("btnGuia");
+let divGuia = document.getElementById("divGuia");
 
 let flexSwitchCheckDefault1 = document.getElementById(
   "flexSwitchCheckDefault1"
@@ -307,6 +309,12 @@ btnEvaluacion.addEventListener("click", function () {
   console.log("entro");
   limpiarVista();
   ocultarElemento(divEvaluacion, false);
+});
+
+btnGuia.addEventListener("click", function () {
+  console.log("entro");
+  limpiarVista();
+  ocultarElemento(divGuia, false);
 });
 
 //btnEmpirico.addEventListener('click', function(){
@@ -1104,6 +1112,7 @@ function limpiarVista() {
   ocultarElemento(divUnit4, true);
   ocultarElemento(divCalcular, true);
   ocultarElemento(divEvaluacion, true);
+  ocultarElemento(divGuia, true);
 
 }
 
@@ -1520,17 +1529,17 @@ btnFinalizar1.addEventListener("click", function () {
   pregunta19 = Preg19();
   pregunta20 = Preg20();
   pregunta21 = Preg21();
-  //pregunta22 = Preg22();
+  pregunta22 = Preg22();
   pregunta23 = Preg23();
   pregunta24 = Preg24();
-  //pregunta25 = Preg25();
+  pregunta25 = Preg25();
   pregunta26 = Preg26();
   pregunta27 = Preg27();
   pregunta28 = Preg28();
 
   var resultadoEvaluacion1 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
   pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
-  + pregunta19 + pregunta20 + pregunta21 + pregunta23 + pregunta24 + pregunta26 + pregunta27 + pregunta28;
+  + pregunta19 + pregunta20 + pregunta21 +  pregunta22 + pregunta23 + pregunta24 + pregunta25 + pregunta26 + pregunta27 + pregunta28;
 
   console.log(resultadoEvaluacion1)
 
@@ -1891,17 +1900,17 @@ function Preg21() {
   }
 }
 
-//function Preg22() {
-//  var respuesta = txtPregunta1_22.value;
-//  var valor = 0;
-//  if (respuesta == "40 metros") {
-//    valor = 1;
-//    return (valor);
-//  }
-//  else {
-//    return (valor);
-//  }
-//}
+function Preg22() {
+  var respuesta = txtPregunta1_22.value;
+  var valor = 0;
+  if (respuesta == "209.6050") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
 
 function Preg23() {
   var p20 = 0;
@@ -1925,17 +1934,17 @@ function Preg24() {
   }
 }
 
-//function Preg25() {
-//  var respuesta = txtPregunta1_22.value;
-//  var valor = 0;
-//  if (respuesta == "40 metros") {
-//    valor = 1;
-//    return (valor);
-//  }
-//  else {
-//    return (valor);
-//  }
-//}
+function Preg25() {
+  var respuesta = txtPregunta1_25.value;
+  var valor = 0;
+  if (respuesta == "115.5780") {
+    valor = 1;
+    return (valor);
+  }
+  else {
+    return (valor);
+  }
+}
 
 function Preg26() {
   var respuesta = txtPregunta1_26.value;

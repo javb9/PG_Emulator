@@ -200,3 +200,32 @@ h5 {
     font-family: "Homer Simpson UI";
     font-size: 120%;
   }
+
+  .btnSeleccion1 {
+    font-family: "Homer Simpson UI";
+    font-size: 160%;
+    margin: 30px;
+  }
+
+  .btn-download {
+    background-color: #00539F;
+    color: #fff;
+    border-color: #004686;
+}
+
+.btn-desc {
+  display: inline-block;
+  padding: 18px 25px;
+  text-decoration: none;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #eee;
+  color: #555;
+  margin-top: 80px;
+}
+
+.font-desc {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+}
