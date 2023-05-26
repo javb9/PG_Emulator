@@ -1647,7 +1647,7 @@ btnFinalizar4.addEventListener("click", function () {
   pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
   + pregunta19 + pregunta20 + pregunta21 + pregunta22 + pregunta23;
 
-  txtResultadoEva3.value = resultadoEvaluacion4;
+  txtResultadoEva4.value = resultadoEvaluacion4;
 
 });
 
@@ -1798,7 +1798,7 @@ function Preg12() {
 function Preg13() {
   var respuesta = txtPregunta1_13.value;
   var valor = 0;
-  if (respuesta == "cost 31–Hata") {
+  if (respuesta == "COST 231 – Hata") {
     valor = 1;
     return (valor);
   }
@@ -1844,7 +1844,7 @@ function Preg16() {
 
 function Preg17() {
   var p17 = 0;
-  if (document.getElementById('Radios12').checked == true) {
+  if (document.getElementById('Radios11').checked == true) {
     p17 = 1;
     return (p17);
   }
@@ -1856,7 +1856,7 @@ function Preg17() {
 function Preg18() {
   var respuesta = txtPregunta1_18.value;
   var valor = 0;
-  if (respuesta == "P.1546-5") {
+  if (respuesta == "Recomendación P.1546-5") {
     valor = 1;
     return (valor);
   }
@@ -1868,7 +1868,7 @@ function Preg18() {
 function Preg19() {
   var respuesta = txtPregunta1_19.value;
   var valor = 0;
-  if (respuesta == "30 a 300") {
+  if (respuesta == "De los 30 a 300MHz") {
     valor = 1;
     return (valor);
   }
@@ -1903,7 +1903,7 @@ function Preg21() {
 function Preg22() {
   var respuesta = txtPregunta1_22.value;
   var valor = 0;
-  if (respuesta == "209.6050") {
+  if (respuesta == "-269.4722") {
     valor = 1;
     return (valor);
   }
@@ -1937,7 +1937,7 @@ function Preg24() {
 function Preg25() {
   var respuesta = txtPregunta1_25.value;
   var valor = 0;
-  if (respuesta == "115.5780") {
+  if (respuesta == "154.6313") {
     valor = 1;
     return (valor);
   }
@@ -2080,7 +2080,7 @@ function Preg2_6() {
 function Preg2_7() {
   var respuesta = txtResultado2_7.value;
   var valor = 0;
-  if (respuesta == "Seguridad, bomberos, taxis, policia") {
+  if (respuesta == "Seguridad, bomberos, taxis, policía") {
     valor = 1;
     return (valor);
   }
@@ -2159,7 +2159,7 @@ function Preg2_13() {
 function Preg2_14() {
   var respuesta = txtResultado2_14.value;
   var valor = 0;
-  if (respuesta == "dos estacion base fija y telefono fijo") {
+  if (respuesta == "Dos, una estación base fija y la otra es un teléfono fijo o portátil") {
     valor = 1;
     return (valor);
   }
@@ -2181,7 +2181,7 @@ function Preg2_15() {
 
 function Preg2_16() {
   var p16 = 0;
-  if (document.getElementById('Radios46').checked == true) {
+  if (document.getElementById('Radios45').checked == true) {
     p16 = 1;
     return (p16);
   }
