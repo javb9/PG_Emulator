@@ -1521,6 +1521,7 @@ btnFinalizar1.addEventListener("click", function () {
   pregunta11 = Preg11();
   pregunta12 = Preg12();
   pregunta13 = Preg13();
+  console.log(pregunta13);
   pregunta14 = Preg14();
   pregunta15 = Preg15();
   pregunta16 = Preg16();
@@ -1634,7 +1635,6 @@ btnFinalizar4.addEventListener("click", function () {
   pregunta13 = Preg4_13();
   pregunta14 = Preg4_14();
   pregunta15 = Preg4_15();
-  pregunta16 = Preg4_16();
   pregunta17 = Preg4_17();
   pregunta18 = Preg4_18();
   pregunta19 = Preg4_19();
@@ -1644,7 +1644,7 @@ btnFinalizar4.addEventListener("click", function () {
   pregunta23 = Preg4_23();
 
   var resultadoEvaluacion4 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
-  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
+  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta17 + pregunta18 
   + pregunta19 + pregunta20 + pregunta21 + pregunta22 + pregunta23;
 
   txtResultadoEva4.value = resultadoEvaluacion4;
@@ -1752,7 +1752,7 @@ function Preg8() {
 function Preg9() {
   var respuesta = txtPregunta1_9.value;
   var valor = 0;
-  if (respuesta == "WalfischIkegami") {
+  if (respuesta == "Walfisch Ikegami") {
     valor = 1;
     return (valor);
   }
@@ -1856,7 +1856,7 @@ function Preg17() {
 function Preg18() {
   var respuesta = txtPregunta1_18.value;
   var valor = 0;
-  if (respuesta == "Recomendación P.1546-5") {
+  if (respuesta == "Recomendacion P.1546-5") {
     valor = 1;
     return (valor);
   }
@@ -2080,7 +2080,7 @@ function Preg2_6() {
 function Preg2_7() {
   var respuesta = txtResultado2_7.value;
   var valor = 0;
-  if (respuesta == "Seguridad, bomberos, taxis, policía") {
+  if (respuesta == "Seguridad, bomberos, taxis, policia") {
     valor = 1;
     return (valor);
   }
@@ -2159,7 +2159,7 @@ function Preg2_13() {
 function Preg2_14() {
   var respuesta = txtResultado2_14.value;
   var valor = 0;
-  if (respuesta == "Dos, una estación base fija y la otra es un teléfono fijo o portátil") {
+  if (respuesta == "Dos, una estacion base fija y la otra es un telefono fijo o portatil") {
     valor = 1;
     return (valor);
   }
