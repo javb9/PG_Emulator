@@ -22,6 +22,12 @@ let video5G = document.getElementById("video5G");
 let videoHistoria = document.getElementById("videoHistoria");
 let videoPARAMETROS = document.getElementById("videoPARAMETROS");
 let videoECUACIONES = document.getElementById("videoECUACIONES");
+let videoModeloI = document.getElementById("videoModeloI");
+let videoModeloII = document.getElementById("videoModeloII");
+let videoModeloIII = document.getElementById("videoModeloIII");
+let videoModeloIV = document.getElementById("videoModeloIV");
+let videoModeloV = document.getElementById("videoModeloV");
+let videoModeloVI = document.getElementById("videoModeloVI");
 
 let btnEmpirico = document.getElementById("btnEmpirico");
 let btnSemiEmpirico = document.getElementById("btnSemiEmpirico");
@@ -73,6 +79,12 @@ let btnEvalu1 = document.getElementById("btnEvalu1");
 let btnEvalu2 = document.getElementById("btnEvalu2");
 let btnEvalu3 = document.getElementById("btnEvalu3");
 let btnEvalu4 = document.getElementById("btnEvalu4");
+let btnModeloI = document.getElementById("btnModeloI");
+let btnModeloII = document.getElementById("btnModeloII");
+let btnModeloIII = document.getElementById("btnModeloIII");
+let btnModeloIV = document.getElementById("btnModeloIV");
+let btnModeloV = document.getElementById("btnModeloV");
+let btnModeloVI = document.getElementById("btnModeloVI");
 let divContentEmpirico = document.getElementById("divContentEmpirico");
 // let divContentSemiEmpirico=document.getElementById('divContentSemiEmpirico');
 let divCaracteristicasMPE = document.getElementById("divCaracteristicasMPE");
@@ -122,6 +134,12 @@ let divEvalu1 = document.getElementById("divEvalu1");
 let divEvalu2 = document.getElementById("divEvalu2");
 let divEvalu3 = document.getElementById("divEvalu3");
 let divEvalu4 = document.getElementById("divEvalu4");
+let divModeloI = document.getElementById("divModeloI");
+let divModeloII = document.getElementById("divModeloII");
+let divModeloIII = document.getElementById("divModeloIII");
+let divModeloIV = document.getElementById("divModeloIV");
+let divModeloV = document.getElementById("divModeloV");
+let divModeloVI = document.getElementById("divModeloVI");
 let titleModalUnidadII = document.getElementById("titleModalUnidadII");
 let iconContenido = document.getElementById("icon-Contenido");
 let listContent = document.getElementById("listContent");
@@ -585,13 +603,17 @@ btnBorrarDato.addEventListener("click", function () {
 btnCalcularNLOS.addEventListener("click", function () {
   var logDistacia = Math.log10(parseFloat(txtDistanciaNLOS.value));
   var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaNLOS.value));
+  var valFrecuencia = parseFloat(txtFrecuenciaNLOS.value);
   var LogdistanEdificios = Math.log10(parseFloat(txtDistanciaEdificios.value));
   var PerdidasLo = 32.4 + 20 * logDistacia + 20 * logFrecuencia;
+  console.log(PerdidasLo);
   var logAnchoCalleSub = Math.log10(parseFloat(txtAnchoCalleSub.value));
   var logDiferenciaAlturas = Math.log10(parseFloat(txtAlturaEdificioSub.value) - parseFloat(txtAlturaMovilSub.value));
   var PerdidasLrts = -16.9 - 10 * logAnchoCalleSub + 10 * logFrecuencia + 20 * logDiferenciaAlturas + CalcularAngulo();
-  var DependenciaPerdidasSub = - 4 + (0.7 * ((logFrecuencia / 925) - 1));
+  console.log(PerdidasLrts);
+  var DependenciaPerdidasSub = - 4 + (0.7 * ((valFrecuencia / 925) - 1));
   var PerdidasLmsd = PerdidasEstacionSub() + IncrementoPerdidasSub() + ControlDependencia() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios;
+  console.log(PerdidasLmsd);
   var perdida1 = PerdidasEstacionSub();
   var perdida2 = IncrementoPerdidasSub();
   var perdida3 = ControlDependencia();
@@ -615,12 +637,13 @@ btnBorrarDatoSub.addEventListener("click", function () {
 btnCalcularUrb.addEventListener("click", function () {
   var logDistacia = Math.log10(parseFloat(txtDistanciaUrb.value));
   var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUrb.value));
+  var valFrecuencia = parseFloat(txtFrecuenciaUrb.value);
   var LogdistanEdificios = Math.log10(parseFloat(txtDistanciaEdifUrb.value));
   var PerdidasLo = 32.4 + 20 * logDistacia + 20 * logFrecuencia;
   var logAnchoCalleUrb = Math.log10(parseFloat(txtCalleUrb.value));
   var logDiferenciaAlturas = Math.log10(parseFloat(txtEdificioUrb.value) - parseFloat(txtMovilUrb.value));
   var PerdidasLrts = -16.9 - 10 * logAnchoCalleUrb + 10 * logFrecuencia + 20 * logDiferenciaAlturas + CalcularAnguloUrb();
-  var DependenciaPerdidasSub = - 4 + (1.5 * ((logFrecuencia / 925) - 1));
+  var DependenciaPerdidasSub = - 4 + (1.5 * ((valFrecuencia / 925) - 1));
   var PerdidasLmsd = PerdidasEstacionUrb() + IncrementoPerdidasUrb() + ControlDependenciaUrb() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios;
   var total = PerdidasLo + PerdidasLmsd + PerdidasLrts;
 
@@ -1050,6 +1073,42 @@ btnEvalu4.addEventListener("click", function () {
   ocultarElemento(divEvalu4, false);
 });
 
+btnModeloI.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "MODELO I";
+  ocultarElemento(divModeloI, false);
+});
+
+btnModeloII.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "MODELO II";
+  ocultarElemento(divModeloII, false);
+});
+
+btnModeloIII.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "MODELO III";
+  ocultarElemento(divModeloIII, false);
+});
+
+btnModeloIV.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "MODELO IV";
+  ocultarElemento(divModeloIV, false);
+});
+
+btnModeloV.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "MODELO V";
+  ocultarElemento(divModeloV, false);
+});
+
+btnModeloVI.addEventListener("click", function () {
+  limpiarModalEmpSemp();
+  titleModalUnidadII.innerText = "MODELO VI";
+  ocultarElemento(divModeloVI, false);
+});
+
 function limpiarModalEmpSemp() {
   ocultarElemento(divContentEmpirico, true);
   // ocultarElemento(divContentSemiEmpirico, true);
@@ -1100,6 +1159,12 @@ function limpiarModalEmpSemp() {
   ocultarElemento(divEvalu2, true);
   ocultarElemento(divEvalu3, true);
   ocultarElemento(divEvalu4, true);
+  ocultarElemento(divModeloI, true);
+  ocultarElemento(divModeloII, true);
+  ocultarElemento(divModeloIII, true);
+  ocultarElemento(divModeloIV, true);
+  ocultarElemento(divModeloV, true);
+  ocultarElemento(divModeloVI, true);
 }
 
 function limpiarVista() {
@@ -1383,7 +1448,8 @@ function PerdidasEstacionSub() {
   var alturaEstacion = parseFloat(txtAlturaBaseSub.value);
   var AlturaEdificio = parseFloat(txtAlturaEdificioSub.value);
   if (alturaEstacion > AlturaEdificio) {
-    var PerdidasSub = -18 * Math.log10(1 + alturaEstacion);
+    var diferencia = alturaEstacion - AlturaEdificio;
+    var PerdidasSub = -18 * Math.log10(1 + diferencia);
     return (PerdidasSub);
   }
   else {
@@ -1397,7 +1463,8 @@ function PerdidasEstacionUrb() {
   var alturaEstacion = parseFloat(txtAlturaBaseUrb.value);
   var AlturaEdificio = parseFloat(txtEdificioUrb.value);
   if (alturaEstacion > AlturaEdificio) {
-    var PerdidasSub = -18 * Math.log10(1 + alturaEstacion);
+    var diferencia = alturaEstacion - AlturaEdificio;
+    var PerdidasSub = -18 * Math.log10(1 + diferencia);
     return (PerdidasSub);
   }
   else {
@@ -2557,7 +2624,7 @@ function Preg4_8() {
 function Preg4_9() {
   var respuesta = txtResultado4_9.value;
   var valor = 0;
-  if (respuesta == "3 y 7") {
+  if (respuesta == "minimo: 3 años y maximo: 7 años") {
     valor = 1;
     return (valor);
   }
@@ -2580,7 +2647,7 @@ function Preg4_10() {
 function Preg4_11() {
   var respuesta = txtResultado4_11.value;
   var valor = 0;
-  if (respuesta == "10 y 15") {
+  if (respuesta == "minimo: 10 años y maximo: 15 años") {
     valor = 1;
     return (valor);
   }
@@ -2735,4 +2802,10 @@ function cerrarModal() {
   videoHistoria.pause();
   videoPARAMETROS.pause();
   videoECUACIONES.pause();
+  videoModeloI.pause();
+  videoModeloII.pause();
+  videoModeloIII.pause();
+  videoModeloIV.pause();
+  videoModeloV.pause();
+  videoModeloVI.pause();
 }
