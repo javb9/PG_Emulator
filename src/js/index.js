@@ -1708,7 +1708,7 @@ btnFinalizar4.addEventListener("click", function () {
   pregunta20 = Preg4_20();
   pregunta21 = Preg4_21();
   pregunta22 = Preg4_22();
-  pregunta23 = Preg4_23();
+  pregunta23 = Preg4_24();
 
   var resultadoEvaluacion4 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
   pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta17 + pregunta18 
