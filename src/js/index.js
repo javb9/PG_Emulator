@@ -1918,14 +1918,14 @@ function Preg17() {
   }
 }
 
-function Preg19() {
-  var p19 = 0;
+function Preg18() {
+  var p18 = 0;
   if (document.getElementById('Radio7').checked == true) {
-    p19 = 1;
-    return (p19);
+    p18 = 1;
+    return (p18);
   }
   else {
-    return (p19);
+    return (p18);
   }
 }
 
