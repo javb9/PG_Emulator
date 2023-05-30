@@ -12,6 +12,7 @@ let videoUnidad2 = document.getElementById("videoUnidad2");
 let videoUnidad1V2 = document.getElementById("videoUnidad1V2");
 let videoLDSM = document.getElementById("videoLDSM");
 let videoDosRayos = document.getElementById("videoDosRayos");
+let videoInicio = document.getElementById("videoInicio");
 let videoWalfisch = document.getElementById("videoWalfisch");
 let videoFriis = document.getElementById("videoFriis");
 let videoTETRA = document.getElementById("videoTETRA");
@@ -152,7 +153,9 @@ let divUnit4 = document.getElementById("divUnit4");
 let btnUnit3 = document.getElementById("btnUnit3");
 let btnUnit4 = document.getElementById("btnUnit4");
 let btnCalcular = document.getElementById("btnCalcular");
+let btnInicio = document.getElementById("btnInicio");
 let divCalcular = document.getElementById("divCalcular");
+let divInicio = document.getElementById("divInicio");
 let btnEvaluacion = document.getElementById("btnEvaluacion");
 let divEvaluacion = document.getElementById("divEvaluacion");
 let btnGuia = document.getElementById("btnGuia");
@@ -333,6 +336,12 @@ btnGuia.addEventListener("click", function () {
   console.log("entro");
   limpiarVista();
   ocultarElemento(divGuia, false);
+});
+
+btnInicio.addEventListener("click", function () {
+  console.log("entro");
+  limpiarVista();
+  ocultarElemento(divInicio, false);
 });
 
 //btnEmpirico.addEventListener('click', function(){
@@ -1178,6 +1187,7 @@ function limpiarVista() {
   ocultarElemento(divCalcular, true);
   ocultarElemento(divEvaluacion, true);
   ocultarElemento(divGuia, true);
+  ocultarElemento(divInicio, true);
 
 }
 
@@ -1584,6 +1594,7 @@ btnFinalizar1.addEventListener("click", function () {
   pregunta7 = Preg7();
   pregunta8 = Preg8();
   pregunta9 = Preg9();
+  console.log(pregunta9)
   pregunta10 = Preg10();
   pregunta11 = Preg11();
   pregunta12 = Preg12();
@@ -1605,9 +1616,7 @@ btnFinalizar1.addEventListener("click", function () {
   pregunta27 = Preg27();
   pregunta28 = Preg28();
 
-  var resultadoEvaluacion1 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
-  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
-  + pregunta19 + pregunta20 + pregunta21 +  pregunta22 + pregunta23 + pregunta24 + pregunta25 + pregunta26 + pregunta27 + pregunta28;
+  var resultadoEvaluacion1 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 + pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 + pregunta19 + pregunta20 + pregunta21 + pregunta22 + pregunta23 + pregunta24 + pregunta25 + pregunta26 + pregunta27 + pregunta28;
 
   console.log(resultadoEvaluacion1)
 
@@ -1643,8 +1652,8 @@ btnFinalizar2.addEventListener("click", function () {
   pregunta20 = Preg2_20();
 
   var resultadoEvaluacion2 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
-  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
-  + pregunta19 + pregunta20;
+    pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18
+    + pregunta19 + pregunta20;
 
   txtResultadoEva2.value = resultadoEvaluacion2;
 
@@ -1676,8 +1685,8 @@ btnFinalizar3.addEventListener("click", function () {
   pregunta20 = Preg3_20();
 
   var resultadoEvaluacion3 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
-  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18 
-  + pregunta19 + pregunta20;
+    pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta16 + pregunta17 + pregunta18
+    + pregunta19 + pregunta20;
 
   txtResultadoEva3.value = resultadoEvaluacion3;
 
@@ -1711,8 +1720,8 @@ btnFinalizar4.addEventListener("click", function () {
   pregunta23 = Preg4_24();
 
   var resultadoEvaluacion4 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
-  pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta17 + pregunta18 
-  + pregunta19 + pregunta20 + pregunta21 + pregunta22 + pregunta23;
+    pregunta9 + pregunta10 + pregunta11 + pregunta12 + pregunta13 + pregunta14 + pregunta15 + pregunta17 + pregunta18
+    + pregunta19 + pregunta20 + pregunta21 + pregunta22 + pregunta23;
 
   txtResultadoEva4.value = resultadoEvaluacion4;
 
@@ -1932,7 +1941,7 @@ function Preg18() {
 
 function Preg19() {
   var p19 = 0;
-  if (document.getElementById('Radio4').checked == true) {
+  if (document.getElementById('Radio4_1_1').checked == true) {
     p19 = 1;
     return (p19);
   }
@@ -2102,7 +2111,7 @@ function Preg2_3() {
   else {
     return (valor);
   }
-} 
+}
 
 function Preg2_4() {
   var p4 = 0;
@@ -2794,4 +2803,5 @@ function cerrarModal() {
   videoModeloIV.pause();
   videoModeloV.pause();
   videoModeloVI.pause();
+  videoInicio.pause();
 }
