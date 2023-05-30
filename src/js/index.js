@@ -1817,14 +1817,13 @@ function Preg8() {
 }
 
 function Preg9() {
-  var respuesta = txtPregunta1_9.value;
-  var valor = 0;
-  if (respuesta == "Walfisch Ikegami") {
-    valor = 1;
-    return (valor);
+  var p9 = 0;
+  if (document.getElementById('Radio4').checked == true) {
+    p9 = 1;
+    return (p9);
   }
   else {
-    return (valor);
+    return (p9);
   }
 }
 
@@ -1863,14 +1862,13 @@ function Preg12() {
 }
 
 function Preg13() {
-  var respuesta = txtPregunta1_13.value;
-  var valor = 0;
-  if (respuesta == "COST 231 – Hata") {
-    valor = 1;
-    return (valor);
+  var p13 = 0;
+  if (document.getElementById('Radio1').checked == true) {
+    p13 = 1;
+    return (p13);
   }
   else {
-    return (valor);
+    return (p13);
   }
 }
 
@@ -1920,27 +1918,26 @@ function Preg17() {
   }
 }
 
-function Preg18() {
-  var respuesta = txtPregunta1_18.value;
-  var valor = 0;
-  if (respuesta == "Recomendacion P.1546-5") {
-    valor = 1;
-    return (valor);
+function Preg19() {
+  var p19 = 0;
+  if (document.getElementById('Radio7').checked == true) {
+    p19 = 1;
+    return (p19);
   }
   else {
-    return (valor);
+    return (p19);
   }
 }
 
+
 function Preg19() {
-  var respuesta = txtPregunta1_19.value;
-  var valor = 0;
-  if (respuesta == "De los 30 a 300MHz") {
-    valor = 1;
-    return (valor);
+  var p19 = 0;
+  if (document.getElementById('Radio4').checked == true) {
+    p19 = 1;
+    return (p19);
   }
   else {
-    return (valor);
+    return (p19);
   }
 }
 
@@ -1956,26 +1953,24 @@ function Preg20() {
 }
 
 function Preg21() {
-  var respuesta = txtPregunta1_21.value;
-  var valor = 0;
-  if (respuesta == "40 metros") {
-    valor = 1;
-    return (valor);
+  var p21 = 0;
+  if (document.getElementById('Radio10').checked == true) {
+    p21 = 1;
+    return (p21);
   }
   else {
-    return (valor);
+    return (p21);
   }
 }
 
 function Preg22() {
-  var respuesta = txtPregunta1_22.value;
-  var valor = 0;
-  if (respuesta == "-269.4722") {
-    valor = 1;
-    return (valor);
+  var p22 = 0;
+  if (document.getElementById('Radio14').checked == true) {
+    p22 = 1;
+    return (p22);
   }
   else {
-    return (valor);
+    return (p22);
   }
 }
 
@@ -2064,7 +2059,7 @@ function Preg2_1() {
 function Preg2_2_a() {
   var respuesta = txtResultado2_2.value;
   var valor = 0;
-  if (respuesta == "Propagacion Inalambrica") {
+  if (respuesta == "inalambrica") {
     valor = 1;
     return (valor);
   }
@@ -2100,7 +2095,7 @@ function Preg2_2_c() {
 function Preg2_3() {
   var respuesta = txtResultado2_3_1.value;
   var valor = 0;
-  if (respuesta == "ondas de radio") {
+  if (respuesta == "radio") {
     valor = 1;
     return (valor);
   }
@@ -2121,14 +2116,13 @@ function Preg2_4() {
 }
 
 function Preg2_5() {
-  var respuesta = txtResultado2_5.value;
-  var valor = 0;
-  if (respuesta == "redes pmr") {
-    valor = 1;
-    return (valor);
+  var p5 = 0;
+  if (document.getElementById('Radio2_1').checked == true) {
+    p5 = 1;
+    return (p5);
   }
   else {
-    return (valor);
+    return (p5);
   }
 }
 
@@ -2145,14 +2139,13 @@ function Preg2_6() {
 }
 
 function Preg2_7() {
-  var respuesta = txtResultado2_7.value;
-  var valor = 0;
-  if (respuesta == "Seguridad, bomberos, taxis, policia") {
-    valor = 1;
-    return (valor);
+  var p8 = 0;
+  if (document.getElementById('Radio2_6').checked == true) {
+    p8 = 1;
+    return (p8);
   }
   else {
-    return (valor);
+    return (p8);
   }
 }
 
@@ -2190,14 +2183,13 @@ function Preg2_10() {
 }
 
 function Preg2_11() {
-  var respuesta = txtResultado2_11.value;
-  var valor = 0;
-  if (respuesta == "lmds") {
-    valor = 1;
-    return (valor);
+  var p11 = 0;
+  if (document.getElementById('Radio2_8').checked == true) {
+    p11 = 1;
+    return (p11);
   }
   else {
-    return (valor);
+    return (p11);
   }
 }
 
@@ -2224,14 +2216,13 @@ function Preg2_13() {
 }
 
 function Preg2_14() {
-  var respuesta = txtResultado2_14.value;
-  var valor = 0;
-  if (respuesta == "Dos, una estacion base fija y la otra es un telefono fijo o portatil") {
-    valor = 1;
-    return (valor);
+  var p14 = 0;
+  if (document.getElementById('Radio2_10').checked == true) {
+    p14 = 1;
+    return (p14);
   }
   else {
-    return (valor);
+    return (p14);
   }
 }
 
@@ -2269,14 +2260,13 @@ function Preg2_17() {
 }
 
 function Preg2_18() {
-  var respuesta = txtResultado2_18.value;
-  var valor = 0;
-  if (respuesta == "primera generacion") {
-    valor = 1;
-    return (valor);
+  var p18 = 0;
+  if (document.getElementById('Radio2_13').checked == true) {
+    p18 = 1;
+    return (p18);
   }
   else {
-    return (valor);
+    return (p18);
   }
 }
 
@@ -2395,14 +2385,13 @@ function Preg3_8() {
 }
 
 function Preg3_9() {
-  var respuesta = txtResultado3_9.value;
-  var valor = 0;
-  if (respuesta == "2.5 g") {
-    valor = 1;
-    return (valor);
+  var p9 = 0;
+  if (document.getElementById('Radio3_1').checked == true) {
+    p9 = 1;
+    return (p9);
   }
   else {
-    return (valor);
+    return (p9);
   }
 }
 
@@ -2473,14 +2462,13 @@ function Preg3_15() {
 }
 
 function Preg3_16() {
-  var respuesta = txtResultado3_16.value;
-  var valor = 0;
-  if (respuesta == "5g e iot") {
-    valor = 1;
-    return (valor);
+  var p16 = 0;
+  if (document.getElementById('Radio3_4').checked == true) {
+    p16 = 1;
+    return (p16);
   }
   else {
-    return (valor);
+    return (p16);
   }
 }
 
@@ -2622,14 +2610,13 @@ function Preg4_8() {
 }
 
 function Preg4_9() {
-  var respuesta = txtResultado4_9.value;
-  var valor = 0;
-  if (respuesta == "minimo: 3 años y maximo: 7 años") {
-    valor = 1;
-    return (valor);
+  var p9 = 0;
+  if (document.getElementById('Radio4_1').checked == true) {
+    p9 = 1;
+    return (p9);
   }
   else {
-    return (valor);
+    return (p9);
   }
 }
 
@@ -2645,14 +2632,13 @@ function Preg4_10() {
 }
 
 function Preg4_11() {
-  var respuesta = txtResultado4_11.value;
-  var valor = 0;
-  if (respuesta == "minimo: 10 años y maximo: 15 años") {
-    valor = 1;
-    return (valor);
+  var p11 = 0;
+  if (document.getElementById('Radio4_4').checked == true) {
+    p11 = 1;
+    return (p11);
   }
   else {
-    return (valor);
+    return (p11);
   }
 }
 
