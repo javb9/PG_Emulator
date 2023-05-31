@@ -2728,7 +2728,7 @@ function Preg4_19() {
 
 function Preg4_20() {
   var p20 = 0;
-  if (document.getElementById('Radios134').checked == true) {
+  if (document.getElementById('Radios136').checked == true) {
     p20 = 1;
     return (p20);
   }
