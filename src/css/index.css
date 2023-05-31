@@ -237,9 +237,12 @@ h5 {
   width: 350px;
 }
 
-.estilos_div1{
-  background: linear-gradient(to right, #3265ca, #2106b7);
-  overflow-y: scroll;
-  height: 200px;
-  width: 350px;
+.estilos_div::-webkit-scrollbar {
+  width: 10px;;
 }
+
+.estilos_div::-webkit-scrollbar-thumb{
+  background: #3265ca;
+  border-radius: 5px;
+}
+
