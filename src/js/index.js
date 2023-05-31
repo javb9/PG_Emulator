@@ -2052,7 +2052,7 @@ function Preg28() {
 
 // FUNCIONES EVALUACION 2
 
-function Preg2_4() {
+function Preg2_1() {
   var p1 = 0;
   if (document.getElementById('Radio2_18').checked == true) {
     p1 = 1;
@@ -2739,7 +2739,7 @@ function Preg4_20() {
 
 function Preg4_21() {
   var p21 = 0;
-  if (document.getElementById('Radios136').checked == true) {
+  if (document.getElementById('Radios142').checked == true) {
     p21 = 1;
     return (p21);
   }
