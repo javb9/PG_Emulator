@@ -1716,7 +1716,7 @@ btnFinalizar4.addEventListener("click", function () {
   pregunta19 = Preg4_19();
   pregunta20 = Preg4_20();
   pregunta21 = Preg4_21();
-  pregunta22 = Preg4_22();
+  pregunta22 = Preg4_23();
   pregunta23 = Preg4_24();
 
   var resultadoEvaluacion4 = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 +
@@ -2006,21 +2006,20 @@ function Preg24() {
 }
 
 function Preg25() {
-  var respuesta = txtPregunta1_25.value;
-  var valor = 0;
-  if (respuesta == "154.6313") {
-    valor = 1;
-    return (valor);
+  var p25 = 0;
+  if (document.getElementById('Radio17').checked == true) {
+    p25 = 1;
+    return (p25);
   }
   else {
-    return (valor);
+    return (p25);
   }
 }
 
 function Preg26() {
   var respuesta = txtPregunta1_26.value;
   var valor = 0;
-  if (respuesta == "LOS y NLOS") {
+  if (respuesta == "los y nlos") {
     valor = 1;
     return (valor);
   }
@@ -2053,15 +2052,14 @@ function Preg28() {
 
 // FUNCIONES EVALUACION 2
 
-function Preg2_1() {
-  var respuesta = txtResultado2_1.value;
-  var valor = 0;
-  if (respuesta == "las señales de humo, las palomas mensajeras, mensajes en piedras") {
-    valor = 1;
-    return (valor);
+function Preg2_4() {
+  var p1 = 0;
+  if (document.getElementById('Radio2_18').checked == true) {
+    p1 = 1;
+    return (p1);
   }
   else {
-    return (valor);
+    return (p1);
   }
 }
 
@@ -2747,17 +2745,6 @@ function Preg4_21() {
   }
   else {
     return (p21);
-  }
-}
-
-function Preg4_22() {
-  var p22 = 0;
-  if (document.getElementById('Radios142').checked == true) {
-    p22 = 1;
-    return (p22);
-  }
-  else {
-    return (p22);
   }
 }
 

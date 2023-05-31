@@ -229,3 +229,17 @@ h5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 100;
 }
+
+.estilos_div{
+  background: linear-gradient(to right, #3265ca, #2106b7);
+  overflow-y: scroll;
+  height: 200px;
+  width: 350px;
+}
+
+.estilos_div1{
+  background: linear-gradient(to right, #3265ca, #2106b7);
+  overflow-y: scroll;
+  height: 200px;
+  width: 350px;
+}
