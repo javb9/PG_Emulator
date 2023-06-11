@@ -406,7 +406,7 @@ btnIndoor.addEventListener("click", function () {
 
 btnOutdoor.addEventListener("click", function () {
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText = "Modelo Indoor - Interiores:";
+  titleModalUnidadII.innerText = "Modelo Outdoor - Exteriores:";
   ocultarElemento(divOutdoor, false);
 });
 
@@ -471,7 +471,7 @@ btnRTGC.addEventListener("click", function () {
 
 btnAMPS.addEventListener("click", function () {
   limpiarModalEmpSemp();
-  titleModalUnidadII.innerText = "AMPS (Sistremas telefonico Movil Avanzado)";
+  titleModalUnidadII.innerText = "AMPS (Sistema telefonico Movil Avanzado)";
   ocultarElemento(divAMPS, false);
 });
 
