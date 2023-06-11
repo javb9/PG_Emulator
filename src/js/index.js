@@ -29,6 +29,7 @@ let videoModeloIII = document.getElementById("videoModeloIII");
 let videoModeloIV = document.getElementById("videoModeloIV");
 let videoModeloV = document.getElementById("videoModeloV");
 let videoModeloVI = document.getElementById("videoModeloVI");
+let videoSatelites = document.getElementById("videoSatelites");
 
 let btnEmpirico = document.getElementById("btnEmpirico");
 let btnSemiEmpirico = document.getElementById("btnSemiEmpirico");
@@ -598,10 +599,21 @@ btnCost.addEventListener("click", function () {
 });
 
 btnCalculo.addEventListener("click", function () {
-  var logDistacia = Math.log10(parseFloat(txtDistancia.value));
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuencia.value));
-  var total = 42.6 + 26 * logDistacia + 20 * logFrecuencia;
-  txtResultadoLOS.value = total;
+  var frecuencia = parseFloat(txtFrecuencia.value);
+  
+  if(frecuencia >= 800 && frecuencia <= 2000){
+    var logDistacia = Math.log10(parseFloat(txtDistancia.value));
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuencia.value));
+    var total = 42.6 + 26 * logDistacia + 20 * logFrecuencia;
+
+    txtResultadoLOS.value = total;
+
+  } else{
+    
+    alert("FRECUENCIA FUERA DEL RANGO - INGRESE VALOR NUEVAMENTE")
+  
+  }
+  
 });
 
 btnBorrarDato.addEventListener("click", function () {
@@ -610,25 +622,37 @@ btnBorrarDato.addEventListener("click", function () {
 });
 
 btnCalcularNLOS.addEventListener("click", function () {
-  var logDistacia = Math.log10(parseFloat(txtDistanciaNLOS.value));
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaNLOS.value));
-  var valFrecuencia = parseFloat(txtFrecuenciaNLOS.value);
-  var LogdistanEdificios = Math.log10(parseFloat(txtDistanciaEdificios.value));
-  var PerdidasLo = 32.4 + 20 * logDistacia + 20 * logFrecuencia;
-  console.log(PerdidasLo);
-  var logAnchoCalleSub = Math.log10(parseFloat(txtAnchoCalleSub.value));
-  var logDiferenciaAlturas = Math.log10(parseFloat(txtAlturaEdificioSub.value) - parseFloat(txtAlturaMovilSub.value));
-  var PerdidasLrts = -16.9 - 10 * logAnchoCalleSub + 10 * logFrecuencia + 20 * logDiferenciaAlturas + CalcularAngulo();
-  console.log(PerdidasLrts);
-  var DependenciaPerdidasSub = - 4 + (0.7 * ((valFrecuencia / 925) - 1));
-  var PerdidasLmsd = PerdidasEstacionSub() + IncrementoPerdidasSub() + ControlDependencia() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios;
-  console.log(PerdidasLmsd);
-  var perdida1 = PerdidasEstacionSub();
-  var perdida2 = IncrementoPerdidasSub();
-  var perdida3 = ControlDependencia();
-  var total = PerdidasLo + PerdidasLmsd + PerdidasLrts;
 
-  txtResultadoNLOSSub.value = total;
+  var Frecuencia = parseFloat(txtFrecuenciaNLOS.value);
+  var grado = parseFloat(txtAnguloSub.value);
+
+  if( Frecuencia >= 800 && Frecuencia <= 2000 && grado > 0 && grado <= 90){
+    var logDistacia = Math.log10(parseFloat(txtDistanciaNLOS.value));
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaNLOS.value));
+    var LogdistanEdificios = Math.log10(parseFloat(txtDistanciaEdificios.value));
+    var PerdidasLo = 32.4 + 20 * logDistacia + 20 * logFrecuencia;
+    console.log(PerdidasLo);
+    var logAnchoCalleSub = Math.log10(parseFloat(txtAnchoCalleSub.value));
+    var logDiferenciaAlturas = Math.log10(parseFloat(txtAlturaEdificioSub.value) - parseFloat(txtAlturaMovilSub.value));
+    var PerdidasLrts = -16.9 - 10 * logAnchoCalleSub + 10 * logFrecuencia + 20 * logDiferenciaAlturas + CalcularAngulo();
+    console.log(PerdidasLrts);
+    var DependenciaPerdidasSub = - 4 + (0.7 * ((Frecuencia / 925) - 1));
+    var PerdidasLmsd = PerdidasEstacionSub() + IncrementoPerdidasSub() + ControlDependencia() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios;
+    console.log(PerdidasLmsd);
+    var perdida1 = PerdidasEstacionSub();
+    var perdida2 = IncrementoPerdidasSub();
+    var perdida3 = ControlDependencia();
+    var total = PerdidasLo + PerdidasLmsd + PerdidasLrts;
+
+    txtResultadoNLOSSub.value = total;
+
+  } else{
+
+    alert("VALOR FUERA DE RANGO REVISAR CAMPO DE FRECUENCIA Y ANGULO")
+
+  }
+
+  
 
 });
 
@@ -1454,6 +1478,7 @@ function MostrarDiv21() {
 
 function CalcularAngulo() {
   var angulo = parseFloat(txtAnguloSub.value);
+
   if (angulo <= 35) {
     var ValorAngulo = -10 + (0.354 * angulo);
     return (ValorAngulo);
@@ -2821,4 +2846,5 @@ function cerrarModal() {
   videoModeloV.pause();
   videoModeloVI.pause();
   videoInicio.pause();
+  videoSatelites.pause();
 }
