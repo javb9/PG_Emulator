@@ -99,7 +99,7 @@ h5 {
   }
 
   .li-sub-opciones{
-    color: #fff !important;
+    color: #6cbdf3 !important;
     margin: 0px;
     font-size: 15px !important;
   }
@@ -242,7 +242,7 @@ h5 {
 }
 
 .estilos_div::-webkit-scrollbar-thumb{
-  background: #3265ca;
+  background: #3dc6f0;
   border-radius: 5px;
 }
 
