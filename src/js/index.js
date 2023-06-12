@@ -10,17 +10,17 @@ let btnContenido = document.getElementById("btnContenido");
 let videoUnidad1 = document.getElementById("videoUnidad1");
 let videoUnidad2 = document.getElementById("videoUnidad2");
 let videoUnidad1V2 = document.getElementById("videoUnidad1V2");
-let videoLDSM = document.getElementById("videoLDSM");
+//let videoLDSM = document.getElementById("videoLDSM");
 let videoDosRayos = document.getElementById("videoDosRayos");
 let videoInicio = document.getElementById("videoInicio");
 let videoWalfisch = document.getElementById("videoWalfisch");
 let videoFriis = document.getElementById("videoFriis");
-let videoTETRA = document.getElementById("videoTETRA");
+//let videoTETRA = document.getElementById("videoTETRA");
 let videoDECT = document.getElementById("videoDECT");
 let videoRadioMensa = document.getElementById("videoRadioMensa");
 let videoAMPS = document.getElementById("videoAMPS");
 let video5G = document.getElementById("video5G");
-let videoHistoria = document.getElementById("videoHistoria");
+//let videoHistoria = document.getElementById("videoHistoria");
 let videoPARAMETROS = document.getElementById("videoPARAMETROS");
 let videoECUACIONES = document.getElementById("videoECUACIONES");
 let videoModeloI = document.getElementById("videoModeloI");
@@ -2827,16 +2827,16 @@ function Preg4_24() {
 }
 
 function cerrarModal() {
-  videoLDSM.pause();
+  //videoLDSM.pause();
   videoDosRayos.pause();
-  videoFriss.pause();
+  videoFriis.pause();
   videoWalfisch.pause();
-  videoTETRA.pause();
+  //videoTETRA.pause();
   videoDECT.pause();
   videoRadioMensa.pause();
   videoAMPS.pause();
   video5G.pause();
-  videoHistoria.pause();
+  //videoHistoria.pause();
   videoPARAMETROS.pause();
   videoECUACIONES.pause();
   videoModeloI.pause();
