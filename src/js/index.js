@@ -30,6 +30,42 @@ let videoModeloIV = document.getElementById("videoModeloIV");
 let videoModeloV = document.getElementById("videoModeloV");
 let videoModeloVI = document.getElementById("videoModeloVI");
 let videoSatelites = document.getElementById("videoSatelites");
+let audioSatelites = document.getElementById("audioSatelites");
+let audioTrunking = document.getElementById("audioTrunking");
+let audioModelo1 = document.getElementById("audioModelo1");
+let audioModelo2 = document.getElementById("audioModelo2");
+let audioEmpirico1 = document.getElementById("audioEmpirico1");
+let audioEmpirico2 = document.getElementById("audioEmpirico2");
+let audioDeterministas = document.getElementById("audioDeterministas");
+let audioEstadisticos = document.getElementById("audioEstadisticos");
+let audioIndoor1 = document.getElementById("audioIndoor1");
+let audioIndoor2 = document.getElementById("audioIndoor2");
+let audioPMR = document.getElementById("audioPMR");
+let audioWIFI = document.getElementById("audioWIFI");
+let audioWIMAX = document.getElementById("audioWIMAX");
+let audioLDMS = document.getElementById("audioLDMS");
+let audioTetra = document.getElementById("audioTetra");
+let audioUni2 = document.getElementById("audioUni2");
+let audioAMPS = document.getElementById("audioAMPS");
+let audioCDMA = document.getElementById("audioCDMA");
+let audioTDMA = document.getElementById("audioTDMA");
+let audioGSM = document.getElementById("audioGSM");
+let audioGPRS = document.getElementById("audioGPRS");
+let audioPC = document.getElementById("audioPC");
+let audio4G = document.getElementById("audio4G");
+let audioGEO = document.getElementById("audioGEO");
+let audioMEO = document.getElementById("audioMEO");
+let audioLEO = document.getElementById("audioLEO");
+
+
+
+
+
+
+
+
+
+
 
 let btnEmpirico = document.getElementById("btnEmpirico");
 let btnSemiEmpirico = document.getElementById("btnSemiEmpirico");
@@ -3099,4 +3135,32 @@ function cerrarModal() {
   videoModeloVI.pause();
   videoInicio.pause();
   videoSatelites.pause();
+  audioSatelites.pause();
+  audioTrunking.pause();
+  audioModelo1.pause();
+  audioModelo2.pause();
+  audioEmpirico1.pause();
+  audioEmpirico2.pause();
+  audioDeterministas.pause();
+  audioEstadisticos.pause();
+  audioIndoor1.pause();
+  audioIndoor2.pause();
+  audioPMR.pause();
+  audioWIFI.pause();
+  audioWIMAX.pause();
+  audioLDMS.pause();  
+  audioTetra.pause();
+  audioUni2.pause();
+  audioAMPS.pause();
+  audioTDMA.pause();
+  audioCDMA.pause();
+  audioGSM.pause();
+  audioGPRS.pause();
+  audioPC.pause();
+  audio4G.pause();
+  audioGEO.pause();
+  audioMEO.pause();
+  audioLEO.pause();
+
+  
 }
