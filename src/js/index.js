@@ -600,8 +600,9 @@ btnCost.addEventListener("click", function () {
 
 btnCalculo.addEventListener("click", function () {
   var frecuencia = parseFloat(txtFrecuencia.value);
+  var distancia = parseFloat(txtDistancia.value);
   
-  if(frecuencia >= 800 && frecuencia <= 2000){
+  if(frecuencia >= 800 && frecuencia <= 2000 && distancia < 10000){
     var logDistacia = Math.log10(parseFloat(txtDistancia.value));
     var logFrecuencia = Math.log10(parseFloat(txtFrecuencia.value));
     var total = 42.6 + 26 * logDistacia + 20 * logFrecuencia;
@@ -625,8 +626,14 @@ btnCalcularNLOS.addEventListener("click", function () {
 
   var Frecuencia = parseFloat(txtFrecuenciaNLOS.value);
   var grado = parseFloat(txtAnguloSub.value);
+  var distancia = parseFloat(txtDistanciaNLOS.value);
+  var ancho = parseFloat(txtAnchoCalleSub.value);
+  var edificio = parseFloat(txtAlturaEdificioSub.value);
+  var movil = parseFloat(txtAlturaMovilSub.value);
+  var base = parseFloat(txtAlturaBaseSub.value);
+  var separacion = parseFloat(txtDistanciaEdificios.value);
 
-  if( Frecuencia >= 800 && Frecuencia <= 2000 && grado > 0 && grado <= 90){
+  if( Frecuencia >= 800 && Frecuencia <= 2000 && grado > 0 && grado <= 90 && distancia < 10000 && ancho <= 20 && edificio < 500 && movil <= 10 && base <= 100 && separacion <= 1000){
     var logDistacia = Math.log10(parseFloat(txtDistanciaNLOS.value));
     var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaNLOS.value));
     var LogdistanEdificios = Math.log10(parseFloat(txtDistanciaEdificios.value));
@@ -648,7 +655,7 @@ btnCalcularNLOS.addEventListener("click", function () {
 
   } else{
 
-    alert("VALOR FUERA DE RANGO REVISAR CAMPO DE FRECUENCIA Y ANGULO")
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
 
   }
 
@@ -668,19 +675,37 @@ btnBorrarDatoSub.addEventListener("click", function () {
 });
 
 btnCalcularUrb.addEventListener("click", function () {
-  var logDistacia = Math.log10(parseFloat(txtDistanciaUrb.value));
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUrb.value));
-  var valFrecuencia = parseFloat(txtFrecuenciaUrb.value);
-  var LogdistanEdificios = Math.log10(parseFloat(txtDistanciaEdifUrb.value));
-  var PerdidasLo = 32.4 + 20 * logDistacia + 20 * logFrecuencia;
-  var logAnchoCalleUrb = Math.log10(parseFloat(txtCalleUrb.value));
-  var logDiferenciaAlturas = Math.log10(parseFloat(txtEdificioUrb.value) - parseFloat(txtMovilUrb.value));
-  var PerdidasLrts = -16.9 - 10 * logAnchoCalleUrb + 10 * logFrecuencia + 20 * logDiferenciaAlturas + CalcularAnguloUrb();
-  var DependenciaPerdidasSub = - 4 + (1.5 * ((valFrecuencia / 925) - 1));
-  var PerdidasLmsd = PerdidasEstacionUrb() + IncrementoPerdidasUrb() + ControlDependenciaUrb() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios;
-  var total = PerdidasLo + PerdidasLmsd + PerdidasLrts;
 
-  txtResultadoNLOSUrb.value = total;
+  var Frecuencia = parseFloat(txtFrecuenciaUrb.value);
+  var grado = parseFloat(txtGradosUrb.value);
+  var distancia = parseFloat(txtDistanciaUrb.value);
+  var ancho = parseFloat(txtCalleUrb.value);
+  var edificio = parseFloat(txtEdificioUrb.value);
+  var movil = parseFloat(txtMovilUrb.value);
+  var base = parseFloat(txtAlturaBaseUrb.value);
+  var separacion = parseFloat(txtDistanciaEdifUrb.value);
+
+
+  if(Frecuencia >= 800 && Frecuencia <= 2000 && grado > 0 && grado <= 90 && distancia < 10000 && ancho <= 20 && edificio < 500 && movil <= 10 && base <= 100 && separacion <= 1000){
+    var logDistacia = Math.log10(parseFloat(txtDistanciaUrb.value));
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUrb.value));
+    var valFrecuencia = parseFloat(txtFrecuenciaUrb.value);
+    var LogdistanEdificios = Math.log10(parseFloat(txtDistanciaEdifUrb.value));
+    var PerdidasLo = 32.4 + 20 * logDistacia + 20 * logFrecuencia;
+    var logAnchoCalleUrb = Math.log10(parseFloat(txtCalleUrb.value));
+    var logDiferenciaAlturas = Math.log10(parseFloat(txtEdificioUrb.value) - parseFloat(txtMovilUrb.value));
+    var PerdidasLrts = -16.9 - 10 * logAnchoCalleUrb + 10 * logFrecuencia + 20 * logDiferenciaAlturas + CalcularAnguloUrb();
+    var DependenciaPerdidasSub = - 4 + (1.5 * ((valFrecuencia / 925) - 1));
+    var PerdidasLmsd = PerdidasEstacionUrb() + IncrementoPerdidasUrb() + ControlDependenciaUrb() * logDistacia + DependenciaPerdidasSub * logFrecuencia - 9 * LogdistanEdificios;
+    var total = PerdidasLo + PerdidasLmsd + PerdidasLrts;
+
+    txtResultadoNLOSUrb.value = total;
+
+  } else{
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -696,20 +721,36 @@ btnBorrarUrb.addEventListener("click", function () {
 });
 
 btnCalcularMedSub.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaMedSub.value));
-  var AlturaMovil = parseFloat(txtAlturaMovilMedSub.value);
-  var FactorAhm = (1.1 * logFrecuencia - 0.7) * AlturaMovil - (1.56 * logFrecuencia - 0.8);
-  console.log(FactorAhm)
-  var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseMedSub.value));
-  var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorMedSub.value));
-  var FactorCf = parseFloat(txtFactorCorreccionMedSub.value);
-  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
-  console.log(PerdidasPlo)
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedSub.value) / 28);
-  var PerdidasMedUrb = PerdidasPlo - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
 
-  //txtResultadoMed.value = PerdidasPlo;
-  txtResultadoMed.value = PerdidasMedUrb;
+
+var frecuencia = parseFloat(txtFrecuanciaMedSub.value);
+var base = parseFloat(txtAlturaBaseMedSub.value);
+var movil = parseFloat(txtAlturaMovilMedSub.value);
+var distancia = parseFloat(txtDistanciaTransmisorMedSub.value);
+var correccion = parseFloat(txtFactorCorreccionMedSub.value);
+
+
+if(frecuencia > 150 && frecuencia <= 2000 && base <=100 && distancia <= 10000 &&  movil <= 10 && correccion >= 0  && correccion <= 3 ){ 
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaMedSub.value));
+    var AlturaMovil = parseFloat(txtAlturaMovilMedSub.value);
+    var FactorAhm = (1.1 * logFrecuencia - 0.7) * AlturaMovil - (1.56 * logFrecuencia - 0.8);
+    console.log(FactorAhm)
+    var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseMedSub.value));
+    var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorMedSub.value));
+    var FactorCf = parseFloat(txtFactorCorreccionMedSub.value);
+    var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+    console.log(PerdidasPlo)
+    var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedSub.value) / 28);
+    var PerdidasMedUrb = PerdidasPlo - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
+
+    //txtResultadoMed.value = PerdidasPlo;
+    txtResultadoMed.value = PerdidasMedUrb;
+  
+  } else{
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -720,24 +761,38 @@ btnBorrarMedSub.addEventListener("click", function () {
   var distancia = Math.log10(parseFloat((txtDistanciaTransmisorMedSub.value = 0)));
   var factor = Math.log10(parseFloat((txtFactorCorreccionMedSub.value = 0)));
   var PerdidasPlo = Math.log10(parseFloat((txtResultadoMed.value = 0)));
-  var Perdidas = Math.log10(parseFloat((txtResultadoMedSub.value = 0)));
+  //var Perdidas = Math.log10(parseFloat((txtResultadoMedSub.value = 0)));
 });
 
 btnCalcularMedAbi.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaMedAbi.value));
-  var AlturaMovil = parseFloat(txtAlturaMovilMedAbi.value);
-  var FactorAhm = (1.1 * logFrecuencia - 0.7) * AlturaMovil - (1.56 * logFrecuencia - 0.8);
-  console.log(FactorAhm)
-  var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseMedAbi.value));
-  var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorMedAbi.value));
-  var FactorCf = parseFloat(txtFactorCorreccionMedAbi.value);
-  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
-  console.log(PerdidasPlo)
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedAbi.value) / 28);
-  var PerdidasMedUrb = PerdidasPlo - 4.78 * Math.pow(logFrecuencia  , 2) + 18.33 * logFrecuencia - 40.94;
-  console.log(PerdidasMedUrb)
+
+  var frecuencia = parseFloat(txtFrecuanciaMedAbi.value);
+  var base = parseFloat(txtAlturaBaseMedAbi.value);
+  var movil = parseFloat(txtAlturaMovilMedAbi.value);
+  var distancia = parseFloat(txtDistanciaTransmisorMedAbi.value);
+  var correccion = parseFloat(txtFactorCorreccionMedAbi.value);
+
+  if(frecuencia > 150 && frecuencia <= 2000 && base <=100 && distancia <= 10000 &&  movil <= 10 && correccion >= 0  && correccion <= 3){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaMedAbi.value));
+    var AlturaMovil = parseFloat(txtAlturaMovilMedAbi.value);
+    var FactorAhm = (1.1 * logFrecuencia - 0.7) * AlturaMovil - (1.56 * logFrecuencia - 0.8);
+    console.log(FactorAhm)
+    var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseMedAbi.value));
+    var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorMedAbi.value));
+    var FactorCf = parseFloat(txtFactorCorreccionMedAbi.value);
+    var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+    console.log(PerdidasPlo)
+    var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaMedAbi.value) / 28);
+    var PerdidasMedUrb = PerdidasPlo - 4.78 * Math.pow(logFrecuencia  , 2) + 18.33 * logFrecuencia - 40.94;
+    console.log(PerdidasMedUrb)
+    
+    txtResultadoMedAbi.value = PerdidasMedUrb;
   
-  txtResultadoMedAbi.value = PerdidasMedUrb;
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -748,25 +803,40 @@ btnBorrarMedAbi.addEventListener("click", function () {
   var distancia = Math.log10(parseFloat((txtDistanciaTransmisorMedAbi.value = 0)));
   var factor = Math.log10(parseFloat((txtFactorCorreccionMedAbi.value = 0)));
   var PerdidasPlo = Math.log10(parseFloat((txtResultadoMediana.value = 0)));
-  var Perdidas = Math.log10(parseFloat((txtResultadoMedAbi.value = 0)));
+  //var Perdidas = Math.log10(parseFloat((txtResultadoMedAbi.value = 0)));
 });
 
 btnCalcularGranSub.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaGranSub.value));
-  var AlturaMovil = parseFloat(txtAlturaMovilGranSub.value);
-  var frecuencia = parseFloat(txtFrecuanciaGranSub.value);
-  var proLogAhm = 11.75 * frecuencia;
-  var logAhm = Math.log10(proLogAhm);
-  var FactorAhm = 3.2 * Math.pow(logAhm, 2) - 4.97;
-  var LogAluraBase = Math.log10(parseFloat(txtAlturaMovilGranSub.value));
-  var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorGranSub.value));
-  var FactorCf = parseFloat(txtFactorCorreccionGranSub.value);
-  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranSub.value) / 28);
-  var PerdidasMedUrb = PerdidasPlo - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
 
-  txtResultadoGrande.value = PerdidasPlo;
-  txtResultadoGraSub.value = PerdidasMedUrb;
+  var frec = parseFloat(txtFrecuanciaGranSub.value);
+  var base = parseFloat(txtAlturaBaseGranSub.value);
+  var movil = parseFloat(txtAlturaMovilGranSub.value);
+  var distancia = parseFloat(txtDistanciaTransmisorGranSub.value);
+  var correccion = parseFloat(txtFactorCorreccionGranSub.value);
+
+  if(frec > 150 && frec <= 2000 && base <=100 && distancia <= 10000 &&  movil <= 10 && correccion >= 0  && correccion <= 3){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaGranSub.value));
+    var AlturaMovil = parseFloat(txtAlturaMovilGranSub.value);
+    var frecuencia = parseFloat(txtFrecuanciaGranSub.value);
+    var proLogAhm = 11.75 * frecuencia;
+    var logAhm = Math.log10(proLogAhm);
+    var FactorAhm = 3.2 * Math.pow(logAhm, 2) - 4.97;
+    var LogAluraBase = Math.log10(parseFloat(txtAlturaMovilGranSub.value));
+    var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorGranSub.value));
+    var FactorCf = parseFloat(txtFactorCorreccionGranSub.value);
+    var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+    var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranSub.value) / 28);
+    var PerdidasMedUrb = PerdidasPlo - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
+
+    txtResultadoGrande.value = PerdidasPlo;
+    //txtResultadoGraSub.value = PerdidasMedUrb;
+
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
+
 
 });
 
@@ -777,28 +847,42 @@ btnBorrarGranSub.addEventListener("click", function () {
   var distancia = Math.log10(parseFloat((txtDistanciaTransmisorGranSub.value = 0)));
   var factor = Math.log10(parseFloat((txtFactorCorreccionGranSub.value = 0)));
   var PerdidasPlo = Math.log10(parseFloat((txtResultadoGrande.value = 0)));
-  var Perdidas = Math.log10(parseFloat((txtResultadoGraSub.value = 0)));
+  //var Perdidas = Math.log10(parseFloat((txtResultadoGraSub.value = 0)));
 });
 
 btnCalcularGranAbi.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaGranAbi.value));
-  var AlturaMovil = parseFloat(txtAlturaMovilGranAbi.value);
-  var frecuencia = parseFloat(txtAlturaMovilGranAbi.value);
-  var proLogAhm = 11.75 * frecuencia;
-  console.log(proLogAhm)
-  var logAhm = Math.log10(proLogAhm);
-  console.log(logAhm)
-  var FactorAhm = 3.2 * Math.pow(logAhm, 2) - 4.97;
-  console.log(FactorAhm)
-  var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseGranAbi.value));
-  var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorGranAbi.value));
-  var FactorCf = parseFloat(txtFactorCorreccionGranAbi.value);
-  var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranAbi.value) / 28);
-  var PerdidasMedUrb = PerdidasPlo - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
 
-  txtResultadoGra.value = PerdidasPlo;
-  txtResultadoGraAbi.value = PerdidasMedUrb;
+  var frec = parseFloat(txtFrecuanciaGranAbi.value);
+  var base = parseFloat(txtAlturaBaseGranAbi.value);
+  var movil = parseFloat(txtAlturaMovilGranAbi.value);
+  var distancia = parseFloat(txtDistanciaTransmisorGranAbi.value);
+  var correccion = parseFloat(txtFactorCorreccionGranAbi.value);
+
+  if(frec > 150 && frec <= 2000 && base <=100 && distancia <= 10000 &&  movil <= 10 && correccion >= 0  && correccion <= 3){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaGranAbi.value));
+    var AlturaMovil = parseFloat(txtAlturaMovilGranAbi.value);
+    var frecuencia = parseFloat(txtAlturaMovilGranAbi.value);
+    var proLogAhm = 11.75 * frecuencia;
+    console.log(proLogAhm)
+    var logAhm = Math.log10(proLogAhm);
+    console.log(logAhm)
+    var FactorAhm = 3.2 * Math.pow(logAhm, 2) - 4.97;
+    console.log(FactorAhm)
+    var LogAluraBase = Math.log10(parseFloat(txtAlturaBaseGranAbi.value));
+    var LogDistanciaTransmisor = Math.log10(parseFloat(txtDistanciaTransmisorGranAbi.value));
+    var FactorCf = parseFloat(txtFactorCorreccionGranAbi.value);
+    var PerdidasPlo = 46.3 + 33.9 * logFrecuencia - 13.82 * LogAluraBase - FactorAhm - (44.9 - 6.55 * LogAluraBase) * LogDistanciaTransmisor + FactorCf;
+    var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuanciaGranAbi.value) / 28);
+    var PerdidasMedUrb = PerdidasPlo - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
+
+    txtResultadoGra.value = PerdidasPlo;
+    //txtResultadoGraAbi.value = PerdidasMedUrb;
+  
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -809,7 +893,7 @@ btnBorrarGranAbi.addEventListener("click", function () {
   var distancia = Math.log10(parseFloat((txtDistanciaTransmisorGranAbi.value = 0)));
   var factor = Math.log10(parseFloat((txtFactorCorreccionGranAbi.value = 0)));
   var PerdidasPlo = Math.log10(parseFloat((txtResultadoGra.value = 0)));
-  var Perdidas = Math.log10(parseFloat((txtResultadoGraAbi.value = 0)));
+  //var Perdidas = Math.log10(parseFloat((txtResultadoGraAbi.value = 0)));
 });
 
 btnITU.addEventListener("click", function () {
@@ -819,19 +903,32 @@ btnITU.addEventListener("click", function () {
 });
 
 btnCalcularITU.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaITU.value));
-  var cuadradoDistancia = Math.pow(parseFloat(txtDistanciaITU.value), 2);
-  var DiferenciaAlturas = (parseFloat(txtAlturaAntenaITU.value) - parseFloat(txtAlturaReceptorITU.value));
-  var alt = parseFloat(txtAlturaAntenaITU.value);
-  var rec = parseFloat(txtAlturaReceptorITU.value);
-  var cuadradoAlturas = Math.pow(DiferenciaAlturas, 2);
-  var Dslope = Math.sqrt(cuadradoDistancia + 0.000001 * cuadradoAlturas);
-  var logDslope = Math.log10(Dslope);
-  var CampoElectrico = 106.9 - 20 * logDslope;
-  console.log(CampoElectrico)
-  var PerdidasTrayecto = 139.3 - CampoElectrico + 20 * logFrecuencia;
 
-  txtResultadoITU.value = PerdidasTrayecto;
+var frecuencia = parseFloat(txtFrecuenciaITU.value);
+var distancia = parseFloat(txtDistanciaITU.value);
+var transmisor = parseFloat(txtAlturaAntenaITU.value);
+var receptor = parseFloat(txtAlturaReceptorITU.value);
+
+if(frecuencia >= 30 && frecuencia <= 3000 && distancia <= 10000 && transmisor <= 100 && receptor <= 10){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaITU.value));
+    var cuadradoDistancia = Math.pow(parseFloat(txtDistanciaITU.value), 2);
+    var DiferenciaAlturas = (parseFloat(txtAlturaAntenaITU.value) - parseFloat(txtAlturaReceptorITU.value));
+    var alt = parseFloat(txtAlturaAntenaITU.value);
+    var rec = parseFloat(txtAlturaReceptorITU.value);
+    var cuadradoAlturas = Math.pow(DiferenciaAlturas, 2);
+    var Dslope = Math.sqrt(cuadradoDistancia + 0.000001 * cuadradoAlturas);
+    var logDslope = Math.log10(Dslope);
+    var CampoElectrico = 106.9 - 20 * logDslope;
+    console.log(CampoElectrico)
+    var PerdidasTrayecto = 139.3 - CampoElectrico + 20 * logFrecuencia;
+
+    txtResultadoITU.value = PerdidasTrayecto;
+  
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -851,24 +948,37 @@ btnSUI.addEventListener("click", function () {
 });
 
 btnCalcularTipoA.addEventListener("click", function () {
-  var logFrecuencia = parseFloat(txtFrecuenciaTipoA.value);
-  var antenaReceptora = parseFloat(txtAntenaReceptorTipoA.value);
-  console.log(logFrecuencia)
-  var velLuz = 299792458;
-  var DivisionA = Math.log10((4 * 3.1416 * 100 * parseFloat(txtFrecuenciaTipoA.value)) / velLuz);
-  console.log(DivisionA)
-  var PerdidasEspacioLibre = 20 * DivisionA;
-  console.log(PerdidasEspacioLibre)
-  var exponPerdidasY = 4.6 - 0.0075 * parseFloat(txtAntenaBaseTipoA.value) * (12.6 / parseFloat(txtAntenaBaseTipoA.value));
-  console.log(exponPerdidasY)
-  var logDivFrecuencia = Math.log10(logFrecuencia / 2000);
-  console.log(logDivFrecuencia)
-  var logDivhr = Math.log10(antenaReceptora / 2000);
-  var Xf = 6 * logDivFrecuencia;
-  var Xh = 10.8 * logDivhr;
-  var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoA.value) / 100) + Xf + Xh + 10.6;
 
-  txtResultadoTipoA.value = PerdidasTrayecto;
+var frecuencia = parseFloat(txtFrecuenciaTipoA.value);
+var base = parseFloat(txtAntenaBaseTipoA.value);
+var receptor = parseFloat(txtAntenaReceptorTipoA.value);
+var distancia = parseFloat(txtDistanciaTipoA.value);
+
+if(frecuencia >= 0 && frecuencia <= 2000 && base >= 15 && base <= 40 && receptor >= 2 && receptor <= 10 && distancia <= 1000 ){    
+    var logFrecuencia = parseFloat(txtFrecuenciaTipoA.value);
+    var antenaReceptora = parseFloat(txtAntenaReceptorTipoA.value);
+    console.log(logFrecuencia)
+    var velLuz = 299792458;
+    var DivisionA = Math.log10((4 * 3.1416 * 100 * parseFloat(txtFrecuenciaTipoA.value)) / velLuz);
+    console.log(DivisionA)
+    var PerdidasEspacioLibre = 20 * DivisionA;
+    console.log(PerdidasEspacioLibre)
+    var exponPerdidasY = 4.6 - 0.0075 * parseFloat(txtAntenaBaseTipoA.value) * (12.6 / parseFloat(txtAntenaBaseTipoA.value));
+    console.log(exponPerdidasY)
+    var logDivFrecuencia = Math.log10(logFrecuencia / 2000);
+    console.log(logDivFrecuencia)
+    var logDivhr = Math.log10(antenaReceptora / 2000);
+    var Xf = 6 * logDivFrecuencia;
+    var Xh = 10.8 * logDivhr;
+    var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoA.value) / 100) + Xf + Xh + 10.6;
+
+    txtResultadoTipoA.value = PerdidasTrayecto;
+  
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -882,25 +992,38 @@ btnBorrarTipoA.addEventListener("click", function () {
 });
 
 btnCalcularTipoB.addEventListener("click", function () {
-  var logFrecuencia = parseFloat(txtFrecuenciaTipoB.value);
-  var antenaReceptora = parseFloat(txtAntenaReceptorTipoB.value);
-  var velLuz = 299792458;
-  var DivisionA = Math.log10((4 * 3.1416 * 100 * logFrecuencia) / velLuz);
-  console.log(DivisionA)
-  var PerdidasEspacioLibre = 20 * DivisionA;
-  console.log(PerdidasEspacioLibre)
-  var exponPerdidasY = 4 - 0.0065 * parseFloat(txtAntenaBaseTipoB.value) * (17.1 / parseFloat(txtAntenaBaseTipoB.value));
-  console.log(exponPerdidasY)
-  var logDivFrecuencia = Math.log(logFrecuencia / 2000);
-  var logDivhr = Math.log10(antenaReceptora / 2000);
-  console.log(logDivFrecuencia)
-  var Xf = 6 * logDivFrecuencia;
-  console.log(Xf)
-  var Xh = 10.8 * logDivhr;
-  console.log(Xh)
-  var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoB.value) / 100) + Xf + Xh + 9.6;
 
-  txtResultadoTipoB.value = PerdidasTrayecto;
+  var frecuencia = parseFloat(txtFrecuenciaTipoB.value);
+  var base = parseFloat(txtAntenaBaseTipoB.value);
+  var receptor = parseFloat(txtAntenaReceptorTipoB.value);
+  var distancia = parseFloat(txtDistanciaTipoB.value);
+
+  if(frecuencia >= 0 && frecuencia <= 2000 && base >= 15 && base <= 40 && receptor >= 2 && receptor <= 10 && distancia <= 1000){  
+    var logFrecuencia = parseFloat(txtFrecuenciaTipoB.value);
+    var antenaReceptora = parseFloat(txtAntenaReceptorTipoB.value);
+    var velLuz = 299792458;
+    var DivisionA = Math.log10((4 * 3.1416 * 100 * logFrecuencia) / velLuz);
+    console.log(DivisionA)
+    var PerdidasEspacioLibre = 20 * DivisionA;
+    console.log(PerdidasEspacioLibre)
+    var exponPerdidasY = 4 - 0.0065 * parseFloat(txtAntenaBaseTipoB.value) * (17.1 / parseFloat(txtAntenaBaseTipoB.value));
+    console.log(exponPerdidasY)
+    var logDivFrecuencia = Math.log(logFrecuencia / 2000);
+    var logDivhr = Math.log10(antenaReceptora / 2000);
+    console.log(logDivFrecuencia)
+    var Xf = 6 * logDivFrecuencia;
+    console.log(Xf)
+    var Xh = 10.8 * logDivhr;
+    console.log(Xh)
+    var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoB.value) / 100) + Xf + Xh + 9.6;
+
+    txtResultadoTipoB.value = PerdidasTrayecto;
+  
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -914,19 +1037,32 @@ btnBorrarTipoB.addEventListener("click", function () {
 });
 
 btnCalcularTipoC.addEventListener("click", function () {
-  var logFrecuencia = parseFloat(txtFrecuenciaTipoC.value);
-  var antenaReceptora = parseFloat(txtAntenaReceptorTipoC.value);
-  var velLuz = 299792458;
-  var DivisionA = Math.log10((4 * 3.1416 * 100 * parseFloat(txtFrecuenciaTipoC.value)) / velLuz);
-  var PerdidasEspacioLibre = 20 * DivisionA;
-  var exponPerdidasY = 3.6 - 0.005 * parseFloat(txtAntenaBaseTipoC.value) * (20 / parseFloat(txtAntenaBaseTipoC.value));
-  var logDivFrecuencia = Math.log(logFrecuencia / 2000);
-  var logDivhr = Math.log10(antenaReceptora / 2000);
-  var Xf = 6 * logDivFrecuencia;
-  var Xh = 20 * logDivhr;
-  var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoC.value) / 100) + Xf + Xh + 8.2;
 
-  txtResultadoTipoC.value = PerdidasTrayecto;
+  var frecuencia = parseFloat(txtFrecuenciaTipoC.value);
+  var base = parseFloat(txtAntenaBaseTipoC.value);
+  var receptor = parseFloat(txtAntenaReceptorTipoC.value);
+  var distancia = parseFloat(txtDistanciaTipoC.value);
+
+  if(frecuencia >= 0 && frecuencia <= 2000 && base >= 15 && base <= 40 && receptor >= 2 && receptor <= 10 && distancia <= 1000){
+    var logFrecuencia = parseFloat(txtFrecuenciaTipoC.value);
+    var antenaReceptora = parseFloat(txtAntenaReceptorTipoC.value);
+    var velLuz = 299792458;
+    var DivisionA = Math.log10((4 * 3.1416 * 100 * parseFloat(txtFrecuenciaTipoC.value)) / velLuz);
+    var PerdidasEspacioLibre = 20 * DivisionA;
+    var exponPerdidasY = 3.6 - 0.005 * parseFloat(txtAntenaBaseTipoC.value) * (20 / parseFloat(txtAntenaBaseTipoC.value));
+    var logDivFrecuencia = Math.log(logFrecuencia / 2000);
+    var logDivhr = Math.log10(antenaReceptora / 2000);
+    var Xf = 6 * logDivFrecuencia;
+    var Xh = 20 * logDivhr;
+    var PerdidasTrayecto = PerdidasEspacioLibre + 10 * exponPerdidasY * Math.log10(parseFloat(txtDistanciaTipoC.value) / 100) + Xf + Xh + 8.2;
+
+    txtResultadoTipoC.value = PerdidasTrayecto;
+
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -946,20 +1082,33 @@ btnHata.addEventListener("click", function () {
 });
 
 btnCalcularHataMedSub.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value));
-  console.log(logFrecuencia)
-  var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedSub.value);
-  console.log(AntenaReceptora)
-  var FactorAh2 = (1.1 * logFrecuencia - 0.7) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
-  console.log(FactorAh2)
-  var logDistacia = Math.log10(parseFloat(txtDistanciaHataMedSub.value));
-  var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseHataMedSub.value));
-  var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  console.log(Perdidas)
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value) / 28);
-  var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
 
-  txtResultadoHataMedSub.value = PerdidasTrayecto;
+var frecuencia = parseFloat(txtFrecuenciaHataMedSub.value);
+var base = parseFloat(txtAntenaBaseHataMedSub.value);
+var receptor = parseFloat(txtAntenaReceptorHataMedSub.value);
+var distancia = parseFloat(txtDistanciaHataMedSub.value);
+
+if(frecuencia >= 150 && frecuencia <= 1500 && base >= 30 && base<= 200 && receptor >= 1 && receptor <= 20 && distancia <= 1000){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value));
+    console.log(logFrecuencia)
+    var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedSub.value);
+    console.log(AntenaReceptora)
+    var FactorAh2 = (1.1 * logFrecuencia - 0.7) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+    console.log(FactorAh2)
+    var logDistacia = Math.log10(parseFloat(txtDistanciaHataMedSub.value));
+    var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseHataMedSub.value));
+    var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+    console.log(Perdidas)
+    var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value) / 28);
+    var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
+
+    txtResultadoHataMedSub.value = PerdidasTrayecto;
+  
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -973,18 +1122,31 @@ btnBorrarHataMedSub.addEventListener("click", function () {
 });
 
 btnCalcularHataMedAbi.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaHataMedAbi.value));
-  console.log(logFrecuencia)
-  var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedAbi.value);
-  console.log(AntenaReceptora)
-  var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
-  var logDistacia = Math.log10(parseFloat(txtDistanciaHataMedAbi.value));
-  var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseHataMedAbi.value));
-  var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  console.log(Perdidas)
-  var PerdidasTrayecto = Perdidas - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
 
-  txtResultadoHataMedAbi.value = PerdidasTrayecto;
+  var frecuencia = parseFloat(txtFrecuenciaHataMedAbi.value);
+  var base = parseFloat(txtAntenaBaseHataMedAbi.value);
+  var receptor = parseFloat(txtAntenaReceptorHataMedAbi.value);
+  var distancia = parseFloat(txtDistanciaHataMedAbi.value);
+
+  if(frecuencia >= 150 && frecuencia <= 1500 && base >= 30 && base<= 200 && receptor >= 1 && receptor <= 20 && distancia <= 1000){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaHataMedAbi.value));
+    console.log(logFrecuencia)
+    var AntenaReceptora = parseFloat(txtAntenaReceptorHataMedAbi.value);
+    console.log(AntenaReceptora)
+    var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+    var logDistacia = Math.log10(parseFloat(txtDistanciaHataMedAbi.value));
+    var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseHataMedAbi.value));
+    var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactorAh2 + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+    console.log(Perdidas)
+    var PerdidasTrayecto = Perdidas - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
+
+    txtResultadoHataMedAbi.value = PerdidasTrayecto;
+
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -998,17 +1160,32 @@ btnBorrarHataMedAbi.addEventListener("click", function () {
 });
 
 btnCalcularGraHataSub.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaGraHataSub.value));
-  var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataSub.value);
-  var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
-  var logDistacia = Math.log10(parseFloat(txtDistanciaGraHataSub.value));
-  var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseGraHataSub.value));
-  var factores = FactAh2();
-  var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaHataMedSub.value) / 28);
-  var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
 
-  txtResultadoGraHataSub.value = PerdidasTrayecto;
+  var frecuencia = parseFloat(txtFrecuenciaGraHataSub.value);
+  var base = parseFloat(txtAntenaBaseGraHataSub.value);
+  var receptor = parseFloat(txtAntenaReceptorGraHataSub.value);
+  var distancia = parseFloat(txtDistanciaGraHataSub.value);
+  
+
+  if(frecuencia >= 150 && frecuencia <= 1500 && base >= 30 && base<= 200 && receptor >= 1 && receptor <= 20 && distancia <= 1000){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaGraHataSub.value));
+    var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataSub.value);
+    console.log(AntenaReceptora)
+    var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+    var logDistacia = Math.log10(parseFloat(txtDistanciaGraHataSub.value));
+    var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseGraHataSub.value));
+    var factores = FactAh2();
+    var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+    var logFrecuenciaDiv = Math.log10(parseFloat(txtFrecuenciaGraHataSub.value) / 28);
+    var PerdidasTrayecto = Perdidas - 2 * Math.pow(logFrecuenciaDiv, 2) - 5.4;
+
+    txtResultadoGraHataSub.value = PerdidasTrayecto;
+
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -1022,18 +1199,31 @@ btnBorrarGraHataSub.addEventListener("click", function () {
 });
 
 btnCalcularGraHataAbi.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaGraHataAbi.value));
-  console.log(logFrecuencia)
-  var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataAbi.value);
-  console.log(AntenaReceptora)
-  var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
-  var logDistacia = Math.log10(parseFloat(txtDistanciaGraHataAbi.value));
-  console.log(logDistacia)
-  var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseGraHataAbi.value));
-  var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2Abi() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
-  var PerdidasTrayecto = Perdidas - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
 
-  txtResultadoGraHataAbi.value = PerdidasTrayecto;
+  var frecuencia = parseFloat(txtFrecuenciaGraHataAbi.value);
+  var base = parseFloat(txtAntenaBaseGraHataAbi.value);
+  var receptor = parseFloat(txtAntenaReceptorGraHataAbi.value);
+  var distancia = parseFloat(txtDistanciaGraHataAbi.value);
+
+  if(frecuencia >= 150 && frecuencia <= 1500 && base >= 30 && base<= 200 && receptor >= 1 && receptor <= 20 && distancia <= 1000){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaGraHataAbi.value));
+    console.log(logFrecuencia)
+    var AntenaReceptora = parseFloat(txtAntenaReceptorGraHataAbi.value);
+    console.log(AntenaReceptora)
+    var FactorAh2 = (1.1 * logFrecuencia) * AntenaReceptora - 1.52 * logFrecuencia - 0.8;
+    var logDistacia = Math.log10(parseFloat(txtDistanciaGraHataAbi.value));
+    console.log(logDistacia)
+    var logAntenaTransmisora = Math.log10(parseFloat(txtAntenaBaseGraHataAbi.value));
+    var Perdidas = 69.55 + 26.16 * logFrecuencia - 13.82 * logAntenaTransmisora - FactAh2Abi() + (44.9 - 6.55 * logAntenaTransmisora) * logDistacia;
+    var PerdidasTrayecto = Perdidas - 4.78 * Math.pow(logFrecuencia, 2) + 18.33 * logFrecuencia - 40.94;
+
+    txtResultadoGraHataAbi.value = PerdidasTrayecto;
+
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -1053,13 +1243,27 @@ btnUMI.addEventListener("click", function () {
 });
 
 btnCalcularUMILos.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUMILos.value));
-  console.log(logFrecuencia)
-  var logDistanciaPuntaPunta = Math.log10(parseFloat(txtDistanciaTransReceLos.value));
-  console.log(logDistanciaPuntaPunta)
-  var PerdidasTrayecto = 22 * logDistanciaPuntaPunta + 28 + 20 * logFrecuencia;
 
-  txtResultadoUMILos.value = PerdidasTrayecto;
+var frecuencia = parseFloat(txtFrecuenciaUMILos.value);
+var transmisor = parseFloat(txtAlturaTrasLos.value);
+var receptor = parseFloat(txtAlturaRecepLos.value);
+var distancia = parseFloat(txtDistanciaBaseReceptoraLos.value);
+var punta = parseFloat(txtDistanciaTransReceLos.value);
+
+if(frecuencia >= 2 && frecuencia <= 6 && transmisor >= 0 && transmisor <= 10 && receptor >= 1.5 && receptor <= 22.5 && distancia >= 10 && distancia <= 2000 && punta <= 1000){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUMILos.value));
+    console.log(logFrecuencia)
+    var logDistanciaPuntaPunta = Math.log10(parseFloat(txtDistanciaTransReceLos.value));
+    console.log(logDistanciaPuntaPunta)
+    var PerdidasTrayecto = 22 * logDistanciaPuntaPunta + 28 + 20 * logFrecuencia;
+
+    txtResultadoUMILos.value = PerdidasTrayecto;
+
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -1074,13 +1278,29 @@ btnBorrarUMILos.addEventListener("click", function () {
 });
 
 btnCalcularUMINLos.addEventListener("click", function () {
-  var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUMINLos.value));
-  console.log(logFrecuencia)
-  var logDistanciaPuntaPunta = Math.log10(parseFloat(txtDistanciaTransReceNLos.value));
-  console.log(logDistanciaPuntaPunta)
-  var PerdidasTrayecto = 36.7 * logDistanciaPuntaPunta + 22.7 + 26 * logFrecuencia - 0.3 * (parseFloat(txtAlturaRecepNLos.value) - 1.5);
 
-  txtResultadoUMINLos.value = PerdidasTrayecto;
+
+  var frecuencia = parseFloat(txtFrecuenciaUMINLos.value);
+  var transmisor = parseFloat(txtAlturaTrasNLos.value);
+  var receptor = parseFloat(txtAlturaRecepNLos.value);
+  var distancia = parseFloat(txtDistanciaBaseReceptoraNLos.value);
+  var punta = parseFloat(txtDistanciaTransReceNLos.value);
+
+
+  if(frecuencia >= 2 && frecuencia <= 6 && transmisor >= 0 && transmisor <= 10 && receptor >= 1.5 && receptor <= 22.5 && distancia >= 10 && distancia <= 2000 && punta <= 1000){
+    var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUMINLos.value));
+    console.log(logFrecuencia)
+    var logDistanciaPuntaPunta = Math.log10(parseFloat(txtDistanciaTransReceNLos.value));
+    console.log(logDistanciaPuntaPunta)
+    var PerdidasTrayecto = 36.7 * logDistanciaPuntaPunta + 22.7 + 26 * logFrecuencia - 0.3 * (parseFloat(txtAlturaRecepNLos.value) - 1.5);
+
+    txtResultadoUMINLos.value = PerdidasTrayecto;
+
+  } else {
+
+    alert("VALIDAR UN PARAMETRO FUERA DE RANGO")
+
+  }
 
 });
 
@@ -1195,6 +1415,7 @@ function limpiarModalEmpSemp() {
   ocultarElemento(divPARAMETROS, true);
   ocultarElemento(divECUACIONES, true);
   ocultarElemento(divWalfischIk, true);
+  ocultarElemento(divWalfisch, true);
   ocultarElemento(divCost, true);
   ocultarElemento(divITU, true);
   ocultarElemento(divSUI, true);
@@ -1279,41 +1500,53 @@ function MostrarDiv4() {
   ocultarElemento(document.getElementById("Zona1"), true);
 }
 
-function MostrarDiv5() {
-  if (flexSwitchCheckDefault5.checked) {
-    flexSwitchCheckDefault6.checked = false;
-    ocultarElemento(document.getElementById("divMediano"), false);
+function limpiarFormulasCostHata(){
     ocultarElemento(document.getElementById("divGrande"), true);
     ocultarElemento(document.getElementById("divMedAbierto"), true);
     ocultarElemento(document.getElementById("divMedianoSub"), true);
-    ocultarElemento(document.getElementById("divMedAbierto"), true);
+    ocultarElemento(document.getElementById("divMediano"), true);
+    ocultarElemento(document.getElementById("divGranSub"), true);
+    ocultarElemento(document.getElementById("divGranAbi"), true);
+}
 
+function MostrarDiv5() {
+  if (flexSwitchCheckDefault5.checked) {
+    flexSwitchCheckDefault6.checked = false;
+    limpiarFormulasCostHata();
+    flexSwitchCheckDefault9.checked=false;
+    flexSwitchCheckDefault10.checked=false;
+    ocultarElemento(document.getElementById("divMediano"), false);
     return;
   }
+  flexSwitchCheckDefault7.checked=false;
+  flexSwitchCheckDefault8.checked=false;
   ocultarElemento(document.getElementById("divMediano"), true);
+  ocultarElemento(document.getElementById("divMedAbierto"), true);
+  ocultarElemento(document.getElementById("divMedianoSub"), true);
 }
 
 function MostrarDiv6() {
   if (flexSwitchCheckDefault6.checked) {
     flexSwitchCheckDefault5.checked = false;
+    limpiarFormulasCostHata();
+    flexSwitchCheckDefault7.checked=false;
+    flexSwitchCheckDefault8.checked=false;
     ocultarElemento(document.getElementById("divGrande"), false);
-    ocultarElemento(document.getElementById("divMediano"), true);
-    ocultarElemento(document.getElementById("divMedAbierto"), true);
-    ocultarElemento(document.getElementById("divGranSub"), true);
-    ocultarElemento(document.getElementById("divGranAbi"), true);
     return;
   }
+  flexSwitchCheckDefault9.checked=false;
+  flexSwitchCheckDefault10.checked=false;
   ocultarElemento(document.getElementById("divGrande"), true);
+  ocultarElemento(document.getElementById("divGranSub"), true);
+  ocultarElemento(document.getElementById("divGranAbi"), true);
 }
 
 function MostrarDiv7() {
   if (flexSwitchCheckDefault7.checked) {
     flexSwitchCheckDefault8.checked = false;
+    limpiarFormulasCostHata();
+    ocultarElemento(document.getElementById("divMediano"), false);
     ocultarElemento(document.getElementById("divMedianoSub"), false);
-    ocultarElemento(document.getElementById("divMedAbierto"), true);
-    ocultarElemento(document.getElementById("divGrande"), true);
-    ocultarElemento(document.getElementById("divGranSub"), true);
-    ocultarElemento(document.getElementById("divGranAbi"), true);
     return;
   }
   ocultarElemento(document.getElementById("divMedianoSub"), true);
@@ -1322,11 +1555,9 @@ function MostrarDiv7() {
 function MostrarDiv8() {
   if (flexSwitchCheckDefault8.checked) {
     flexSwitchCheckDefault7.checked = false;
+    limpiarFormulasCostHata();
+    ocultarElemento(document.getElementById("divMediano"), false);
     ocultarElemento(document.getElementById("divMedAbierto"), false);
-    ocultarElemento(document.getElementById("divMedianoSub"), true);
-    ocultarElemento(document.getElementById("divGrande"), true);
-    ocultarElemento(document.getElementById("divGranSub"), true);
-    ocultarElemento(document.getElementById("divGranAbi"), true);
     return;
   }
   ocultarElemento(document.getElementById("divMedAbierto"), true);
@@ -1335,11 +1566,9 @@ function MostrarDiv8() {
 function MostrarDiv9() {
   if (flexSwitchCheckDefault9.checked) {
     flexSwitchCheckDefault10.checked = false;
+    limpiarFormulasCostHata();
+    ocultarElemento(document.getElementById("divGrande"), false);
     ocultarElemento(document.getElementById("divGranSub"), false);
-    ocultarElemento(document.getElementById("divGranAbi"), true);
-    ocultarElemento(document.getElementById("divMediano"), true);
-    ocultarElemento(document.getElementById("divMedianoSub"), true);
-    ocultarElemento(document.getElementById("divMedAbierto"), true);
     return;
   }
   ocultarElemento(document.getElementById("divGranSub"), true);
@@ -1348,11 +1577,9 @@ function MostrarDiv9() {
 function MostrarDiv10() {
   if (flexSwitchCheckDefault10.checked) {
     flexSwitchCheckDefault9.checked = false;
+    limpiarFormulasCostHata();
+    ocultarElemento(document.getElementById("divGrande"), false);
     ocultarElemento(document.getElementById("divGranAbi"), false);
-    ocultarElemento(document.getElementById("divGranSub"), true);
-    ocultarElemento(document.getElementById("divMediano"), true);
-    ocultarElemento(document.getElementById("divMedianoSub"), true);
-    ocultarElemento(document.getElementById("divMedAbierto"), true);
     return;
   }
   ocultarElemento(document.getElementById("divGranAbi"), true);
@@ -1394,31 +1621,53 @@ function MostrarDiv13() {
   ocultarElemento(document.getElementById("divTipoC"), true);
 }
 
+function limpiarFormulasOkumura(){
+  ocultarElemento(document.getElementById("divGrandeHata"), true);
+  ocultarElemento(document.getElementById("divMedianoHata"), true);
+  ocultarElemento(document.getElementById("MedianoHataAbi"), true);
+  ocultarElemento(document.getElementById("MedianoHataSub"), true);
+  ocultarElemento(document.getElementById("GrandeHataAbi"), true);
+  ocultarElemento(document.getElementById("GrandeHataSub"), true);    
+}
+
 function MostrarDiv14() {
   if (flexSwitchCheckDefault14.checked) {
     flexSwitchCheckDefault15.checked = false;
+    limpiarFormulasOkumura();
     ocultarElemento(document.getElementById("divMedianoHata"), false);
-    ocultarElemento(document.getElementById("divGrandeHata"), true);
+    flexSwitchCheckDefault18.checked = false;
+    flexSwitchCheckDefault19.checked = false;
     return;
   }
+  flexSwitchCheckDefault17.checked = false;
+  flexSwitchCheckDefault16.checked = false;
   ocultarElemento(document.getElementById("divMedianoHata"), true);
+  ocultarElemento(document.getElementById("MedianoHataAbi"), true);
+  ocultarElemento(document.getElementById("MedianoHataSub"), true);
 }
 
 function MostrarDiv15() {
   if (flexSwitchCheckDefault15.checked) {
     flexSwitchCheckDefault14.checked = false;
-    ocultarElemento(document.getElementById("divGrandeHata"), false);
-    ocultarElemento(document.getElementById("divMedianoHata"), true);
+    limpiarFormulasOkumura();
+    ocultarElemento(document.getElementById("divGrandeHata"), false); 
+    flexSwitchCheckDefault17.checked = false;
+    flexSwitchCheckDefault16.checked = false;
     return;
   }
+  flexSwitchCheckDefault18.checked = false;
+  flexSwitchCheckDefault19.checked = false;
   ocultarElemento(document.getElementById("divGrandeHata"), true);
+  ocultarElemento(document.getElementById("GrandeHataAbi"), true);
+  ocultarElemento(document.getElementById("GrandeHataSub"), true);
 }
 
 function MostrarDiv16() {
   if (flexSwitchCheckDefault16.checked) {
     flexSwitchCheckDefault17.checked = false;
+    limpiarFormulasOkumura();
+    ocultarElemento(document.getElementById("divMedianoHata"), false);
     ocultarElemento(document.getElementById("MedianoHataSub"), false);
-    ocultarElemento(document.getElementById("MedianoHataAbi"), true);
     return;
   }
   ocultarElemento(document.getElementById("MedianoHataSub"), true);
@@ -1427,8 +1676,9 @@ function MostrarDiv16() {
 function MostrarDiv17() {
   if (flexSwitchCheckDefault17.checked) {
     flexSwitchCheckDefault16.checked = false;
+    limpiarFormulasOkumura();
+    ocultarElemento(document.getElementById("divMedianoHata"), false);
     ocultarElemento(document.getElementById("MedianoHataAbi"), false);
-    ocultarElemento(document.getElementById("MedianoHataSub"), true);
     return;
   }
   ocultarElemento(document.getElementById("MedianoHataAbi"), true);
@@ -1437,8 +1687,9 @@ function MostrarDiv17() {
 function MostrarDiv18() {
   if (flexSwitchCheckDefault18.checked) {
     flexSwitchCheckDefault19.checked = false;
+    limpiarFormulasOkumura();
+    ocultarElemento(document.getElementById("divGrandeHata"), false); 
     ocultarElemento(document.getElementById("GrandeHataSub"), false);
-    ocultarElemento(document.getElementById("GrandeHataAbi"), true);
     return;
   }
   ocultarElemento(document.getElementById("GrandeHataSub"), true);
@@ -1447,8 +1698,9 @@ function MostrarDiv18() {
 function MostrarDiv19() {
   if (flexSwitchCheckDefault19.checked) {
     flexSwitchCheckDefault18.checked = false;
+    limpiarFormulasOkumura();
+    ocultarElemento(document.getElementById("divGrandeHata"), false); 
     ocultarElemento(document.getElementById("GrandeHataAbi"), false);
-    ocultarElemento(document.getElementById("GrandeHataSub"), true);
     return;
   }
   ocultarElemento(document.getElementById("GrandeHataAbi"), true);
