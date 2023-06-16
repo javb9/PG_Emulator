@@ -669,7 +669,7 @@ btnCalcularNLOS.addEventListener("click", function () {
   var base = parseFloat(txtAlturaBaseSub.value);
   var separacion = parseFloat(txtDistanciaEdificios.value);
 
-  if( Frecuencia >= 800 && Frecuencia <= 2000 && grado > 0 && grado <= 90 && distancia < 10000 && ancho <= 20 && edificio < 500 && movil <= 10 && base <= 100 && separacion <= 1000){
+  if( Frecuencia >= 800 && Frecuencia <= 2000 && grado > 0 && grado <= 90 && distancia < 10000 && ancho <= 20 && edificio < 500 && movil >= 1 && movil <= 3 && base >= 4 && base <= 50 && separacion <= 1000){
     var logDistacia = Math.log10(parseFloat(txtDistanciaNLOS.value));
     var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaNLOS.value));
     var LogdistanEdificios = Math.log10(parseFloat(txtDistanciaEdificios.value));
@@ -722,7 +722,7 @@ btnCalcularUrb.addEventListener("click", function () {
   var separacion = parseFloat(txtDistanciaEdifUrb.value);
 
 
-  if(Frecuencia >= 800 && Frecuencia <= 2000 && grado > 0 && grado <= 90 && distancia < 10000 && ancho <= 20 && edificio < 500 && movil <= 10 && base <= 100 && separacion <= 1000){
+  if(Frecuencia >= 800 && Frecuencia <= 2000 && grado > 0 && grado <= 90 && distancia < 10000 && ancho <= 20 && edificio < 500 && movil >= 1 && movil <= 3 && base >= 4 && base <= 50 && separacion <= 1000){
     var logDistacia = Math.log10(parseFloat(txtDistanciaUrb.value));
     var logFrecuencia = Math.log10(parseFloat(txtFrecuenciaUrb.value));
     var valFrecuencia = parseFloat(txtFrecuenciaUrb.value);
@@ -766,7 +766,7 @@ var distancia = parseFloat(txtDistanciaTransmisorMedSub.value);
 var correccion = parseFloat(txtFactorCorreccionMedSub.value);
 
 
-if(frecuencia > 150 && frecuencia <= 2000 && base <=100 && distancia <= 10000 &&  movil <= 10 && correccion >= 0  && correccion <= 3 ){ 
+if(frecuencia > 150 && frecuencia <= 2000 && base >= 30 && base <= 200 && distancia <= 10000 &&  movil >= 1 && movil <= 10 && correccion >= 0  && correccion <= 3 ){ 
     var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaMedSub.value));
     var AlturaMovil = parseFloat(txtAlturaMovilMedSub.value);
     var FactorAhm = (1.1 * logFrecuencia - 0.7) * AlturaMovil - (1.56 * logFrecuencia - 0.8);
@@ -808,7 +808,7 @@ btnCalcularMedAbi.addEventListener("click", function () {
   var distancia = parseFloat(txtDistanciaTransmisorMedAbi.value);
   var correccion = parseFloat(txtFactorCorreccionMedAbi.value);
 
-  if(frecuencia > 150 && frecuencia <= 2000 && base <=100 && distancia <= 10000 &&  movil <= 10 && correccion >= 0  && correccion <= 3){
+  if(frecuencia > 150 && frecuencia <= 2000 && base >=30 && base <=200 && distancia <= 10000 &&  movil >= 1 && movil <= 10 && correccion >= 0  && correccion <= 3){
     var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaMedAbi.value));
     var AlturaMovil = parseFloat(txtAlturaMovilMedAbi.value);
     var FactorAhm = (1.1 * logFrecuencia - 0.7) * AlturaMovil - (1.56 * logFrecuencia - 0.8);
@@ -850,7 +850,7 @@ btnCalcularGranSub.addEventListener("click", function () {
   var distancia = parseFloat(txtDistanciaTransmisorGranSub.value);
   var correccion = parseFloat(txtFactorCorreccionGranSub.value);
 
-  if(frec > 150 && frec <= 2000 && base <=100 && distancia <= 10000 &&  movil <= 10 && correccion >= 0  && correccion <= 3){
+  if(frec > 150 && frec <= 2000 && base >= 30 && base <=200 && distancia <= 10000 &&  movil >= 1 && movil <= 10 && correccion >= 0  && correccion <= 3){
     var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaGranSub.value));
     var AlturaMovil = parseFloat(txtAlturaMovilGranSub.value);
     var frecuencia = parseFloat(txtFrecuanciaGranSub.value);
@@ -894,7 +894,7 @@ btnCalcularGranAbi.addEventListener("click", function () {
   var distancia = parseFloat(txtDistanciaTransmisorGranAbi.value);
   var correccion = parseFloat(txtFactorCorreccionGranAbi.value);
 
-  if(frec > 150 && frec <= 2000 && base <=100 && distancia <= 10000 &&  movil <= 10 && correccion >= 0  && correccion <= 3){
+  if(frec > 150 && frec <= 2000 && base >= 30 && base <=200 && distancia <= 10000 &&  movil >= 1 && movil <= 10 && correccion >= 0  && correccion <= 3){
     var logFrecuencia = Math.log10(parseFloat(txtFrecuanciaGranAbi.value));
     var AlturaMovil = parseFloat(txtAlturaMovilGranAbi.value);
     var frecuencia = parseFloat(txtAlturaMovilGranAbi.value);
@@ -2261,7 +2261,7 @@ function Preg16() {
 
 function Preg17() {
   var p17 = 0;
-  if (document.getElementById('Radios11').checked == true) {
+  if (document.getElementById('Radios12').checked == true) {
     p17 = 1;
     return (p17);
   }
@@ -2317,7 +2317,7 @@ function Preg21() {
 
 function Preg22() {
   var p22 = 0;
-  if (document.getElementById('Radio14').checked == true) {
+  if (document.getElementById('Radio13').checked == true) {
     p22 = 1;
     return (p22);
   }
