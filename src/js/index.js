@@ -193,6 +193,7 @@ let btnCalcular = document.getElementById("btnCalcular");
 let btnInicio = document.getElementById("btnInicio");
 let divCalcular = document.getElementById("divCalcular");
 let divInicio = document.getElementById("divInicio");
+let divPresentacion = document.getElementById("divPresentacion");
 let btnEvaluacion = document.getElementById("btnEvaluacion");
 let divEvaluacion = document.getElementById("divEvaluacion");
 let btnGuia = document.getElementById("btnGuia");
@@ -1481,6 +1482,7 @@ function limpiarVista() {
   ocultarElemento(divEvaluacion, true);
   ocultarElemento(divGuia, true);
   ocultarElemento(divInicio, true);
+  ocultarElemento(divPresentacion, true);
 
 }
 
