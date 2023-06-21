@@ -3062,7 +3062,7 @@ function Preg4_18() {
 
 function Preg4_19() {
   var p19 = 0;
-  if (document.getElementById('Radios133').checked == true) {
+  if (document.getElementById('Radios134').checked == true) {
     p19 = 1;
     return (p19);
   }
